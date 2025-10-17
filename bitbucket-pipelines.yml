@@ -10,7 +10,7 @@ pipelines:
           script:
             # 0) 啟用 corepack，使用 pnpm（Node 20 內建）
             - corepack enable
-            - corepack prepare pnpm@8 --activate
+            - corepack prepare pnpm@9 --activate
 
             # 1) 安裝 & 建置（用 pnpm 並鎖定 lockfile）
             - pnpm install --frozen-lockfile
