@@ -7,7 +7,6 @@
     <style>
       html, body { height: 100%; margin: 0; }
       body { background: #000; }
-      /* 方式 A：用 <img> 滿版鋪滿（推薦，行動裝置相容好） */
       .bg {
         position: fixed;
         inset: 0;
@@ -17,16 +16,9 @@
         object-position: center center;
         display: block;
       }
-      /* 方式 B：用 CSS 背景圖（若你想只靠 CSS，取消 body 的 background 即可） */
-      /*
-      body {
-        background: url('/assets/coming-soon.jpg') center/cover no-repeat fixed #000;
-      }
-      */
     </style>
   </head>
   <body>
-    <!-- 將檔名替換成你的實際圖片路徑，例如 /assets/xmas-coming-soon-2025.jpg -->
     <img class="bg" src="public/assets/coming-soon.png" alt="Coming soon" />
   </body>
 </html>
