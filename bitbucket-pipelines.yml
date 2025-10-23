@@ -2,9 +2,9 @@ image: node:20
 
 pipelines:
   branches:
-    prd:
+    dev:
       - step:
-          name: Build & Deploy Production
+          name: Build & Deploy Staging
           caches:
             - node
           script:
@@ -25,8 +25,8 @@ pipelines:
             - aws configure set default.region $AWS_REGION
 
             # 4) 部署到 S3（資源長快取、index.html 不快取）
-            - aws s3 sync dist/ s3://$S3_BUCKET_PROD --delete --cache-control "public, max-age=31536000" --exclude "index.html"
-            - aws s3 cp dist/index.html s3://$S3_BUCKET_PROD/index.html --cache-control "no-store"
+            - aws s3 sync dist/ s3://$S3_BUCKET_STAGING --delete --cache-control "public, max-age=31536000" --exclude "index.html"
+            - aws s3 cp dist/index.html s3://$S3_BUCKET_STAGING/index.html --cache-control "no-store"
 
-            # 5) CloudFront 失效（更新正式站頁面）
-            - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_PROD --paths "/*"
+            # 5) CloudFront 失效
+            - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_STAGING --paths "/*"
