@@ -1,25 +1,27 @@
 <!doctype html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>台北聖誕活動｜Staging</title>
-  <style>
-    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC",sans-serif}
-    .wrap{display:flex;align-items:center;justify-content:center;height:100%;background:#0b1220;color:#fff}
-    .card{padding:32px 28px;border-radius:16px;background:rgba(255,255,255,.06);backdrop-filter: blur(6px);text-align:center}
-    h1{margin:0 0 8px;font-size:28px}
-    p{margin:0 0 12px;opacity:.85}
-    small{opacity:.6}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <h1>🎄 台北聖誕活動</h1>
-      <p>這是測試版 v3</p>
-      <small>Built on S3 + CloudFront + HTTPS</small>
-    </div>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 防止測試站被搜尋到 -->
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>2025繽紛耶誕玩台北・光之覓境</title>
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body { background: #000; }
+      .bg {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* 保持比例，鋪滿裁切 */
+        object-position: center center;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="bg" src="public/assets/coming-soon.png" alt="Coming soon" />
+  </body>
 </html>

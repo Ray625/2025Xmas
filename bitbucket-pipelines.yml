@@ -10,14 +10,14 @@ pipelines:
           script:
             # 0) 啟用 corepack，使用 pnpm（Node 20 內建）
             - corepack enable
-            - corepack prepare pnpm@8 --activate
+            - corepack prepare pnpm@9 --activate
 
             # 1) 安裝 & 建置（用 pnpm 並鎖定 lockfile）
             - pnpm install --frozen-lockfile
             - pnpm build
 
             # 2) 安裝 AWS CLI
-            - apt-get update && apt-get install -y python3-pip && pip3 install awscli
+            - apt-get update && apt-get install -y awscli
 
             # 3) 設定 AWS 憑證
             - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
