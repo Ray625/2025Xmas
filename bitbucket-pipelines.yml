@@ -30,3 +30,32 @@ pipelines:
 
             # 5) CloudFront 失效
             - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_STAGING --paths "/*"
+    prd:
+      - step:
+          name: Build & Deploy Production
+          deployment: production
+          caches:
+            - node
+          script:
+            # 0) 啟用 corepack，使用 pnpm
+            - corepack enable
+            - corepack prepare pnpm@9 --activate
+
+            # 1) 安裝 & 建置
+            - pnpm install --frozen-lockfile
+            - pnpm build
+
+            # 2) 安裝 AWS CLI（apt 版）
+            - apt-get update && apt-get install -y awscli
+
+            # 3) 設定 AWS 憑證
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            - aws configure set default.region $AWS_REGION
+
+            # 4) 部署到正式 S3（靜態資源長快取、index.html 不快取）
+            - aws s3 sync dist/ s3://$S3_BUCKET_PROD --delete --cache-control "public, max-age=31536000" --exclude "index.html"
+            - aws s3 cp dist/index.html s3://$S3_BUCKET_PROD/index.html --cache-control "no-store"
+
+            # 5) CloudFront 失效
+            - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_PROD --paths "/*"
