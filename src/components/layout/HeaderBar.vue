@@ -1,7 +1,7 @@
 <template>
   <header class="site-header">
     <div class="gradient-bar">
-      <Container class="header-inner" size="xxl">
+      <Container class="header-inner" maxWidth="1464px">
         <nav class="nav">
           <a
             v-for="item in navItems"
@@ -9,27 +9,43 @@
             :href="item.href"
             class="nav-item"
           >
-            <img :src="item.icon" :alt="item.label" class="nav-item__icon" />
-            <span>{{ item.label }}</span>
+            <img
+              :src="item.icon"
+              :alt="t(`header.nav.${item.key}`)"
+              class="nav-item__icon"
+            />
+            <span>{{ t(`header.nav.${item.key}`) }}</span>
           </a>
         </nav>
         <div class="header-actions">
-          <button class="lang-btn" type="button">EN</button>
+          <button class="lang-btn hover" type="button" @click="toggleLocale">
+            {{ t("header.lang") }}
+          </button>
           <a
-            class="social"
+            class="social hover"
             href="https://www.facebook.com"
             target="_blank"
             rel="noreferrer"
+            :aria-label="t('header.socials.facebook')"
           >
-            <span>f</span>
+            <img
+              :src="social_fb"
+              :alt="t(`header.socials.facebook`)"
+              class="nav-item__icon__social"
+            />
           </a>
           <a
-            class="social"
+            class="social hover"
             href="https://www.youtube.com"
             target="_blank"
             rel="noreferrer"
+            :aria-label="t('header.socials.youtube')"
           >
-            <span>▶</span>
+            <img
+              :src="social_yt"
+              :alt="t(`header.socials.youtube`)"
+              class="nav-item__icon__social"
+            />
           </a>
         </div>
       </Container>
@@ -38,29 +54,38 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import Container from "./Container.vue";
-import giftIcon from "../../assets/icon/gift.svg";
-import bellIcon from "../../assets/icon/bell.svg";
-import lightsIcon from "../../assets/icon/lights.svg";
-import treeIcon from "../../assets/icon/tree.svg";
-import ballIcon from "../../assets/icon/ball.svg";
-import busIcon from "../../assets/icon/bus.svg";
-import mailIcon from "../../assets/icon/mail.svg";
-import playIcon from "../../assets/icon/play.svg";
+import giftIcon from "@/assets/icon/gift.svg";
+import bellIcon from "@/assets/icon/bell.svg";
+import lightsIcon from "@/assets/icon/lights.svg";
+import treeIcon from "@/assets/icon/tree.svg";
+import ballIcon from "@/assets/icon/ball.svg";
+import busIcon from "@/assets/icon/bus.svg";
+import mailIcon from "@/assets/icon/mail.svg";
+import playIcon from "@/assets/icon/play.svg";
+import social_fb from "@/assets/icon/social_fb.svg";
+import social_yt from "@/assets/icon/social_yt.svg";
 
 const navItems = [
-  { label: "光之覓境雙重抽", href: "#raffle", icon: giftIcon },
-  { label: "百貨優惠", href: "#promo", icon: bellIcon },
-  { label: "耶誕燈飾", href: "#lights", icon: lightsIcon },
-  { label: "信義空橋妝點", href: "#landmark", icon: treeIcon },
-  { label: "聚客展演", href: "#performance", icon: playIcon },
-  { label: "影音專區", href: "#media", icon: ballIcon },
-  { label: "交通資訊", href: "#transportation", icon: busIcon },
-  { label: "聯絡我們", href: "#contact", icon: mailIcon },
+  { key: "raffle", href: "#raffle", icon: giftIcon },
+  { key: "promo", href: "#promo", icon: bellIcon },
+  { key: "lights", href: "#lights", icon: ballIcon },
+  { key: "landmark", href: "#landmark", icon: lightsIcon },
+  { key: "performance", href: "#performance", icon: treeIcon },
+  { key: "media", href: "#media", icon: playIcon },
+  { key: "transportation", href: "#transportation", icon: busIcon },
+  { key: "contact", href: "#contact", icon: mailIcon },
 ];
+
+const { t, locale } = useI18n();
+
+const toggleLocale = () => {
+  locale.value = locale.value === "zh-TW" ? "en" : "zh-TW";
+};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .site-header {
   position: sticky;
   top: 0;
@@ -69,25 +94,22 @@ const navItems = [
 }
 
 .gradient-bar {
+  height: 100%;
+  padding: 10px;
   background: linear-gradient(90deg, #dc1f9e 0%, #5e4fd4 100%);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 12px 30px rgba(96, 148, 234, 0.3);
+  box-shadow: 0px 4px 40px 0px #0000001a;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding-block: 0.75rem;
 }
 
 .nav {
   display: flex;
-  gap: 0.75rem;
+  gap: 8px;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 0.25rem;
 }
 
 .nav::-webkit-scrollbar {
@@ -97,14 +119,15 @@ const navItems = [
 .nav-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.85rem;
+  padding: 8px 12px;
+  gap: 8px;
   color: #fff;
   font-weight: 700;
   font-size: 18px;
+  line-height: 32px;
   text-decoration: none;
   white-space: nowrap;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .nav-item:hover {
@@ -113,24 +136,34 @@ const navItems = [
 
 .nav-item__icon {
   width: 24px;
+  &__social {
+    width: 40px;
+  }
 }
 
 .header-actions {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 24px;
   flex-shrink: 0;
 }
 
 .lang-btn {
-  width: 44px;
-  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 32px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  padding: 10px 12px;
+  outline: 1px solid white;
+  outline-offset: -1px;
   background: transparent;
   color: #fff;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: 1rem;
+  line-height: 100%;
+  font-weight: 600;
+  letter-spacing: 0;
   cursor: pointer;
 }
 
@@ -138,7 +171,6 @@ const navItems = [
   width: 40px;
   height: 40px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -147,18 +179,14 @@ const navItems = [
   font-weight: 700;
 }
 
-.social span {
-  transform: translateX(1px);
+.hover {
+  transition: opacity 0.2s ease;
+}
+
+.hover:hover {
+  opacity: 0.6;
 }
 
 @media (max-width: 960px) {
-  .header-inner {
-    flex-direction: column;
-  }
-
-  .header-actions {
-    width: 100%;
-    justify-content: flex-end;
-  }
 }
 </style>
