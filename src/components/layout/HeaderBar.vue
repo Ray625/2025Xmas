@@ -55,7 +55,7 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import Container from "./Container.vue";
+import Container from "@/components/layout/Container.vue";
 import giftIcon from "@/assets/icon/gift.svg";
 import bellIcon from "@/assets/icon/bell.svg";
 import lightsIcon from "@/assets/icon/lights.svg";
