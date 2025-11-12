@@ -18,11 +18,13 @@
         </p>
       </div>
     </Container>
+    <SectionTitle title="光之覓境雙重抽" bg-color="#FF7628"  />
   </section>
 </template>
 
 <script setup lang="ts">
 import Container from "@/components/layout/Container.vue";
+import SectionTitle from "@/components/common/SectionTitle.vue";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -39,16 +41,17 @@ const textRows = computed(() => {
 
 <style scoped lang="scss">
 .raffle-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 172px;
+  padding: 135px;
   --gradient-height: 427px;
   background: linear-gradient(180deg, #75c7d7 0%, #6a8ac6 100%) top center /
       100% var(--gradient-height) no-repeat,
     #6a8ac6;
-  padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(4rem, 9vw, 7rem);
 }
 
-.raffle-section__inner {
-  position: relative;
-}
 
 .raffle-card {
   padding: 80px 280px;
