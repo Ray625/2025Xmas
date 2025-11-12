@@ -1,5 +1,5 @@
 <template>
-  <section id="raffle" class="raffle-section">
+  <section class="raffle-section">
     <Container class="raffle-section__inner" maxWidth="1440px">
       <div class="raffle-card">
         <p
@@ -18,7 +18,9 @@
         </p>
       </div>
     </Container>
-    <SectionTitle title="光之覓境雙重抽" bg-color="#FF7628"  />
+    <SectionTitle title="光之覓境雙重抽" bg-color="#FF7628" id="raffle"/>
+    <SectionTitle title="百貨優惠" bg-color="#E3007F"  />
+
   </section>
 </template>
 
