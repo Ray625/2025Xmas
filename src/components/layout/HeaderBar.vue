@@ -54,18 +54,18 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import Container from "@/components/layout/Container.vue";
-import giftIcon from "@/assets/icon/gift.svg";
-import bellIcon from "@/assets/icon/bell.svg";
-import lightsIcon from "@/assets/icon/lights.svg";
-import treeIcon from "@/assets/icon/tree.svg";
-import ballIcon from "@/assets/icon/ball.svg";
-import busIcon from "@/assets/icon/bus.svg";
-import mailIcon from "@/assets/icon/mail.svg";
-import playIcon from "@/assets/icon/play.svg";
-import social_fb from "@/assets/icon/social_fb.svg";
-import social_yt from "@/assets/icon/social_yt.svg";
+import { useI18n } from "vue-i18n"
+import Container from "@/components/layout/Container.vue"
+import giftIcon from "@/assets/icon/gift.svg"
+import bellIcon from "@/assets/icon/bell.svg"
+import lightsIcon from "@/assets/icon/lights.svg"
+import treeIcon from "@/assets/icon/tree.svg"
+import ballIcon from "@/assets/icon/ball.svg"
+import busIcon from "@/assets/icon/bus.svg"
+import mailIcon from "@/assets/icon/mail.svg"
+import playIcon from "@/assets/icon/play.svg"
+import social_fb from "@/assets/icon/social_fb.svg"
+import social_yt from "@/assets/icon/social_yt.svg"
 
 const navItems = [
   { key: "raffle", href: "#raffle", icon: giftIcon },
@@ -76,20 +76,20 @@ const navItems = [
   { key: "media", href: "#media", icon: playIcon },
   { key: "transportation", href: "#transportation", icon: busIcon },
   { key: "contact", href: "#contact", icon: mailIcon },
-];
+]
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
 
 const toggleLocale = () => {
-  locale.value = locale.value === "zh-TW" ? "en" : "zh-TW";
-};
+  locale.value = locale.value === "zh-TW" ? "en" : "zh-TW"
+}
 </script>
 
 <style scoped lang="scss">
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 999;
   height: 68px;
 }
 
