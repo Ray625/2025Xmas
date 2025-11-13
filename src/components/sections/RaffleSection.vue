@@ -1,6 +1,6 @@
 <template>
-  <section id="raffle" class="raffle-section">
-    <Container class="raffle-section__inner" maxWidth="1440px">
+  <section class="raffle-section">
+    <Container maxWidth="1440px">
       <div class="raffle-card">
         <p
           v-for="(paragraph, paragraphIndex) in textRows"
@@ -18,13 +18,16 @@
         </p>
       </div>
     </Container>
-    <SectionTitle preset="raffle" />
-    <SectionTitle preset="promo" />
+    <Container maxWidth="1440px">
+      <SectionTitle preset="raffle" />
+      <Card title-key="sections.raffle.rulesTitle"> </Card>
+    </Container>
   </section>
 </template>
 
 <script setup lang="ts">
 import Container from "@/components/layout/Container.vue";
+import Card from "@/components/common/Card.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
@@ -46,7 +49,10 @@ const textRows = computed(() => {
   flex-direction: column;
   align-items: center;
   gap: 172px;
-  padding: 135px;
+  padding-top: 135px;
+  padding-bottom: 194px;
+
+  // 漸層高度
   --gradient-height: 427px;
   background: linear-gradient(180deg, #75c7d7 0%, #6a8ac6 100%) top center /
       100% var(--gradient-height) no-repeat,

@@ -119,6 +119,7 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey));
     align-items: center;
     width: var(--section-title-outWidth);
     height: var(--section-title-outHeight);
+    margin: 0 auto;
   }
 }
 
