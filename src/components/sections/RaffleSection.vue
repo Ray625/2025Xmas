@@ -2,25 +2,18 @@
   <section class="raffle-section">
     <Container maxWidth="1440px">
       <div class="raffle-card">
-        <p
-          v-for="(paragraph, paragraphIndex) in textRows"
-          :key="`paragraph-${paragraphIndex}`"
-          class="raffle-card__text"
-        >
-          <template
-            v-for="(segment, segmentIndex) in paragraph"
-            :key="`segment-${segmentIndex}`"
-          >
-            {{ segment }}
-            <br v-if="segmentIndex < paragraph.length - 1" />
-          </template>
-          <br v-if="paragraphIndex < textRows.length - 1" />
+        <p class="raffle-card__text">
+          {{ t("sections.raffle.cardText") }}
         </p>
       </div>
     </Container>
     <Container maxWidth="1440px">
       <SectionTitle preset="raffle" />
-      <Card title-key="sections.raffle.rulesTitle"> </Card>
+      <Card title-key="sections.raffle.rules.title">
+        <p class="raffle-card__text">
+          {{ t("sections.raffle.rules.text") }}
+        </p>
+      </Card>
     </Container>
   </section>
 </template>
@@ -29,21 +22,14 @@
 import Container from "@/components/layout/Container.vue";
 import Card from "@/components/common/Card.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
-import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
-
-const textRows = computed(() => {
-  const content = t("sections.raffle.cardText");
-  return content
-    .split("\n\n")
-    .map((paragraph) => paragraph.split("\n").filter(Boolean))
-    .filter((paragraph) => paragraph.length > 0);
-});
 </script>
 
 <style scoped lang="scss">
+@use "@/styles/_variables" as vars;
+
 .raffle-section {
   display: flex;
   flex-direction: column;
@@ -52,7 +38,6 @@ const textRows = computed(() => {
   padding-top: 135px;
   padding-bottom: 194px;
 
-  // 漸層高度
   --gradient-height: 427px;
   background: linear-gradient(180deg, #75c7d7 0%, #6a8ac6 100%) top center /
       100% var(--gradient-height) no-repeat,
@@ -64,13 +49,12 @@ const textRows = computed(() => {
   border-radius: 40px;
   background: #fff;
   &__text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     font-size: 28px;
     line-height: 44px;
     font-weight: 700;
-    color: #001a7d;
+    color: vars.$color-text-blue;
+    white-space: pre-line;
   }
 }
 

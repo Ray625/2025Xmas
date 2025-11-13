@@ -38,6 +38,8 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
 </script>
 
 <style scoped lang="scss">
+@use "@/styles/_variables" as vars;
+
 .card {
   width: 100%;
   height: fit-content;
@@ -48,10 +50,13 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
     line-height: 100%;
     font-weight: 700;
     text-align: center;
-    color: #fff;
+    color: vars.$color-white;
     padding: 15px;
   }
   &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: var(--card-body-padding, 75px 80px 80px);
   }
 }
