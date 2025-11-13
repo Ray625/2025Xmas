@@ -1,73 +1,144 @@
 <template>
   <section class="raffle-section">
-    <Container class="raffle-section__inner" maxWidth="1440px">
+    <Container maxWidth="1440px">
       <div class="raffle-card">
-        <p
-          v-for="(paragraph, paragraphIndex) in textRows"
-          :key="`paragraph-${paragraphIndex}`"
-          class="raffle-card__text"
-        >
-          <p
-            v-for="(segment, segmentIndex) in paragraph"
-            :key="`segment-${segmentIndex}`"
-          >
-            {{ segment }}
-            <br v-if="segmentIndex < paragraph.length - 1" />
-          </p>
-          <br v-if="paragraphIndex < textRows.length - 1" />
+        <p class="raffle-card__text">
+          {{ t("sections.raffle.cardText") }}
         </p>
       </div>
     </Container>
-    <SectionTitle title="光之覓境雙重抽" bg-color="#FF7628" id="raffle"/>
-    <SectionTitle title="百貨優惠" bg-color="#E3007F"  />
-
+    <Container maxWidth="1440px">
+      <SectionTitle preset="raffle" />
+      <Card title-key="sections.raffle.rules.title">
+        <p class="raffle-card__text mb-[66px]">
+          {{ t("sections.raffle.rules.text") }}
+        </p>
+        <TagHighlight :icon="iconClock" textColor="#5E4FD4" class="mb-8">
+          {{ t("sections.raffle.rules.time") }}
+        </TagHighlight>
+        <TagHighlight :icon="iconMap" textColor="#E3007F" class="mb-[76px]">
+          {{ t("sections.raffle.rules.location") }}
+        </TagHighlight>
+        <div class="flex w-full gap-8 mb-7">
+          <CardStep
+            class="flex-1"
+            bg-color="#CFEEE0"
+            text-bg-color="#28B590"
+            :icon-left="iconGift"
+            :icon-right="iconGift"
+            title-key="sections.raffle.rules.step1.title"
+          >
+            <div class="step__text">
+              {{ t("sections.raffle.rules.step1.text") }}
+            </div>
+            <button class="step__button" @click="clickLine">
+              <span>
+                {{ t("sections.raffle.rules.step1.button") }}
+              </span>
+              <img :src="iconArrow" alt="button" class="w-[24px] h-[24px]" />
+            </button>
+          </CardStep>
+          <CardStep
+            class="flex-1"
+            bg-color="#D3E3FF"
+            text-bg-color="#5E4FD4"
+            :icon-left="iconGift"
+            :icon-right="iconGift"
+            title-key="sections.raffle.rules.step2.title"
+          >
+            <div class="step__text">
+              {{ t("sections.raffle.rules.step2.text") }}
+            </div>
+            <img :src="iconQRCode" alt="qrcode" class="w-[60px] h-[60px]" />
+          </CardStep>
+        </div>
+        <CardStep
+          class="flex-1"
+          bg-color="#EBEBEB"
+          text-bg-color="#DC1F9E"
+          :icon-left="iconGift"
+          :icon-right="iconGift"
+          title-key="sections.raffle.rules.step3.title"
+        ></CardStep>
+      </Card>
+    </Container>
   </section>
 </template>
 
 <script setup lang="ts">
 import Container from "@/components/layout/Container.vue";
+import Card from "@/components/common/Card.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
-import { computed } from "vue";
+import TagHighlight from "@/components/common/TagHighlight.vue";
+import CardStep from "@/components/common/CardStep.vue";
+import iconClock from "@/assets/icon/clock.svg";
+import iconMap from "@/assets/icon/map.svg";
+import iconGift from "@/assets/icon/gift.svg";
+import iconArrow from "@/assets/icon/arrow_right.svg";
+import iconQRCode from "@/assets/icon/qrcode.svg";
+
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 
-const textRows = computed(() => {
-  const content = t("sections.raffle.cardText");
-  return content
-    .split("\n\n")
-    .map((paragraph) => paragraph.split("\n").filter(Boolean))
-    .filter((paragraph) => paragraph.length > 0);
-});
+const clickLine = () => alert("line btn");
 </script>
 
 <style scoped lang="scss">
+@use "@/styles/_variables" as vars;
+
 .raffle-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 172px;
-  padding: 135px;
+  padding-top: 135px;
+  padding-bottom: 194px;
+
   --gradient-height: 427px;
   background: linear-gradient(180deg, #75c7d7 0%, #6a8ac6 100%) top center /
       100% var(--gradient-height) no-repeat,
     #6a8ac6;
 }
 
-
 .raffle-card {
   padding: 80px 280px;
   border-radius: 40px;
   background: #fff;
   &__text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     font-size: 28px;
     line-height: 44px;
     font-weight: 700;
-    color: #001a7d;
+    color: vars.$color-text-blue;
+    white-space: pre-line;
   }
+}
+
+.step__text {
+  display: flex;
+  flex-direction: col;
+  margin: 32px 0;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: vars.$color-text-blue;
+  white-space: pre-line;
+}
+
+.step__button {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px 16px 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  color: #fff;
+  background-color: #45b035;
+  border-radius: 40px;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
 }
 
 @media (min-width: 1024px) {
