@@ -44,6 +44,28 @@ export default {
           textRight3: "→ 再獲得【尋光大獎抽】的抽獎資格！",
         },
       },
+      prize: {
+        title: "活動獎項",
+        cardLeft: {
+          title: "尋光立即抽",
+          text: "（即抽即中）",
+          prize1: "百貨禮券 $200",
+          prize2: "百貨禮券 $500",
+          prize3: "百貨禮券 $1,000",
+          prize4: "百貨禮券 $2,000",
+          prize5: "各百貨精美贈品",
+          prize5tag: "總價值百萬",
+          quota: "名",
+        },
+        cardRight: {
+          title: "尋光大獎抽",
+          text: "（活動結束後，預計於115年1月下旬統一抽出）",
+          prize1: "百貨禮券 $10,000",
+          prize2: "百貨禮券 $30,000",
+          prize3: "百貨禮券 $100,000",
+          quota: "名",
+        },
+      },
     },
   },
 }

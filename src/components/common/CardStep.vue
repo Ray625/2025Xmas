@@ -16,33 +16,34 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
+import { computed } from "vue"
+import { useI18n } from "vue-i18n"
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const props = withDefaults(
   defineProps<{
-    textBgColor?: string;
-    bgColor?: string;
-    bodyPadding?: string;
-    titleKey?: string;
-    iconLeft?: string;
-    iconRight?: string;
+    textBgColor?: string
+    bgColor?: string
+    bodyPadding?: string
+    titleKey?: string
+    iconLeft?: string
+    iconRight?: string
   }>(),
   {
     textBgColor: "#3277E1",
     bgColor: "#fff",
     bodyPadding: "32px",
+    cardHeight: "fit-content",
   }
-);
+)
 
 const styleVars = computed(() => ({
   backgroundColor: props.bgColor,
   "--card-body-padding": props.bodyPadding,
-}));
+}))
 
-const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
+const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""))
 </script>
 
 <style scoped lang="scss">
@@ -50,8 +51,8 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
 
 .card {
   width: 100%;
-  height: fit-content;
-  border-radius: 20;
+  height: auto;
+  border-radius: 20px;
   padding: var(--card-body-padding, 32px);
   display: flex;
   flex-direction: column;
