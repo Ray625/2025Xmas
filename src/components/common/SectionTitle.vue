@@ -24,44 +24,44 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import leftIcon from "@/assets/icon/title_left.svg";
-import rightIcon from "@/assets/icon/title_right.svg";
-import { navConfig } from "@/data/navigation";
+import { computed } from "vue"
+import { useI18n } from "vue-i18n"
+import leftIcon from "@/assets/icon/title_left.svg"
+import rightIcon from "@/assets/icon/title_right.svg"
+import { navConfig } from "@/data/navigation"
 
 const titlePresets = navConfig.reduce(
   (acc, item) => {
-    const id = item.href.replace("#", "");
+    const id = item.href.replace("#", "")
     acc[item.key] = {
       id,
       titleKey: item.titleKey,
       bgColor: item.color,
-    };
-    return acc;
+    }
+    return acc
   },
   {} as Record<
     (typeof navConfig)[number]["key"],
     {
-      id: string;
-      titleKey: string;
-      bgColor: string;
+      id: string
+      titleKey: string
+      bgColor: string
     }
   >
-);
+)
 
-type TitlePresetKey = keyof typeof titlePresets;
+type TitlePresetKey = keyof typeof titlePresets
 
 const props = withDefaults(
   defineProps<{
-    preset: TitlePresetKey;
-    bgColor?: string;
-    textColor?: string;
-    width?: string | number;
-    height?: string | number;
-    outWidth?: string | number;
-    outHeight?: string | number;
-    showDecor?: boolean;
+    preset: TitlePresetKey
+    bgColor?: string
+    textColor?: string
+    width?: string | number
+    height?: string | number
+    outWidth?: string | number
+    outHeight?: string | number
+    showDecor?: boolean
   }>(),
   {
     width: "453px",
@@ -70,18 +70,18 @@ const props = withDefaults(
     outHeight: "132px",
     showDecor: true,
   }
-);
+)
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const normalize = (value: string | number) =>
-  typeof value === "number" ? `${value}px` : value;
+  typeof value === "number" ? `${value}px` : value
 
-const presetConfig = computed(() => titlePresets[props.preset]);
+const presetConfig = computed(() => titlePresets[props.preset])
 
 const styleVars = computed(() => {
-  const config = presetConfig.value;
-  const bg = config.bgColor;
+  const config = presetConfig.value
+  const bg = config.bgColor
 
   return {
     "--section-title-bg": bg,
@@ -89,13 +89,13 @@ const styleVars = computed(() => {
     "--section-title-height": normalize(props.height),
     "--section-title-outWidth": normalize(props.outWidth),
     "--section-title-outHeight": normalize(props.outHeight),
-  };
-});
+  }
+})
 
-const showLeftIcon = computed(() => props.showDecor);
-const showRightIcon = computed(() => props.showDecor);
+const showLeftIcon = computed(() => props.showDecor)
+const showRightIcon = computed(() => props.showDecor)
 
-const displayTitle = computed(() => t(presetConfig.value.titleKey));
+const displayTitle = computed(() => t(presetConfig.value.titleKey))
 </script>
 
 <style scoped lang="scss">
@@ -119,7 +119,8 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey));
     align-items: center;
     width: var(--section-title-outWidth);
     height: var(--section-title-outHeight);
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

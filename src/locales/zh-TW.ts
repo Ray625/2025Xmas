@@ -36,8 +36,14 @@ export default {
         },
         step3: {
           title: "Step. 3",
+          textLeft1: "每集滿",
+          textLeft2: "個章",
+          textLeft3: "→ 參加【尋光立即抽】抽獎！",
+          textRight1: "集滿",
+          textRight2: "個章",
+          textRight3: "→ 再獲得【尋光大獎抽】的抽獎資格！",
         },
       },
     },
   },
-};
+}

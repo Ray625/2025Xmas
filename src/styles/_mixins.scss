@@ -1,0 +1,22 @@
+@use "sass:meta";
+@use "@/styles/_variables" as vars;
+
+/// Typography helper mixin.
+/// Provides a single place to keep font-related settings consistent.
+/// Usage:
+/// @include typography(24px, 700, 36px);
+@mixin typography(
+  $font-size,
+  $line-height: 100%,
+  $font-weight: 700,
+  $color: vars.$color-text-blue
+) {
+  @if meta.type-of($font-size) != number {
+    @error "font-size must be a number, got #{meta.type-of($font-size)}";
+  }
+
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
