@@ -10,9 +10,56 @@
     <Container maxWidth="1440px">
       <SectionTitle preset="raffle" />
       <Card title-key="sections.raffle.rules.title">
-        <p class="raffle-card__text">
+        <p class="raffle-card__text mb-[66px]">
           {{ t("sections.raffle.rules.text") }}
         </p>
+        <TagHighlight :icon="iconClock" textColor="#5E4FD4" class="mb-8">
+          {{ t("sections.raffle.rules.time") }}
+        </TagHighlight>
+        <TagHighlight :icon="iconMap" textColor="#E3007F" class="mb-[76px]">
+          {{ t("sections.raffle.rules.location") }}
+        </TagHighlight>
+        <div class="flex w-full gap-8 mb-7">
+          <CardStep
+            class="flex-1"
+            bg-color="#CFEEE0"
+            text-bg-color="#28B590"
+            :icon-left="iconGift"
+            :icon-right="iconGift"
+            title-key="sections.raffle.rules.step1.title"
+          >
+            <div class="step__text">
+              {{ t("sections.raffle.rules.step1.text") }}
+            </div>
+            <button class="step__button" @click="clickLine">
+              <span>
+                {{ t("sections.raffle.rules.step1.button") }}
+              </span>
+              <img :src="iconArrow" alt="button" class="w-[24px] h-[24px]" />
+            </button>
+          </CardStep>
+          <CardStep
+            class="flex-1"
+            bg-color="#D3E3FF"
+            text-bg-color="#5E4FD4"
+            :icon-left="iconGift"
+            :icon-right="iconGift"
+            title-key="sections.raffle.rules.step2.title"
+          >
+            <div class="step__text">
+              {{ t("sections.raffle.rules.step2.text") }}
+            </div>
+            <img :src="iconQRCode" alt="qrcode" class="w-[60px] h-[60px]" />
+          </CardStep>
+        </div>
+        <CardStep
+          class="flex-1"
+          bg-color="#EBEBEB"
+          text-bg-color="#DC1F9E"
+          :icon-left="iconGift"
+          :icon-right="iconGift"
+          title-key="sections.raffle.rules.step3.title"
+        ></CardStep>
       </Card>
     </Container>
   </section>
@@ -22,9 +69,19 @@
 import Container from "@/components/layout/Container.vue";
 import Card from "@/components/common/Card.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
+import TagHighlight from "@/components/common/TagHighlight.vue";
+import CardStep from "@/components/common/CardStep.vue";
+import iconClock from "@/assets/icon/clock.svg";
+import iconMap from "@/assets/icon/map.svg";
+import iconGift from "@/assets/icon/gift.svg";
+import iconArrow from "@/assets/icon/arrow_right.svg";
+import iconQRCode from "@/assets/icon/qrcode.svg";
+
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
+
+const clickLine = () => alert("line btn");
 </script>
 
 <style scoped lang="scss">
@@ -56,6 +113,32 @@ const { t } = useI18n();
     color: vars.$color-text-blue;
     white-space: pre-line;
   }
+}
+
+.step__text {
+  display: flex;
+  flex-direction: col;
+  margin: 32px 0;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: vars.$color-text-blue;
+  white-space: pre-line;
+}
+
+.step__button {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px 16px 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  color: #fff;
+  background-color: #45b035;
+  border-radius: 40px;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
 }
 
 @media (min-width: 1024px) {

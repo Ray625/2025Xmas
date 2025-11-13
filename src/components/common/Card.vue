@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :style="{ backgroundColor: bgColor }">
+  <div class="card" :style="styleVars">
     <div
       v-if="cardTitle"
       class="card__title"
@@ -7,7 +7,7 @@
     >
       {{ cardTitle }}
     </div>
-    <div class="card__body" :style="{ padding: bodyPadding }">
+    <div class="card__body">
       <slot />
     </div>
   </div>
@@ -16,6 +16,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
@@ -32,9 +34,12 @@ const props = withDefaults(
   }
 );
 
-const { t } = useI18n();
-
 const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
+
+const styleVars = computed(() => ({
+  backgroundColor: props.bgColor,
+  "--card-body-padding": props.bodyPadding,
+}));
 </script>
 
 <style scoped lang="scss">

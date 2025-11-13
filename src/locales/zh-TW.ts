@@ -23,6 +23,20 @@ export default {
       rules: {
         title: "活動辦法",
         text: "在最浪漫的耶誕季，跟著「光之覓境」的光影腳步，\n一起探索臺北各大百貨與門市的繽紛燈飾吧！",
+        time: "時間 : 2025/11/28 (五) – 2026/1/4 (日)",
+        location: "地點 : 臺北市16大百貨體系",
+        step1: {
+          title: "Step. 1",
+          text: "加入\n2025繽紛耶誕玩台北LINE帳號",
+          button: "立即加入",
+        },
+        step2: {
+          title: "Step. 2",
+          text: "前往臺北市各大百貨門市\n掃描現場QR code開始集章！",
+        },
+        step3: {
+          title: "Step. 3",
+        },
       },
     },
   },
