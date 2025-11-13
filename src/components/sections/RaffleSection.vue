@@ -7,18 +7,19 @@
           :key="`paragraph-${paragraphIndex}`"
           class="raffle-card__text"
         >
-          <p
+          <template
             v-for="(segment, segmentIndex) in paragraph"
             :key="`segment-${segmentIndex}`"
           >
             {{ segment }}
             <br v-if="segmentIndex < paragraph.length - 1" />
-          </p>
+          </template>
           <br v-if="paragraphIndex < textRows.length - 1" />
         </p>
       </div>
     </Container>
-    <SectionTitle title="光之覓境雙重抽" bg-color="#FF7628"  />
+    <SectionTitle preset="raffle" />
+    <SectionTitle preset="promo" />
   </section>
 </template>
 
@@ -51,7 +52,6 @@ const textRows = computed(() => {
       100% var(--gradient-height) no-repeat,
     #6a8ac6;
 }
-
 
 .raffle-card {
   padding: 80px 280px;

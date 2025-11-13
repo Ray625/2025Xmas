@@ -56,6 +56,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
 import Container from "@/components/layout/Container.vue"
+import { navConfig } from "@/data/navigation"
 import giftIcon from "@/assets/icon/gift.svg"
 import bellIcon from "@/assets/icon/bell.svg"
 import lightsIcon from "@/assets/icon/lights.svg"
@@ -67,16 +68,21 @@ import playIcon from "@/assets/icon/play.svg"
 import social_fb from "@/assets/icon/social_fb.svg"
 import social_yt from "@/assets/icon/social_yt.svg"
 
-const navItems = [
-  { key: "raffle", href: "#raffle", icon: giftIcon },
-  { key: "promo", href: "#promo", icon: bellIcon },
-  { key: "lights", href: "#lights", icon: ballIcon },
-  { key: "landmark", href: "#landmark", icon: lightsIcon },
-  { key: "performance", href: "#performance", icon: treeIcon },
-  { key: "media", href: "#media", icon: playIcon },
-  { key: "transportation", href: "#transportation", icon: busIcon },
-  { key: "contact", href: "#contact", icon: mailIcon },
-]
+const iconMap: Record<string, string> = {
+  raffle: giftIcon,
+  promo: bellIcon,
+  lights: ballIcon,
+  landmark: lightsIcon,
+  performance: treeIcon,
+  media: playIcon,
+  transportation: busIcon,
+  contact: mailIcon,
+}
+
+const navItems = navConfig.map((item) => ({
+  ...item,
+  icon: iconMap[item.key],
+}))
 
 const { t, locale } = useI18n()
 
