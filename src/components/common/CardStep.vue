@@ -16,19 +16,19 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue"
-import { useI18n } from "vue-i18n"
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
-    textBgColor?: string
-    bgColor?: string
-    bodyPadding?: string
-    titleKey?: string
-    iconLeft?: string
-    iconRight?: string
+    textBgColor?: string;
+    bgColor?: string;
+    bodyPadding?: string;
+    titleKey?: string;
+    iconLeft?: string;
+    iconRight?: string;
   }>(),
   {
     textBgColor: "#3277E1",
@@ -36,18 +36,19 @@ const props = withDefaults(
     bodyPadding: "32px",
     cardHeight: "fit-content",
   }
-)
+);
 
 const styleVars = computed(() => ({
   backgroundColor: props.bgColor,
   "--card-body-padding": props.bodyPadding,
-}))
+}));
 
-const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""))
+const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
 </script>
 
 <style scoped lang="scss">
 @use "@/styles/_variables" as vars;
+@use "@/styles/_mixins" as mixins;
 
 .card {
   width: 100%;
@@ -63,12 +64,9 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""))
     justify-content: center;
     border-radius: 8px;
     width: 100%;
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 700;
     text-align: center;
-    color: vars.$color-white;
     padding: 12px;
+    @include mixins.typography(24px, 36px, 700, vars.$color-white);
     &__group {
       display: flex;
       flex-direction: row;

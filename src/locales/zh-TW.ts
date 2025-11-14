@@ -76,6 +76,18 @@ export default {
           noteLink: "此處",
         },
       },
+      stamp: {
+        title: "各大百貨集章點位",
+        xinyi: {
+          title: "信義區",
+          light1: {
+            lightName: "燈飾名稱",
+            shopName: "百貨名稱",
+            location: "詳細位置",
+            time: "展出時間",
+          },
+        },
+      },
     },
   },
 };

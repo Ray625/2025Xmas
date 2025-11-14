@@ -7,7 +7,7 @@
         </p>
       </div>
     </Container>
-    <Container maxWidth="1440px">
+    <Container maxWidth="1440px" padding-x="0">
       <SectionTitle preset="raffle" class="mb-[66px]" />
       <div class="flex flex-col gap-20">
         <Card title-key="sections.raffle.rules.title">
@@ -199,6 +199,17 @@
             </ol>
           </div>
         </Card>
+        <Card title-key="sections.raffle.stamp.title" bodyPadding="40px">
+          <CardStamp title-key="sections.raffle.stamp.xinyi.title">
+            <CardLight
+              v-for="_ in Array(8)"
+              light-key="sections.raffle.stamp.xinyi.light1.lightName"
+              shop-key="sections.raffle.stamp.xinyi.light1.shopName"
+              location-key="sections.raffle.stamp.xinyi.light1.location"
+              time-key="sections.raffle.stamp.xinyi.light1.time"
+            />
+          </CardStamp>
+        </Card>
       </div>
     </Container>
   </section>
@@ -207,9 +218,11 @@
 <script setup lang="ts">
 import Container from "@/components/layout/Container.vue";
 import Card from "@/components/common/Card.vue";
+import CardStep from "@/components/common/CardStep.vue";
+import CardStamp from "@/components/common/CardStamp.vue";
+import CardLight from "@/components/common/CardLight.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
 import TagHighlight from "@/components/common/TagHighlight.vue";
-import CardStep from "@/components/common/CardStep.vue";
 import iconClock from "@/assets/icon/clock.svg";
 import iconMap from "@/assets/icon/map.svg";
 import iconGift from "@/assets/icon/gift.svg";

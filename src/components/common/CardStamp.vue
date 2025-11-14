@@ -1,10 +1,6 @@
 <template>
   <div class="card" :style="styleVars">
-    <div
-      v-if="cardTitle"
-      class="card__title"
-      :style="{ backgroundColor: textBgColor }"
-    >
+    <div v-if="cardTitle" class="card__title">
       {{ cardTitle }}
     </div>
     <div class="card__body">
@@ -16,29 +12,26 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import bg from "@/assets/backgrounds/stamp_bg.png";
 
 const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
-    textBgColor?: string;
-    bgColor?: string;
     titleKey?: string;
     bodyPadding?: string;
   }>(),
   {
-    textBgColor: "#3277E1",
-    bgColor: "#fff",
     titleKey: "",
-    bodyPadding: "75px 80px 80px",
+    bodyPadding: "40px 72px",
   }
 );
 
 const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
 
 const styleVars = computed(() => ({
-  backgroundColor: props.bgColor,
   "--card-body-padding": props.bodyPadding,
+  backgroundImage: `url(${bg})`,
 }));
 </script>
 
@@ -49,18 +42,22 @@ const styleVars = computed(() => ({
 .card {
   width: 100%;
   height: fit-content;
-  border-radius: 12px 12px 40px 40px;
+  border-radius: 16px;
+  padding: var(--card-body-padding, 40px 72px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   &__title {
-    padding: 15px;
-    @include mixins.typography(32px, 100%, 700, vars.$color-white);
+    @include mixins.typography(38px, 100%, 700, vars.$color-white);
+    text-shadow: 0 0 8px #0000004d;
     text-align: center;
-    border-radius: 12px 12px 0 0;
   }
   &__body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--card-body-padding, 75px 80px 80px);
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 12px;
   }
 }
 

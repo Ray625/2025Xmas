@@ -47,7 +47,7 @@ const styleVars = computed(() => {
   const base = normalizeSize(props.maxWidth) ?? presetMap[props.size];
   const md = normalizeSize(props.mdMaxWidth);
   const lg = normalizeSize(props.lgMaxWidth);
-  const padding = normalizeSize(props.paddingX) ?? "1rem";
+  const padding = normalizeSize(props.paddingX);
   const paddingMd = normalizeSize(props.mdPaddingX);
   const paddingLg = normalizeSize(props.lgPaddingX);
 
@@ -65,16 +65,13 @@ const styleVars = computed(() => {
 <style scoped>
 .container-shell {
   max-width: var(--container-max, 72rem);
-  padding-inline: var(--container-padding, 1rem);
+  padding-inline: var(--container-padding, 0);
 }
 
 @media (min-width: 768px) {
   .container-shell {
     max-width: var(--container-max-md, var(--container-max, 72rem));
-    padding-inline: var(
-      --container-padding-md,
-      var(--container-padding, 1.5rem)
-    );
+    padding-inline: var(--container-padding-md, var(--container-padding, 0));
   }
 }
 
@@ -86,7 +83,7 @@ const styleVars = computed(() => {
     );
     padding-inline: var(
       --container-padding-lg,
-      var(--container-padding-md, var(--container-padding, 2.5rem))
+      var(--container-padding-md, var(--container-padding, 0))
     );
   }
 }
