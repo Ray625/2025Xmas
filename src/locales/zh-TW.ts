@@ -87,6 +87,24 @@ export default {
             time: "展出時間",
           },
         },
+        eastern: {
+          title: "東區",
+          light1: {
+            lightName: "燈飾名稱",
+            shopName: "百貨名稱",
+            location: "詳細位置",
+            time: "展出時間",
+          },
+        },
+        taipei: {
+          title: "臺北各區",
+          light1: {
+            lightName: "燈飾名稱",
+            shopName: "百貨名稱",
+            location: "詳細位置",
+            time: "展出時間",
+          },
+        },
       },
     },
   },

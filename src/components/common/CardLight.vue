@@ -5,12 +5,14 @@
       :src="lightImg"
       alt="light_img"
       class="card__light__img"
+      loading="lazy"
     />
     <img
       v-if="decorate === 'clip'"
       :src="iconClip"
       alt="decorate"
       class="card__light__clip"
+      loading="lazy"
     />
     <div class="card__light__name__group">
       <div v-if="lightName" class="card__light__name">
@@ -50,7 +52,6 @@ const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
-    bgColor?: string;
     lightKey?: string;
     lightImg?: string;
     shopKey?: string;
@@ -59,7 +60,6 @@ const props = withDefaults(
     decorate?: string;
   }>(),
   {
-    bgColor: "#fff",
     lightImg: checker,
     decorate: "clip",
   }
@@ -74,7 +74,6 @@ const time = computed(() => (props.timeKey ? t(props.timeKey) : ""));
 
 const styleVars = computed(() => ({
   "--card-top-margin": props.decorate === "clip" ? "56.4px" : "0px",
-  backgroundColor: props.bgColor,
 }));
 </script>
 
@@ -93,6 +92,7 @@ const styleVars = computed(() => ({
   margin-top: var(--card-top-margin, 0);
   padding: 20px;
   box-shadow: 0px 0px 24px 0px #f4e19d;
+  background-color: vars.$color-white;
 
   &__name {
     @include mixins.typography(20px, 26px, 700);
@@ -128,6 +128,7 @@ const styleVars = computed(() => ({
     gap: 8px;
     &__text {
       display: flex;
+      align-items: center;
       gap: 2px;
       @include mixins.typography(16px, 22px, 500);
     }

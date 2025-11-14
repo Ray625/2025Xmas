@@ -77,6 +77,7 @@
                   :src="stepCardImgLeft"
                   alt="stamp card"
                   class="step__card__img"
+                  loading="lazy"
                 />
               </div>
               <div class="step__card__col">
@@ -96,6 +97,7 @@
                   :src="stepCardImgRight"
                   alt="stamp card"
                   class="step__card__img"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -200,15 +202,26 @@
           </div>
         </Card>
         <Card title-key="sections.raffle.stamp.title" bodyPadding="40px">
-          <CardStamp title-key="sections.raffle.stamp.xinyi.title">
-            <CardLight
-              v-for="_ in Array(8)"
-              light-key="sections.raffle.stamp.xinyi.light1.lightName"
-              shop-key="sections.raffle.stamp.xinyi.light1.shopName"
-              location-key="sections.raffle.stamp.xinyi.light1.location"
-              time-key="sections.raffle.stamp.xinyi.light1.time"
+          <div class="flex flex-col gap-10 w-full">
+            <CardStamp
+              title-key="sections.raffle.stamp.xinyi.title"
+              :lights="xinyiLights"
+              :page-size="8"
+              bodyMinHeight="967px"
             />
-          </CardStamp>
+            <CardStamp
+              title-key="sections.raffle.stamp.eastern.title"
+              :lights="easternLights"
+              :page-size="8"
+              bodyMinHeight="967px"
+            />
+            <CardStamp
+              title-key="sections.raffle.stamp.taipei.title"
+              :lights="taipeiLights"
+              :page-size="8"
+              bodyMinHeight="967px"
+            />
+          </div>
         </Card>
       </div>
     </Container>
@@ -220,7 +233,6 @@ import Container from "@/components/layout/Container.vue";
 import Card from "@/components/common/Card.vue";
 import CardStep from "@/components/common/CardStep.vue";
 import CardStamp from "@/components/common/CardStamp.vue";
-import CardLight from "@/components/common/CardLight.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
 import TagHighlight from "@/components/common/TagHighlight.vue";
 import iconClock from "@/assets/icon/clock.svg";
@@ -233,6 +245,7 @@ import stepCardImgRight from "@/assets/icon/step_card_Right.svg";
 import iconStar from "@/assets/icon/star_1.svg";
 import iconStarLeft from "@/assets/icon/star_2.svg";
 import iconStarRight from "@/assets/icon/star_3.svg";
+import checker from "@/assets/backgrounds/checker.png";
 import prizeLeft1 from "@/assets/icon/prize_left_1.svg";
 import prizeLeft2 from "@/assets/icon/prize_left_2.svg";
 import prizeLeft3 from "@/assets/icon/prize_left_3.svg";
@@ -290,6 +303,33 @@ const prizeRight = [
     quota: "1",
   },
 ];
+
+const xinyiLights = Array.from({ length: 19 }).map((_, index) => ({
+  id: `xinyi-${index}`,
+  lightKey: "sections.raffle.stamp.xinyi.light1.lightName",
+  shopKey: "sections.raffle.stamp.xinyi.light1.shopName",
+  locationKey: "sections.raffle.stamp.xinyi.light1.location",
+  timeKey: "sections.raffle.stamp.xinyi.light1.time",
+  lightImg: checker,
+}));
+
+const easternLights = Array.from({ length: 18 }).map((_, index) => ({
+  id: `eastern-${index}`,
+  lightKey: "sections.raffle.stamp.eastern.light1.lightName",
+  shopKey: "sections.raffle.stamp.eastern.light1.shopName",
+  locationKey: "sections.raffle.stamp.eastern.light1.location",
+  timeKey: "sections.raffle.stamp.eastern.light1.time",
+  lightImg: checker,
+}));
+
+const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
+  id: `taipei-${index}`,
+  lightKey: "sections.raffle.stamp.taipei.light1.lightName",
+  shopKey: "sections.raffle.stamp.taipei.light1.shopName",
+  locationKey: "sections.raffle.stamp.taipei.light1.location",
+  timeKey: "sections.raffle.stamp.taipei.light1.time",
+  lightImg: checker,
+}));
 </script>
 
 <style scoped lang="scss">
