@@ -1,13 +1,13 @@
 <template>
   <section class="raffle-section">
-    <Container maxWidth="1440px">
+    <Container maxWidth="1440px" tag="section">
       <div class="raffle-card">
         <p class="raffle-card__text">
           {{ t("sections.raffle.cardText") }}
         </p>
       </div>
     </Container>
-    <Container maxWidth="1440px" padding-x="0">
+    <Container maxWidth="1440px" padding-x="0" tag="section">
       <SectionTitle preset="raffle" class="mb-[66px]" />
       <div class="flex flex-col gap-20">
         <Card title-key="sections.raffle.rules.title">
@@ -32,12 +32,9 @@
               <div class="step__text">
                 {{ t("sections.raffle.rules.step1.text") }}
               </div>
-              <button class="step__button" @click="clickLine">
-                <span>
-                  {{ t("sections.raffle.rules.step1.button") }}
-                </span>
-                <img :src="iconArrow" alt="button" class="w-[24px] h-[24px]" />
-              </button>
+              <ActionButton @click="clickLine">
+                {{ t("sections.raffle.rules.step1.button") }}
+              </ActionButton>
             </CardStep>
             <CardStep
               class="flex-1"
@@ -223,6 +220,25 @@
             />
           </div>
         </Card>
+        <Card
+          title-key="sections.raffle.map.title"
+          text-bg-color="#28B590"
+          bodyPadding="156px 180px 192px 180px"
+        >
+          <div class="map__card">
+            <div>
+              <img :src="googleMap" alt="map" class="map__card__map" />
+            </div>
+            <div class="map__card__btn__group">
+              <ActionButton bg-color="#F23D25" :has-border="false">{{
+                t("sections.raffle.map.openMap")
+              }}</ActionButton>
+              <ActionButton :has-border="false">{{
+                t("sections.raffle.map.openLine")
+              }}</ActionButton>
+            </div>
+          </div>
+        </Card>
       </div>
     </Container>
   </section>
@@ -235,10 +251,11 @@ import CardStep from "@/components/common/CardStep.vue";
 import CardStamp from "@/components/common/CardStamp.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
 import TagHighlight from "@/components/common/TagHighlight.vue";
+import ActionButton from "@/components/common/ActionButton.vue";
+
 import iconClock from "@/assets/icon/clock.svg";
 import iconMap from "@/assets/icon/map.svg";
 import iconGift from "@/assets/icon/gift.svg";
-import iconArrow from "@/assets/icon/arrow_right.svg";
 import iconQRCode from "@/assets/icon/qrcode.svg";
 import stepCardImgLeft from "@/assets/icon/step_card_left.svg";
 import stepCardImgRight from "@/assets/icon/step_card_Right.svg";
@@ -254,6 +271,7 @@ import prizeLeft5 from "@/assets/icon/prize_left_5.svg";
 import prizeRight1 from "@/assets/icon/prize_right_1.svg";
 import prizeRight2 from "@/assets/icon/prize_right_2.svg";
 import prizeRight3 from "@/assets/icon/prize_right_3.svg";
+import googleMap from "@/assets/backgrounds/google_map.png";
 
 import { useI18n } from "vue-i18n";
 
@@ -373,20 +391,6 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   white-space: pre-line;
 }
 
-.step__button {
-  display: flex;
-  gap: 8px;
-  padding: 16px 20px 16px 24px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 100%;
-  color: #fff;
-  background-color: #45b035;
-  border-radius: 40px;
-  outline: 2px solid #fff;
-  outline-offset: -2px;
-}
-
 .step__card {
   display: flex;
   gap: 32px;
@@ -443,8 +447,6 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
       padding-left: 1.5rem;
     }
   }
-  &__link {
-  }
 }
 
 .prize__card__row {
@@ -453,6 +455,22 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   gap: 32px;
   align-items: center;
   width: 100%;
+}
+
+.map__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__map {
+    margin-bottom: 60px;
+    border-radius: 16px;
+  }
+  &__btn__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
 }
 
 @media (min-width: 1024px) {

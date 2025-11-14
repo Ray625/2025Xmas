@@ -106,6 +106,11 @@ export default {
           },
         },
       },
+      map: {
+        title: "活動地圖",
+        openMap: "開啟線上地圖",
+        openLine: "前往LINE官方帳號",
+      },
     },
   },
 };
