@@ -106,7 +106,7 @@
           textBgColor="#28B590"
           bodyPadding="56px 80px 80px"
         >
-          <div class="flex w-full h-fit gap-8 mb-18">
+          <div class="flex w-full h-fit gap-8 mb-[72px]">
             <CardStep
               class="flex-1"
               bg-color="#FDEED2"
@@ -179,6 +179,25 @@
               </div>
             </CardStep>
           </div>
+          <div class="prize__card__note">
+            <p>
+              {{ t("sections.raffle.prize.note.title") }}
+            </p>
+            <ol>
+              <li v-for="(_, index) in Array(4)">
+                {{ t(`sections.raffle.prize.note.note${index + 1}`) }}
+              </li>
+              <li>
+                <span>
+                  {{ t("sections.raffle.prize.note.note5") }}
+                </span>
+                <button class="prize__card__link" @click="clickPopup">
+                  <u>{{ t("sections.raffle.prize.note.noteLink") }}</u>
+                  <span>。</span>
+                </button>
+              </li>
+            </ol>
+          </div>
         </Card>
       </div>
     </Container>
@@ -186,35 +205,37 @@
 </template>
 
 <script setup lang="ts">
-import Container from "@/components/layout/Container.vue"
-import Card from "@/components/common/Card.vue"
-import SectionTitle from "@/components/common/SectionTitle.vue"
-import TagHighlight from "@/components/common/TagHighlight.vue"
-import CardStep from "@/components/common/CardStep.vue"
-import iconClock from "@/assets/icon/clock.svg"
-import iconMap from "@/assets/icon/map.svg"
-import iconGift from "@/assets/icon/gift.svg"
-import iconArrow from "@/assets/icon/arrow_right.svg"
-import iconQRCode from "@/assets/icon/qrcode.svg"
-import stepCardImgLeft from "@/assets/icon/step_card_left.svg"
-import stepCardImgRight from "@/assets/icon/step_card_Right.svg"
-import iconStar from "@/assets/icon/star_1.svg"
-import iconStarLeft from "@/assets/icon/star_2.svg"
-import iconStarRight from "@/assets/icon/star_3.svg"
-import prizeLeft1 from "@/assets/icon/prize_left_1.svg"
-import prizeLeft2 from "@/assets/icon/prize_left_2.svg"
-import prizeLeft3 from "@/assets/icon/prize_left_3.svg"
-import prizeLeft4 from "@/assets/icon/prize_left_4.svg"
-import prizeLeft5 from "@/assets/icon/prize_left_5.svg"
-import prizeRight1 from "@/assets/icon/prize_right_1.svg"
-import prizeRight2 from "@/assets/icon/prize_right_2.svg"
-import prizeRight3 from "@/assets/icon/prize_right_3.svg"
+import Container from "@/components/layout/Container.vue";
+import Card from "@/components/common/Card.vue";
+import SectionTitle from "@/components/common/SectionTitle.vue";
+import TagHighlight from "@/components/common/TagHighlight.vue";
+import CardStep from "@/components/common/CardStep.vue";
+import iconClock from "@/assets/icon/clock.svg";
+import iconMap from "@/assets/icon/map.svg";
+import iconGift from "@/assets/icon/gift.svg";
+import iconArrow from "@/assets/icon/arrow_right.svg";
+import iconQRCode from "@/assets/icon/qrcode.svg";
+import stepCardImgLeft from "@/assets/icon/step_card_left.svg";
+import stepCardImgRight from "@/assets/icon/step_card_Right.svg";
+import iconStar from "@/assets/icon/star_1.svg";
+import iconStarLeft from "@/assets/icon/star_2.svg";
+import iconStarRight from "@/assets/icon/star_3.svg";
+import prizeLeft1 from "@/assets/icon/prize_left_1.svg";
+import prizeLeft2 from "@/assets/icon/prize_left_2.svg";
+import prizeLeft3 from "@/assets/icon/prize_left_3.svg";
+import prizeLeft4 from "@/assets/icon/prize_left_4.svg";
+import prizeLeft5 from "@/assets/icon/prize_left_5.svg";
+import prizeRight1 from "@/assets/icon/prize_right_1.svg";
+import prizeRight2 from "@/assets/icon/prize_right_2.svg";
+import prizeRight3 from "@/assets/icon/prize_right_3.svg";
 
-import { useI18n } from "vue-i18n"
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n()
+const { t } = useI18n();
 
-const clickLine = () => alert("line btn")
+const clickLine = () => alert("line btn");
+
+const clickPopup = () => alert("popup");
 
 const prizeLeft = [
   {
@@ -237,7 +258,7 @@ const prizeLeft = [
     text: t("sections.raffle.prize.cardLeft.prize4"),
     quota: "20",
   },
-]
+];
 
 const prizeRight = [
   {
@@ -255,7 +276,7 @@ const prizeRight = [
     text: t("sections.raffle.prize.cardRight.prize3"),
     quota: "1",
   },
-]
+];
 </script>
 
 <style scoped lang="scss">
@@ -356,6 +377,20 @@ const prizeRight = [
   }
   &__prize__img {
     width: 108px;
+  }
+  &__note {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
+    @include mixins.typography(16px, 32px, 500, #868686);
+    ol {
+      list-style: decimal;
+      padding-left: 1.5rem;
+    }
+  }
+  &__link {
   }
 }
 
