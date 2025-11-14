@@ -1,13 +1,13 @@
 <template>
   <section class="raffle-section">
-    <Container maxWidth="1440px" tag="section">
+    <Container maxWidth="1440px">
       <div class="raffle-card">
         <p class="raffle-card__text">
           {{ t("sections.raffle.cardText") }}
         </p>
       </div>
     </Container>
-    <Container maxWidth="1440px" padding-x="0" tag="section">
+    <Container maxWidth="1440px" padding-x="0">
       <SectionTitle preset="raffle" class="mb-[66px]" />
       <div class="flex flex-col gap-20">
         <Card title-key="sections.raffle.rules.title">
@@ -58,12 +58,12 @@
             :icon-right="iconGift"
             title-key="sections.raffle.rules.step3.title"
           >
-            <div class="step__card">
-              <div class="step__card__col">
+            <div class="step-card">
+              <div class="step-card__col">
                 <div class="flex flex-col text-center">
                   <span>{{ t("sections.raffle.rules.step3.textLeft1") }}</span>
                   <span>
-                    <span class="step__card__num">1、3、5、7、9</span>
+                    <span class="step-card__num">1、3、5、7、9</span>
                     <span>
                       {{ t("sections.raffle.rules.step3.textLeft2") }}
                     </span>
@@ -73,15 +73,15 @@
                 <img
                   :src="stepCardImgLeft"
                   alt="stamp card"
-                  class="step__card__img"
+                  class="step-card__img"
                   loading="lazy"
                 />
               </div>
-              <div class="step__card__col">
+              <div class="step-card__col">
                 <div class="flex flex-col text-center">
                   <span>{{ t("sections.raffle.rules.step3.textRight1") }}</span>
                   <span>
-                    <span class="step__card__num step__card__num--right"
+                    <span class="step-card__num step-card__num--right"
                       >5、10、15</span
                     >
                     <span>
@@ -93,7 +93,7 @@
                 <img
                   :src="stepCardImgRight"
                   alt="stamp card"
-                  class="step__card__img"
+                  class="step-card__img"
                   loading="lazy"
                 />
               </div>
@@ -115,33 +115,33 @@
               title-key="sections.raffle.prize.cardLeft.title"
             >
               <div class="flex flex-col mt-2 items-center">
-                <span class="prize__card__text">{{
+                <span class="prize-card__text">{{
                   t("sections.raffle.prize.cardLeft.text")
                 }}</span>
                 <div class="flex flex-col items-start gap-5 mt-9">
-                  <div v-for="prize in prizeLeft" class="prize__card__row">
+                  <div v-for="prize in prizeLeft" class="prize-card__row">
                     <img
                       :src="prize.img"
                       alt="prize"
-                      class="prize__card__prize__img"
+                      class="prize-card__prize__img"
                     />
-                    <p class="prize__card__prize__text">{{ prize.text }}</p>
-                    <span class="prize__card__prize__quota">{{
+                    <p class="prize-card__prize__text">{{ prize.text }}</p>
+                    <span class="prize-card__prize__quota">{{
                       `${prize.quota}${t(
                         "sections.raffle.prize.cardRight.quota"
                       )}`
                     }}</span>
                   </div>
-                  <div class="prize__card__row">
+                  <div class="prize-card__row">
                     <img
                       :src="prizeLeft5"
                       alt="prize"
-                      class="prize__card__prize__img"
+                      class="prize-card__prize__img"
                     />
-                    <p class="prize__card__prize__text">
+                    <p class="prize-card__prize__text">
                       {{ t("sections.raffle.prize.cardLeft.prize5") }}
                     </p>
-                    <span class="prize__card__prize__quota">
+                    <span class="prize-card__prize__quota">
                       {{ t("sections.raffle.prize.cardLeft.prize5tag") }}
                     </span>
                   </div>
@@ -157,18 +157,18 @@
               title-key="sections.raffle.prize.cardRight.title"
             >
               <div class="flex flex-col mt-2 items-center">
-                <span class="prize__card__text">{{
+                <span class="prize-card__text">{{
                   t("sections.raffle.prize.cardRight.text")
                 }}</span>
                 <div class="flex flex-col items-start gap-5 mt-9">
-                  <div v-for="prize in prizeRight" class="prize__card__row">
+                  <div v-for="prize in prizeRight" class="prize-card__row">
                     <img
                       :src="prize.img"
                       alt="prize"
-                      class="prize__card__prize__img"
+                      class="prize-card__prize__img"
                     />
-                    <p class="prize__card__prize__text">{{ prize.text }}</p>
-                    <span class="prize__card__prize__quota">{{
+                    <p class="prize-card__prize__text">{{ prize.text }}</p>
+                    <span class="prize-card__prize__quota">{{
                       `${prize.quota}${t(
                         "sections.raffle.prize.cardRight.quota"
                       )}`
@@ -178,7 +178,7 @@
               </div>
             </CardStep>
           </div>
-          <div class="prize__card__note">
+          <div class="prize-card__note">
             <p>
               {{ t("sections.raffle.prize.note.title") }}
             </p>
@@ -190,7 +190,7 @@
                 <span>
                   {{ t("sections.raffle.prize.note.note5") }}
                 </span>
-                <button class="prize__card__link" @click="clickPopup">
+                <button class="prize-card__link" @click="clickPopup">
                   <u>{{ t("sections.raffle.prize.note.noteLink") }}</u>
                   <span>。</span>
                 </button>
@@ -391,7 +391,7 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   white-space: pre-line;
 }
 
-.step__card {
+.step-card {
   display: flex;
   gap: 32px;
   @include mixins.typography(24px, 44px, 700);
@@ -416,7 +416,7 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   }
 }
 
-.prize__card {
+.prize-card {
   &__text {
     @include mixins.typography(18px, 36px, 700, #868686);
   }
@@ -449,7 +449,7 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   }
 }
 
-.prize__card__row {
+.prize-card__row {
   display: grid;
   grid-template-columns: auto 1fr 138px;
   gap: 32px;

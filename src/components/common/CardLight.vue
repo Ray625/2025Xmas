@@ -1,39 +1,35 @@
 <template>
-  <div class="card__light" :style="styleVars">
+  <div class="light-card" :style="styleVars">
     <img
       v-if="lightImg"
       :src="lightImg"
       alt="light_img"
-      class="card__light__img"
+      class="light-card__img"
       loading="lazy"
     />
     <img
       v-if="decorate === 'clip'"
       :src="iconClip"
       alt="decorate"
-      class="card__light__clip"
+      class="light-card__clip"
       loading="lazy"
     />
-    <div class="card__light__name__group">
-      <div v-if="lightName" class="card__light__name">
+    <div class="light-card__name__group">
+      <div v-if="lightName" class="light-card__name">
         {{ lightName }}
       </div>
-      <div v-if="shopName" class="card__light__shop__name">
+      <div v-if="shopName" class="light-card__shop__name">
         {{ shopName }}
       </div>
     </div>
-    <div class="card__light__divider"></div>
-    <div class="card__light__detail">
-      <div class="card__light__detail__text">
-        <img :src="iconMap" alt="icon_map" class="card__light__detail__icon" />
+    <div class="light-card__divider"></div>
+    <div class="light-card__detail">
+      <div class="light-card__detail__text">
+        <img :src="iconMap" alt="icon_map" class="light-card__detail__icon" />
         <span>{{ loaction }}</span>
       </div>
-      <div class="card__light__detail__text">
-        <img
-          :src="iconTime"
-          alt="icon_time"
-          class="card__light__detail__icon"
-        />
+      <div class="light-card__detail__text">
+        <img :src="iconTime" alt="icon_time" class="light-card__detail__icon" />
         <span>{{ time }}</span>
       </div>
     </div>
@@ -81,7 +77,7 @@ const styleVars = computed(() => ({
 @use "@/styles/_variables" as vars;
 @use "@/styles/_mixins" as mixins;
 
-.card__light {
+.light-card {
   position: relative;
   display: flex;
   flex-direction: column;
