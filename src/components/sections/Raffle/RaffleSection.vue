@@ -7,7 +7,7 @@
         </p>
       </div>
     </Container>
-    <Container maxWidth="1440px" padding-x="0">
+    <Container maxWidth="1440px">
       <SectionTitle preset="raffle" class="mb-[66px]" />
       <div class="flex flex-col gap-20">
         <Card title-key="sections.raffle.rules.title">
@@ -132,19 +132,6 @@
                       )}`
                     }}</span>
                   </div>
-                  <div class="prize-card__row">
-                    <img
-                      :src="prizeLeft5"
-                      alt="prize"
-                      class="prize-card__prize__img"
-                    />
-                    <p class="prize-card__prize__text">
-                      {{ t("sections.raffle.prize.cardLeft.prize5") }}
-                    </p>
-                    <span class="prize-card__prize__quota">
-                      {{ t("sections.raffle.prize.cardLeft.prize5tag") }}
-                    </span>
-                  </div>
                 </div>
               </div>
             </CardStep>
@@ -262,92 +249,19 @@ import stepCardImgRight from "@/assets/icon/step_card_right.svg";
 import iconStar from "@/assets/icon/star_1.svg";
 import iconStarLeft from "@/assets/icon/star_2.svg";
 import iconStarRight from "@/assets/icon/star_3.svg";
-import checker from "@/assets/backgrounds/checker.png";
-import prizeLeft1 from "@/assets/icon/prize_left_1.svg";
-import prizeLeft2 from "@/assets/icon/prize_left_2.svg";
-import prizeLeft3 from "@/assets/icon/prize_left_3.svg";
-import prizeLeft4 from "@/assets/icon/prize_left_4.svg";
-import prizeLeft5 from "@/assets/icon/prize_left_5.svg";
-import prizeRight1 from "@/assets/icon/prize_right_1.svg";
-import prizeRight2 from "@/assets/icon/prize_right_2.svg";
-import prizeRight3 from "@/assets/icon/prize_right_3.svg";
 import googleMap from "@/assets/backgrounds/google_map.png";
 
 import { useI18n } from "vue-i18n";
+import { useRaffleConstants } from "./const";
 
 const { t } = useI18n();
+
+const { prizeLeft, prizeRight, xinyiLights, easternLights, taipeiLights } =
+  useRaffleConstants();
 
 const clickLine = () => alert("line btn");
 
 const clickPopup = () => alert("popup");
-
-const prizeLeft = [
-  {
-    img: prizeLeft1,
-    text: t("sections.raffle.prize.cardLeft.prize1"),
-    quota: "800",
-  },
-  {
-    img: prizeLeft2,
-    text: t("sections.raffle.prize.cardLeft.prize2"),
-    quota: "300",
-  },
-  {
-    img: prizeLeft3,
-    text: t("sections.raffle.prize.cardLeft.prize3"),
-    quota: "100",
-  },
-  {
-    img: prizeLeft4,
-    text: t("sections.raffle.prize.cardLeft.prize4"),
-    quota: "20",
-  },
-];
-
-const prizeRight = [
-  {
-    img: prizeRight1,
-    text: t("sections.raffle.prize.cardRight.prize1"),
-    quota: "4",
-  },
-  {
-    img: prizeRight2,
-    text: t("sections.raffle.prize.cardRight.prize2"),
-    quota: "2",
-  },
-  {
-    img: prizeRight3,
-    text: t("sections.raffle.prize.cardRight.prize3"),
-    quota: "1",
-  },
-];
-
-const xinyiLights = Array.from({ length: 19 }).map((_, index) => ({
-  id: `xinyi-${index}`,
-  lightKey: "sections.raffle.stamp.xinyi.light1.lightName",
-  shopKey: "sections.raffle.stamp.xinyi.light1.shopName",
-  locationKey: "sections.raffle.stamp.xinyi.light1.location",
-  timeKey: "sections.raffle.stamp.xinyi.light1.time",
-  lightImg: checker,
-}));
-
-const easternLights = Array.from({ length: 18 }).map((_, index) => ({
-  id: `eastern-${index}`,
-  lightKey: "sections.raffle.stamp.eastern.light1.lightName",
-  shopKey: "sections.raffle.stamp.eastern.light1.shopName",
-  locationKey: "sections.raffle.stamp.eastern.light1.location",
-  timeKey: "sections.raffle.stamp.eastern.light1.time",
-  lightImg: checker,
-}));
-
-const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
-  id: `taipei-${index}`,
-  lightKey: "sections.raffle.stamp.taipei.light1.lightName",
-  shopKey: "sections.raffle.stamp.taipei.light1.shopName",
-  locationKey: "sections.raffle.stamp.taipei.light1.location",
-  timeKey: "sections.raffle.stamp.taipei.light1.time",
-  lightImg: checker,
-}));
 </script>
 
 <style scoped lang="scss">
@@ -363,9 +277,9 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   padding-bottom: 194px;
 
   --gradient-height: 427px;
-  background: linear-gradient(180deg, #75c7d7 0%, #6a8ac6 100%) top center /
+  background: linear-gradient(180deg, #75c7d7 0%, vars.$bg-blue 100%) top center /
       100% var(--gradient-height) no-repeat,
-    #6a8ac6;
+    vars.$bg-blue;
 }
 
 .raffle-card {
