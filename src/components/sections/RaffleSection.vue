@@ -258,7 +258,7 @@ import iconMap from "@/assets/icon/map.svg";
 import iconGift from "@/assets/icon/gift.svg";
 import iconQRCode from "@/assets/icon/qrcode.svg";
 import stepCardImgLeft from "@/assets/icon/step_card_left.svg";
-import stepCardImgRight from "@/assets/icon/step_card_Right.svg";
+import stepCardImgRight from "@/assets/icon/step_card_right.svg";
 import iconStar from "@/assets/icon/star_1.svg";
 import iconStarLeft from "@/assets/icon/star_2.svg";
 import iconStarRight from "@/assets/icon/star_3.svg";
