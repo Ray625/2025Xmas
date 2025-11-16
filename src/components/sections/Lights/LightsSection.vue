@@ -12,7 +12,7 @@
         >
           <div class="flex flex-col gap-8 w-full">
             <div>
-              <img :src="xinyiMap" alt="xinyi map" />
+              <img :src="xinyiMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="xinyiLights"
@@ -33,7 +33,7 @@
         >
           <div class="flex flex-col gap-8 w-full">
             <div>
-              <img :src="easternMap" alt="xinyi map" />
+              <img :src="easternMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="easternLights"
@@ -54,7 +54,7 @@
         >
           <div class="flex flex-col gap-8 w-full items-center">
             <div>
-              <img :src="taipeiMap" alt="xinyi map" />
+              <img :src="taipeiMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="taipeiLights"
@@ -76,7 +76,7 @@
               </div>
             </div>
             <div>
-              <img :src="ximendingMap" alt="xinyi map" />
+              <img :src="ximendingMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="taipeiLights"

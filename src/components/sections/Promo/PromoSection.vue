@@ -118,7 +118,7 @@ const { t } = useI18n()
 
 const activeTab = ref(0)
 const tabs = computed(() => usePromoTabs())
-const { xinyiList, taipeiList } = usePromoLocations()
+const { xinyiList } = usePromoLocations()
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;

@@ -42,7 +42,7 @@ import arrowRight from '@/assets/icon/arrow_page_right.svg'
 
 type CardLightItem = {
   id?: string | number
-  num: number
+  num?: number
   lightKey: string
   shopKey?: string
   locationKey?: string
@@ -50,6 +50,7 @@ type CardLightItem = {
   bgColor?: string
   lightImg?: string
   decorate?: string
+  letter?: string
   useStar?: boolean
 }
 
