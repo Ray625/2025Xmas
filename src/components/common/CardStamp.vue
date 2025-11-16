@@ -64,6 +64,7 @@ const props = withDefaults(
     bodyMinHeight?: string
     useBg?: boolean
     useStar?: boolean
+    bgColor?: string
   }>(),
   {
     titleKey: '',
@@ -82,6 +83,7 @@ const styleVars = computed(() => ({
   '--card-body-padding': props.bodyPadding,
   '--card-body-min-height': props.bodyMinHeight,
   backgroundImage: props.useBg ? `url(${bg})` : 'none',
+  backgroundColor: props.useBg ? '' : props.bgColor,
 }))
 
 const currentPage = ref(1)

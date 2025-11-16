@@ -28,7 +28,7 @@
           <span>{{ time }}</span>
         </div>
       </div>
-      <div v-if="useStar" class="light-card__detail__star" :style="starStyleVars">{{ num }}</div>
+      <div v-if="useStar" class="light-card__detail__star">{{ formattedNum }}</div>
     </div>
   </div>
 </template>
@@ -40,7 +40,6 @@ import checker from '@/assets/backgrounds/checker.png'
 import iconClip from '@/assets/icon/card_light_clip.svg'
 import iconMap from '@/assets/icon/map_solid.svg'
 import iconTime from '@/assets/icon/date.svg'
-import iconStar from '@/assets/icon/star.svg'
 
 const { t } = useI18n()
 
@@ -66,13 +65,14 @@ const lightName = computed(() => (props.lightKey ? t(props.lightKey) : ''))
 const shopName = computed(() => (props.shopKey ? t(props.shopKey) : ''))
 const loaction = computed(() => (props.locationKey ? t(props.locationKey) : ''))
 const time = computed(() => (props.timeKey ? t(props.timeKey) : ''))
+const formattedNum = computed(() => {
+  if (props.num === undefined || props.num === null) return ''
+  const numStr = String(props.num)
+  return numStr.length === 1 ? `0${numStr}` : numStr.slice(0, 2)
+})
 
 const styleVars = computed(() => ({
   '--card-top-margin': props.decorate === 'clip' ? '56.4px' : '0px',
-}))
-
-const starStyleVars = computed(() => ({
-  backgroundImage: `url(${iconStar})`,
 }))
 </script>
 
@@ -146,9 +146,11 @@ const starStyleVars = computed(() => ({
       display: flex;
       justify-content: center;
       align-items: center;
+      align-self: flex-end;
       width: 51px;
       height: 48px;
       margin-left: auto;
+      background-image: url('@/assets/icon/star.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;

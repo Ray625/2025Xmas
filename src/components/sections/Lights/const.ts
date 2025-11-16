@@ -36,8 +36,12 @@ export function useLightsList() {
     }))
 
   const xinyiLights: LightItem[] = createLights('xinyi', 19, 'xinyi')
+  const easternLights: LightItem[] = createLights('eastern', 18, 'eastern')
+  const taipeiLights: LightItem[] = createLights('taipei', 18, 'taipei')
 
   return {
     xinyiLights,
+    easternLights,
+    taipeiLights,
   }
 }

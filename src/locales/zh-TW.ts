@@ -212,6 +212,9 @@ export default {
       taipei: {
         title: '台北各區百貨',
       },
+      ximending: {
+        title: '西門Play樂購町',
+      },
     },
   },
 }
