@@ -4,11 +4,7 @@
       <div class="flex flex-col items-center">
         <SectionTitle preset="promo" class="mb-[100px]" />
         <SectionTabs v-model="activeTab" :tabs="tabs" class="mb-[88px]" />
-        <Card
-          v-if="activeTab === 0"
-          title-key="sections.promo.xinyi.title"
-          bodyPadding="40px"
-        >
+        <Card v-if="activeTab === 0" title-key="sections.promo.xinyi.title" bodyPadding="40px">
           <div class="flex flex-col gap-8 w-full">
             <!-- 台北101 -->
             <CardLocale
@@ -17,7 +13,7 @@
             >
               <template #detail>
                 <div class="">
-                  {{ t("sections.promo.xinyi.taipei101.body") }}
+                  {{ t('sections.promo.xinyi.taipei101.body') }}
                 </div>
               </template>
             </CardLocale>
@@ -27,48 +23,54 @@
               :locationList="xinyiList.breeze.locationList"
             >
               <template #detail>
-                <div class=""></div>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.breeze.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.breeze.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
               </template>
             </CardLocale>
             <!-- 微風松高 -->
-            <CardLocale :locationList="xinyiList.breeze.locationList2">
+            <!-- <CardLocale :locationList="xinyiList.breeze.locationList2">
               <template #detail>
                 <div class=""></div>
               </template>
-            </CardLocale>
+            </CardLocale> -->
             <!-- 微風信義 -->
-            <CardLocale :locationList="xinyiList.breeze.locationList3">
+            <!-- <CardLocale :locationList="xinyiList.breeze.locationList3">
               <template #detail>
                 <div class=""></div>
               </template>
-            </CardLocale>
+            </CardLocale> -->
             <!-- 新光三越 -->
-            <CardLocale
-              :title="xinyiList.SKM.title"
-              :locationList="xinyiList.SKM.locationList"
-            >
+            <!-- <CardLocale :title="xinyiList.SKM.title" :locationList="xinyiList.SKM.locationList">
               <template #detail>
                 <div class=""></div>
               </template>
-            </CardLocale>
+            </CardLocale> -->
             <!-- 遠百信義A13 -->
-            <CardLocale
-              :title="xinyiList.FEDS.title"
-              :locationList="xinyiList.FEDS.locationList"
-            >
+            <!-- <CardLocale :title="xinyiList.FEDS.title" :locationList="xinyiList.FEDS.locationList">
               <template #detail>
                 <div class=""></div>
               </template>
-            </CardLocale>
+            </CardLocale> -->
             <!-- 統一時代百貨 -->
-            <CardLocale
-              :title="xinyiList.uni.title"
-              :locationList="xinyiList.uni.locationList"
-            >
+            <!-- <CardLocale :title="xinyiList.uni.title" :locationList="xinyiList.uni.locationList">
               <template #detail>
                 <div class=""></div>
               </template>
-            </CardLocale>
+            </CardLocale> -->
             <!-- BELLAVITA 寶麗廣場 -->
             <CardLocale
               :title="xinyiList.BELLAVITA.title"
@@ -76,7 +78,7 @@
             >
               <template #detail>
                 <div class="">
-                  {{ t("sections.promo.xinyi.BELLAVITA.body") }}
+                  {{ t('sections.promo.xinyi.BELLAVITA.body') }}
                 </div>
               </template>
             </CardLocale>
@@ -91,18 +93,10 @@
             </CardLocale> -->
           </div>
         </Card>
-        <Card
-          v-if="activeTab === 1"
-          title-key="sections.promo.eastern.title"
-          bodyPadding="40px"
-        >
+        <Card v-if="activeTab === 1" title-key="sections.promo.eastern.title" bodyPadding="40px">
           <div class="flex flex-col w-full"></div>
         </Card>
-        <Card
-          v-if="activeTab === 2"
-          title-key="sections.promo.taipei.title"
-          bodyPadding="40px"
-        >
+        <Card v-if="activeTab === 2" title-key="sections.promo.taipei.title" bodyPadding="40px">
           <div class="flex flex-col w-full"></div>
         </Card>
       </div>
@@ -110,27 +104,25 @@
   </section>
 </template>
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import Container from "@/components/layout/Container.vue";
-import SectionTitle from "@/components/common/SectionTitle.vue";
-import SectionTabs from "@/components/common/SectionTabs.vue";
-import Card from "@/components/common/Card.vue";
-import CardLocale from "@/components/common/CardLocale.vue";
-import { useI18n } from "vue-i18n";
-import {
-  usePromoTabs,
-  usePromoLocations,
-} from "@/components/sections/Promo/const";
+import { ref, computed } from 'vue'
+import Container from '@/components/layout/Container.vue'
+import SectionTitle from '@/components/common/SectionTitle.vue'
+import SectionTabs from '@/components/common/SectionTabs.vue'
+import Card from '@/components/common/Card.vue'
+import CardLocale from '@/components/common/CardLocale.vue'
+import CardEvent from '@/components/common/CardEvent.vue'
+import { useI18n } from 'vue-i18n'
+import { usePromoTabs, usePromoLocations } from '@/components/sections/Promo/const'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
-const activeTab = ref(0);
-const tabs = computed(() => usePromoTabs());
-const { xinyiList, taipeiList } = usePromoLocations();
+const activeTab = ref(0)
+const tabs = computed(() => usePromoTabs())
+const { xinyiList, taipeiList } = usePromoLocations()
 </script>
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .promo-section {
   padding-top: 100px;
