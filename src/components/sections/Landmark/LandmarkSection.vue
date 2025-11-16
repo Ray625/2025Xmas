@@ -4,7 +4,7 @@
       <div class="flex flex-col items-center">
         <SectionTitle preset="landmark" class="mb-[75px]" />
         <div class="map__group">
-          <img :src="xinyiMap" alt="xinyi map" class="ml-auto" />
+          <img :src="xinyiMap" alt="xinyi map" class="ml-auto" loading="lazy" />
           <div class="map__card__container">
             <CardLight class="map__card map__card--left" v-bind="cardLeft" />
             <CardLight class="map__card map__card--right" v-bind="cardRight" />
@@ -23,15 +23,11 @@
   </section>
 </template>
 <script setup lang="ts">
-import { ref, computed } from 'vue'
 import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import xinyiMap from '@/assets/map/section_08_map.png'
 import CardLight from '@/components/common/CardLight.vue'
 import { useLandmarkList } from '@/components/sections/Landmark/const'
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
 
 const { xinyiLights, cardLeft, cardRight } = useLandmarkList()
 </script>
