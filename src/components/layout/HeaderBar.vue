@@ -75,7 +75,8 @@ const navItems = navConfig.map((item) => ({
   icon: iconMap[item.key],
 }))
 
-const { t, locale } = useI18n()
+// const { t, locale } = useI18n()
+const { t } = useI18n()
 
 const toggleLocale = () => {
   return
