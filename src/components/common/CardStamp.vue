@@ -3,22 +3,17 @@
     <div v-if="cardTitle" class="card__title">
       {{ cardTitle }}
     </div>
-    <div class="card__body" v-if="hasLights">
+    <div class="card__body">
       <CardLight
         v-for="light in paginatedLights"
         :key="light.id ?? light.lightKey"
+        :useStar="useStar"
         v-bind="light"
       />
     </div>
-    <div class="card__body" v-else>
-      <slot />
-    </div>
+
     <div class="card__pager" v-if="hasPagination">
-      <button
-        class="card__pager__btn"
-        :disabled="currentPage === 1"
-        @click="goPrev"
-      >
+      <button class="card__pager__btn" :disabled="currentPage === 1" @click="goPrev">
         <img :src="arrowLeft" alt="arrow" class="card__pager__btn__icon" />
       </button>
       <div class="card__pager__dots">
@@ -30,11 +25,7 @@
           @click="currentPage = page"
         ></button>
       </div>
-      <button
-        class="card__pager__btn"
-        :disabled="currentPage === totalPages"
-        @click="goNext"
-      >
+      <button class="card__pager__btn" :disabled="currentPage === totalPages" @click="goNext">
         <img :src="arrowRight" alt="arrow" class="card__pager__btn__icon" />
       </button>
     </div>
@@ -42,88 +33,90 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
-import { useI18n } from "vue-i18n";
-import bg from "@/assets/backgrounds/stamp_bg.png";
-import CardLight from "@/components/common/CardLight.vue";
-import arrowLeft from "@/assets/icon/arrow_page_left.svg";
-import arrowRight from "@/assets/icon/arrow_page_right.svg";
+import { computed, ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+import bg from '@/assets/backgrounds/stamp_bg.png'
+import CardLight from '@/components/common/CardLight.vue'
+import arrowLeft from '@/assets/icon/arrow_page_left.svg'
+import arrowRight from '@/assets/icon/arrow_page_right.svg'
 
 type CardLightItem = {
-  id?: string | number;
-  lightKey: string;
-  shopKey?: string;
-  locationKey?: string;
-  timeKey?: string;
-  bgColor?: string;
-  lightImg?: string;
-  decorate?: string;
-};
+  id?: string | number
+  num: number
+  lightKey: string
+  shopKey?: string
+  locationKey?: string
+  timeKey?: string
+  bgColor?: string
+  lightImg?: string
+  decorate?: string
+  useStar?: boolean
+}
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const props = withDefaults(
   defineProps<{
-    titleKey?: string;
-    bodyPadding?: string;
-    lights?: CardLightItem[];
-    pageSize?: number;
-    bodyMinHeight?: string;
+    titleKey?: string
+    bodyPadding?: string
+    lights?: CardLightItem[]
+    pageSize?: number
+    bodyMinHeight?: string
+    useBg?: boolean
+    useStar?: boolean
   }>(),
   {
-    titleKey: "",
-    bodyPadding: "40px 72px",
+    titleKey: '',
+    bodyPadding: '40px 72px',
     lights: () => [],
     pageSize: 8,
-    bodyMinHeight: "520px",
-  }
-);
+    bodyMinHeight: '520px',
+    useBg: true,
+    useStar: false,
+  },
+)
 
-const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
+const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ''))
 
 const styleVars = computed(() => ({
-  "--card-body-padding": props.bodyPadding,
-  "--card-body-min-height": props.bodyMinHeight,
-  backgroundImage: `url(${bg})`,
-}));
+  '--card-body-padding': props.bodyPadding,
+  '--card-body-min-height': props.bodyMinHeight,
+  backgroundImage: props.useBg ? `url(${bg})` : 'none',
+}))
 
-const hasLights = computed(() => props.lights.length > 0);
-
-const currentPage = ref(1);
-const totalPages = computed(() =>
-  Math.max(1, Math.ceil(props.lights.length / props.pageSize))
-);
+const currentPage = ref(1)
+const totalPages = computed(() => Math.max(1, Math.ceil(props.lights.length / props.pageSize)))
 
 watch(
   () => [props.lights.length, props.pageSize],
   () => {
     if (currentPage.value > totalPages.value) {
-      currentPage.value = totalPages.value;
+      currentPage.value = totalPages.value
     }
   },
-  { immediate: true }
-);
+  { immediate: true },
+)
 
 const paginatedLights = computed(() => {
-  const start = (currentPage.value - 1) * props.pageSize;
-  const end = start + props.pageSize;
-  return props.lights.slice(start, end);
-});
+  const start = (currentPage.value - 1) * props.pageSize
+  const end = start + props.pageSize
+  return props.lights.slice(start, end)
+})
 
-const hasPagination = computed(() => props.lights.length > props.pageSize);
+const hasPagination = computed(() => props.lights.length > props.pageSize)
 
 const goPrev = () => {
-  if (currentPage.value > 1) currentPage.value -= 1;
-};
+  if (currentPage.value > 1) currentPage.value -= 1
+}
 
 const goNext = () => {
-  if (currentPage.value < totalPages.value) currentPage.value += 1;
-};
+  if (currentPage.value < totalPages.value) currentPage.value += 1
+}
 </script>
 
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .card {
   width: 100%;

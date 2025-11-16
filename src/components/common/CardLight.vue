@@ -1,12 +1,6 @@
 <template>
   <div class="light-card" :style="styleVars">
-    <img
-      v-if="lightImg"
-      :src="lightImg"
-      alt="light_img"
-      class="light-card__img"
-      loading="lazy"
-    />
+    <img v-if="lightImg" :src="lightImg" alt="light_img" class="light-card__img" loading="lazy" />
     <img
       v-if="decorate === 'clip'"
       :src="iconClip"
@@ -24,58 +18,67 @@
     </div>
     <div class="light-card__divider"></div>
     <div class="light-card__detail">
-      <div class="light-card__detail__text">
-        <img :src="iconMap" alt="icon_map" class="light-card__detail__icon" />
-        <span>{{ loaction }}</span>
+      <div class="light-card__detail__group">
+        <div class="light-card__detail__text">
+          <img :src="iconMap" alt="icon_map" class="light-card__detail__icon" />
+          <span>{{ loaction }}</span>
+        </div>
+        <div class="light-card__detail__text">
+          <img :src="iconTime" alt="icon_time" class="light-card__detail__icon" />
+          <span>{{ time }}</span>
+        </div>
       </div>
-      <div class="light-card__detail__text">
-        <img :src="iconTime" alt="icon_time" class="light-card__detail__icon" />
-        <span>{{ time }}</span>
-      </div>
+      <div v-if="useStar" class="light-card__detail__star" :style="starStyleVars">{{ num }}</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import checker from "@/assets/backgrounds/checker.png";
-import iconClip from "@/assets/icon/card_light_clip.svg";
-import iconMap from "@/assets/icon/map_solid.svg";
-import iconTime from "@/assets/icon/date.svg";
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import checker from '@/assets/backgrounds/checker.png'
+import iconClip from '@/assets/icon/card_light_clip.svg'
+import iconMap from '@/assets/icon/map_solid.svg'
+import iconTime from '@/assets/icon/date.svg'
+import iconStar from '@/assets/icon/star.svg'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const props = withDefaults(
   defineProps<{
-    lightKey?: string;
-    lightImg?: string;
-    shopKey?: string;
-    locationKey?: string;
-    timeKey?: string;
-    decorate?: string;
+    lightKey?: string
+    lightImg?: string
+    shopKey?: string
+    locationKey?: string
+    timeKey?: string
+    decorate?: string
+    useStar?: boolean
+    num?: number
   }>(),
   {
     lightImg: checker,
-    decorate: "clip",
-  }
-);
+    decorate: 'clip',
+    useStar: true,
+  },
+)
 
-const lightName = computed(() => (props.lightKey ? t(props.lightKey) : ""));
-const shopName = computed(() => (props.shopKey ? t(props.shopKey) : ""));
-const loaction = computed(() =>
-  props.locationKey ? t(props.locationKey) : ""
-);
-const time = computed(() => (props.timeKey ? t(props.timeKey) : ""));
+const lightName = computed(() => (props.lightKey ? t(props.lightKey) : ''))
+const shopName = computed(() => (props.shopKey ? t(props.shopKey) : ''))
+const loaction = computed(() => (props.locationKey ? t(props.locationKey) : ''))
+const time = computed(() => (props.timeKey ? t(props.timeKey) : ''))
 
 const styleVars = computed(() => ({
-  "--card-top-margin": props.decorate === "clip" ? "56.4px" : "0px",
-}));
+  '--card-top-margin': props.decorate === 'clip' ? '56.4px' : '0px',
+}))
+
+const starStyleVars = computed(() => ({
+  backgroundImage: `url(${iconStar})`,
+}))
 </script>
 
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .light-card {
   position: relative;
@@ -120,8 +123,13 @@ const styleVars = computed(() => ({
 
   &__detail {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
     &__text {
       display: flex;
       align-items: center;
@@ -132,6 +140,19 @@ const styleVars = computed(() => ({
     &__icon {
       width: 20px;
       height: 20px;
+    }
+
+    &__star {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 51px;
+      height: 48px;
+      margin-left: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include mixins.typography(16px, 22px, 700, white);
     }
   }
 }

@@ -201,5 +201,17 @@ export default {
         },
       },
     },
+    lights: {
+      title: '耶誕燈飾',
+      xinyi: {
+        title: '信義區百貨',
+      },
+      eastern: {
+        title: '東區商圈',
+      },
+      taipei: {
+        title: '台北各區百貨',
+      },
+    },
   },
 }
