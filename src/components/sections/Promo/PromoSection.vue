@@ -21,7 +21,7 @@
                 </div>
               </template>
             </CardLocale>
-            <!-- 微風 -->
+            <!-- 微風南山 -->
             <CardLocale
               :title="xinyiList.breeze.title"
               :locationList="xinyiList.breeze.locationList"
@@ -30,14 +30,65 @@
                 <div class=""></div>
               </template>
             </CardLocale>
+            <!-- 微風松高 -->
+            <CardLocale :locationList="xinyiList.breeze.locationList2">
+              <template #detail>
+                <div class=""></div>
+              </template>
+            </CardLocale>
+            <!-- 微風信義 -->
+            <CardLocale :locationList="xinyiList.breeze.locationList3">
+              <template #detail>
+                <div class=""></div>
+              </template>
+            </CardLocale>
+            <!-- 新光三越 -->
             <CardLocale
-              :title="xinyiList.eslite.title"
-              :locationList="xinyiList.eslite.locationList"
+              :title="xinyiList.SKM.title"
+              :locationList="xinyiList.SKM.locationList"
             >
               <template #detail>
                 <div class=""></div>
               </template>
             </CardLocale>
+            <!-- 遠百信義A13 -->
+            <CardLocale
+              :title="xinyiList.FEDS.title"
+              :locationList="xinyiList.FEDS.locationList"
+            >
+              <template #detail>
+                <div class=""></div>
+              </template>
+            </CardLocale>
+            <!-- 統一時代百貨 -->
+            <CardLocale
+              :title="xinyiList.uni.title"
+              :locationList="xinyiList.uni.locationList"
+            >
+              <template #detail>
+                <div class=""></div>
+              </template>
+            </CardLocale>
+            <!-- BELLAVITA 寶麗廣場 -->
+            <CardLocale
+              :title="xinyiList.BELLAVITA.title"
+              :locationList="xinyiList.BELLAVITA.locationList"
+            >
+              <template #detail>
+                <div class="">
+                  {{ t("sections.promo.xinyi.BELLAVITA.body") }}
+                </div>
+              </template>
+            </CardLocale>
+            <!-- 誠品 -->
+            <!-- <CardLocale
+              :title="taipeiList.eslite.title"
+              :locationList="taipeiList.eslite.locationList"
+            >
+              <template #detail>
+                <div class=""></div>
+              </template>
+            </CardLocale> -->
           </div>
         </Card>
         <Card
@@ -66,42 +117,16 @@ import SectionTabs from "@/components/common/SectionTabs.vue";
 import Card from "@/components/common/Card.vue";
 import CardLocale from "@/components/common/CardLocale.vue";
 import { useI18n } from "vue-i18n";
-import { usePromoTabs } from "@/components/sections/Promo/const";
+import {
+  usePromoTabs,
+  usePromoLocations,
+} from "@/components/sections/Promo/const";
 
 const { t } = useI18n();
 
 const activeTab = ref(0);
 const tabs = computed(() => usePromoTabs());
-
-const xinyiList = {
-  taipei101: {
-    title: "sections.promo.xinyi.taipei101.title",
-    locationList: [
-      {
-        locationKey: "sections.promo.xinyi.taipei101.location",
-      },
-    ],
-  },
-  breeze: {
-    title: "sections.promo.xinyi.breeze.title",
-    locationList: [
-      {
-        shopKey: "sections.promo.xinyi.breeze.shop",
-        locationKey: "sections.promo.xinyi.breeze.location",
-      },
-    ],
-  },
-  eslite: {
-    title: "sections.promo.xinyi.eslite.title",
-    locationList: Array.from({ length: 4 }, (_, index) => {
-      const suffix = index === 0 ? "" : index;
-      return {
-        shopKey: `sections.promo.xinyi.eslite.shop${suffix}`,
-        locationKey: `sections.promo.xinyi.eslite.location${suffix}`,
-      };
-    }),
-  },
-};
+const { xinyiList, taipeiList } = usePromoLocations();
 </script>
 <style scoped lang="scss">
 @use "@/styles/_variables" as vars;

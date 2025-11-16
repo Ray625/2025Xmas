@@ -1,6 +1,6 @@
 <template>
   <div class="location-card">
-    <div class="location-card__title">
+    <div v-if="title" class="location-card__title">
       {{ t(`${title}`) }}
     </div>
     <div class="location-card__detail">
@@ -37,15 +37,10 @@ import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 
-const props = withDefaults(
-  defineProps<{
-    title: string;
-    locationList: Record<string, string>[];
-  }>(),
-  {
-    title: "",
-  }
-);
+defineProps<{
+  title?: string;
+  locationList: Record<string, string>[];
+}>();
 
 const openToggle = ref(true);
 </script>
