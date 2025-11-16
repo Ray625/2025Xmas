@@ -28,7 +28,8 @@
           <span>{{ time }}</span>
         </div>
       </div>
-      <div v-if="useStar" class="light-card__detail__star">{{ formattedNum }}</div>
+      <div v-if="useStar && num" class="light-card__detail__star">{{ formattedNum }}</div>
+      <div v-if="useStar && letter" class="light-card__detail__star">{{ letter }}</div>
     </div>
   </div>
 </template>
@@ -53,6 +54,7 @@ const props = withDefaults(
     decorate?: string
     useStar?: boolean
     num?: number
+    letter?: string
   }>(),
   {
     lightImg: checker,
@@ -105,6 +107,7 @@ const styleVars = computed(() => ({
     width: 240px;
     max-width: 100%;
     height: auto;
+    aspect-ratio: 240 /176;
   }
 
   &__clip {

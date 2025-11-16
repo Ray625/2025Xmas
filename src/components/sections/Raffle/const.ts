@@ -15,7 +15,9 @@ type LightItem = {
   locationKey: string
   timeKey: string
   lightImg: string
+  num?: number
   useStar?: boolean
+  letter?: string
 }
 
 type PrizeItem = {

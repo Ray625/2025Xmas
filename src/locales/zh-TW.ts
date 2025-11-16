@@ -216,5 +216,20 @@ export default {
         title: '西門Play樂購町',
       },
     },
+    landmark: {
+      title: '信義空橋妝點',
+      light10: {
+        lightName: '光之簾幕',
+        shopName: 'BELLAVITA 寶麗廣場',
+        location: 'A4-A5空橋',
+        time: '114/11/28-115/01/04',
+      },
+      light11: {
+        lightName: '光之簾幕',
+        shopName: 'BELLAVITA 寶麗廣場',
+        location: 'A4-A5空橋',
+        time: '114/11/28-115/01/04',
+      },
+    },
   },
 }

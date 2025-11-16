@@ -8,8 +8,9 @@ type LightItem = {
   locationKey: string
   timeKey: string
   lightImg: string
-  num: number
+  num?: number
   useStar?: boolean
+  letter?: string
 }
 
 export function useLightsTabs() {
