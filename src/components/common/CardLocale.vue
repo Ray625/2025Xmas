@@ -1,18 +1,28 @@
 <template>
-  <div class="locale-card">
-    <div class="locale-card__title">
-      <slot name="title" />
+  <div class="location-card">
+    <div class="location-card__title">
+      {{ t(`${title}`) }}
     </div>
-    <div class="locale-card__detail">
-      <div class="locale-card__detail__header">
-        <TagLocale v-if="shopKey" :shopKey="shopKey" />
-        <div class="locale-card__detail__header__location">
-          <img :src="iconInfo" alt="info icon" />
-          <p>{{ location }}</p>
+    <div class="location-card__detail">
+      <div class="location-card__detail__header">
+        <div class="location-card__detail__header__col">
+          <div
+            v-for="location in locationList"
+            class="location-card__detail__header__group"
+          >
+            <TagLocale v-if="location.shopKey" :shopKey="location.shopKey" />
+            <div class="location-card__detail__header__location">
+              <img :src="iconInfo" alt="info icon" />
+              <p>{{ t(`${location.locationKey}`) }}</p>
+            </div>
+          </div>
         </div>
-        <ButtonToggle v-model="openToggle" class="ml-auto" />
+        <ButtonToggle
+          v-model="openToggle"
+          class="location-card__detail__header__btn"
+        />
       </div>
-      <div v-if="openToggle">
+      <div v-if="openToggle" class="location-card__detail__body">
         <slot name="detail" />
       </div>
     </div>
@@ -22,28 +32,28 @@
 import TagLocale from "@/components/common/TagLocale.vue";
 import ButtonToggle from "@/components/common/ButtonToggle.vue";
 import iconInfo from "@/assets/icon/info.svg";
+import { ref } from "vue";
 import { useI18n } from "vue-i18n";
-import { computed, ref } from "vue";
 
 const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
-    shopKey?: string;
-    locationKey?: string;
+    title: string;
+    locationList: Record<string, string>[];
   }>(),
-  {}
+  {
+    title: "",
+  }
 );
 
-const openToggle = ref(false);
-
-const location = computed(() => t(`${props.locationKey}`));
+const openToggle = ref(true);
 </script>
 <style scoped lang="scss">
 @use "@/styles/_variables" as vars;
 @use "@/styles/_mixins" as mixins;
 
-.locale-card {
+.location-card {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -62,9 +72,24 @@ const location = computed(() => t(`${props.locationKey}`));
     background-color: #ecf4f9;
     border-radius: 16px;
     &__header {
+      position: relative;
       display: flex;
-      gap: 4px;
       align-items: center;
+      &__col {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        row-gap: 24px;
+        max-height: 144px;
+        flex: 1 1 0;
+      }
+      &__group {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        min-height: 60px;
+      }
+
       &__location {
         display: flex;
         align-items: center;
@@ -72,6 +97,16 @@ const location = computed(() => t(`${props.locationKey}`));
         padding: 8px 12px;
         @include mixins.typography(18px, 32px, 700);
       }
+
+      &__btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    &__body {
+      white-space: pre-line;
+      @include mixins.typography(18px, 32px, 500, #000);
     }
   }
 }

@@ -11,22 +11,32 @@
         >
           <div class="flex flex-col gap-8 w-full">
             <!-- 台北101 -->
-            <CardLocale locationKey="sections.promo.xinyi.taipei101.locale">
-              <template #title>
-                {{ t("sections.promo.xinyi.taipei101.title") }}
+            <CardLocale
+              :title="xinyiList.taipei101.title"
+              :locationList="xinyiList.taipei101.locationList"
+            >
+              <template #detail>
+                <div class="">
+                  {{ t("sections.promo.xinyi.taipei101.body") }}
+                </div>
               </template>
-              <template #detail> 123 </template>
             </CardLocale>
             <!-- 微風 -->
             <CardLocale
-              shopKey="sections.promo.xinyi.breeze.title"
-              locationKey="sections.promo.xinyi.breeze.locale"
-              :showBtn="true"
+              :title="xinyiList.breeze.title"
+              :locationList="xinyiList.breeze.locationList"
             >
-              <template #title>
-                {{ t("sections.promo.xinyi.breeze.title") }}
+              <template #detail>
+                <div class=""></div>
               </template>
-              <template #detail> 123 </template>
+            </CardLocale>
+            <CardLocale
+              :title="xinyiList.eslite.title"
+              :locationList="xinyiList.eslite.locationList"
+            >
+              <template #detail>
+                <div class=""></div>
+              </template>
             </CardLocale>
           </div>
         </Card>
@@ -62,6 +72,36 @@ const { t } = useI18n();
 
 const activeTab = ref(0);
 const tabs = computed(() => usePromoTabs());
+
+const xinyiList = {
+  taipei101: {
+    title: "sections.promo.xinyi.taipei101.title",
+    locationList: [
+      {
+        locationKey: "sections.promo.xinyi.taipei101.location",
+      },
+    ],
+  },
+  breeze: {
+    title: "sections.promo.xinyi.breeze.title",
+    locationList: [
+      {
+        shopKey: "sections.promo.xinyi.breeze.shop",
+        locationKey: "sections.promo.xinyi.breeze.location",
+      },
+    ],
+  },
+  eslite: {
+    title: "sections.promo.xinyi.eslite.title",
+    locationList: Array.from({ length: 4 }, (_, index) => {
+      const suffix = index === 0 ? "" : index;
+      return {
+        shopKey: `sections.promo.xinyi.eslite.shop${suffix}`,
+        locationKey: `sections.promo.xinyi.eslite.location${suffix}`,
+      };
+    }),
+  },
+};
 </script>
 <style scoped lang="scss">
 @use "@/styles/_variables" as vars;

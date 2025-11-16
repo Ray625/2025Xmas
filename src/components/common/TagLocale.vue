@@ -1,5 +1,5 @@
 <template>
-  <div class="tag">{{ locale }}</div>
+  <div class="tag">{{ location }}</div>
 </template>
 
 <script setup lang="ts">
@@ -15,7 +15,7 @@ const props = withDefaults(
   {}
 );
 
-const locale = computed(() => t(`${props.shopKey}`));
+const location = computed(() => t(`${props.shopKey}`));
 </script>
 
 <style scoped lang="scss">

@@ -52,7 +52,7 @@
           </div>
           <CardStep
             class="flex-1"
-            bg-color="#EBEBEB"
+            bg-color="#FFE5F0"
             text-bg-color="#DC1F9E"
             :icon-left="iconGift"
             :icon-right="iconGift"
