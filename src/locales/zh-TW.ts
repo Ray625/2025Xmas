@@ -112,5 +112,30 @@ export default {
         openLine: "前往LINE官方帳號",
       },
     },
+    promo: {
+      tabs: {
+        xinyi: "信義區",
+        eastern: "東區商圈",
+        taipei: "臺北各區",
+      },
+      xinyi: {
+        title: "信義區百貨",
+        taipei101: {
+          title: "台北101",
+          locale: "信義區市府路45號 (02)8101-8800",
+        },
+        breeze: {
+          title: "Breeze微風",
+          shop: "微風南山",
+          locale: "信義區松智路17號 (02)6638-9999",
+        },
+      },
+      eastern: {
+        title: "東區商圈",
+      },
+      taipei: {
+        title: "台北各區百貨",
+      },
+    },
   },
 };

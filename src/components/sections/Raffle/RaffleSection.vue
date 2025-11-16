@@ -32,9 +32,9 @@
               <div class="step__text">
                 {{ t("sections.raffle.rules.step1.text") }}
               </div>
-              <ActionButton @click="clickLine">
+              <ButtonAction @click="clickLine">
                 {{ t("sections.raffle.rules.step1.button") }}
-              </ActionButton>
+              </ButtonAction>
             </CardStep>
             <CardStep
               class="flex-1"
@@ -217,12 +217,12 @@
               <img :src="googleMap" alt="map" class="map__card__map" />
             </div>
             <div class="map__card__btn__group">
-              <ActionButton bg-color="#F23D25" :has-border="false">{{
+              <ButtonAction bg-color="#F23D25" :has-border="false">{{
                 t("sections.raffle.map.openMap")
-              }}</ActionButton>
-              <ActionButton :has-border="false">{{
+              }}</ButtonAction>
+              <ButtonAction :has-border="false">{{
                 t("sections.raffle.map.openLine")
-              }}</ActionButton>
+              }}</ButtonAction>
             </div>
           </div>
         </Card>
@@ -238,7 +238,7 @@ import CardStep from "@/components/common/CardStep.vue";
 import CardStamp from "@/components/common/CardStamp.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
 import TagHighlight from "@/components/common/TagHighlight.vue";
-import ActionButton from "@/components/common/ActionButton.vue";
+import ButtonAction from "@/components/common/ButtonAction.vue";
 
 import iconClock from "@/assets/icon/clock.svg";
 import iconMap from "@/assets/icon/map.svg";
@@ -252,7 +252,7 @@ import iconStarRight from "@/assets/icon/star_3.svg";
 import googleMap from "@/assets/backgrounds/google_map.png";
 
 import { useI18n } from "vue-i18n";
-import { useRaffleConstants } from "./const";
+import { useRaffleConstants } from "@/components/sections/Raffle/const";
 
 const { t } = useI18n();
 

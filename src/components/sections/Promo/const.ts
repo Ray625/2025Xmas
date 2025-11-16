@@ -1,5 +1,11 @@
-export const promoTabs = [
-  { label: '信義區', key: 'xinyi' },
-  { label: '東區商圈', key: 'eastern' },
-  { label: '臺北各區', key: 'taipei' },
-]
+import { useI18n } from "vue-i18n";
+
+export function usePromoTabs() {
+  const { t } = useI18n();
+
+  return [
+    { label: t("sections.promo.tabs.xinyi"), key: "xinyi" },
+    { label: t("sections.promo.tabs.eastern"), key: "eastern" },
+    { label: t("sections.promo.tabs.taipei"), key: "taipei" },
+  ];
+}
