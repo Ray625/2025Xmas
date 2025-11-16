@@ -3,23 +3,14 @@
     <div class="gradient-bar">
       <Container class="header-inner" maxWidth="1464px">
         <nav class="nav">
-          <a
-            v-for="item in navItems"
-            :key="item.href"
-            :href="item.href"
-            class="nav-item"
-          >
-            <img
-              :src="item.icon"
-              :alt="t(`header.nav.${item.key}`)"
-              class="nav-item__icon"
-            />
+          <a v-for="item in navItems" :key="item.href" :href="item.href" class="nav-item">
+            <img :src="item.icon" :alt="t(`header.nav.${item.key}`)" class="nav-item__icon" />
             <span>{{ t(`header.nav.${item.key}`) }}</span>
           </a>
         </nav>
         <div class="header-actions">
           <button class="lang-btn hover" type="button" @click="toggleLocale">
-            {{ t("header.lang") }}
+            {{ t('header.lang') }}
           </button>
           <a
             class="social hover"
@@ -54,19 +45,19 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n"
-import Container from "@/components/layout/Container.vue"
-import { navConfig } from "@/data/navigation"
-import giftIcon from "@/assets/icon/gift.svg"
-import bellIcon from "@/assets/icon/bell.svg"
-import lightsIcon from "@/assets/icon/lights.svg"
-import treeIcon from "@/assets/icon/tree.svg"
-import ballIcon from "@/assets/icon/ball.svg"
-import busIcon from "@/assets/icon/bus.svg"
-import mailIcon from "@/assets/icon/mail.svg"
-import playIcon from "@/assets/icon/play.svg"
-import social_fb from "@/assets/icon/social_fb.svg"
-import social_yt from "@/assets/icon/social_yt.svg"
+import { useI18n } from 'vue-i18n'
+import Container from '@/components/layout/Container.vue'
+import { navConfig } from '@/data/navigation'
+import giftIcon from '@/assets/icon/gift.svg'
+import bellIcon from '@/assets/icon/bell.svg'
+import lightsIcon from '@/assets/icon/lights.svg'
+import treeIcon from '@/assets/icon/tree.svg'
+import ballIcon from '@/assets/icon/ball.svg'
+import busIcon from '@/assets/icon/bus.svg'
+import mailIcon from '@/assets/icon/mail.svg'
+import playIcon from '@/assets/icon/play.svg'
+import social_fb from '@/assets/icon/social_fb.svg'
+import social_yt from '@/assets/icon/social_yt.svg'
 
 const iconMap: Record<string, string> = {
   raffle: giftIcon,
@@ -84,10 +75,12 @@ const navItems = navConfig.map((item) => ({
   icon: iconMap[item.key],
 }))
 
-const { t, locale } = useI18n()
+// const { t, locale } = useI18n()
+const { t } = useI18n()
 
 const toggleLocale = () => {
-  locale.value = locale.value === "zh-TW" ? "en" : "zh-TW"
+  return
+  // locale.value = locale.value === "zh-TW" ? "en" : "zh-TW"
 }
 </script>
 
