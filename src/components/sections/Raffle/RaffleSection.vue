@@ -1,13 +1,13 @@
 <template>
   <section class="raffle-section">
-    <Container maxWidth="1440px" tag="section">
+    <Container maxWidth="1440px">
       <div class="raffle-card">
         <p class="raffle-card__text">
           {{ t("sections.raffle.cardText") }}
         </p>
       </div>
     </Container>
-    <Container maxWidth="1440px" padding-x="0" tag="section">
+    <Container maxWidth="1440px">
       <SectionTitle preset="raffle" class="mb-[66px]" />
       <div class="flex flex-col gap-20">
         <Card title-key="sections.raffle.rules.title">
@@ -32,9 +32,9 @@
               <div class="step__text">
                 {{ t("sections.raffle.rules.step1.text") }}
               </div>
-              <ActionButton @click="clickLine">
+              <ButtonAction @click="clickLine">
                 {{ t("sections.raffle.rules.step1.button") }}
-              </ActionButton>
+              </ButtonAction>
             </CardStep>
             <CardStep
               class="flex-1"
@@ -52,18 +52,18 @@
           </div>
           <CardStep
             class="flex-1"
-            bg-color="#EBEBEB"
+            bg-color="#FFE5F0"
             text-bg-color="#DC1F9E"
             :icon-left="iconGift"
             :icon-right="iconGift"
             title-key="sections.raffle.rules.step3.title"
           >
-            <div class="step__card">
-              <div class="step__card__col">
+            <div class="step-card">
+              <div class="step-card__col">
                 <div class="flex flex-col text-center">
                   <span>{{ t("sections.raffle.rules.step3.textLeft1") }}</span>
                   <span>
-                    <span class="step__card__num">1、3、5、7、9</span>
+                    <span class="step-card__num">1、3、5、7、9</span>
                     <span>
                       {{ t("sections.raffle.rules.step3.textLeft2") }}
                     </span>
@@ -73,15 +73,15 @@
                 <img
                   :src="stepCardImgLeft"
                   alt="stamp card"
-                  class="step__card__img"
+                  class="step-card__img"
                   loading="lazy"
                 />
               </div>
-              <div class="step__card__col">
+              <div class="step-card__col">
                 <div class="flex flex-col text-center">
                   <span>{{ t("sections.raffle.rules.step3.textRight1") }}</span>
                   <span>
-                    <span class="step__card__num step__card__num--right"
+                    <span class="step-card__num step-card__num--right"
                       >5、10、15</span
                     >
                     <span>
@@ -93,7 +93,7 @@
                 <img
                   :src="stepCardImgRight"
                   alt="stamp card"
-                  class="step__card__img"
+                  class="step-card__img"
                   loading="lazy"
                 />
               </div>
@@ -115,35 +115,22 @@
               title-key="sections.raffle.prize.cardLeft.title"
             >
               <div class="flex flex-col mt-2 items-center">
-                <span class="prize__card__text">{{
+                <span class="prize-card__text">{{
                   t("sections.raffle.prize.cardLeft.text")
                 }}</span>
                 <div class="flex flex-col items-start gap-5 mt-9">
-                  <div v-for="prize in prizeLeft" class="prize__card__row">
+                  <div v-for="prize in prizeLeft" class="prize-card__row">
                     <img
                       :src="prize.img"
                       alt="prize"
-                      class="prize__card__prize__img"
+                      class="prize-card__prize__img"
                     />
-                    <p class="prize__card__prize__text">{{ prize.text }}</p>
-                    <span class="prize__card__prize__quota">{{
+                    <p class="prize-card__prize__text">{{ prize.text }}</p>
+                    <span class="prize-card__prize__quota">{{
                       `${prize.quota}${t(
                         "sections.raffle.prize.cardRight.quota"
                       )}`
                     }}</span>
-                  </div>
-                  <div class="prize__card__row">
-                    <img
-                      :src="prizeLeft5"
-                      alt="prize"
-                      class="prize__card__prize__img"
-                    />
-                    <p class="prize__card__prize__text">
-                      {{ t("sections.raffle.prize.cardLeft.prize5") }}
-                    </p>
-                    <span class="prize__card__prize__quota">
-                      {{ t("sections.raffle.prize.cardLeft.prize5tag") }}
-                    </span>
                   </div>
                 </div>
               </div>
@@ -157,18 +144,18 @@
               title-key="sections.raffle.prize.cardRight.title"
             >
               <div class="flex flex-col mt-2 items-center">
-                <span class="prize__card__text">{{
+                <span class="prize-card__text">{{
                   t("sections.raffle.prize.cardRight.text")
                 }}</span>
                 <div class="flex flex-col items-start gap-5 mt-9">
-                  <div v-for="prize in prizeRight" class="prize__card__row">
+                  <div v-for="prize in prizeRight" class="prize-card__row">
                     <img
                       :src="prize.img"
                       alt="prize"
-                      class="prize__card__prize__img"
+                      class="prize-card__prize__img"
                     />
-                    <p class="prize__card__prize__text">{{ prize.text }}</p>
-                    <span class="prize__card__prize__quota">{{
+                    <p class="prize-card__prize__text">{{ prize.text }}</p>
+                    <span class="prize-card__prize__quota">{{
                       `${prize.quota}${t(
                         "sections.raffle.prize.cardRight.quota"
                       )}`
@@ -178,7 +165,7 @@
               </div>
             </CardStep>
           </div>
-          <div class="prize__card__note">
+          <div class="prize-card__note">
             <p>
               {{ t("sections.raffle.prize.note.title") }}
             </p>
@@ -190,7 +177,7 @@
                 <span>
                   {{ t("sections.raffle.prize.note.note5") }}
                 </span>
-                <button class="prize__card__link" @click="clickPopup">
+                <button class="prize-card__link" @click="clickPopup">
                   <u>{{ t("sections.raffle.prize.note.noteLink") }}</u>
                   <span>。</span>
                 </button>
@@ -230,12 +217,12 @@
               <img :src="googleMap" alt="map" class="map__card__map" />
             </div>
             <div class="map__card__btn__group">
-              <ActionButton bg-color="#F23D25" :has-border="false">{{
+              <ButtonAction bg-color="#F23D25" :has-border="false">{{
                 t("sections.raffle.map.openMap")
-              }}</ActionButton>
-              <ActionButton :has-border="false">{{
+              }}</ButtonAction>
+              <ButtonAction :has-border="false">{{
                 t("sections.raffle.map.openLine")
-              }}</ActionButton>
+              }}</ButtonAction>
             </div>
           </div>
         </Card>
@@ -251,7 +238,7 @@ import CardStep from "@/components/common/CardStep.vue";
 import CardStamp from "@/components/common/CardStamp.vue";
 import SectionTitle from "@/components/common/SectionTitle.vue";
 import TagHighlight from "@/components/common/TagHighlight.vue";
-import ActionButton from "@/components/common/ActionButton.vue";
+import ButtonAction from "@/components/common/ButtonAction.vue";
 
 import iconClock from "@/assets/icon/clock.svg";
 import iconMap from "@/assets/icon/map.svg";
@@ -262,92 +249,19 @@ import stepCardImgRight from "@/assets/icon/step_card_right.svg";
 import iconStar from "@/assets/icon/star_1.svg";
 import iconStarLeft from "@/assets/icon/star_2.svg";
 import iconStarRight from "@/assets/icon/star_3.svg";
-import checker from "@/assets/backgrounds/checker.png";
-import prizeLeft1 from "@/assets/icon/prize_left_1.svg";
-import prizeLeft2 from "@/assets/icon/prize_left_2.svg";
-import prizeLeft3 from "@/assets/icon/prize_left_3.svg";
-import prizeLeft4 from "@/assets/icon/prize_left_4.svg";
-import prizeLeft5 from "@/assets/icon/prize_left_5.svg";
-import prizeRight1 from "@/assets/icon/prize_right_1.svg";
-import prizeRight2 from "@/assets/icon/prize_right_2.svg";
-import prizeRight3 from "@/assets/icon/prize_right_3.svg";
 import googleMap from "@/assets/backgrounds/google_map.png";
 
 import { useI18n } from "vue-i18n";
+import { useRaffleConstants } from "@/components/sections/Raffle/const";
 
 const { t } = useI18n();
+
+const { prizeLeft, prizeRight, xinyiLights, easternLights, taipeiLights } =
+  useRaffleConstants();
 
 const clickLine = () => alert("line btn");
 
 const clickPopup = () => alert("popup");
-
-const prizeLeft = [
-  {
-    img: prizeLeft1,
-    text: t("sections.raffle.prize.cardLeft.prize1"),
-    quota: "800",
-  },
-  {
-    img: prizeLeft2,
-    text: t("sections.raffle.prize.cardLeft.prize2"),
-    quota: "300",
-  },
-  {
-    img: prizeLeft3,
-    text: t("sections.raffle.prize.cardLeft.prize3"),
-    quota: "100",
-  },
-  {
-    img: prizeLeft4,
-    text: t("sections.raffle.prize.cardLeft.prize4"),
-    quota: "20",
-  },
-];
-
-const prizeRight = [
-  {
-    img: prizeRight1,
-    text: t("sections.raffle.prize.cardRight.prize1"),
-    quota: "4",
-  },
-  {
-    img: prizeRight2,
-    text: t("sections.raffle.prize.cardRight.prize2"),
-    quota: "2",
-  },
-  {
-    img: prizeRight3,
-    text: t("sections.raffle.prize.cardRight.prize3"),
-    quota: "1",
-  },
-];
-
-const xinyiLights = Array.from({ length: 19 }).map((_, index) => ({
-  id: `xinyi-${index}`,
-  lightKey: "sections.raffle.stamp.xinyi.light1.lightName",
-  shopKey: "sections.raffle.stamp.xinyi.light1.shopName",
-  locationKey: "sections.raffle.stamp.xinyi.light1.location",
-  timeKey: "sections.raffle.stamp.xinyi.light1.time",
-  lightImg: checker,
-}));
-
-const easternLights = Array.from({ length: 18 }).map((_, index) => ({
-  id: `eastern-${index}`,
-  lightKey: "sections.raffle.stamp.eastern.light1.lightName",
-  shopKey: "sections.raffle.stamp.eastern.light1.shopName",
-  locationKey: "sections.raffle.stamp.eastern.light1.location",
-  timeKey: "sections.raffle.stamp.eastern.light1.time",
-  lightImg: checker,
-}));
-
-const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
-  id: `taipei-${index}`,
-  lightKey: "sections.raffle.stamp.taipei.light1.lightName",
-  shopKey: "sections.raffle.stamp.taipei.light1.shopName",
-  locationKey: "sections.raffle.stamp.taipei.light1.location",
-  timeKey: "sections.raffle.stamp.taipei.light1.time",
-  lightImg: checker,
-}));
 </script>
 
 <style scoped lang="scss">
@@ -363,9 +277,9 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   padding-bottom: 194px;
 
   --gradient-height: 427px;
-  background: linear-gradient(180deg, #75c7d7 0%, #6a8ac6 100%) top center /
+  background: linear-gradient(180deg, #75c7d7 0%, vars.$bg-blue 100%) top center /
       100% var(--gradient-height) no-repeat,
-    #6a8ac6;
+    vars.$bg-blue;
 }
 
 .raffle-card {
@@ -391,7 +305,7 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   white-space: pre-line;
 }
 
-.step__card {
+.step-card {
   display: flex;
   gap: 32px;
   @include mixins.typography(24px, 44px, 700);
@@ -416,7 +330,7 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   }
 }
 
-.prize__card {
+.prize-card {
   &__text {
     @include mixins.typography(18px, 36px, 700, #868686);
   }
@@ -449,7 +363,7 @@ const taipeiLights = Array.from({ length: 18 }).map((_, index) => ({
   }
 }
 
-.prize__card__row {
+.prize-card__row {
   display: grid;
   grid-template-columns: auto 1fr 138px;
   gap: 32px;
