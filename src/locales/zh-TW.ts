@@ -16,6 +16,17 @@ export default {
       youtube: 'YouTube',
     },
   },
+  common: {
+    tabs: {
+      xinyi: '信義區',
+      eastern: '東區商圈',
+      taipei: '臺北各區',
+    },
+    car: {
+      bus: '公車',
+      MRT: '捷運',
+    },
+  },
   sections: {
     raffle: {
       cardText:
@@ -112,11 +123,6 @@ export default {
       },
     },
     promo: {
-      tabs: {
-        xinyi: '信義區',
-        eastern: '東區商圈',
-        taipei: '臺北各區',
-      },
       xinyi: {
         title: '信義區百貨',
         taipei101: {
@@ -231,5 +237,6 @@ export default {
         time: '114/11/28-115/01/04',
       },
     },
+    transportion: {},
   },
 }

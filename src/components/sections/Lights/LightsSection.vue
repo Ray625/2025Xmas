@@ -104,13 +104,14 @@ import easternMap from '@/assets/map/section_07_map_02_ed.png'
 import taipeiMap from '@/assets/map/section_07_map_03_other.png'
 import ximendingMap from '@/assets/map/section_07_map_04_xm.png'
 import iconPlay from '@/assets/icon/play_blue.svg'
-import { useLightsTabs, useLightsList } from '@/components/sections/Lights/const'
+import { useLightsList } from '@/components/sections/Lights/const'
+import { useTabs } from '@/data/const'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
 const activeTab = ref(0)
-const tabs = computed(() => useLightsTabs())
+const tabs = computed(() => useTabs())
 const { xinyiLights, easternLights, taipeiLights } = useLightsList()
 </script>
 <style scoped lang="scss">

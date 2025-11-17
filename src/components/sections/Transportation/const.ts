@@ -1,4 +1,4 @@
-export function usePromoLocations() {
+export function useTransport() {
   const xinyiList = {
     // 台北101
     taipei101: {
@@ -96,8 +96,5 @@ export function usePromoLocations() {
     },
   }
 
-  return {
-    xinyiList,
-    taipeiList,
-  }
+  return {}
 }
