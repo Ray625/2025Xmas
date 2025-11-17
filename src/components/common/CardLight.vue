@@ -37,7 +37,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import checker from '@/assets/backgrounds/checker.png'
+import checker from '@/assets/mock/checker.png'
 import iconClip from '@/assets/icon/card_light_clip.svg'
 import iconMap from '@/assets/icon/map_solid.svg'
 import iconTime from '@/assets/icon/date.svg'
@@ -107,7 +107,7 @@ const styleVars = computed(() => ({
     width: 240px;
     max-width: 100%;
     height: auto;
-    aspect-ratio: 240 /176;
+    aspect-ratio: 240/176;
   }
 
   &__clip {

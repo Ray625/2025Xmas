@@ -6,6 +6,8 @@
     <PromoSection />
     <LightsSection />
     <LandmarkSection />
+    <PerformanceSection />
+    <MediaSection />
   </div>
 </template>
 
@@ -16,4 +18,6 @@ import RaffleSection from '@/components/sections/Raffle/RaffleSection.vue'
 import PromoSection from '@/components/sections/Promo/PromoSection.vue'
 import LightsSection from '@/components/sections/Lights/LightsSection.vue'
 import LandmarkSection from '@/components/sections/Landmark/LandmarkSection.vue'
+import PerformanceSection from '@/components/sections/Performance/PerformanceSection.vue'
+import MediaSection from '@/components/sections/Media/MediaSection.vue'
 </script>

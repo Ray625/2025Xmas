@@ -1,5 +1,5 @@
 import { useI18n } from 'vue-i18n'
-import checker from '@/assets/backgrounds/checker.png'
+import checker from '@/assets/mock/checker.png'
 
 type LightItem = {
   id: string

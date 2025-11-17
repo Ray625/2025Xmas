@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import bg from '@/assets/backgrounds/stamp_bg.png'
+import bg from '@/assets/img/section_04_pic-bg.png'
 import CardLight from '@/components/common/CardLight.vue'
 import arrowLeft from '@/assets/icon/arrow_page_left.svg'
 import arrowRight from '@/assets/icon/arrow_page_right.svg'

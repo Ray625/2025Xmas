@@ -1,5 +1,5 @@
 import { useI18n } from 'vue-i18n'
-import checker from '@/assets/backgrounds/checker.png'
+import checker from '@/assets/mock/checker.png'
 import prizeLeft1 from '@/assets/icon/prize_left_1.svg'
 import prizeLeft2 from '@/assets/icon/prize_left_2.svg'
 import prizeLeft3 from '@/assets/icon/prize_left_3.svg'
