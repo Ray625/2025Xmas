@@ -10,6 +10,7 @@
     <MediaSection />
     <TransportationSection />
     <ContactSection />
+    <Footer />
   </div>
 </template>
 
@@ -24,4 +25,5 @@ import PerformanceSection from '@/components/sections/Performance/PerformanceSec
 import MediaSection from '@/components/sections/Media/MediaSection.vue'
 import TransportationSection from '@/components/sections/Transportation/TransportationSection.vue'
 import ContactSection from '@/components/sections/Contact/ContactSection.vue'
+import Footer from '@/components/layout/Footer.vue'
 </script>

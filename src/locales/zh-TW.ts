@@ -304,4 +304,9 @@ export default {
       more: '了解更多',
     },
   },
+  footer: {
+    host: '主辦單位',
+    marketing: '執行單位',
+    cooperate: '合作單位',
+  },
 }
