@@ -112,12 +112,13 @@ import Card from '@/components/common/Card.vue'
 import CardLocale from '@/components/common/CardLocale.vue'
 import CardEvent from '@/components/common/CardEvent.vue'
 import { useI18n } from 'vue-i18n'
-import { usePromoTabs, usePromoLocations } from '@/components/sections/Promo/const'
+import { usePromoLocations } from '@/components/sections/Promo/const'
+import { useTabs } from '@/data/const'
 
 const { t } = useI18n()
 
 const activeTab = ref(0)
-const tabs = computed(() => usePromoTabs())
+const tabs = computed(() => useTabs())
 const { xinyiList } = usePromoLocations()
 </script>
 <style scoped lang="scss">

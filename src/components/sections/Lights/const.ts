@@ -1,5 +1,4 @@
-import { useI18n } from 'vue-i18n'
-import checker from '@/assets/backgrounds/checker.png'
+import checker from '@/assets/mock/checker.png'
 
 type LightItem = {
   id: string
@@ -11,16 +10,6 @@ type LightItem = {
   num?: number
   useStar?: boolean
   letter?: string
-}
-
-export function useLightsTabs() {
-  const { t } = useI18n()
-
-  return [
-    { label: t('sections.promo.tabs.xinyi'), key: 'xinyi' },
-    { label: t('sections.promo.tabs.eastern'), key: 'eastern' },
-    { label: t('sections.promo.tabs.taipei'), key: 'taipei' },
-  ]
 }
 
 export function useLightsList() {

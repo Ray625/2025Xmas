@@ -6,6 +6,11 @@
     <PromoSection />
     <LightsSection />
     <LandmarkSection />
+    <PerformanceSection />
+    <MediaSection />
+    <TransportationSection />
+    <ContactSection />
+    <Footer />
   </div>
 </template>
 
@@ -16,4 +21,9 @@ import RaffleSection from '@/components/sections/Raffle/RaffleSection.vue'
 import PromoSection from '@/components/sections/Promo/PromoSection.vue'
 import LightsSection from '@/components/sections/Lights/LightsSection.vue'
 import LandmarkSection from '@/components/sections/Landmark/LandmarkSection.vue'
+import PerformanceSection from '@/components/sections/Performance/PerformanceSection.vue'
+import MediaSection from '@/components/sections/Media/MediaSection.vue'
+import TransportationSection from '@/components/sections/Transportation/TransportationSection.vue'
+import ContactSection from '@/components/sections/Contact/ContactSection.vue'
+import Footer from '@/components/layout/Footer.vue'
 </script>

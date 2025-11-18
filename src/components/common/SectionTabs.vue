@@ -14,45 +14,45 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch } from 'vue'
 interface TabItem {
-  key?: string | number;
-  label: string;
+  key?: string | number
+  label: string
 }
 
 const props = defineProps<{
-  tabs: TabItem[];
-  modelValue?: number;
-}>();
+  tabs: TabItem[]
+  modelValue?: number
+}>()
 
 const emit = defineEmits<{
-  "update:modelValue": [value: number];
-  select: [value: number];
-}>();
+  'update:modelValue': [value: number]
+  select: [value: number]
+}>()
 
-const currentIndex = computed(() => props.modelValue ?? internalIndex.value);
+const currentIndex = computed(() => props.modelValue ?? internalIndex.value)
 
-const internalIndex = ref(0);
+const internalIndex = ref(0)
 
 watch(
   () => props.modelValue,
   (val) => {
-    if (val === undefined) return;
-    internalIndex.value = val;
+    if (val === undefined) return
+    internalIndex.value = val
   },
-  { immediate: true }
-);
+  { immediate: true },
+)
 
 const handleClick = (index: number) => {
-  internalIndex.value = index;
-  emit("update:modelValue", index);
-  emit("select", index);
-};
+  internalIndex.value = index
+  emit('update:modelValue', index)
+  emit('select', index)
+}
 </script>
 
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .section-tabs {
   display: flex;
