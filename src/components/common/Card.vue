@@ -1,10 +1,6 @@
 <template>
   <div class="card" :style="styleVars">
-    <div
-      v-if="cardTitle"
-      class="card__title"
-      :style="{ backgroundColor: textBgColor }"
-    >
+    <div v-if="cardTitle" class="card__title" :style="{ backgroundColor: textBgColor }">
       {{ cardTitle }}
     </div>
     <div class="card__body">
@@ -14,37 +10,40 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const props = withDefaults(
   defineProps<{
-    textBgColor?: string;
-    bgColor?: string;
-    titleKey?: string;
-    bodyPadding?: string;
+    textBgColor?: string
+    bgColor?: string
+    titleKey?: string
+    bodyPadding?: string
+    bodyBgColor?: string
   }>(),
   {
-    textBgColor: "#3277E1",
-    bgColor: "#fff",
-    titleKey: "",
-    bodyPadding: "75px 80px 80px",
-  }
-);
+    textBgColor: '#3277E1',
+    bgColor: '#fff',
+    bodyBgColor: '#fff',
+    titleKey: '',
+    bodyPadding: '75px 80px 80px',
+  },
+)
 
-const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
+const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ''))
 
 const styleVars = computed(() => ({
   backgroundColor: props.bgColor,
-  "--card-body-padding": props.bodyPadding,
-}));
+  '--card-body-padding': props.bodyPadding,
+  '--card-body-bg-color': props.bodyBgColor,
+}))
 </script>
 
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .card {
   width: 100%;
@@ -61,13 +60,11 @@ const styleVars = computed(() => ({
     flex-direction: column;
     align-items: center;
     padding: var(--card-body-padding, 75px 80px 80px);
+    background-color: var(--card-body-bg-color);
+    border-radius: 0 0 40px 40px;
   }
 }
 
 @media (max-width: 960px) {
-  .card {
-    padding: 0 1.5rem 2rem;
-    border-radius: 16px;
-  }
 }
 </style>

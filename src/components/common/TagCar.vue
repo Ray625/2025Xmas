@@ -40,10 +40,11 @@ const styleVars = computed(() => ({
   justify-content: center;
   gap: 8px;
   width: fit-content;
+  height: fit-content;
   padding: 8px 6px 8px 12px;
   border-radius: 8px;
   background-color: var(--bg-color);
-  @include mixins.typography(18px, 362px, 700, var(--text-color));
+  @include mixins.typography(18px, 32px, 700, var(--text-color));
   img {
     width: 24px;
     max-width: 100%;
