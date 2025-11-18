@@ -23,18 +23,8 @@ export function useTransport() {
     }
   })
 
-  const taipeiList = {
-    eslite: {
-      title: 'sections.promo.taipei.eslite.title',
-      locationList: Array.from({ length: 4 }, (_, index) => {
-        const suffix = index === 0 ? '' : index + 1
-        return {
-          shopKey: `sections.promo.taipei.eslite.shop${suffix}`,
-          locationKey: `sections.promo.taipei.eslite.location${suffix}`,
-        }
-      }),
-    },
-  }
+  // todo: 跟上面相同
+  const taipeiList = null
 
   return { xinyiList, taipeiList }
 }

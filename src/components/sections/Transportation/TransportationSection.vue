@@ -9,7 +9,7 @@
           title-key="sections.promo.xinyi.title"
           bodyPadding="52px 80px 80px"
           textBgColor="#28B590"
-          body-bg-color="#f1f9f5"
+          bg-color="#f1f9f5"
         >
           <div class="promo-section__card__group">
             <CardTransport
@@ -24,7 +24,7 @@
           title-key="sections.promo.eastern.title"
           bodyPadding="52px 80px 80px"
           textBgColor="#28B590"
-          body-bg-color="#f1f9f5"
+          bg-color="#f1f9f5"
         >
           <div class="promo-section__card__group"></div>
         </Card>
@@ -33,7 +33,7 @@
           title-key="sections.promo.taipei.title"
           bodyPadding="52px 80px 80px"
           textBgColor="#28B590"
-          body-bg-color="#f1f9f5"
+          bg-color="#f1f9f5"
         >
           <div class="promo-section__card__group"></div>
         </Card>

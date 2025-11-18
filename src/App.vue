@@ -9,6 +9,7 @@
     <PerformanceSection />
     <MediaSection />
     <TransportationSection />
+    <ContactSection />
   </div>
 </template>
 
@@ -22,4 +23,5 @@ import LandmarkSection from '@/components/sections/Landmark/LandmarkSection.vue'
 import PerformanceSection from '@/components/sections/Performance/PerformanceSection.vue'
 import MediaSection from '@/components/sections/Media/MediaSection.vue'
 import TransportationSection from '@/components/sections/Transportation/TransportationSection.vue'
+import ContactSection from '@/components/sections/Contact/ContactSection.vue'
 </script>

@@ -21,12 +21,10 @@ const props = withDefaults(
     bgColor?: string
     titleKey?: string
     bodyPadding?: string
-    bodyBgColor?: string
   }>(),
   {
     textBgColor: '#3277E1',
     bgColor: '#fff',
-    bodyBgColor: '#fff',
     titleKey: '',
     bodyPadding: '75px 80px 80px',
   },
@@ -35,9 +33,8 @@ const props = withDefaults(
 const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ''))
 
 const styleVars = computed(() => ({
-  backgroundColor: props.bgColor,
   '--card-body-padding': props.bodyPadding,
-  '--card-body-bg-color': props.bodyBgColor,
+  '--card-body-bg-color': props.bgColor,
 }))
 </script>
 
