@@ -41,36 +41,110 @@
                 </div>
               </template>
             </CardLocale>
+
             <!-- 微風松高 -->
-            <!-- <CardLocale :locationList="xinyiList.breeze.locationList2">
+            <CardLocale :locationList="xinyiList.breeze.locationList2">
               <template #detail>
-                <div class=""></div>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.breeze.eventLeft2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.breeze.eventRight2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
               </template>
-            </CardLocale> -->
+            </CardLocale>
+
             <!-- 微風信義 -->
-            <!-- <CardLocale :locationList="xinyiList.breeze.locationList3">
+            <CardLocale :locationList="xinyiList.breeze.locationList3">
               <template #detail>
-                <div class=""></div>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.breeze.eventLeft3"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.breeze.eventRight3"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
               </template>
-            </CardLocale> -->
+            </CardLocale>
+
             <!-- 新光三越 -->
-            <!-- <CardLocale :title="xinyiList.SKM.title" :locationList="xinyiList.SKM.locationList">
+            <CardLocale :title="xinyiList.SKM.title" :locationList="xinyiList.SKM.locationList">
               <template #detail>
-                <div class=""></div>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.SKM.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.SKM.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
               </template>
-            </CardLocale> -->
+            </CardLocale>
             <!-- 遠百信義A13 -->
-            <!-- <CardLocale :title="xinyiList.FEDS.title" :locationList="xinyiList.FEDS.locationList">
+            <CardLocale :title="xinyiList.FEDS.title" :locationList="xinyiList.FEDS.locationList">
               <template #detail>
-                <div class=""></div>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.FEDS.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1 relative">
+                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
+                  </div>
+                </div>
               </template>
-            </CardLocale> -->
+            </CardLocale>
             <!-- 統一時代百貨 -->
-            <!-- <CardLocale :title="xinyiList.uni.title" :locationList="xinyiList.uni.locationList">
+            <CardLocale :title="xinyiList.uni.title" :locationList="xinyiList.uni.locationList">
               <template #detail>
-                <div class=""></div>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.uni.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.uni.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
               </template>
-            </CardLocale> -->
+            </CardLocale>
             <!-- BELLAVITA 寶麗廣場 -->
             <CardLocale
               :title="xinyiList.BELLAVITA.title"
@@ -111,6 +185,7 @@ import SectionTabs from '@/components/common/SectionTabs.vue'
 import Card from '@/components/common/Card.vue'
 import CardLocale from '@/components/common/CardLocale.vue'
 import CardEvent from '@/components/common/CardEvent.vue'
+import snoopyImg from '@/assets/img/section_06_snoopy.png'
 import { useI18n } from 'vue-i18n'
 import { usePromoLocations } from '@/components/sections/Promo/const'
 import { useTabs } from '@/data/const'
