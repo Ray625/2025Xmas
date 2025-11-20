@@ -197,11 +197,18 @@
           bodyPadding="156px 180px 192px 180px"
         >
           <div class="map__card">
-            <div>
-              <img :src="googleMap" alt="map" class="map__card__map" />
+            <div class="w-full h-full">
+              <iframe
+                src="https://www.google.com/maps/d/u/0/embed?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ehbc=2E312F&noprof=1"
+                width="100%"
+                height="auto"
+                class="map__card__map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
             <div class="map__card__btn__group">
-              <ButtonAction bg-color="#F23D25" :has-border="false">{{
+              <ButtonAction bg-color="#F23D25" :has-border="false" @click="handleOpenMap">{{
                 t('sections.raffle.map.openMap')
               }}</ButtonAction>
               <ButtonAction :has-border="false">{{
@@ -245,6 +252,14 @@ const { prizeLeft, prizeRight, xinyiLights, easternLights, taipeiLights } = useR
 const clickLine = () => alert('line btn')
 
 const clickPopup = () => alert('popup')
+
+const handleOpenMap = () => {
+  window.open(
+    'https://www.google.com/maps/d/u/0/viewer?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ll=25.076023980955114%2C121.56142795&z=13',
+    '_blank',
+    'noopener,noreferrer',
+  )
+}
 </script>
 
 <style scoped lang="scss">
@@ -358,9 +373,18 @@ const clickPopup = () => alert('popup')
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
   &__map {
+    width: 100%;
+    aspect-ratio: 1080 / 548;
     margin-bottom: 60px;
     border-radius: 16px;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   }
   &__btn__group {
     display: flex;
