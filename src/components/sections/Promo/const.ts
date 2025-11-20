@@ -287,9 +287,170 @@ export function usePromoLocations() {
         }
       }),
     },
+
+    DT: {
+      title: 'sections.promo.eastern.DT.title',
+      locationList: [
+        {
+          locationKey: 'sections.promo.eastern.DT.location',
+        },
+      ],
+
+      eventLeft: [
+        {
+          title: `sections.promo.eastern.DT.event.title`,
+          text: `sections.promo.eastern.DT.event.text`,
+        },
+      ],
+      eventRight: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index + 2
+        return {
+          title: `sections.promo.eastern.DT.event.title${suffix}`,
+          text: `sections.promo.eastern.DT.event.text${suffix}`,
+        }
+      }),
+    },
+
+    MingYao: {
+      title: 'sections.promo.eastern.MingYao.title',
+      locationList: [
+        {
+          locationKey: 'sections.promo.eastern.MingYao.location',
+        },
+      ],
+
+      eventLeft: [
+        {
+          title: `sections.promo.eastern.MingYao.event.title`,
+          text: `sections.promo.eastern.MingYao.event.text`,
+        },
+      ],
+      eventRight: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index + 2
+        return {
+          title: `sections.promo.eastern.MingYao.event.title${suffix}`,
+          text: `sections.promo.eastern.MingYao.event.text${suffix}`,
+        }
+      }),
+    },
+
+    eslite: {
+      title: 'sections.promo.eastern.eslite.title',
+      locationList: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          shopKey: `sections.promo.eastern.eslite.shop${suffix}`,
+          locationKey: `sections.promo.eastern.eslite.location${suffix}`,
+        }
+      }),
+
+      eventLeft: Array.from({ length: 3 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.eastern.eslite.event.title${suffix}`,
+          text: `sections.promo.eastern.eslite.event.text${suffix}`,
+        }
+      }),
+
+      eventRight: [
+        {
+          title: `sections.promo.eastern.eslite.event.title4`,
+          text: `sections.promo.eastern.eslite.event.text4`,
+        },
+      ],
+    },
+
+    Taishin: {
+      title: 'sections.promo.eastern.Taishin.title',
+      body: 'sections.promo.eastern.Taishin.body',
+      link: 'sections.promo.eastern.Taishin.link',
+    },
   }
 
   const taipeiList = {
+    Dayeh: {
+      title: '大葉髙島屋',
+      locationList: [
+        {
+          locationKey: 'sections.promo.taipei.Dayeh.location',
+        },
+      ],
+
+      eventLeft: [
+        {
+          title: `sections.promo.taipei.Dayeh.event.title`,
+          text: `sections.promo.taipei.Dayeh.event.text`,
+        },
+      ],
+      eventRight: [
+        {
+          title: `sections.promo.taipei.Dayeh.event.title2`,
+          text: `sections.promo.taipei.Dayeh.event.text2`,
+        },
+      ],
+    },
+    breeze: {
+      title: 'sections.promo.taipei.breeze.title',
+      locationList: [
+        {
+          shopKey: 'sections.promo.taipei.breeze.shop',
+          locationKey: 'sections.promo.taipei.breeze.location',
+        },
+      ],
+
+      eventLeft: Array.from({ length: 3 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.taipei.breeze.event.title${suffix}`,
+          text: `sections.promo.taipei.breeze.event.text${suffix}`,
+        }
+      }),
+      eventRight: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index + 4
+        return {
+          title: `sections.promo.taipei.breeze.event.title${suffix}`,
+          text: `sections.promo.taipei.breeze.event.text${suffix}`,
+        }
+      }),
+    },
+    SKM: {
+      title: 'sections.promo.taipei.SKM.title',
+      locationList: Array.from({ length: 3 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          shopKey: `sections.promo.taipei.SKM.shop${suffix}`,
+          locationKey: `sections.promo.taipei.SKM.location${suffix}`,
+        }
+      }),
+      locationList2: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index + 4
+        return {
+          shopKey: `sections.promo.taipei.SKM.shop${suffix}`,
+          locationKey: `sections.promo.taipei.SKM.location${suffix}`,
+        }
+      }),
+      eventLeft: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.taipei.SKM.event.title${suffix}`,
+          text: `sections.promo.taipei.SKM.event.text${suffix}`,
+        }
+      }),
+      eventRight: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index + 2
+        return {
+          title: `sections.promo.taipei.SKM.event.title${suffix}`,
+          text: `sections.promo.taipei.SKM.event.text${suffix}`,
+        }
+      }),
+      eventRight2: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index + 3
+        return {
+          title: `sections.promo.taipei.SKM.event.title${suffix}`,
+          text: `sections.promo.taipei.SKM.event.text${suffix}`,
+        }
+      }),
+    },
     eslite: {
       title: 'sections.promo.taipei.eslite.title',
       locationList: Array.from({ length: 4 }, (_, index) => {
@@ -297,6 +458,44 @@ export function usePromoLocations() {
         return {
           shopKey: `sections.promo.taipei.eslite.shop${suffix}`,
           locationKey: `sections.promo.taipei.eslite.location${suffix}`,
+        }
+      }),
+      locationList2: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index + 5
+        return {
+          shopKey: `sections.promo.taipei.eslite.shop${suffix}`,
+          locationKey: `sections.promo.taipei.eslite.location${suffix}`,
+        }
+      }),
+
+      eventLeft: Array.from({ length: 3 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.taipei.eslite.event.title${suffix}`,
+          text: `sections.promo.taipei.eslite.event.text${suffix}`,
+        }
+      }),
+
+      eventRight: [
+        {
+          title: `sections.promo.taipei.eslite.event.title4`,
+          text: `sections.promo.taipei.eslite.event.text4`,
+        },
+      ],
+
+      eventLeft2: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.taipei.eslite.event2.title${suffix}`,
+          text: `sections.promo.taipei.eslite.event2.text${suffix}`,
+        }
+      }),
+
+      eventRight2: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index + 2
+        return {
+          title: `sections.promo.taipei.eslite.event2.title${suffix}`,
+          text: `sections.promo.taipei.eslite.event2.text${suffix}`,
         }
       }),
     },

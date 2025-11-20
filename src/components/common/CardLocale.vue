@@ -6,10 +6,7 @@
     <div class="location-card__detail">
       <div class="location-card__detail__header">
         <div class="location-card__detail__header__col">
-          <div
-            v-for="location in locationList"
-            class="location-card__detail__header__group"
-          >
+          <div v-for="location in locationList" class="location-card__detail__header__group">
             <TagLocale v-if="location.shopKey" :shopKey="location.shopKey" />
             <div class="location-card__detail__header__location">
               <img :src="iconInfo" alt="info icon" />
@@ -17,10 +14,7 @@
             </div>
           </div>
         </div>
-        <ButtonToggle
-          v-model="openToggle"
-          class="location-card__detail__header__btn"
-        />
+        <ButtonToggle v-model="openToggle" class="location-card__detail__header__btn" />
       </div>
       <div v-if="openToggle" class="location-card__detail__body">
         <slot name="detail" />
@@ -29,24 +23,24 @@
   </div>
 </template>
 <script setup lang="ts">
-import TagLocale from "@/components/common/TagLocale.vue";
-import ButtonToggle from "@/components/common/ButtonToggle.vue";
-import iconInfo from "@/assets/icon/info.svg";
-import { ref } from "vue";
-import { useI18n } from "vue-i18n";
+import TagLocale from '@/components/common/TagLocale.vue'
+import ButtonToggle from '@/components/common/ButtonToggle.vue'
+import iconInfo from '@/assets/icon/info.svg'
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 defineProps<{
-  title?: string;
-  locationList: Record<string, string>[];
-}>();
+  title?: string
+  locationList?: Record<string, string>[]
+}>()
 
-const openToggle = ref(true);
+const openToggle = ref(true)
 </script>
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .location-card {
   display: flex;

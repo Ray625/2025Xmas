@@ -252,19 +252,228 @@
                 </div>
               </template>
             </CardLocale>
+
+            <CardLocale :title="easternList.DT.title" :locationList="easternList.DT.locationList">
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.DT.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.DT.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale
+              :title="easternList.MingYao.title"
+              :locationList="easternList.MingYao.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.MingYao.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.MingYao.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale
+              :title="easternList.eslite.title"
+              :locationList="easternList.eslite.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.eslite.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.eslite.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+            <CardLocale :title="easternList.Taishin.title">
+              <template #detail>
+                <div class="flex flex-row">
+                  <span>
+                    {{ t(`${easternList.Taishin.body}`) }}
+                  </span>
+                  <a
+                    href="https://www.taishinbank.com.tw/TSB/personal/common/bonus/TSBankBonus-002107/"
+                    class="underline"
+                    target="_blank"
+                  >
+                    {{ t(`${easternList.Taishin.link}`) }}
+                  </a>
+                </div>
+              </template>
+            </CardLocale>
           </div>
         </Card>
         <Card v-if="activeTab === 2" title-key="sections.promo.taipei.title" bodyPadding="40px">
-          <div class="flex flex-col w-full">
+          <div class="flex flex-col gap-8 w-full">
+            <CardLocale
+              :title="taipeiList.Dayeh.title"
+              :locationList="taipeiList.Dayeh.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.Dayeh.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.Dayeh.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale
+              :title="taipeiList.breeze.title"
+              :locationList="taipeiList.breeze.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.breeze.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.breeze.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale :title="taipeiList.SKM.title" :locationList="taipeiList.SKM.locationList">
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.SKM.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.SKM.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale :locationList="taipeiList.SKM.locationList2">
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.SKM.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.SKM.eventRight2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
             <!-- 誠品 -->
-            <!-- <CardLocale
+            <CardLocale
               :title="taipeiList.eslite.title"
               :locationList="taipeiList.eslite.locationList"
             >
               <template #detail>
-                <div class=""></div>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.eslite.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.eslite.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
               </template>
-            </CardLocale> -->
+            </CardLocale>
+            <CardLocale :locationList="taipeiList.eslite.locationList2">
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.eslite.eventLeft2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.eslite.eventRight2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
           </div>
         </Card>
       </div>
@@ -288,7 +497,7 @@ const { t } = useI18n()
 
 const activeTab = ref(0)
 const tabs = computed(() => useTabs())
-const { xinyiList, easternList } = usePromoLocations()
+const { xinyiList, easternList, taipeiList } = usePromoLocations()
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;
