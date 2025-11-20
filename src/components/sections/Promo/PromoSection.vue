@@ -4,6 +4,7 @@
       <div class="flex flex-col items-center">
         <SectionTitle preset="promo" class="mb-[100px]" />
         <SectionTabs v-model="activeTab" :tabs="tabs" class="mb-[88px]" />
+        <!-- 信義區 -->
         <Card v-if="activeTab === 0" title-key="sections.promo.xinyi.title" bodyPadding="40px">
           <div class="flex flex-col gap-8 w-full">
             <!-- 台北101 -->
@@ -156,6 +157,105 @@
                 </div>
               </template>
             </CardLocale>
+          </div>
+        </Card>
+        <!-- 東區商圈 -->
+        <Card v-if="activeTab === 1" title-key="sections.promo.eastern.title" bodyPadding="40px">
+          <div class="flex flex-col gap-8 w-full">
+            <!-- 微風廣場 -->
+            <CardLocale
+              :title="easternList.breeze.title"
+              :locationList="easternList.breeze.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.breeze.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.breeze.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+            <!-- 微風南京 -->
+            <CardLocale :locationList="easternList.breeze.locationList2">
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.breeze.eventLeft2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.breeze.eventRight2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+            <!-- 遠東SOGO百貨 -->
+            <CardLocale
+              :title="easternList.sogo.title"
+              :locationList="easternList.sogo.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.sogo.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.sogo.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale :locationList="easternList.sogo.locationList2">
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.sogo.eventLeft2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.sogo.eventRight2"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+          </div>
+        </Card>
+        <Card v-if="activeTab === 2" title-key="sections.promo.taipei.title" bodyPadding="40px">
+          <div class="flex flex-col w-full">
             <!-- 誠品 -->
             <!-- <CardLocale
               :title="taipeiList.eslite.title"
@@ -166,12 +266,6 @@
               </template>
             </CardLocale> -->
           </div>
-        </Card>
-        <Card v-if="activeTab === 1" title-key="sections.promo.eastern.title" bodyPadding="40px">
-          <div class="flex flex-col w-full"></div>
-        </Card>
-        <Card v-if="activeTab === 2" title-key="sections.promo.taipei.title" bodyPadding="40px">
-          <div class="flex flex-col w-full"></div>
         </Card>
       </div>
     </Container>
@@ -194,7 +288,7 @@ const { t } = useI18n()
 
 const activeTab = ref(0)
 const tabs = computed(() => useTabs())
-const { xinyiList } = usePromoLocations()
+const { xinyiList, easternList } = usePromoLocations()
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;

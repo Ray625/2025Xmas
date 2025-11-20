@@ -197,6 +197,98 @@ export function usePromoLocations() {
     },
   }
 
+  const easternList = {
+    // 微風
+    breeze: {
+      title: 'sections.promo.eastern.breeze.title',
+      locationList: [
+        {
+          shopKey: 'sections.promo.eastern.breeze.shop',
+          locationKey: 'sections.promo.eastern.breeze.location',
+        },
+      ],
+      locationList2: [
+        {
+          shopKey: 'sections.promo.eastern.breeze.shop2',
+          locationKey: 'sections.promo.eastern.breeze.location2',
+        },
+      ],
+
+      eventLeft: Array.from({ length: 4 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.eastern.breeze.event.title${suffix}`,
+          text: `sections.promo.eastern.breeze.event.text${suffix}`,
+        }
+      }),
+      eventRight: Array.from({ length: 4 }, (_, index) => {
+        const suffix = index + 5
+        return {
+          title: `sections.promo.eastern.breeze.event.title${suffix}`,
+          text: `sections.promo.eastern.breeze.event.text${suffix}`,
+        }
+      }),
+
+      eventLeft2: Array.from({ length: 4 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.eastern.breeze.event2.title${suffix}`,
+          text: `sections.promo.eastern.breeze.event2.text${suffix}`,
+        }
+      }),
+      eventRight2: Array.from({ length: 3 }, (_, index) => {
+        const suffix = index + 5
+        return {
+          title: `sections.promo.eastern.breeze.event2.title${suffix}`,
+          text: `sections.promo.eastern.breeze.event2.text${suffix}`,
+        }
+      }),
+    },
+    // SOGO
+    sogo: {
+      title: 'sections.promo.eastern.sogo.title',
+      locationList: [
+        {
+          shopKey: 'sections.promo.eastern.sogo.shop',
+          locationKey: 'sections.promo.eastern.sogo.location',
+        },
+      ],
+      locationList2: [
+        {
+          shopKey: 'sections.promo.eastern.sogo.shop2',
+          locationKey: 'sections.promo.eastern.sogo.location2',
+        },
+      ],
+      eventLeft: [
+        {
+          title: `sections.promo.eastern.sogo.event.title`,
+          text: `sections.promo.eastern.sogo.event.text`,
+        },
+      ],
+      eventRight: [
+        {
+          title: `sections.promo.eastern.sogo.event.title2`,
+          text: `sections.promo.eastern.sogo.event.text2`,
+        },
+      ],
+
+      eventLeft2: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.eastern.sogo.event2.title${suffix}`,
+          text: `sections.promo.eastern.sogo.event2.text${suffix}`,
+        }
+      }),
+      eventRight2: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index + 3
+        return {
+          title: `sections.promo.eastern.sogo.event2.title${suffix}`,
+          text: `sections.promo.eastern.sogo.event2.text${suffix}`,
+        }
+      }),
+    },
+  }
+
   const taipeiList = {
     eslite: {
       title: 'sections.promo.taipei.eslite.title',
@@ -212,6 +304,7 @@ export function usePromoLocations() {
 
   return {
     xinyiList,
+    easternList,
     taipeiList,
   }
 }

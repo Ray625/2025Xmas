@@ -27,6 +27,7 @@
 .hero-banner {
   position: relative;
   width: 100%;
+  margin-top: -132px;
   aspect-ratio: 1920/1080;
 }
 
