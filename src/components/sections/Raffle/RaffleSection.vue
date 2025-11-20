@@ -32,7 +32,7 @@
               <div class="step__text">
                 {{ t('sections.raffle.rules.step1.text') }}
               </div>
-              <ButtonAction @click="clickLine">
+              <ButtonAction @click="handleGoLineOA">
                 {{ t('sections.raffle.rules.step1.button') }}
               </ButtonAction>
             </CardStep>
