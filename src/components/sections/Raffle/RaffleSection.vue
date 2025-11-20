@@ -115,11 +115,13 @@
               <div class="flex flex-col mt-2 items-center">
                 <span class="prize-card__text">{{ t('sections.raffle.prize.cardLeft.text') }}</span>
                 <div class="flex flex-col items-start gap-5 mt-9">
-                  <div v-for="prize in prizeLeft" class="prize-card__row">
+                  <div v-for="(prize, index) in prizeLeft" class="prize-card__row">
                     <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                     <p class="prize-card__prize__text">{{ prize.text }}</p>
                     <span class="prize-card__prize__quota">{{
-                      `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
+                      `${prize.quota}${
+                        index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
+                      }`
                     }}</span>
                   </div>
                 </div>
@@ -149,24 +151,27 @@
               </div>
             </CardStep>
           </div>
-          <div class="prize-card__note">
-            <p>
-              {{ t('sections.raffle.prize.note.title') }}
-            </p>
-            <ol>
-              <li v-for="(_, index) in Array(4)">
-                {{ t(`sections.raffle.prize.note.note${index + 1}`) }}
-              </li>
-              <li>
-                <span>
-                  {{ t('sections.raffle.prize.note.note5') }}
-                </span>
-                <button class="prize-card__link" @click="handleTogglePopup">
-                  <u>{{ t('sections.raffle.prize.note.noteLink') }}</u>
-                  <span>。</span>
-                </button>
-              </li>
-            </ol>
+          <div class="prize-card__note__wrapper">
+            <div class="flex-1"></div>
+            <div class="prize-card__note">
+              <p>
+                {{ t('sections.raffle.prize.note.title') }}
+              </p>
+              <ol>
+                <li v-for="(_, index) in Array(4)">
+                  {{ t(`sections.raffle.prize.note.note${index + 1}`) }}
+                </li>
+                <li>
+                  <span>
+                    {{ t('sections.raffle.prize.note.note5') }}
+                  </span>
+                  <button class="prize-card__link" @click="handleTogglePopup">
+                    <u>{{ t('sections.raffle.prize.note.noteLink') }}</u>
+                    <span>。</span>
+                  </button>
+                </li>
+              </ol>
+            </div>
           </div>
         </Card>
         <Card title-key="sections.raffle.stamp.title" bodyPadding="40px">
@@ -360,9 +365,16 @@ const handleGoLineOA = () =>
     width: 108px;
   }
   &__note {
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      width: 100%;
+    }
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    flex: 1 1 0;
     width: 100%;
     text-align: left;
     @include mixins.typography(16px, 32px, 500, #868686);
