@@ -211,7 +211,7 @@
               <ButtonAction bg-color="#F23D25" :has-border="false" @click="handleOpenMap">{{
                 t('sections.raffle.map.openMap')
               }}</ButtonAction>
-              <ButtonAction :has-border="false">{{
+              <ButtonAction :has-border="false" @click="handleGoLineOA">{{
                 t('sections.raffle.map.openLine')
               }}</ButtonAction>
             </div>
@@ -240,7 +240,6 @@ import stepCardImgRight from '@/assets/icon/step_card_right.svg'
 import iconStar from '@/assets/icon/star_1.svg'
 import iconStarLeft from '@/assets/icon/star_2.svg'
 import iconStarRight from '@/assets/icon/star_3.svg'
-import googleMap from '@/assets/mock/google_map.png'
 
 import { useI18n } from 'vue-i18n'
 import { useRaffleConstants } from '@/components/sections/Raffle/const'
@@ -260,6 +259,9 @@ const handleOpenMap = () => {
     'noopener,noreferrer',
   )
 }
+
+const handleGoLineOA = () =>
+  window.open('https://line.me/R/ti/p/@996rskra', '_blank', 'noopener,noreferrer')
 </script>
 
 <style scoped lang="scss">
