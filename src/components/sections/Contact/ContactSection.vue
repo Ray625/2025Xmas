@@ -11,7 +11,6 @@
         </div>
         <div class="contact-section__event__cantainer">
           <img :src="eventImg" alt="event banner" class="contact-section__event__img" />
-          <p class="contact-section__event__text">{{ t('sections.contact.event') }}</p>
           <ButtonAction bgColor="#F23D25" :hasBorder="false" @click="handleMailTo">
             {{ t('sections.contact.more') }}
           </ButtonAction>
