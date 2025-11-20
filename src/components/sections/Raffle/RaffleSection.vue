@@ -161,7 +161,7 @@
                 <span>
                   {{ t('sections.raffle.prize.note.note5') }}
                 </span>
-                <button class="prize-card__link" @click="clickPopup">
+                <button class="prize-card__link" @click="handleTogglePopup">
                   <u>{{ t('sections.raffle.prize.note.noteLink') }}</u>
                   <span>。</span>
                 </button>
@@ -219,6 +219,7 @@
         </Card>
       </div>
     </Container>
+    <Pop :visible="openPopup" @close="handleTogglePopup" />
   </section>
 </template>
 
@@ -230,6 +231,7 @@ import CardStamp from '@/components/common/CardStamp.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import TagHighlight from '@/components/common/TagHighlight.vue'
 import ButtonAction from '@/components/common/ButtonAction.vue'
+import Pop from '@/components/sections/Raffle/Pop.vue'
 
 import iconClock from '@/assets/icon/clock.svg'
 import iconMap from '@/assets/icon/map.svg'
@@ -241,16 +243,24 @@ import iconStar from '@/assets/icon/star_1.svg'
 import iconStarLeft from '@/assets/icon/star_2.svg'
 import iconStarRight from '@/assets/icon/star_3.svg'
 
+import { watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRaffleConstants } from '@/components/sections/Raffle/const'
 
 const { t } = useI18n()
-
 const { prizeLeft, prizeRight, xinyiLights, easternLights, taipeiLights } = useRaffleConstants()
 
-const clickLine = () => alert('line btn')
+const openPopup = ref(false)
 
-const clickPopup = () => alert('popup')
+const handleTogglePopup = () => {
+  openPopup.value = !openPopup.value
+}
+
+watch(openPopup, (visible) => {
+  document.body.style.overflow = visible ? 'hidden' : ''
+})
+
+const clickLine = () => alert('line btn')
 
 const handleOpenMap = () => {
   window.open(
