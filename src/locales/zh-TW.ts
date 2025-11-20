@@ -252,7 +252,7 @@ export default {
           },
         },
         BELLAVITA: {
-          title: 'BELLAVITA 寶麗廣場',
+          title: 'BELLAVITA 寶麗廣塲',
           location: '信義區松仁路28號 (02)8729-2771',
           body: '2025/12/12 - 12/25 期間，全館消費達指定門檻，即可憑電子發票及銷貨明細兌換限量禮品乙份。',
         },
@@ -381,13 +381,13 @@ export default {
       title: '信義空橋妝點',
       light10: {
         lightName: '光之簾幕',
-        shopName: 'BELLAVITA 寶麗廣場',
+        shopName: 'BELLAVITA 寶麗廣塲',
         location: 'A4-A5空橋',
         time: '114/11/28-115/01/04',
       },
       light11: {
         lightName: '光之簾幕',
-        shopName: 'BELLAVITA 寶麗廣場',
+        shopName: 'BELLAVITA 寶麗廣塲',
         location: 'A4-A5空橋',
         time: '114/11/28-115/01/04',
       },
@@ -425,7 +425,7 @@ export default {
           MRT: '板南線「市政府站」3號出口步行約3分鐘',
         },
         BELLAVITA: {
-          title: 'BELLAVITA 寶麗廣場',
+          title: 'BELLAVITA 寶麗廣塲',
           bus: '「台北市消防局(松仁)」32、32(區)、266、266(區)、270、270區、281、282(副)、284、284(直)、611、621 、647、650、612、912、915、市民小巴7、棕6、棕7、棕18、綠1、藍5、藍10\n「市政府(松高路)」669、935、939',
           MRT: '板南線「市政府站」3號出口步行約3分鐘',
         },

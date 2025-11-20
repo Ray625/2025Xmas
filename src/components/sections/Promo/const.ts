@@ -186,7 +186,7 @@ export function usePromoLocations() {
         }
       }),
     },
-    // 寶麗廣場
+    // 寶麗廣塲
     BELLAVITA: {
       title: 'sections.promo.xinyi.BELLAVITA.title',
       locationList: [

@@ -146,7 +146,7 @@
                 </div>
               </template>
             </CardLocale>
-            <!-- BELLAVITA 寶麗廣場 -->
+            <!-- BELLAVITA 寶麗廣塲 -->
             <CardLocale
               :title="xinyiList.BELLAVITA.title"
               :locationList="xinyiList.BELLAVITA.locationList"
