@@ -1,7 +1,9 @@
 <template>
   <div v-if="visible" class="popup" @click.self="onClose">
     <Container maxWidth="1200px">
-      <div class="relative p-[60px_284px] max-h-[560px] bg-white rounded-[20px] overflow-y-auto">
+      <div
+        class="relative p-[60px_284px] max-h-[560px] bg-white rounded-[20px] overflow-y-auto scroll-container"
+      >
         <ButtonClose @click="onClose" />
         <div class="flex flex-col bg-white rounded-5">
           <div class="popup__title mb-[36px]">{{ t('popup.title') }}</div>
@@ -106,6 +108,21 @@ const onClose = () => emit('close')
   &__list {
     list-style: decimal;
     padding-left: 24px;
+  }
+}
+
+.scroll-container {
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+    border: 3px solid transparent; /* 看起來有 padding */
+    background-clip: content-box;
   }
 }
 </style>

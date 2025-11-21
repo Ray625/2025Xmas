@@ -29,7 +29,7 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const handleMailTo = () => {
-  window.location.href = 'mailto:taipeixmas2025@clickforce.com.tw?subject=活動洽詢&body=您好...'
+  window.location.href = 'mailto:taipeixmas114@clickforce.com.tw?subject=活動洽詢&body=您好...'
 }
 
 const handleGoToEventWeb = () => {
