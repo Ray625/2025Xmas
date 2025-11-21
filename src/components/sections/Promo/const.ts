@@ -195,6 +195,28 @@ export function usePromoLocations() {
         },
       ],
     },
+    ATT: {
+      title: 'sections.promo.xinyi.ATT.title',
+      locationList: [
+        {
+          locationKey: 'sections.promo.xinyi.ATT.location',
+        },
+      ],
+
+      eventLeft: [
+        {
+          title: `sections.promo.xinyi.ATT.event.title`,
+          text: `sections.promo.xinyi.ATT.event.text`,
+        },
+      ],
+
+      eventRight: [
+        {
+          title: `sections.promo.xinyi.ATT.event.title2`,
+          text: `sections.promo.xinyi.ATT.event.text2`,
+        },
+      ],
+    },
   }
 
   const easternList = {
