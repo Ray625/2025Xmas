@@ -102,6 +102,14 @@ export default {
       },
     },
   },
+  mock: {
+    light: {
+      lightName: '燈飾名稱',
+      shopName: '百貨名稱',
+      location: '詳細位置',
+      time: '展出時間',
+    },
+  },
   sections: {
     raffle: {
       cardText:
@@ -171,7 +179,6 @@ export default {
             lightName: '台北101',
             shopName: 'B1 服務台',
             location: '詳細信義區市府路45號位置',
-            time: '展出時間',
           },
           light2: {
             lightName: '台北101',
