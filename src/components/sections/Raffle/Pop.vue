@@ -122,16 +122,7 @@ const onClose = () => emit('close')
 
 .scroll-container {
   &::-webkit-scrollbar {
-    width: 12px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.25);
-    border-radius: 999px;
-    border: 3px solid transparent; /* 看起來有 padding */
-    background-clip: content-box;
+    width: 0;
   }
 }
 </style>

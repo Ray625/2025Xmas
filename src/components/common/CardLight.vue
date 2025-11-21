@@ -9,10 +9,10 @@
       loading="lazy"
     />
     <div class="light-card__name__group">
-      <div v-if="lightName" class="light-card__name">
+      <div v-if="lightName" class="light-card__name whitespace-pre-line">
         {{ lightName }}
       </div>
-      <div v-if="shopName" class="light-card__shop__name">
+      <div v-if="shopName" class="light-card__shop__name whitespace-pre-line">
         {{ shopName }}
       </div>
     </div>
@@ -20,10 +20,10 @@
     <div class="light-card__detail">
       <div class="light-card__detail__group">
         <div class="light-card__detail__text">
-          <img :src="iconMap" alt="icon_map" class="light-card__detail__icon" />
+          <img :src="iconMap" alt="icon_map" class="light-card__detail__icon whitespace-pre-line" />
           <span>{{ loaction }}</span>
         </div>
-        <div v-if="props.showTime" class="light-card__detail__text">
+        <div v-if="props.showTime" class="light-card__detail__text whitespace-pre-line">
           <img :src="iconTime" alt="icon_time" class="light-card__detail__icon" />
           <span>{{ time }}</span>
         </div>

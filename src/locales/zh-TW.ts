@@ -141,7 +141,7 @@ export default {
           prize3: '百貨禮券 $1,000',
           prize4: '百貨禮券 $2,000',
           prize5: '各百貨精美贈品',
-          prize5tag: '總價值百萬',
+          prize5tag: '總價值百萬元',
           quota: '名',
         },
         cardRight: {
@@ -168,28 +168,270 @@ export default {
         xinyi: {
           title: '信義區',
           light1: {
-            lightName: '燈飾名稱',
-            shopName: '百貨名稱',
-            location: '詳細位置',
-            time: '展出時間',
+            lightName: '台北101',
+            shopName: 'B1 服務台',
+            location: '詳細信義區市府路45號位置',
+          },
+          light2: {
+            lightName: '台北101',
+            shopName: '5F 服務台',
+            location: '信義區市府路45號',
+          },
+          light3: {
+            lightName: '台北101',
+            shopName: '89F 服務台',
+            location: '信義區市府路45號',
+          },
+          light4: {
+            lightName: '台北101',
+            shopName: '1F 館外路燈旗',
+            location: '信義區市府路45號',
+          },
+          light5: {
+            lightName: 'Breeze微風南山',
+            shopName: '1F PRADA 側大門百貨',
+            location: '信義區松智路17號',
+          },
+          light6: {
+            lightName: 'Breeze微風南山',
+            shopName: '百貨1F BOTTEGA VENETA 側大門',
+            location: '信義區松智路17號',
+          },
+          light7: {
+            lightName: 'Breeze微風松高',
+            shopName: '1F 松高路大門',
+            location: '信義區松高路16號',
+          },
+          light8: {
+            lightName: 'Breeze微風信義',
+            shopName: '1F 十米大道 (市政府捷運站3號出口旁)',
+            location: '信義區忠孝東路五段68號',
+          },
+          light9: {
+            lightName: '威秀影城',
+            shopName: '威秀商場 1F 大巨人地標下 \n(手扶梯旁)',
+            location: '信義區松壽路20號',
+          },
+          light10: {
+            lightName: 'ATT 4 FUN',
+            shopName: '1F 戶外廣場側門 (酒吧街)',
+            location: '信義區松壽路12號',
+          },
+          light11: {
+            lightName: 'ATT 4 FUN',
+            shopName: '1F 戶外廣場正門 (Zara Home旁)',
+            location: '信義區松壽路12號',
+          },
+          light12: {
+            lightName: 'ATT 4 FUN',
+            shopName: 'B2 顧客服務中心',
+            location: '信義區松壽路12號',
+          },
+          light13: {
+            lightName: '新光三越百貨 信義新天地',
+            shopName: 'A11 1F 服務台',
+            location: '信義區松壽路11號',
+          },
+          light14: {
+            lightName: '遠百信義A13',
+            shopName: '1F 服務台',
+            location: '信義區松仁路58號',
+          },
+          light15: {
+            lightName: '遠百信義A13',
+            shopName: '1F 北面廣場',
+            location: '信義區松仁路58號',
+          },
+          light16: {
+            lightName: 'BELLAVITA 寶麗廣塲',
+            shopName: '館內中庭耶誕布置旁',
+            location: '信義區松仁路28號',
+          },
+          light17: {
+            lightName: 'BELLAVITA 寶麗廣塲',
+            shopName: 'B1 客服中心',
+            location: '信義區松仁路28號',
+          },
+          light18: {
+            lightName: '統一時代百貨 台北店',
+            shopName: '璀璨愛戀底部 (1F 忠孝東路下 B1F 階梯)',
+            location: '信義區忠孝東路五段8號',
+          },
+          light19: {
+            lightName: '統一時代百貨 台北店',
+            shopName: '7F 贈品兌換處',
+            location: '信義區忠孝東路五段8號',
+          },
+          light20: {
+            lightName: '統一時代百貨 DREAM PLAZA',
+            shopName: '5F 贈品兌換處',
+            location: '信義區松高路11號',
           },
         },
         eastern: {
           title: '東區',
           light1: {
-            lightName: '燈飾名稱',
-            shopName: '百貨名稱',
-            location: '詳細位置',
-            time: '展出時間',
+            lightName: '台新銀行 新光金控',
+            shopName: '仁愛圓環燈飾旁',
+            location: '大安區仁愛路四段118號',
+          },
+          light2: {
+            lightName: '明曜百貨公司',
+            shopName: '館外出入口 UNIQLO 旁',
+            location: '大安區忠孝東路四段200號',
+          },
+          light3: {
+            lightName: '明曜百貨公司',
+            shopName: '7F 貴賓服務中心',
+            location: '大安區忠孝東路四段200號',
+          },
+          light4: {
+            lightName: '遠東SOGO百貨 忠孝館',
+            shopName: '1F 西後大門',
+            location: '大安區忠孝東路四段45號',
+          },
+          light5: {
+            lightName: '遠東SOGO百貨 復興館',
+            shopName: '復興館 1F 中庭 (耶誕DP旁)',
+            location: '大安區忠孝東路三段300號',
+          },
+          light6: {
+            lightName: '新光三越百貨 Diamond Towers (忠孝店)',
+            shopName: '一館 4F 贈品處',
+            location: '大安區忠孝東路三段268號',
+          },
+          light7: {
+            lightName: '新光三越百貨 Diamond Towers (忠孝店)',
+            shopName: '一館 1F 服務台',
+            location: '大安區忠孝東路三段268號',
+          },
+          light8: {
+            lightName: '誠品生活 松菸店',
+            shopName: '1F 廣場正門口 (台灣大哥大旁)',
+            location: '信義區菸廠路88號',
+          },
+          light9: {
+            lightName: '誠品生活 松菸店',
+            shopName: '2F 顧客服務中心',
+            location: '信義區菸廠路88號',
+          },
+          light10: {
+            lightName: 'Breeze微風廣場',
+            shopName: '1F 復南大門',
+            location: '松山區復興南路一段39號',
+          },
+          light11: {
+            lightName: 'Breeze微風廣場',
+            shopName: '1F 市民大門',
+            location: '松山區復興南路一段39號',
+          },
+          light12: {
+            lightName: 'Breeze微風廣場',
+            shopName: 'GF 圓棟區',
+            location: '松山區復興南路一段39號',
+          },
+          light13: {
+            lightName: 'Breeze微風南京',
+            shopName: '1F 南京東路大門口',
+            location: '松山區南京東路三段337號',
           },
         },
         taipei: {
           title: '臺北各區',
           light1: {
-            lightName: '燈飾名稱',
-            shopName: '百貨名稱',
-            location: '詳細位置',
-            time: '展出時間',
+            lightName: '新光三越百貨 天母店',
+            shopName: '一館 5F 贈品處',
+            location: '士林區天母東路68號A棟',
+          },
+          light2: {
+            lightName: '新光三越百貨 站前店',
+            shopName: '東側門打卡點',
+            location: '中正區忠孝西路一段66號',
+          },
+          light3: {
+            lightName: '新光三越百貨 站前店',
+            shopName: '1F 服務台',
+            location: '中正區忠孝西路一段66號',
+          },
+          light4: {
+            lightName: '新光三越百貨 南西店',
+            shopName: '三館外聖誕樹',
+            location: '中山區南京西路15號',
+          },
+          light5: {
+            lightName: '大葉高島屋',
+            shopName: '1F 服務台旁',
+            location: '士林區忠誠路二段55號',
+          },
+          light6: {
+            lightName: '美麗華百樂園',
+            shopName: 'B2 贈品處',
+            location: '中山區敬業三路20號',
+          },
+          light7: {
+            lightName: '台新銀行 新光摩天大樓 (台北車站)',
+            shopName: '新光摩天大樓燈飾旁',
+            location: '中正區忠孝西路一段66號',
+          },
+          light8: {
+            lightName: '三創生活園區',
+            shopName: '八德路大門燈飾旁',
+            location: '中正區市民大道三段2號',
+          },
+          light9: {
+            lightName: '三創生活園區',
+            shopName: '2F 顧客服務中心',
+            location: '中正區市民大道三段2號',
+          },
+          light10: {
+            lightName: 'Breeze微風台北車站',
+            shopName: '台北車站 1F 大廳',
+            location: '中正區北平西路3號',
+          },
+          light11: {
+            lightName: '京站時尚廣場',
+            shopName: '1F 承德路大門口內 (12/26撤除)',
+            location: '大同區承德路一段1號',
+          },
+          light12: {
+            lightName: '京站時尚廣場',
+            shopName: '3F 圓台植生牆 (12/26撤除)',
+            location: '大同區承德路一段1號',
+          },
+          light13: {
+            lightName: '京站時尚廣場',
+            shopName: '1F 服務台',
+            location: '大同區承德路一段1號',
+          },
+          light14: {
+            lightName: '誠品生活 西門店',
+            shopName: '1F 峨眉街大門入口',
+            location: '萬華區峨眉街52號',
+          },
+          light15: {
+            lightName: '誠品生活 西門店',
+            shopName: 'B1 顧客服務中心',
+            location: '萬華區峨眉街52號',
+          },
+          light16: {
+            lightName: '誠品生活 武昌店',
+            shopName: '1F 武昌街大門入口',
+            location: '萬華區武昌街二段77號',
+          },
+          light17: {
+            lightName: '誠品生活 武昌店',
+            shopName: '4F 顧客服務中心',
+            location: '萬華區武昌街二段77號',
+          },
+          light18: {
+            lightName: 'LaLaport 南港',
+            shopName: '1F 服務台',
+            location: '南港區經貿二路131號',
+          },
+          light19: {
+            lightName: 'LaLaport 南港',
+            shopName: 'B1 南廣場燈飾旁',
+            location: '南港區經貿二路131號',
           },
         },
       },
@@ -657,7 +899,7 @@ export default {
         title: '台北各區百貨',
       },
       ximending: {
-        title: '西門Play樂購町',
+        title: '西門 Play 樂購町',
       },
     },
     landmark: {

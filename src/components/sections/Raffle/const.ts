@@ -1,5 +1,4 @@
 import { useI18n } from 'vue-i18n'
-import checker from '@/assets/mock/checker.png'
 import prizeLeft1 from '@/assets/icon/prize_left_1.svg'
 import prizeLeft2 from '@/assets/icon/prize_left_2.svg'
 import prizeLeft3 from '@/assets/icon/prize_left_3.svg'
@@ -8,18 +7,6 @@ import prizeLeft5 from '@/assets/icon/prize_left_5.svg'
 import prizeRight1 from '@/assets/icon/prize_right_1.svg'
 import prizeRight2 from '@/assets/icon/prize_right_2.svg'
 import prizeRight3 from '@/assets/icon/prize_right_3.svg'
-
-type LightItem = {
-  id: string
-  lightKey: string
-  shopKey: string
-  locationKey: string
-  timeKey: string
-  lightImg: string
-  num?: number
-  useStar?: boolean
-  letter?: string
-}
 
 type PrizeItem = {
   img: string
@@ -76,25 +63,8 @@ export function useRaffleConstants() {
     },
   ]
 
-  const createLights = (prefix: string, length: number, base: string) =>
-    Array.from({ length }).map((_, index) => ({
-      id: `${prefix}-${index}`,
-      lightKey: `sections.raffle.stamp.${base}.light1.lightName`,
-      shopKey: `sections.raffle.stamp.${base}.light1.shopName`,
-      locationKey: `sections.raffle.stamp.${base}.light1.location`,
-      timeKey: `sections.raffle.stamp.${base}.light1.time`,
-      lightImg: checker,
-    }))
-
-  const xinyiLights: LightItem[] = createLights('xinyi', 19, 'xinyi')
-  const easternLights: LightItem[] = createLights('eastern', 18, 'eastern')
-  const taipeiLights: LightItem[] = createLights('taipei', 18, 'taipei')
-
   return {
     prizeLeft,
     prizeRight,
-    xinyiLights,
-    easternLights,
-    taipeiLights,
   }
 }
