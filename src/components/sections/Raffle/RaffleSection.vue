@@ -174,7 +174,8 @@
             </div>
           </div>
         </Card>
-        <Card title-key="sections.raffle.stamp.title" bodyPadding="40px">
+        <Card title-key="sections.raffle.stamp.title" bodyPadding="20px 40px 40px">
+          <div class="stamp__note">{{ t('sections.raffle.note') }}</div>
           <div class="flex flex-col gap-10 w-full">
             <CardStamp
               title-key="sections.raffle.stamp.xinyi.title"
@@ -414,6 +415,11 @@ const handleGoLineOA = () =>
     align-items: center;
     gap: 32px;
   }
+}
+
+.stamp__note {
+  @include mixins.typography(18px, 36px, 700, #868686);
+  margin-bottom: 24px;
 }
 
 @media (min-width: 1024px) {
