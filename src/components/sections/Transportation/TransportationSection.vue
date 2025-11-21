@@ -14,7 +14,7 @@
           bg-color="#f1f9f5"
           class="w-full"
         >
-          <div class="promo-section__card__group w-full">
+          <div class="transportation-section__card__group">
             <CardTransport
               v-for="locale in xinyiList"
               :title="locale.title"
@@ -30,7 +30,14 @@
           textBgColor="#28B590"
           bg-color="#f1f9f5"
         >
-          <div class="promo-section__card__group"></div>
+          <div class="transportation-section__card__group">
+            <CardTransport
+              v-for="locale in easternList"
+              :title="locale.title"
+              :transportList="locale.transportList"
+              class="w-full"
+            />
+          </div>
         </Card>
         <Card
           v-if="activeTab === 2"
@@ -39,7 +46,14 @@
           textBgColor="#28B590"
           bg-color="#f1f9f5"
         >
-          <div class="promo-section__card__group"></div>
+          <div class="transportation-section__card__group">
+            <CardTransport
+              v-for="locale in taipeiList"
+              :title="locale.title"
+              :transportList="locale.transportList"
+              class="w-full"
+            />
+          </div>
         </Card>
       </div>
     </Container>
@@ -55,7 +69,7 @@ import CardTransport from '@/components/common/CardTransport.vue'
 import { useTransport } from '@/components/sections/Transportation/const'
 import { useTabs } from '@/data/const'
 
-const { xinyiList } = useTransport()
+const { xinyiList, easternList, taipeiList } = useTransport()
 
 const activeTab = ref(0)
 const tabs = computed(() => useTabs())
