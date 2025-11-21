@@ -47,14 +47,16 @@ const handleToggle = () => (openToggle.value = !openToggle.value)
   background-color: #f1f9f5;
 
   &__title {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     padding: 12px 0;
     border-bottom: 2px solid vars.$color-text-green;
     @include mixins.typography(24px, 36px, 700, vars.$color-text-green);
   }
 
   &__btn {
-    margin-left: auto;
+    // margin-left: auto;
     &.open {
       transform: rotate(180deg);
     }

@@ -1,21 +1,25 @@
 <template>
   <section class="transportation-section">
     <Container maxWidth="1440px">
-      <div class="flex flex-col items-center">
-        <SectionTitle preset="transportation" class="mb-[100px]" />
-        <SectionTabs v-model="activeTab" :tabs="tabs" class="mb-[80px]" />
+      <div class="flex flex-col">
+        <div class="flex flex-col items-center">
+          <SectionTitle preset="transportation" class="mb-[100px]" />
+          <SectionTabs v-model="activeTab" :tabs="tabs" class="mb-[80px]" />
+        </div>
         <Card
           v-if="activeTab === 0"
           title-key="sections.promo.xinyi.title"
           bodyPadding="52px 80px 80px"
           textBgColor="#28B590"
           bg-color="#f1f9f5"
+          class="w-full"
         >
-          <div class="promo-section__card__group">
+          <div class="promo-section__card__group w-full">
             <CardTransport
               v-for="locale in xinyiList"
               :title="locale.title"
               :transportList="locale.transportList"
+              class="w-full"
             />
           </div>
         </Card>
@@ -68,6 +72,7 @@ const tabs = computed(() => useTabs())
     display: flex;
     flex-direction: column;
     gap: 40px;
+    width: 100%;
   }
 }
 </style>
