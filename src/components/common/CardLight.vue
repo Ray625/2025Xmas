@@ -23,7 +23,7 @@
           <img :src="iconMap" alt="icon_map" class="light-card__detail__icon" />
           <span>{{ loaction }}</span>
         </div>
-        <div class="light-card__detail__text">
+        <div v-if="props.showTime" class="light-card__detail__text">
           <img :src="iconTime" alt="icon_time" class="light-card__detail__icon" />
           <span>{{ time }}</span>
         </div>
@@ -55,11 +55,13 @@ const props = withDefaults(
     useStar?: boolean
     num?: number
     letter?: string
+    showTime?: boolean
   }>(),
   {
     lightImg: checker,
     decorate: 'clip',
     useStar: true,
+    showTime: true,
   },
 )
 

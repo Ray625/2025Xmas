@@ -191,19 +191,22 @@
               title-key="sections.raffle.stamp.xinyi.title"
               :lights="xinyiLights"
               :page-size="8"
-              bodyMinHeight="967px"
+              bodyMinHeight="780px"
+              :showTime="false"
             />
             <CardStamp
               title-key="sections.raffle.stamp.eastern.title"
               :lights="easternLights"
               :page-size="8"
-              bodyMinHeight="967px"
+              bodyMinHeight="780px"
+              :showTime="false"
             />
             <CardStamp
               title-key="sections.raffle.stamp.taipei.title"
               :lights="taipeiLights"
               :page-size="8"
-              bodyMinHeight="967px"
+              bodyMinHeight="780px"
+              :showTime="false"
             />
           </div>
         </Card>
