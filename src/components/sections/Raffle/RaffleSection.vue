@@ -43,11 +43,13 @@
               :icon-left="iconGift"
               :icon-right="iconGift"
               title-key="sections.raffle.rules.step2.title"
+              body-padding="32px 32px 8px 32px"
             >
-              <div class="step__text">
+              <div class="step__text margin-small">
                 {{ t('sections.raffle.rules.step2.text') }}
               </div>
-              <img :src="iconQRCode" alt="qrcode" class="w-[60px] h-[60px]" />
+              <img :src="iconQRCode" alt="qrcode" class="w-[60px] h-[60px] mb-3" />
+              <p class="step__text__note">{{ t('sections.raffle.rules.step2.note') }}</p>
             </CardStep>
           </div>
           <CardStep
@@ -325,6 +327,12 @@ const handleGoLineOA = () =>
   @include mixins.typography(24px, 36px, 700);
   text-align: center;
   white-space: pre-line;
+  &.margin-small {
+    margin: 20px 0;
+  }
+  &__note {
+    @include mixins.typography(18px, 36px, 700, #868686);
+  }
 }
 
 .step-card {

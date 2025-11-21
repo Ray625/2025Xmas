@@ -5,9 +5,11 @@
         <div class="contact-section__text__container">
           <SectionTitle preset="contact" class="contact-section__title" />
           <p class="contact-section__text">{{ t('sections.contact.text') }}</p>
-          <ButtonAction bgColor="#109D91" @click="handleMailTo">
-            {{ t('sections.contact.mail') }}
-          </ButtonAction>
+          <a href="mailto:taipeixmas114@clickforce.com.tw?subject=活動洽詢" class="inline-flex">
+            <ButtonAction bgColor="#109D91">
+              {{ t('sections.contact.mail') }}
+            </ButtonAction>
+          </a>
         </div>
         <div class="contact-section__event__container">
           <img :src="eventImg" alt="event banner" class="contact-section__event__img" />
@@ -27,10 +29,6 @@ import eventImg from '@/assets/img/section_12_banner.png'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
-
-const handleMailTo = () => {
-  window.location.href = 'mailto:taipeixmas114@clickforce.com.tw?subject=活動洽詢&body=您好...'
-}
 
 const handleGoToEventWeb = () => {
   window.open(
