@@ -195,6 +195,7 @@ export default {
         openMap: '開啟線上地圖',
         openLine: '前往LINE官方帳號',
       },
+      note: '（同一館別僅限蒐集一次章，重複掃描將不再提供額外集章）',
     },
     promo: {
       xinyi: {
