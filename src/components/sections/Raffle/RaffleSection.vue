@@ -117,14 +117,16 @@
               <div class="flex flex-col mt-2 items-center">
                 <span class="prize-card__text">{{ t('sections.raffle.prize.cardLeft.text') }}</span>
                 <div class="flex flex-col items-start gap-5 mt-9">
-                  <div v-for="(prize, index) in prizeLeft" class="prize-card__row">
-                    <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
-                    <p class="prize-card__prize__text">{{ prize.text }}</p>
-                    <span class="prize-card__prize__quota">{{
-                      `${prize.quota}${
-                        index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
-                      }`
-                    }}</span>
+                  <div class="prize-card__row">
+                    <template v-for="(prize, index) in prizeLeft">
+                      <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
+                      <p class="prize-card__prize__text">{{ prize.text }}</p>
+                      <span class="prize-card__prize__quota whitespace-nowrap">{{
+                        `${prize.quota}${
+                          index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
+                        }`
+                      }}</span>
+                    </template>
                   </div>
                 </div>
               </div>
@@ -142,12 +144,14 @@
                   t('sections.raffle.prize.cardRight.text')
                 }}</span>
                 <div class="flex flex-col items-start gap-5 mt-9">
-                  <div v-for="prize in prizeRight" class="prize-card__row">
-                    <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
-                    <p class="prize-card__prize__text">{{ prize.text }}</p>
-                    <span class="prize-card__prize__quota">{{
-                      `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
-                    }}</span>
+                  <div class="prize-card__row">
+                    <template v-for="prize in prizeRight">
+                      <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
+                      <p class="prize-card__prize__text">{{ prize.text }}</p>
+                      <span class="prize-card__prize__quota">{{
+                        `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
+                      }}</span>
+                    </template>
                   </div>
                 </div>
               </div>
@@ -189,21 +193,21 @@
           <div class="flex flex-col gap-10 w-full">
             <CardStamp
               title-key="sections.raffle.stamp.xinyi.title"
-              :lights="xinyiLights"
+              :lights="xinyiCollect"
               :page-size="8"
               bodyMinHeight="780px"
               :showTime="false"
             />
             <CardStamp
               title-key="sections.raffle.stamp.eastern.title"
-              :lights="easternLights"
+              :lights="easternCollect"
               :page-size="8"
               bodyMinHeight="780px"
               :showTime="false"
             />
             <CardStamp
               title-key="sections.raffle.stamp.taipei.title"
-              :lights="taipeiLights"
+              :lights="taipeiCollect"
               :page-size="8"
               bodyMinHeight="780px"
               :showTime="false"
@@ -265,9 +269,10 @@ import iconStarRight from '@/assets/icon/star_3.svg'
 import { watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRaffleConstants } from '@/components/sections/Raffle/const'
+import { xinyiCollect, easternCollect, taipeiCollect } from '@/components/sections/Raffle/photo'
 
 const { t } = useI18n()
-const { prizeLeft, prizeRight, xinyiLights, easternLights, taipeiLights } = useRaffleConstants()
+const { prizeLeft, prizeRight } = useRaffleConstants()
 
 const openPopup = ref(false)
 
@@ -405,7 +410,7 @@ const handleGoLineOA = () =>
 
 .prize-card__row {
   display: grid;
-  grid-template-columns: auto 1fr 138px;
+  grid-template-columns: auto 1fr auto;
   gap: 32px;
   align-items: center;
   width: 100%;
