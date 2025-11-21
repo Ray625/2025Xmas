@@ -9,6 +9,7 @@
         :key="light.id ?? light.lightKey"
         :useStar="useStar"
         v-bind="light"
+        :showTime="props.showTime"
       />
     </div>
 
@@ -52,6 +53,7 @@ type CardLightItem = {
   decorate?: string
   letter?: string
   useStar?: boolean
+  showTime?: boolean
 }
 
 const { t } = useI18n()
@@ -66,6 +68,7 @@ const props = withDefaults(
     useBg?: boolean
     useStar?: boolean
     bgColor?: string
+    showTime?: boolean
   }>(),
   {
     titleKey: '',
@@ -75,6 +78,7 @@ const props = withDefaults(
     bodyMinHeight: '520px',
     useBg: true,
     useStar: false,
+    showTime: true,
   },
 )
 
