@@ -159,7 +159,15 @@
               </p>
               <ol>
                 <li v-for="(_, index) in Array(4)">
-                  {{ t(`sections.raffle.prize.note.note${index + 1}`) }}
+                  {{ t(`sections.raffle.prize.note.note${index + 1}`)
+                  }}<a
+                    v-if="index === 2"
+                    href="https://www.facebook.com/tcooc?locale=zh_TW"
+                    target="_blank"
+                    class="underline"
+                    >{{ t(`sections.raffle.prize.note.noteLink2`) }}</a
+                  >
+                  <span v-if="index === 2">。</span>
                 </li>
                 <li>
                   <span>
