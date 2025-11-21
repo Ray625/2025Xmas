@@ -157,6 +157,27 @@
                 </div>
               </template>
             </CardLocale>
+
+            <CardLocale :title="xinyiList.ATT.title" :locationList="xinyiList.ATT.locationList">
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.ATT.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.ATT.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
           </div>
         </Card>
         <!-- 東區商圈 -->

@@ -22,7 +22,7 @@ const props = withDefaults(
   },
 )
 
-const car = computed(() => (props.car === 'bus' ? t('common.car.bus') : t('common.car.MRT')))
+const car = computed(() => (props.car === 'bus' ? t('common.car.bus') : t('common.car.mrt')))
 
 const styleVars = computed(() => ({
   '--text-color': props.car === 'bus' ? '#E03A3E' : '#001A7D',
