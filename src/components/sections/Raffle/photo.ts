@@ -1,5 +1,3 @@
-import checker from '@/assets/mock/checker.png'
-
 type LightItem = {
   id: string
   lightKey: string
