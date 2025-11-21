@@ -32,7 +32,7 @@
               <div class="step__text">
                 {{ t('sections.raffle.rules.step1.text') }}
               </div>
-              <ButtonAction @click="clickLine">
+              <ButtonAction @click="handleGoLineOA">
                 {{ t('sections.raffle.rules.step1.button') }}
               </ButtonAction>
             </CardStep>
@@ -115,11 +115,13 @@
               <div class="flex flex-col mt-2 items-center">
                 <span class="prize-card__text">{{ t('sections.raffle.prize.cardLeft.text') }}</span>
                 <div class="flex flex-col items-start gap-5 mt-9">
-                  <div v-for="prize in prizeLeft" class="prize-card__row">
+                  <div v-for="(prize, index) in prizeLeft" class="prize-card__row">
                     <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                     <p class="prize-card__prize__text">{{ prize.text }}</p>
                     <span class="prize-card__prize__quota">{{
-                      `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
+                      `${prize.quota}${
+                        index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
+                      }`
                     }}</span>
                   </div>
                 </div>
@@ -149,24 +151,27 @@
               </div>
             </CardStep>
           </div>
-          <div class="prize-card__note">
-            <p>
-              {{ t('sections.raffle.prize.note.title') }}
-            </p>
-            <ol>
-              <li v-for="(_, index) in Array(4)">
-                {{ t(`sections.raffle.prize.note.note${index + 1}`) }}
-              </li>
-              <li>
-                <span>
-                  {{ t('sections.raffle.prize.note.note5') }}
-                </span>
-                <button class="prize-card__link" @click="clickPopup">
-                  <u>{{ t('sections.raffle.prize.note.noteLink') }}</u>
-                  <span>。</span>
-                </button>
-              </li>
-            </ol>
+          <div class="prize-card__note__wrapper">
+            <div class="flex-1"></div>
+            <div class="prize-card__note">
+              <p>
+                {{ t('sections.raffle.prize.note.title') }}
+              </p>
+              <ol>
+                <li v-for="(_, index) in Array(4)">
+                  {{ t(`sections.raffle.prize.note.note${index + 1}`) }}
+                </li>
+                <li>
+                  <span>
+                    {{ t('sections.raffle.prize.note.note5') }}
+                  </span>
+                  <button class="prize-card__link" @click="handleTogglePopup">
+                    <u>{{ t('sections.raffle.prize.note.noteLink') }}</u>
+                    <span>。</span>
+                  </button>
+                </li>
+              </ol>
+            </div>
           </div>
         </Card>
         <Card title-key="sections.raffle.stamp.title" bodyPadding="40px">
@@ -197,14 +202,21 @@
           bodyPadding="156px 180px 192px 180px"
         >
           <div class="map__card">
-            <div>
-              <img :src="googleMap" alt="map" class="map__card__map" />
+            <div class="w-full h-full">
+              <iframe
+                src="https://www.google.com/maps/d/u/0/embed?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ehbc=2E312F&noprof=1"
+                width="100%"
+                height="auto"
+                class="map__card__map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
             <div class="map__card__btn__group">
-              <ButtonAction bg-color="#F23D25" :has-border="false">{{
+              <ButtonAction bg-color="#F23D25" :has-border="false" @click="handleOpenMap">{{
                 t('sections.raffle.map.openMap')
               }}</ButtonAction>
-              <ButtonAction :has-border="false">{{
+              <ButtonAction :has-border="false" @click="handleGoLineOA">{{
                 t('sections.raffle.map.openLine')
               }}</ButtonAction>
             </div>
@@ -212,6 +224,7 @@
         </Card>
       </div>
     </Container>
+    <Pop :visible="openPopup" @close="handleTogglePopup" />
   </section>
 </template>
 
@@ -223,6 +236,7 @@ import CardStamp from '@/components/common/CardStamp.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import TagHighlight from '@/components/common/TagHighlight.vue'
 import ButtonAction from '@/components/common/ButtonAction.vue'
+import Pop from '@/components/sections/Raffle/Pop.vue'
 
 import iconClock from '@/assets/icon/clock.svg'
 import iconMap from '@/assets/icon/map.svg'
@@ -233,18 +247,36 @@ import stepCardImgRight from '@/assets/icon/step_card_right.svg'
 import iconStar from '@/assets/icon/star_1.svg'
 import iconStarLeft from '@/assets/icon/star_2.svg'
 import iconStarRight from '@/assets/icon/star_3.svg'
-import googleMap from '@/assets/mock/google_map.png'
 
+import { watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRaffleConstants } from '@/components/sections/Raffle/const'
 
 const { t } = useI18n()
-
 const { prizeLeft, prizeRight, xinyiLights, easternLights, taipeiLights } = useRaffleConstants()
+
+const openPopup = ref(false)
+
+const handleTogglePopup = () => {
+  openPopup.value = !openPopup.value
+}
+
+watch(openPopup, (visible) => {
+  document.body.style.overflow = visible ? 'hidden' : ''
+})
 
 const clickLine = () => alert('line btn')
 
-const clickPopup = () => alert('popup')
+const handleOpenMap = () => {
+  window.open(
+    'https://www.google.com/maps/d/u/0/viewer?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ll=25.076023980955114%2C121.56142795&z=13',
+    '_blank',
+    'noopener,noreferrer',
+  )
+}
+
+const handleGoLineOA = () =>
+  window.open('https://line.me/R/ti/p/@996rskra', '_blank', 'noopener,noreferrer')
 </script>
 
 <style scoped lang="scss">
@@ -333,9 +365,16 @@ const clickPopup = () => alert('popup')
     width: 108px;
   }
   &__note {
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      width: 100%;
+    }
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    flex: 1 1 0;
     width: 100%;
     text-align: left;
     @include mixins.typography(16px, 32px, 500, #868686);
@@ -358,9 +397,18 @@ const clickPopup = () => alert('popup')
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
   &__map {
+    width: 100%;
+    aspect-ratio: 1080 / 548;
     margin-bottom: 60px;
     border-radius: 16px;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   }
   &__btn__group {
     display: flex;

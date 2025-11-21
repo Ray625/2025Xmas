@@ -4,6 +4,7 @@ import prizeLeft1 from '@/assets/icon/prize_left_1.svg'
 import prizeLeft2 from '@/assets/icon/prize_left_2.svg'
 import prizeLeft3 from '@/assets/icon/prize_left_3.svg'
 import prizeLeft4 from '@/assets/icon/prize_left_4.svg'
+import prizeLeft5 from '@/assets/icon/prize_left_5.svg'
 import prizeRight1 from '@/assets/icon/prize_right_1.svg'
 import prizeRight2 from '@/assets/icon/prize_right_2.svg'
 import prizeRight3 from '@/assets/icon/prize_right_3.svg'
@@ -49,6 +50,11 @@ export function useRaffleConstants() {
       img: prizeLeft4,
       text: t('sections.raffle.prize.cardLeft.prize4'),
       quota: '20',
+    },
+    {
+      img: prizeLeft5,
+      text: t('sections.raffle.prize.cardLeft.prize5'),
+      quota: t('sections.raffle.prize.cardLeft.prize5tag'),
     },
   ]
 

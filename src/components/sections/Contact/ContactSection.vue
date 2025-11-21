@@ -2,17 +2,16 @@
   <section class="contact-section">
     <Container maxWidth="1440px">
       <div class="flex flex-col items-center gap-[172px]">
-        <div class="contact-section__text__cantainer">
+        <div class="contact-section__text__container">
           <SectionTitle preset="contact" class="contact-section__title" />
           <p class="contact-section__text">{{ t('sections.contact.text') }}</p>
           <ButtonAction bgColor="#109D91" @click="handleMailTo">
             {{ t('sections.contact.mail') }}
           </ButtonAction>
         </div>
-        <div class="contact-section__event__cantainer">
+        <div class="contact-section__event__container">
           <img :src="eventImg" alt="event banner" class="contact-section__event__img" />
-          <p class="contact-section__event__text">{{ t('sections.contact.event') }}</p>
-          <ButtonAction bgColor="#F23D25" :hasBorder="false" @click="handleMailTo">
+          <ButtonAction bgColor="#F23D25" :hasBorder="false" @click="handleGoToEventWeb">
             {{ t('sections.contact.more') }}
           </ButtonAction>
         </div>
@@ -30,7 +29,15 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const handleMailTo = () => {
-  alert('mail to...')
+  window.location.href = 'mailto:taipeixmas2025@clickforce.com.tw?subject=活動洽詢&body=您好...'
+}
+
+const handleGoToEventWeb = () => {
+  window.open(
+    'https://www.tcooc.gov.taipei/cp.aspx?n=23E99893D3EC8F41',
+    '_blank',
+    'noopener,noreferrer',
+  )
 }
 </script>
 <style scoped lang="scss">
@@ -46,7 +53,7 @@ const handleMailTo = () => {
     white-space: pre-line;
     text-align: center;
     @include mixins.typography(28px, 44px, 700);
-    &__cantainer {
+    &__container {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -67,7 +74,7 @@ const handleMailTo = () => {
   }
 
   &__event {
-    &__cantainer {
+    &__container {
       display: flex;
       flex-direction: column;
       align-items: center;
