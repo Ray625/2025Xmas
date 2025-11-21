@@ -171,6 +171,7 @@ export default {
             lightName: '台北101',
             shopName: 'B1 服務台',
             location: '詳細信義區市府路45號位置',
+            time: '展出時間',
           },
           light2: {
             lightName: '台北101',
