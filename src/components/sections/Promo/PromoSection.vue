@@ -287,12 +287,13 @@
                       :eventData="event"
                     />
                   </div>
-                  <div class="flex flex-col gap-4 flex-1">
+                  <div class="flex flex-col gap-4 flex-1 relative">
                     <CardEvent
                       v-for="(event, index) in easternList.MingYao.eventRight"
                       :key="index"
                       :eventData="event"
                     />
+                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
                   </div>
                 </div>
               </template>
@@ -470,6 +471,99 @@
                       :key="index"
                       :eventData="event"
                     />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+            <CardLocale
+              :title="taipeiList.Miramar.title"
+              :locationList="taipeiList.Miramar.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.Miramar.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.Miramar.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale
+              :title="taipeiList.lalaport.title"
+              :locationList="taipeiList.lalaport.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row">
+                  <span>
+                    {{ t(`${taipeiList.lalaport.body}`) }}
+                  </span>
+                  <a
+                    href="https://www.mitsui-shopping-park.com.tw/lalaport/nangang/tw/news_detail.html?id=9d93dbe6"
+                    class="underline"
+                    target="_blank"
+                  >
+                    {{ t(`${taipeiList.lalaport.link}`) }}
+                  </a>
+                  。
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale
+              :title="taipeiList.QSquare.title"
+              :locationList="taipeiList.QSquare.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.QSquare.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.QSquare.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale
+              :title="taipeiList.Syntrend.title"
+              :locationList="taipeiList.Syntrend.locationList"
+            >
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.Syntrend.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1 relative">
+                    <CardEvent
+                      v-for="(event, index) in taipeiList.Syntrend.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
                   </div>
                 </div>
               </template>

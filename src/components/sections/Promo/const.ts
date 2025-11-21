@@ -499,6 +499,83 @@ export function usePromoLocations() {
         }
       }),
     },
+    Miramar: {
+      title: 'sections.promo.taipei.Miramar.title',
+      locationList: [
+        {
+          locationKey: 'sections.promo.taipei.Miramar.location',
+        },
+      ],
+
+      eventLeft: [
+        {
+          title: `sections.promo.taipei.Miramar.event.title`,
+          text: `sections.promo.taipei.Miramar.event.text`,
+        },
+      ],
+
+      eventRight: [
+        {
+          title: `sections.promo.taipei.Miramar.event.title2`,
+          text: `sections.promo.taipei.Miramar.event.text2`,
+        },
+      ],
+    },
+    lalaport: {
+      title: 'sections.promo.taipei.lalaport.title',
+      locationList: [
+        {
+          locationKey: 'sections.promo.taipei.lalaport.location',
+        },
+      ],
+      body: 'sections.promo.taipei.lalaport.body',
+      link: 'sections.promo.taipei.lalaport.link',
+    },
+    QSquare: {
+      title: 'sections.promo.taipei.QSquare.title',
+      locationList: [
+        {
+          locationKey: 'sections.promo.taipei.QSquare.location',
+        },
+      ],
+      eventLeft: Array.from({ length: 3 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.taipei.QSquare.event.title${suffix}`,
+          text: `sections.promo.taipei.QSquare.event.text${suffix}`,
+        }
+      }),
+
+      eventRight: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index + 4
+        return {
+          title: `sections.promo.taipei.QSquare.event.title${suffix}`,
+          text: `sections.promo.taipei.QSquare.event.text${suffix}`,
+        }
+      }),
+    },
+    Syntrend: {
+      title: 'sections.promo.taipei.Syntrend.title',
+      locationList: [
+        {
+          locationKey: 'sections.promo.taipei.Syntrend.location',
+        },
+      ],
+      eventLeft: Array.from({ length: 3 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          title: `sections.promo.taipei.Syntrend.event.title${suffix}`,
+          text: `sections.promo.taipei.Syntrend.event.text${suffix}`,
+        }
+      }),
+      eventRight: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index + 4
+        return {
+          title: `sections.promo.taipei.Syntrend.event.title${suffix}`,
+          text: `sections.promo.taipei.Syntrend.event.text${suffix}`,
+        }
+      }),
+    },
   }
 
   return {
