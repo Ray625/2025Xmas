@@ -48,6 +48,7 @@ const openToggle = ref(true)
   gap: 32px;
   width: 100%;
   &__title {
+    width: 100%;
     padding: 12px 32px;
     border-bottom: 2px solid vars.$color-text-blue;
     @include mixins.typography(32px, 100%, 700);

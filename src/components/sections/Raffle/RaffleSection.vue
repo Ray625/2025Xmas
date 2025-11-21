@@ -265,8 +265,6 @@ watch(openPopup, (visible) => {
   document.body.style.overflow = visible ? 'hidden' : ''
 })
 
-const clickLine = () => alert('line btn')
-
 const handleOpenMap = () => {
   window.open(
     'https://www.google.com/maps/d/u/0/viewer?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ll=25.076023980955114%2C121.56142795&z=13',

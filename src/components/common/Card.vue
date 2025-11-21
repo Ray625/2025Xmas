@@ -56,6 +56,7 @@ const styleVars = computed(() => ({
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     padding: var(--card-body-padding, 75px 80px 80px);
     background-color: var(--card-body-bg-color);
     border-radius: 0 0 40px 40px;
