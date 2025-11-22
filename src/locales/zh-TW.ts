@@ -261,17 +261,17 @@ export default {
             location: '信義區松仁路28號',
           },
           light18: {
-            lightName: '統一時代百貨 台北店',
+            lightName: '統一時代百貨台北店',
             shopName: '璀璨愛戀底部 (1F 忠孝東路下 B1F 階梯)',
             location: '信義區忠孝東路五段8號',
           },
           light19: {
-            lightName: '統一時代百貨 台北店',
+            lightName: '統一時代百貨台北店',
             shopName: '7F 贈品兌換處',
             location: '信義區忠孝東路五段8號',
           },
           light20: {
-            lightName: '統一時代百貨 DREAM PLAZA',
+            lightName: 'DREAM PLAZA',
             shopName: '5F 贈品兌換處',
             location: '信義區松高路11號',
           },
@@ -566,9 +566,8 @@ export default {
           },
         },
         uni: {
-          title: '統一時代百貨',
-          shop: '台北店',
-          shop2: 'DREAM PLAZA',
+          title: '統一時代百貨台北店',
+          title2: 'DREAM PLAZA',
           location: '信義區忠孝東路五段8號 (02)2729-9699',
           location2: '信義區松高路11號 (02)2729-9699',
           event: {

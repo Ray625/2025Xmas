@@ -146,6 +146,27 @@
                 </div>
               </template>
             </CardLocale>
+
+            <CardLocale :title="xinyiList.uni.title2" :locationList="xinyiList.uni.locationList2">
+              <template #detail>
+                <div class="flex flex-row gap-8">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.uni.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in xinyiList.uni.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
             <!-- BELLAVITA 寶麗廣塲 -->
             <CardLocale
               :title="xinyiList.BELLAVITA.title"
