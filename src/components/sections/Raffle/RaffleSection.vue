@@ -41,7 +41,10 @@
               title-key="sections.raffle.rules.step1.title"
             >
               <div class="step__text">
-                {{ t('sections.raffle.rules.step1.text') }}
+                <p class="step--sm">
+                  {{ t('sections.raffle.rules.step1.text') }}
+                </p>
+                <p class="step--lg">{{ t('sections.raffle.rules.step1.text2') }}</p>
               </div>
               <ButtonAction @click="handleGoLineOA">
                 {{ t('sections.raffle.rules.step1.button') }}
@@ -55,9 +58,13 @@
               :icon-right="iconGift"
               title-key="sections.raffle.rules.step2.title"
               body-padding="32px 32px 8px 32px"
+              sm-body-padding="16px 16px 8px"
             >
               <div class="step__text margin-small">
-                {{ t('sections.raffle.rules.step2.text') }}
+                <p class="step--sm">
+                  {{ t('sections.raffle.rules.step2.text') }}
+                </p>
+                <p class="step--lg">{{ t('sections.raffle.rules.step2.text2') }}</p>
               </div>
               <img :src="iconQRCode" alt="qrcode" class="w-[60px] h-[60px] mb-3" />
               <p class="step__text__note">{{ t('sections.raffle.rules.step2.note') }}</p>
@@ -99,7 +106,10 @@
                       {{ t('sections.raffle.rules.step3.textRight2') }}
                     </span>
                   </span>
-                  <span>{{ t('sections.raffle.rules.step3.textRight3') }}</span>
+                  <span class="step--sm whitespace-pre-line">{{
+                    t('sections.raffle.rules.step3.textRight3')
+                  }}</span>
+                  <span class="step--lg">{{ t('sections.raffle.rules.step3.textRight4') }}</span>
                 </div>
                 <img
                   :src="stepCardImgRight"
@@ -375,12 +385,21 @@ const handleGoLineOA = () =>
   }
   &__note {
     @include mixins.text-caption(#868686);
+    text-align: center;
   }
+}
+.step--lg {
+  display: none;
+}
+.step--sm {
+  display: block;
 }
 
 .step-card {
   display: flex;
+  flex-direction: column;
   gap: 32px;
+
   @include mixins.typography-responsive(18px, 20px, 24px, 32px, 175%, 44px, 700);
   &__col {
     display: flex;
@@ -400,7 +419,7 @@ const handleGoLineOA = () =>
     }
   }
   &__img {
-    width: 592px;
+    width: 100%;
   }
 }
 
@@ -502,6 +521,13 @@ const handleGoLineOA = () =>
       white-space: pre-line;
     }
   }
+
+  .step-card {
+    flex-direction: row;
+    &__col {
+      justify-content: space-between;
+    }
+  }
 }
 
 @media (min-width: 1024px) {
@@ -541,6 +567,15 @@ const handleGoLineOA = () =>
       }
     }
   }
+
+  .step-card__col {
+    .step--lg {
+      display: block;
+    }
+    .step--sm {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 1440px) {
@@ -563,6 +598,15 @@ const handleGoLineOA = () =>
       &.text--mb {
         margin-bottom: 48px;
       }
+    }
+  }
+
+  .step__text {
+    & .step--lg {
+      display: block;
+    }
+    & .step--sm {
+      display: none;
     }
   }
 }

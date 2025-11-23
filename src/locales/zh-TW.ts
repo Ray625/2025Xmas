@@ -126,12 +126,14 @@ export default {
         location: '地點 : 臺北市16大百貨體系',
         step1: {
           title: 'Step. 1',
-          text: '加入\n2025繽紛耶誕玩台北LINE帳號',
+          text: '加入\n2025繽紛耶誕玩台北\nLINE帳號',
+          text2: '加入\n2025繽紛耶誕玩台北LINE帳號',
           button: '立即加入',
         },
         step2: {
           title: 'Step. 2',
-          text: '前往臺北市各大百貨門市\n掃描現場QR code開始集章！',
+          text: '前往臺北市各大百貨門市\n掃描現場QR code\n開始集章！',
+          text2: '前往臺北市各大百貨門市\n掃描現場QR code開始集章！',
           note: '（同一館別僅限蒐集一次章，重複掃描將不再提供額外集章）',
         },
         step3: {
@@ -141,7 +143,8 @@ export default {
           textLeft3: '→ 參加【尋光立即抽】抽獎！',
           textRight1: '集滿',
           textRight2: '個章',
-          textRight3: '→ 再獲得【尋光大獎抽】的抽獎資格！',
+          textRight3: '→ 再獲得【尋光大獎抽】\n抽獎資格！',
+          textRight4: '→ 再獲得【尋光大獎抽】抽獎資格！',
         },
       },
       prize: {
