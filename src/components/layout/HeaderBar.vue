@@ -14,7 +14,7 @@
           </button>
           <a
             class="social hover"
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/tcooc?locale=zh_TW"
             target="_blank"
             rel="noreferrer"
             :aria-label="t('header.socials.facebook')"
@@ -27,7 +27,7 @@
           </a>
           <a
             class="social hover"
-            href="https://www.youtube.com"
+            href="https://youtube.com/@doed.taipei?si=ysNPrPSdNne1-mKn"
             target="_blank"
             rel="noreferrer"
             :aria-label="t('header.socials.youtube')"
