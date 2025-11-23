@@ -1,13 +1,24 @@
 <template>
   <section class="raffle-section">
-    <Container maxWidth="1440px">
+    <Container>
       <div class="raffle-card">
         <p class="raffle-card__text">
-          {{ t('sections.raffle.cardText') }}
+          {{ t('sections.raffle.cardText.text') }}
+        </p>
+        <div class="flex flex-col items-center">
+          <p class="raffle-card__text">
+            {{ t('sections.raffle.cardText.text2') }}
+          </p>
+          <p class="raffle-card__text">
+            {{ t('sections.raffle.cardText.text3') }}
+          </p>
+        </div>
+        <p class="raffle-card__text">
+          {{ t('sections.raffle.cardText.text4') }}
         </p>
       </div>
     </Container>
-    <Container maxWidth="1440px">
+    <Container>
       <SectionTitle preset="raffle" class="mb-[66px]" />
       <div class="flex flex-col gap-20">
         <Card title-key="sections.raffle.rules.title">
@@ -304,27 +315,31 @@ const handleGoLineOA = () =>
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 172px;
-  padding-top: 135px;
-  padding-bottom: 194px;
+  gap: 96px;
+  padding-top: 26px;
+  padding-bottom: 32px;
 
-  --gradient-height: 427px;
+  --gradient-height: 170px;
   background: linear-gradient(180deg, #75c7d7 0%, vars.$bg-blue 100%) top center / 100%
       var(--gradient-height) no-repeat,
     vars.$bg-blue;
 }
 
 .raffle-card {
-  padding: 80px 280px;
-  border-radius: 40px;
+  display: flex;
+  gap: 22px;
+  flex-direction: column;
+  align-items: center;
+  padding: 52px 12px;
+  border-radius: 16px;
   background: #fff;
   &__text {
     text-align: center;
-    font-size: 28px;
-    line-height: 44px;
+    font-size: 18px;
+    line-height: 28px;
     font-weight: 700;
     color: vars.$color-text-blue;
-    white-space: pre-line;
+    white-space: wrap;
   }
 }
 
@@ -446,6 +461,68 @@ const handleGoLineOA = () =>
   margin-bottom: 24px;
 }
 
+@media (min-width: 768px) {
+  .raffle-section {
+    padding-top: 48px;
+    padding-bottom: 56px;
+    --gradient-height: 200px;
+  }
+
+  .raffle-card {
+    padding: 56px 24px;
+    border-radius: 24px;
+    background: #fff;
+    gap: 44px;
+    &__text {
+      font-size: 28px;
+      line-height: 44px;
+      color: vars.$color-text-blue;
+      white-space: pre-line;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
+  .raffle-section {
+    gap: 136px;
+    padding-top: 120px;
+    padding-bottom: 160px;
+
+    --gradient-height: 368px;
+  }
+
+  .raffle-card {
+    padding: 80px 100px;
+    border-radius: 36px;
+    gap: 44px;
+    &__text {
+      font-size: 28px;
+      line-height: 44px;
+      color: vars.$color-text-blue;
+      white-space: pre-line;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .raffle-section {
+    gap: 172px;
+    padding-top: 135px;
+    padding-bottom: 194px;
+
+    --gradient-height: 427px;
+  }
+
+  .raffle-card {
+    padding: 80px 280px;
+    border-radius: 40px;
+    gap: 44px;
+    &__text {
+      font-size: 28px;
+      line-height: 44px;
+      color: vars.$color-text-blue;
+      white-space: pre-line;
+    }
+  }
 }
 </style>

@@ -24,15 +24,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue"
-import { useI18n } from "vue-i18n"
-import leftIcon from "@/assets/icon/title_left.svg"
-import rightIcon from "@/assets/icon/title_right.svg"
-import { navConfig } from "@/data/navigation"
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import leftIcon from '@/assets/icon/title_left.svg'
+import rightIcon from '@/assets/icon/title_right.svg'
+import { navConfig } from '@/data/navigation'
 
 const titlePresets = navConfig.reduce(
   (acc, item) => {
-    const id = item.href.replace("#", "")
+    const id = item.href.replace('#', '')
     acc[item.key] = {
       id,
       titleKey: item.titleKey,
@@ -41,13 +41,13 @@ const titlePresets = navConfig.reduce(
     return acc
   },
   {} as Record<
-    (typeof navConfig)[number]["key"],
+    (typeof navConfig)[number]['key'],
     {
       id: string
       titleKey: string
       bgColor: string
     }
-  >
+  >,
 )
 
 type TitlePresetKey = keyof typeof titlePresets
@@ -59,23 +59,30 @@ const props = withDefaults(
     textColor?: string
     width?: string | number
     height?: string | number
+    smWidth?: string | number
+    smHeight?: string | number
+    lgWidth?: string | number
+    lgHeight?: string | number
     outWidth?: string | number
     outHeight?: string | number
     showDecor?: boolean
   }>(),
   {
-    width: "453px",
-    height: "86px",
-    outWidth: "560px",
-    outHeight: "132px",
+    smWidth: '276px',
+    smHeight: '52px',
+    lgWidth: '364px',
+    lgHeight: '68px',
+    width: '453px',
+    height: '86px',
+    outWidth: '560px',
+    outHeight: '132px',
     showDecor: true,
-  }
+  },
 )
 
 const { t } = useI18n()
 
-const normalize = (value: string | number) =>
-  typeof value === "number" ? `${value}px` : value
+const normalize = (value: string | number) => (typeof value === 'number' ? `${value}px` : value)
 
 const presetConfig = computed(() => titlePresets[props.preset])
 
@@ -84,11 +91,11 @@ const styleVars = computed(() => {
   const bg = config.bgColor
 
   return {
-    "--section-title-bg": bg,
-    "--section-title-width": normalize(props.width),
-    "--section-title-height": normalize(props.height),
-    "--section-title-outWidth": normalize(props.outWidth),
-    "--section-title-outHeight": normalize(props.outHeight),
+    '--section-title-bg': bg,
+    '--section-title-width': normalize(props.width),
+    '--section-title-height': normalize(props.height),
+    '--section-title-outWidth': normalize(props.outWidth),
+    '--section-title-outHeight': normalize(props.outHeight),
   }
 })
 
@@ -99,6 +106,9 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey))
 </script>
 
 <style scoped lang="scss">
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
+
 .section-title {
   width: var(--section-title-width);
   height: var(--section-title-height);
@@ -106,12 +116,9 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey))
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 38px;
-  line-height: 100%;
-  font-weight: 700;
-  letter-spacing: 0;
   text-align: center;
+  @include mixins.typography(38px, 100%, 700, vars.$color-white);
+
   &__container {
     position: relative;
     display: flex;

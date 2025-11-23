@@ -21,6 +21,9 @@ const props = withDefaults(
     bgColor?: string
     titleKey?: string
     bodyPadding?: string
+    bodyPaddingSm?: string
+    bodyPaddingMd?: string
+    bodyPaddingLg?: string
   }>(),
   {
     textBgColor: '#3277E1',
@@ -34,6 +37,9 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ''))
 
 const styleVars = computed(() => ({
   '--card-body-padding': props.bodyPadding,
+  ...(props.bodyPaddingSm ? { '--card-body-padding-sm': props.bodyPaddingSm } : {}),
+  ...(props.bodyPaddingMd ? { '--card-body-padding-md': props.bodyPaddingMd } : {}),
+  ...(props.bodyPaddingLg ? { '--card-body-padding-lg': props.bodyPaddingLg } : {}),
   '--card-body-bg-color': props.bgColor,
 }))
 </script>
@@ -63,6 +69,30 @@ const styleVars = computed(() => ({
   }
 }
 
-@media (max-width: 960px) {
+@media (min-width: 640px) {
+  .card__body {
+    padding: var(--card-body-padding-sm, 56px 16px);
+  }
+}
+
+@media (min-width: 768px) {
+  .card__body {
+    padding: var(
+      --card-body-padding-md,
+      var(--card-body-padding-sm, var(--card-body-padding, 75px 80px 80px))
+    );
+  }
+}
+
+@media (min-width: 1024px) {
+  .card__body {
+    padding: var(
+      --card-body-padding-lg,
+      var(
+        --card-body-padding-md,
+        var(--card-body-padding-sm, var(--card-body-padding, 75px 80px 80px))
+      )
+    );
+  }
 }
 </style>

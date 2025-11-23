@@ -20,3 +20,11 @@ export const navList = {
   transportation: '交通資訊',
   contact: '聯絡我們',
 }
+
+export const containerMaxWidths = {
+  sm: '342px',
+  md: '640px',
+  lg: '960px',
+  xl: '1140px',
+  '2xl': '1440px',
+}
