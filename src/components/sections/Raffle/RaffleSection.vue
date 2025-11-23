@@ -1,26 +1,37 @@
 <template>
   <section class="raffle-section">
-    <Container maxWidth="1440px">
+    <Container>
       <div class="raffle-card">
         <p class="raffle-card__text">
-          {{ t('sections.raffle.cardText') }}
+          {{ t('sections.raffle.cardText.text') }}
+        </p>
+        <div class="flex flex-col items-center">
+          <p class="raffle-card__text">
+            {{ t('sections.raffle.cardText.text2') }}
+          </p>
+          <p class="raffle-card__text">
+            {{ t('sections.raffle.cardText.text3') }}
+          </p>
+        </div>
+        <p class="raffle-card__text">
+          {{ t('sections.raffle.cardText.text4') }}
         </p>
       </div>
     </Container>
-    <Container maxWidth="1440px">
-      <SectionTitle preset="raffle" class="mb-[66px]" />
+    <Container>
+      <SectionTitle preset="raffle" class="raffle-section__title" />
       <div class="flex flex-col gap-20">
         <Card title-key="sections.raffle.rules.title">
-          <p class="raffle-card__text mb-[66px]">
+          <p class="raffle-card__text text--mb">
             {{ t('sections.raffle.rules.text') }}
           </p>
-          <TagHighlight :icon="iconClock" textColor="#5E4FD4" class="mb-8">
+          <TagHighlight :icon="iconClock" textColor="#5E4FD4" class="raffle-section__tag--top">
             {{ t('sections.raffle.rules.time') }}
           </TagHighlight>
-          <TagHighlight :icon="iconMap" textColor="#E3007F" class="mb-[76px]">
+          <TagHighlight :icon="iconMap" textColor="#E3007F" class="raffle-section__tag--bottom">
             {{ t('sections.raffle.rules.location') }}
           </TagHighlight>
-          <div class="flex w-full gap-8 mb-7">
+          <div class="raffle-section__step__wrapper">
             <CardStep
               class="flex-1"
               bg-color="#CFEEE0"
@@ -30,7 +41,10 @@
               title-key="sections.raffle.rules.step1.title"
             >
               <div class="step__text">
-                {{ t('sections.raffle.rules.step1.text') }}
+                <p class="step--sm">
+                  {{ t('sections.raffle.rules.step1.text') }}
+                </p>
+                <p class="step--lg">{{ t('sections.raffle.rules.step1.text2') }}</p>
               </div>
               <ButtonAction @click="handleGoLineOA">
                 {{ t('sections.raffle.rules.step1.button') }}
@@ -44,9 +58,13 @@
               :icon-right="iconGift"
               title-key="sections.raffle.rules.step2.title"
               body-padding="32px 32px 8px 32px"
+              sm-body-padding="16px 16px 8px"
             >
               <div class="step__text margin-small">
-                {{ t('sections.raffle.rules.step2.text') }}
+                <p class="step--sm">
+                  {{ t('sections.raffle.rules.step2.text') }}
+                </p>
+                <p class="step--lg">{{ t('sections.raffle.rules.step2.text2') }}</p>
               </div>
               <img :src="iconQRCode" alt="qrcode" class="w-[60px] h-[60px] mb-3" />
               <p class="step__text__note">{{ t('sections.raffle.rules.step2.note') }}</p>
@@ -88,7 +106,10 @@
                       {{ t('sections.raffle.rules.step3.textRight2') }}
                     </span>
                   </span>
-                  <span>{{ t('sections.raffle.rules.step3.textRight3') }}</span>
+                  <span class="step--sm whitespace-pre-line">{{
+                    t('sections.raffle.rules.step3.textRight3')
+                  }}</span>
+                  <span class="step--lg">{{ t('sections.raffle.rules.step3.textRight4') }}</span>
                 </div>
                 <img
                   :src="stepCardImgRight"
@@ -304,27 +325,51 @@ const handleGoLineOA = () =>
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 172px;
-  padding-top: 135px;
-  padding-bottom: 194px;
+  gap: 96px;
+  padding-top: 26px;
+  padding-bottom: 32px;
 
-  --gradient-height: 427px;
+  --gradient-height: 170px;
   background: linear-gradient(180deg, #75c7d7 0%, vars.$bg-blue 100%) top center / 100%
       var(--gradient-height) no-repeat,
     vars.$bg-blue;
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__tag--top {
+    margin-bottom: 16px;
+  }
+
+  &__tag--bottom {
+    margin-bottom: 24px;
+  }
+}
+
+.raffle-section__step__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 .raffle-card {
-  padding: 80px 280px;
-  border-radius: 40px;
+  display: flex;
+  gap: 22px;
+  flex-direction: column;
+  align-items: center;
+  padding: 52px 12px;
+  border-radius: 16px;
   background: #fff;
   &__text {
     text-align: center;
-    font-size: 28px;
-    line-height: 44px;
-    font-weight: 700;
-    color: vars.$color-text-blue;
-    white-space: pre-line;
+    @include mixins.text-body;
+    white-space: wrap;
+
+    &.text--mb {
+      margin-bottom: 24px;
+    }
   }
 }
 
@@ -332,21 +377,30 @@ const handleGoLineOA = () =>
   display: flex;
   flex-direction: col;
   margin: 32px 0;
-  @include mixins.typography(24px, 36px, 700);
+  @include mixins.text-body;
   text-align: center;
   white-space: pre-line;
   &.margin-small {
     margin: 20px 0;
   }
   &__note {
-    @include mixins.typography(18px, 36px, 700, #868686);
+    @include mixins.text-caption(#868686);
+    text-align: center;
   }
+}
+.step--lg {
+  display: none;
+}
+.step--sm {
+  display: block;
 }
 
 .step-card {
   display: flex;
+  flex-direction: column;
   gap: 32px;
-  @include mixins.typography(24px, 44px, 700);
+
+  @include mixins.typography-responsive(18px, 20px, 24px, 32px, 175%, 44px, 700);
   &__col {
     display: flex;
     flex-direction: column;
@@ -358,22 +412,23 @@ const handleGoLineOA = () =>
     padding: 0 14px;
     border-radius: 999px;
     background-color: #f4aa1c;
-    @include mixins.typography(24px, 36px, 700, vars.$color-white);
+    @include mixins.text-body(#fff);
+
     &--right {
       background-color: #ff5660;
     }
   }
   &__img {
-    width: 592px;
+    width: 100%;
   }
 }
 
 .prize-card {
   &__text {
-    @include mixins.typography(18px, 36px, 700, #868686);
+    @include mixins.text-caption(#868686);
   }
   &__prize__text {
-    @include mixins.typography(24px, 36px, 700, #000);
+    @include mixins.text-body(#000);
   }
   &__prize__quota {
     width: fit-content;
@@ -382,7 +437,7 @@ const handleGoLineOA = () =>
     border-radius: 32px;
     background: vars.$color-white;
     text-align: center;
-    @include mixins.typography(22px, 36px, 700, #f4aa1c);
+    @include mixins.typography-responsive(18px, 20px, 22px, 28px, 32px, 36px, 700, #f4aa1c);
   }
   &__prize__img {
     width: 108px;
@@ -400,7 +455,7 @@ const handleGoLineOA = () =>
     flex: 1 1 0;
     width: 100%;
     text-align: left;
-    @include mixins.typography(16px, 32px, 500, #868686);
+    @include mixins.text-note;
     ol {
       list-style: decimal;
       padding-left: 1.5rem;
@@ -442,10 +497,156 @@ const handleGoLineOA = () =>
 }
 
 .stamp__note {
-  @include mixins.typography(18px, 36px, 700, #868686);
+  @include mixins.text-note-lg;
   margin-bottom: 24px;
 }
 
+@media (min-width: 768px) {
+  .raffle-section {
+    padding-top: 48px;
+    padding-bottom: 56px;
+    --gradient-height: 200px;
+    &__title {
+      margin-bottom: 24px;
+    }
+  }
+
+  .raffle-card {
+    padding: 56px 24px;
+    border-radius: 24px;
+    background: #fff;
+    gap: 44px;
+    &__text {
+      text-align: center;
+      white-space: pre-line;
+    }
+  }
+
+  .step-card {
+    flex-direction: row;
+    &__col {
+      justify-content: space-between;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
+  .raffle-section {
+    gap: 136px;
+    padding-top: 120px;
+    padding-bottom: 160px;
+
+    --gradient-height: 368px;
+    &__title {
+      margin-bottom: 36px;
+    }
+
+    &__tag--top {
+      margin-bottom: 24px;
+    }
+
+    &__tag--bottom {
+      margin-bottom: 56px;
+    }
+  }
+
+  .raffle-section__step__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .raffle-card {
+    padding: 80px 100px;
+    border-radius: 36px;
+    gap: 44px;
+    &__text {
+      &.text--mb {
+        margin-bottom: 36px;
+      }
+    }
+  }
+
+  .step-card__col {
+    .step--lg {
+      display: block;
+    }
+    .step--sm {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .raffle-section {
+    gap: 148px;
+    padding-top: 130px;
+    padding-bottom: 180px;
+
+    --gradient-height: 400px;
+    &__title {
+      margin-bottom: 48px;
+    }
+  }
+
+  .raffle-card {
+    padding: 80px 280px;
+    border-radius: 40px;
+    gap: 44px;
+    &__text {
+      &.text--mb {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  .step__text {
+    & .step--lg {
+      display: block;
+    }
+    & .step--sm {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .raffle-section {
+    gap: 172px;
+    padding-top: 135px;
+    padding-bottom: 194px;
+
+    --gradient-height: 427px;
+    &__title {
+      margin-bottom: 66px;
+    }
+
+    &__tag--top {
+      margin-bottom: 32px;
+    }
+
+    &__tag--bottom {
+      margin-bottom: 76px;
+    }
+  }
+
+  .raffle-section__step__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 28px;
+  }
+
+  .raffle-card {
+    padding: 80px 280px;
+    border-radius: 40px;
+    gap: 44px;
+    &__text {
+      &.text--mb {
+        margin-bottom: 66px;
+      }
+    }
+  }
 }
 </style>

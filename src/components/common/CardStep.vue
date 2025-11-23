@@ -16,45 +16,48 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const props = withDefaults(
   defineProps<{
-    textBgColor?: string;
-    bgColor?: string;
-    bodyPadding?: string;
-    titleKey?: string;
-    iconLeft?: string;
-    iconRight?: string;
+    textBgColor?: string
+    bgColor?: string
+    bodyPadding?: string
+    smBodyPadding?: string
+    titleKey?: string
+    iconLeft?: string
+    iconRight?: string
   }>(),
   {
-    textBgColor: "#3277E1",
-    bgColor: "#fff",
-    bodyPadding: "32px",
-    cardHeight: "fit-content",
-  }
-);
+    textBgColor: '#3277E1',
+    bgColor: '#fff',
+    smBodyPadding: '16px 16px 54px',
+    bodyPadding: '32px',
+    cardHeight: 'fit-content',
+  },
+)
 
 const styleVars = computed(() => ({
   backgroundColor: props.bgColor,
-  "--card-body-padding": props.bodyPadding,
-}));
+  '--card-body-padding': props.bodyPadding,
+  '--card-body-padding-sm': props.smBodyPadding,
+}))
 
-const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
+const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ''))
 </script>
 
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .card {
   width: 100%;
   height: auto;
   border-radius: 20px;
-  padding: var(--card-body-padding, 32px);
+  padding: var(--card-body-padding-sm);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +69,7 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
     width: 100%;
     text-align: center;
     padding: 12px;
-    @include mixins.typography(24px, 36px, 700, vars.$color-white);
+    @include mixins.text-title;
     &__group {
       display: flex;
       flex-direction: row;
@@ -82,10 +85,15 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ""));
   }
 }
 
-@media (max-width: 960px) {
+@media (min-width: 1024px) {
   .card {
-    padding: 0 1.5rem 2rem;
-    border-radius: 16px;
+    padding: var(--card-body-padding, 32px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .card {
+    padding: var(--card-body-padding, 32px);
   }
 }
 </style>

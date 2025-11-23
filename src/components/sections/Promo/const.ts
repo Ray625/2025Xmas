@@ -1,51 +1,3 @@
-// export const xinyiEnum = {
-//   taipei101:'taipei101',
-//   breeze:['BNS','BSG','BXY',],
-//   SKM: 'SKM',
-//   FEDS:'FEDS',
-//   uni:'uni',
-//   BELLAVITA:'BELLAVITA',
-// }
-
-// Object.entries(xinyiEnum).map(([key, value]) => {
-//    if (typeof value === 'object') {
-//     const list = value.map((_,index) => {
-//       return ({
-//         shop
-//       })
-//     })
-//    }
-// })
-
-// const test = {
-//   locale: 'breeze',
-//   shop: ['BNS', 'BSG', 'BXY'],
-//   eventList: [xinyiListArray()],
-// }
-
-// interface listParams {
-//   locale?: string
-//   shop: string
-//   length: number
-//   direction: string
-// }
-
-// const listArray = ({ locale, shop, length, direction = 'left' }:listParams) => {
-//   return (
-//     Array.from({ length },  (_, index) => {
-//       const suffix = index === 0 ? '' : index + 1
-//       return {
-//         title: `sections.promo.${locale}.${shop}.event.${direction}.title${suffix}`,
-//         text: `sections.promo.${locale}.${shop}.event.${direction}.text${suffix}`,
-//       }
-//     }),
-//   )
-// }
-
-// const xinyiListArray = ({ shop, length, direction = 'left' }:listParams) => {
-//   return listArray({locale:'xinyi', shop, length, direction})
-// }
-
 export function usePromoLocations() {
   const xinyiList = {
     // 台北101
@@ -163,10 +115,18 @@ export function usePromoLocations() {
     // 統一
     uni: {
       title: 'sections.promo.xinyi.uni.title',
-      locationList: Array.from({ length: 2 }, (_, index) => {
+      title2: 'sections.promo.xinyi.uni.title2',
+
+      locationList: Array.from({ length: 1 }, (_, index) => {
         const suffix = index === 0 ? '' : index + 1
         return {
-          shopKey: `sections.promo.xinyi.uni.shop${suffix}`,
+          locationKey: `sections.promo.xinyi.uni.location${suffix}`,
+        }
+      }),
+
+      locationList2: Array.from({ length: 1 }, (_, index) => {
+        const suffix = index + 2
+        return {
           locationKey: `sections.promo.xinyi.uni.location${suffix}`,
         }
       }),

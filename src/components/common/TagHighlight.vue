@@ -36,18 +36,35 @@ const styleVars = computed(() => ({
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 60px;
   width: fit-content;
+  height: fit-content;
+  white-space: pre-line;
   padding: 12px 24px 12px 16px;
   border-radius: 8px;
-  @include mixins.typography(24px, 36px, 700, var(--tag-highlight-color, #5e4fd4));
+  @include mixins.text-body(var(--tag-highlight-color));
 
-  outline: 2px solid var(--tag-highlight-color, #5e4fd4);
+  outline: 2px solid var(--tag-highlight-color);
   outline-offset: -2px;
 }
 
 .tag-highlight__icon img {
   width: 24px;
   height: 24px;
+}
+
+@media (min-width: 768px) {
+  .tag-highlight {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tag-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 60px;
+    width: fit-content;
+  }
 }
 </style>

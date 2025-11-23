@@ -21,11 +21,18 @@ const props = withDefaults(
     bgColor?: string
     titleKey?: string
     bodyPadding?: string
+    smBodyPadding?: string
+    mdBodyPadding?: string
+    lgBodyPadding?: string
+    xlBodyPadding?: string
   }>(),
   {
     textBgColor: '#3277E1',
     bgColor: '#fff',
-    titleKey: '',
+    smBodyPadding: '24px 12px 12px',
+    mdBodyPadding: ' 36px 28px',
+    lgBodyPadding: '48px 48px',
+    xlBodyPadding: '64px 64px',
     bodyPadding: '75px 80px 80px',
   },
 )
@@ -34,6 +41,10 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ''))
 
 const styleVars = computed(() => ({
   '--card-body-padding': props.bodyPadding,
+  ...(props.smBodyPadding ? { '--card-body-padding-sm': props.smBodyPadding } : {}),
+  ...(props.mdBodyPadding ? { '--card-body-padding-md': props.mdBodyPadding } : {}),
+  ...(props.lgBodyPadding ? { '--card-body-padding-lg': props.lgBodyPadding } : {}),
+  ...(props.xlBodyPadding ? { '--card-body-padding-xl': props.xlBodyPadding } : {}),
   '--card-body-bg-color': props.bgColor,
 }))
 </script>
@@ -57,12 +68,77 @@ const styleVars = computed(() => ({
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: var(--card-body-padding, 75px 80px 80px);
+    padding: var(--card-body-padding-sm);
     background-color: var(--card-body-bg-color);
     border-radius: 0 0 40px 40px;
   }
 }
 
-@media (max-width: 960px) {
+@media (min-width: 768px) {
+  .card {
+    width: 100%;
+    height: fit-content;
+    border-radius: 12px 12px 40px 40px;
+    &__title {
+      padding: 15px;
+      @include mixins.typography(32px, 100%, 700, vars.$color-white);
+      border-radius: 12px 12px 0 0;
+    }
+    &__body {
+      padding: var(--card-body-padding-md);
+      border-radius: 0 0 40px 40px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 100%;
+    height: fit-content;
+    border-radius: 12px 12px 40px 40px;
+    &__title {
+      padding: 15px;
+      @include mixins.typography(32px, 100%, 700, vars.$color-white);
+      border-radius: 12px 12px 0 0;
+    }
+    &__body {
+      padding: var(--card-body-padding-lg);
+      border-radius: 0 0 40px 40px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .card {
+    width: 100%;
+    height: fit-content;
+    border-radius: 12px 12px 40px 40px;
+    &__title {
+      padding: 15px;
+      @include mixins.typography(32px, 100%, 700, vars.$color-white);
+      border-radius: 12px 12px 0 0;
+    }
+    &__body {
+      padding: var(--card-body-padding-xl);
+      border-radius: 0 0 40px 40px;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .card {
+    width: 100%;
+    height: fit-content;
+    border-radius: 12px 12px 40px 40px;
+    &__title {
+      padding: 15px;
+      @include mixins.typography(32px, 100%, 700, vars.$color-white);
+      border-radius: 12px 12px 0 0;
+    }
+    &__body {
+      padding: var(--card-body-padding);
+      border-radius: 0 0 40px 40px;
+    }
+  }
 }
 </style>

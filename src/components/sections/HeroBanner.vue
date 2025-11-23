@@ -53,22 +53,23 @@
 }
 
 .img__city-left {
-  right: 59%;
+  left: 0;
   bottom: 0;
   width: 40.5%;
   aspect-ratio: 780/900;
   background-image: url('@/assets/kv/kv_city_left.png');
-  background-position: bottom center;
+  background-position: left bottom;
   z-index: 2;
 }
 
 .img__city-right {
-  left: 59%;
+  right: 0;
   bottom: 0;
   width: 40.5%;
   aspect-ratio: 780/900;
   background-image: url('@/assets/kv/kv_city_right.png');
-  background-position: bottom center;
+  background-position: right bottom;
+  background-size: contain;
   z-index: 2;
 }
 
@@ -211,4 +212,14 @@
     opacity: 0;
   }
 }
+
+// @media (min-width: 1920px) {
+//   .img__city-left {
+//     width: 780px;
+//   }
+
+//   .img__city-right {
+//     width: 780px;
+//   }
+// }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <header class="site-header">
     <div class="gradient-bar">
-      <Container class="header-inner" maxWidth="1464px">
+      <Container class="header-inner" maxWidth="1464px" xl-max-width="1384px">
         <nav class="nav">
           <a v-for="item in navItems" :key="item.href" :href="item.href" class="nav-item">
             <img :src="item.icon" :alt="t(`header.nav.${item.key}`)" class="nav-item__icon" />
@@ -14,7 +14,7 @@
           </button>
           <a
             class="social hover"
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/tcooc?locale=zh_TW"
             target="_blank"
             rel="noreferrer"
             :aria-label="t('header.socials.facebook')"
@@ -27,7 +27,7 @@
           </a>
           <a
             class="social hover"
-            href="https://www.youtube.com"
+            href="https://youtube.com/@doed.taipei?si=ysNPrPSdNne1-mKn"
             target="_blank"
             rel="noreferrer"
             :aria-label="t('header.socials.youtube')"
