@@ -63,6 +63,10 @@ const props = withDefaults(
     smHeight?: string | number
     lgWidth?: string | number
     lgHeight?: string | number
+    smOutWidth?: string | number
+    smOutHeight?: string | number
+    lgOutWidth?: string | number
+    lgOutHeight?: string | number
     outWidth?: string | number
     outHeight?: string | number
     showDecor?: boolean
@@ -71,9 +75,13 @@ const props = withDefaults(
     smWidth: '276px',
     smHeight: '52px',
     lgWidth: '364px',
-    lgHeight: '68px',
+    lgHeight: '72px',
     width: '453px',
     height: '86px',
+    smOutWidth: '350px',
+    smOutHeight: '94px',
+    lgOutWidth: '450px',
+    lgOutHeight: '120px',
     outWidth: '560px',
     outHeight: '132px',
     showDecor: true,
@@ -92,8 +100,16 @@ const styleVars = computed(() => {
 
   return {
     '--section-title-bg': bg,
+    '--section-title-width-sm': normalize(props.smWidth),
+    '--section-title-height-sm': normalize(props.smHeight),
+    '--section-title-width-lg': normalize(props.lgWidth),
+    '--section-title-height-lg': normalize(props.lgHeight),
     '--section-title-width': normalize(props.width),
     '--section-title-height': normalize(props.height),
+    '--section-title-outWidth-sm': normalize(props.smOutWidth),
+    '--section-title-outHeight-sm': normalize(props.smOutHeight),
+    '--section-title-outWidth-lg': normalize(props.lgOutWidth),
+    '--section-title-outHeight-lg': normalize(props.lgOutHeight),
     '--section-title-outWidth': normalize(props.outWidth),
     '--section-title-outHeight': normalize(props.outHeight),
   }
@@ -110,22 +126,25 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey))
 @use '@/styles/_mixins' as mixins;
 
 .section-title {
-  width: var(--section-title-width);
-  height: var(--section-title-height);
+  width: var(--section-title-width-sm, var(--section-title-width-lg, var(--section-title-width)));
+  height: var(
+    --section-title-height-sm,
+    var(--section-title-height-lg, var(--section-title-height))
+  );
   background-color: var(--section-title-bg);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  @include mixins.typography(38px, 100%, 700, vars.$color-white);
+  @include mixins.typography(30px, 100%, 700, vars.$color-white);
 
   &__container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: var(--section-title-outWidth);
-    height: var(--section-title-outHeight);
+    width: var(--section-title-outWidth-sm);
+    height: var(--section-title-outHeight-sm);
     margin-left: auto;
     margin-right: auto;
   }
@@ -135,18 +154,6 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey))
   position: absolute;
   transform: translateY(-50%);
   height: auto;
-}
-
-.section-title__decor--left {
-  top: 49%;
-  width: 120px;
-  left: -15px;
-}
-
-.section-title__decor--right {
-  top: 51%;
-  width: 112px;
-  right: 0;
 }
 
 .section-title__text {
@@ -165,6 +172,68 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey))
     z-index: 1;
     pointer-events: none;
     user-select: none;
+  }
+}
+
+.section-title__decor--left {
+  top: 49%;
+  width: 88px;
+  left: -10px;
+}
+
+.section-title__decor--right {
+  top: 51%;
+  width: 82px;
+  right: 0;
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    width: var(--section-title-width-lg);
+    height: var(--section-title-height-lg);
+    @include mixins.typography(36px, 100%, 700, vars.$color-white);
+  }
+
+  .section-title__container {
+    width: var(--section-title-outWidth-lg);
+    height: var(--section-title-outHeight-lg);
+  }
+
+  .section-title__decor--left {
+    top: 49%;
+    width: 100px;
+    left: -12px;
+  }
+
+  .section-title__decor--right {
+    top: 51%;
+    width: 98px;
+    right: 0;
+  }
+}
+
+@media (min-width: 1920px) {
+  .section-title {
+    width: var(--section-title-width);
+    height: var(--section-title-height);
+    @include mixins.typography(38px, 100%, 700, vars.$color-white);
+  }
+
+  .section-title__container {
+    width: var(--section-title-outWidth);
+    height: var(--section-title-outHeight);
+  }
+
+  .section-title__decor--left {
+    top: 49%;
+    width: 120px;
+    left: -15px;
+  }
+
+  .section-title__decor--right {
+    top: 51%;
+    width: 112px;
+    right: 2px;
   }
 }
 </style>

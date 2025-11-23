@@ -19,19 +19,19 @@
       </div>
     </Container>
     <Container>
-      <SectionTitle preset="raffle" class="mb-[66px]" />
+      <SectionTitle preset="raffle" class="raffle-section__title" />
       <div class="flex flex-col gap-20">
         <Card title-key="sections.raffle.rules.title">
-          <p class="raffle-card__text mb-[66px]">
+          <p class="raffle-card__text text--mb">
             {{ t('sections.raffle.rules.text') }}
           </p>
-          <TagHighlight :icon="iconClock" textColor="#5E4FD4" class="mb-8">
+          <TagHighlight :icon="iconClock" textColor="#5E4FD4" class="raffle-section__tag--top">
             {{ t('sections.raffle.rules.time') }}
           </TagHighlight>
-          <TagHighlight :icon="iconMap" textColor="#E3007F" class="mb-[76px]">
+          <TagHighlight :icon="iconMap" textColor="#E3007F" class="raffle-section__tag--bottom">
             {{ t('sections.raffle.rules.location') }}
           </TagHighlight>
-          <div class="flex w-full gap-8 mb-7">
+          <div class="raffle-section__step__wrapper">
             <CardStep
               class="flex-1"
               bg-color="#CFEEE0"
@@ -323,6 +323,25 @@ const handleGoLineOA = () =>
   background: linear-gradient(180deg, #75c7d7 0%, vars.$bg-blue 100%) top center / 100%
       var(--gradient-height) no-repeat,
     vars.$bg-blue;
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__tag--top {
+    margin-bottom: 16px;
+  }
+
+  &__tag--bottom {
+    margin-bottom: 24px;
+  }
+}
+
+.raffle-section__step__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 .raffle-card {
@@ -335,11 +354,12 @@ const handleGoLineOA = () =>
   background: #fff;
   &__text {
     text-align: center;
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: 700;
-    color: vars.$color-text-blue;
+    @include mixins.text-body;
     white-space: wrap;
+
+    &.text--mb {
+      margin-bottom: 24px;
+    }
   }
 }
 
@@ -347,21 +367,21 @@ const handleGoLineOA = () =>
   display: flex;
   flex-direction: col;
   margin: 32px 0;
-  @include mixins.typography(24px, 36px, 700);
+  @include mixins.text-body;
   text-align: center;
   white-space: pre-line;
   &.margin-small {
     margin: 20px 0;
   }
   &__note {
-    @include mixins.typography(18px, 36px, 700, #868686);
+    @include mixins.text-caption(#868686);
   }
 }
 
 .step-card {
   display: flex;
   gap: 32px;
-  @include mixins.typography(24px, 44px, 700);
+  @include mixins.typography-responsive(18px, 20px, 24px, 32px, 175%, 44px, 700);
   &__col {
     display: flex;
     flex-direction: column;
@@ -373,7 +393,8 @@ const handleGoLineOA = () =>
     padding: 0 14px;
     border-radius: 999px;
     background-color: #f4aa1c;
-    @include mixins.typography(24px, 36px, 700, vars.$color-white);
+    @include mixins.text-body(#fff);
+
     &--right {
       background-color: #ff5660;
     }
@@ -385,10 +406,10 @@ const handleGoLineOA = () =>
 
 .prize-card {
   &__text {
-    @include mixins.typography(18px, 36px, 700, #868686);
+    @include mixins.text-caption(#868686);
   }
   &__prize__text {
-    @include mixins.typography(24px, 36px, 700, #000);
+    @include mixins.text-body(#000);
   }
   &__prize__quota {
     width: fit-content;
@@ -397,7 +418,7 @@ const handleGoLineOA = () =>
     border-radius: 32px;
     background: vars.$color-white;
     text-align: center;
-    @include mixins.typography(22px, 36px, 700, #f4aa1c);
+    @include mixins.typography-responsive(18px, 20px, 22px, 28px, 32px, 36px, 700, #f4aa1c);
   }
   &__prize__img {
     width: 108px;
@@ -415,7 +436,7 @@ const handleGoLineOA = () =>
     flex: 1 1 0;
     width: 100%;
     text-align: left;
-    @include mixins.typography(16px, 32px, 500, #868686);
+    @include mixins.text-note;
     ol {
       list-style: decimal;
       padding-left: 1.5rem;
@@ -457,7 +478,7 @@ const handleGoLineOA = () =>
 }
 
 .stamp__note {
-  @include mixins.typography(18px, 36px, 700, #868686);
+  @include mixins.text-note-lg;
   margin-bottom: 24px;
 }
 
@@ -466,6 +487,9 @@ const handleGoLineOA = () =>
     padding-top: 48px;
     padding-bottom: 56px;
     --gradient-height: 200px;
+    &__title {
+      margin-bottom: 24px;
+    }
   }
 
   .raffle-card {
@@ -474,9 +498,7 @@ const handleGoLineOA = () =>
     background: #fff;
     gap: 44px;
     &__text {
-      font-size: 28px;
-      line-height: 44px;
-      color: vars.$color-text-blue;
+      text-align: center;
       white-space: pre-line;
     }
   }
@@ -489,6 +511,24 @@ const handleGoLineOA = () =>
     padding-bottom: 160px;
 
     --gradient-height: 368px;
+    &__title {
+      margin-bottom: 36px;
+    }
+
+    &__tag--top {
+      margin-bottom: 24px;
+    }
+
+    &__tag--bottom {
+      margin-bottom: 56px;
+    }
+  }
+
+  .raffle-section__step__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
   }
 
   .raffle-card {
@@ -496,21 +536,23 @@ const handleGoLineOA = () =>
     border-radius: 36px;
     gap: 44px;
     &__text {
-      font-size: 28px;
-      line-height: 44px;
-      color: vars.$color-text-blue;
-      white-space: pre-line;
+      &.text--mb {
+        margin-bottom: 36px;
+      }
     }
   }
 }
 
 @media (min-width: 1440px) {
   .raffle-section {
-    gap: 172px;
-    padding-top: 135px;
-    padding-bottom: 194px;
+    gap: 148px;
+    padding-top: 130px;
+    padding-bottom: 180px;
 
-    --gradient-height: 427px;
+    --gradient-height: 400px;
+    &__title {
+      margin-bottom: 48px;
+    }
   }
 
   .raffle-card {
@@ -518,10 +560,48 @@ const handleGoLineOA = () =>
     border-radius: 40px;
     gap: 44px;
     &__text {
-      font-size: 28px;
-      line-height: 44px;
-      color: vars.$color-text-blue;
-      white-space: pre-line;
+      &.text--mb {
+        margin-bottom: 48px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .raffle-section {
+    gap: 172px;
+    padding-top: 135px;
+    padding-bottom: 194px;
+
+    --gradient-height: 427px;
+    &__title {
+      margin-bottom: 66px;
+    }
+
+    &__tag--top {
+      margin-bottom: 32px;
+    }
+
+    &__tag--bottom {
+      margin-bottom: 76px;
+    }
+  }
+
+  .raffle-section__step__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 28px;
+  }
+
+  .raffle-card {
+    padding: 80px 280px;
+    border-radius: 40px;
+    gap: 44px;
+    &__text {
+      &.text--mb {
+        margin-bottom: 66px;
+      }
     }
   }
 }
