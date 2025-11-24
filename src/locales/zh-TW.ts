@@ -1027,7 +1027,8 @@ export default {
           time: '114/11/28-115/01/04',
         },
         light21: {
-          lightName: '祝福投遞所 Blessing Spot\n・快拍車廂 Photo Booth\n・許願報亭 Wish Kiosk',
+          lightName:
+            '祝福投遞所 / Blessing Spot\n・快拍車廂 / Photo Booth\n・許願報亭 / Wish Kiosk',
           shopName: '新光三越 信義新天地',
           location: 'A9 B1 木棧道',
           time: '114/11/20-115/01/04',

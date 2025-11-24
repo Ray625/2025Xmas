@@ -217,7 +217,9 @@
             </CardStep>
           </div>
           <div class="prize-card__note__wrapper">
-            <div class="flex-1"></div>
+            <div class="snoopy-prize_2__wrapper">
+              <img :src="snoopyPrize2" alt="snoopy prize" class="snoopy-prize_2 snoopy" />
+            </div>
             <div class="prize-card__note">
               <p>
                 {{ t('sections.raffle.prize.note.title') }}
@@ -325,6 +327,7 @@ import iconStar from '@/assets/icon/star_1.svg'
 import iconStarLeft from '@/assets/icon/star_2.svg'
 import iconStarRight from '@/assets/icon/star_3.svg'
 import snoopyPrize from '@/assets/img/section_03_snoopy.png'
+import snoopyPrize2 from '@/assets/img/section_03_brown.png'
 
 import { watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -516,12 +519,6 @@ const handleGoLineOA = () =>
     width: 108px;
   }
   &__note {
-    &__wrapper {
-      display: flex;
-      flex-direction: row;
-      gap: 32px;
-      width: 100%;
-    }
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -576,6 +573,18 @@ const handleGoLineOA = () =>
   margin-bottom: 24px;
 }
 
+.prize-card__note__wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 16px;
+}
+
+.snoopy-prize_2 {
+  width: 100%;
+  max-width: 200px;
+}
+
 @media (min-width: 768px) {
   .raffle-section {
     padding-top: 48px;
@@ -624,6 +633,25 @@ const handleGoLineOA = () =>
   .snoopy-prize {
     margin-top: 48px;
     max-width: 236px;
+  }
+
+  .snoopy-prize_2 {
+    max-width: 236px;
+  }
+
+  .snoopy-prize_2__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 0;
+  }
+
+  .prize-card__note__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    width: 100%;
   }
 }
 
@@ -706,6 +734,10 @@ const handleGoLineOA = () =>
   .snoopy-prize {
     margin-top: auto;
   }
+
+  .snoopy-prize_2 {
+    max-width: 260px;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -742,6 +774,10 @@ const handleGoLineOA = () =>
 
   .snoopy-prize {
     max-width: 268px;
+  }
+
+  .snoopy-prize_2 {
+    max-width: 300px;
   }
 }
 
@@ -799,6 +835,10 @@ const handleGoLineOA = () =>
   .prize-card__prize__quota {
     min-width: 94px;
     padding: 0 14px;
+  }
+
+  .snoopy-prize_2 {
+    max-width: 348px;
   }
 }
 </style>
