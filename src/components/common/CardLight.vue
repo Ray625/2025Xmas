@@ -9,7 +9,11 @@
       loading="lazy"
     />
     <div class="light-card__name__group">
-      <div v-if="lightName" class="light-card__name whitespace-pre-line">
+      <div
+        v-if="lightName"
+        class="light-card__name whitespace-pre-line"
+        :class="{ 'small-name': props.smName }"
+      >
         {{ lightName }}
       </div>
       <div v-if="shopName" class="light-card__shop__name whitespace-pre-line">
@@ -20,12 +24,12 @@
     <div class="light-card__detail">
       <div class="light-card__detail__group">
         <div class="light-card__detail__text">
-          <img :src="iconMap" alt="icon_map" class="light-card__detail__icon whitespace-pre-line" />
-          <span>{{ loaction }}</span>
+          <img :src="iconMap" alt="icon_map" class="light-card__detail__icon" />
+          <span class="whitespace-pre-line">{{ loaction }}</span>
         </div>
-        <div v-if="props.showTime" class="light-card__detail__text whitespace-pre-line">
+        <div v-if="props.showTime" class="light-card__detail__text">
           <img :src="iconTime" alt="icon_time" class="light-card__detail__icon" />
-          <span>{{ time }}</span>
+          <span class="whitespace-pre-line">{{ time }}</span>
         </div>
       </div>
       <div v-if="useStar && num" class="light-card__detail__star">{{ formattedNum }}</div>
@@ -56,12 +60,14 @@ const props = withDefaults(
     num?: number
     letter?: string
     showTime?: boolean
+    smName?: boolean
   }>(),
   {
     lightImg: checker,
     decorate: 'clip',
     useStar: true,
     showTime: true,
+    smName: false,
   },
 )
 
@@ -99,6 +105,9 @@ const styleVars = computed(() => ({
 
   &__name {
     @include mixins.typography(20px, 26px, 700);
+    &.small-name {
+      @include mixins.typography(18px, 32px, 700);
+    }
   }
 
   &__shop__name {
@@ -153,7 +162,8 @@ const styleVars = computed(() => ({
       align-items: center;
       align-self: flex-end;
       width: 51px;
-      height: 48px;
+      min-width: 51px;
+      aspect-ratio: 51/48;
       margin-left: auto;
       background-image: url('@/assets/icon/star.svg');
       background-position: center;

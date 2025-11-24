@@ -6,16 +6,17 @@
         <div class="map__group">
           <img :src="xinyiMap" alt="xinyi map" class="ml-auto" loading="lazy" />
           <div class="map__card__container">
-            <CardLight class="map__card map__card--left" v-bind="cardLeft" />
-            <CardLight class="map__card map__card--right" v-bind="cardRight" />
+            <CardLight class="map__card map__card--left" v-bind="xinyiLights[9]" />
+            <CardLight class="map__card map__card--right" v-bind="xinyiLights[10]" />
           </div>
         </div>
         <div class="light__group">
           <CardLight
-            v-for="light in xinyiLights"
+            v-for="light in xinyiLights.slice(0, 9)"
             :key="light.id ?? light.lightKey"
             :useStar="true"
             v-bind="light"
+            class="max-w-[280px]"
           />
         </div>
       </div>
@@ -27,9 +28,7 @@ import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import xinyiMap from '@/assets/map/section_08_map.png'
 import CardLight from '@/components/common/CardLight.vue'
-import { useLandmarkList } from '@/components/sections/Landmark/const'
-
-const { xinyiLights, cardLeft, cardRight } = useLandmarkList()
+import { xinyiLights } from '@/components/sections/Landmark/photo'
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;
