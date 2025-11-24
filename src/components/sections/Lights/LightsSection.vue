@@ -79,7 +79,7 @@
               <img :src="ximendingMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
-              :lights="taipeiLights"
+              :lights="ximenLights"
               :page-size="8"
               bodyMinHeight="967px"
               :use-bg="false"
@@ -104,15 +104,19 @@ import easternMap from '@/assets/map/section_07_map_02_ed.png'
 import taipeiMap from '@/assets/map/section_07_map_03_other.png'
 import ximendingMap from '@/assets/map/section_07_map_04_xm.png'
 import iconPlay from '@/assets/icon/play_blue.svg'
-import { useLightsList } from '@/components/sections/Lights/const'
 import { useTabs } from '@/data/const'
 import { useI18n } from 'vue-i18n'
+import {
+  xinyiLights,
+  easternLights,
+  taipeiLights,
+  ximenLights,
+} from '@/components/sections/Lights/photo'
 
 const { t } = useI18n()
 
 const activeTab = ref(0)
 const tabs = computed(() => useTabs())
-const { xinyiLights, easternLights, taipeiLights } = useLightsList()
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;

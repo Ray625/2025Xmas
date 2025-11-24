@@ -20,7 +20,7 @@
     </Container>
     <Container>
       <SectionTitle preset="raffle" class="raffle-section__title" />
-      <div class="flex flex-col gap-20">
+      <div class="raffle-section__content">
         <Card title-key="sections.raffle.rules.title">
           <p class="raffle-card__text text--mb">
             {{ t('sections.raffle.rules.text') }}
@@ -125,8 +125,9 @@
           title-key="sections.raffle.prize.title"
           textBgColor="#28B590"
           bodyPadding="56px 80px 80px"
+          sm-body-padding="12px"
         >
-          <div class="flex w-full h-fit gap-8 mb-[72px]">
+          <div class="raffle-section__prize__container">
             <CardStep
               class="flex-1"
               bg-color="#FDEED2"
@@ -134,10 +135,11 @@
               :icon-left="iconStar"
               :icon-right="iconStar"
               title-key="sections.raffle.prize.cardLeft.title"
+              sm-body-padding="16px"
             >
               <div class="flex flex-col mt-2 items-center">
                 <span class="prize-card__text">{{ t('sections.raffle.prize.cardLeft.text') }}</span>
-                <div class="flex flex-col items-start gap-5 mt-9">
+                <div class="raffle-section__prize__wrapper">
                   <div class="prize-card__row">
                     <template v-for="(prize, index) in prizeLeft">
                       <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
@@ -147,6 +149,21 @@
                           index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
                         }`
                       }}</span>
+                    </template>
+                  </div>
+                  <div class="prize-card__row--mobile">
+                    <template v-for="(prize, index) in prizeLeft">
+                      <div class="flex flex-row gap-5">
+                        <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
+                        <div class="flex flex-col gap-1">
+                          <p class="prize-card__prize__text">{{ prize.text }}</p>
+                          <span class="prize-card__prize__quota whitespace-nowrap">{{
+                            `${prize.quota}${
+                              index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
+                            }`
+                          }}</span>
+                        </div>
+                      </div>
                     </template>
                   </div>
                 </div>
@@ -159,23 +176,44 @@
               :icon-left="iconStarLeft"
               :icon-right="iconStarRight"
               title-key="sections.raffle.prize.cardRight.title"
+              sm-body-padding="16px 16px 0 16px"
+              body-padding="32px 32px 0 32px"
             >
               <div class="flex flex-col mt-2 items-center">
                 <span class="prize-card__text">{{
                   t('sections.raffle.prize.cardRight.text')
                 }}</span>
-                <div class="flex flex-col items-start gap-5 mt-9">
+                <div class="raffle-section__prize__wrapper">
                   <div class="prize-card__row">
                     <template v-for="prize in prizeRight">
                       <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                       <p class="prize-card__prize__text">{{ prize.text }}</p>
-                      <span class="prize-card__prize__quota">{{
+                      <span class="prize-card__prize__quota--right">{{
                         `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
                       }}</span>
                     </template>
                   </div>
+                  <div class="prize-card__row--mobile">
+                    <template v-for="prize in prizeRight">
+                      <div class="flex flex-row gap-5">
+                        <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
+                        <div class="flex flex-col gap-1">
+                          <p class="prize-card__prize__text">{{ prize.text }}</p>
+                          <span class="prize-card__prize__quota--right">{{
+                            `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
+                          }}</span>
+                        </div>
+                      </div>
+                    </template>
+                    <img
+                      :src="snoopyPrize"
+                      alt="snoopy prize"
+                      class="self-center max-w-[200px] mt-2 snoopy"
+                    />
+                  </div>
                 </div>
               </div>
+              <img :src="snoopyPrize" alt="snoopy prize" class="snoopy-prize snoopy snoopy-lg" />
             </CardStep>
           </div>
           <div class="prize-card__note__wrapper">
@@ -286,6 +324,7 @@ import stepCardImgRight from '@/assets/icon/step_card_right.svg'
 import iconStar from '@/assets/icon/star_1.svg'
 import iconStarLeft from '@/assets/icon/star_2.svg'
 import iconStarRight from '@/assets/icon/star_3.svg'
+import snoopyPrize from '@/assets/img/section_03_snoopy.png'
 
 import { watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -394,11 +433,35 @@ const handleGoLineOA = () =>
 .step--sm {
   display: block;
 }
+.snoopy-lg {
+  display: none;
+}
+
+.raffle-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.raffle-section__prize__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.raffle-section__prize__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
 
 .step-card {
   display: flex;
   flex-direction: column;
-  gap: 32px;
 
   @include mixins.typography-responsive(18px, 20px, 24px, 32px, 175%, 44px, 700);
   &__col {
@@ -426,18 +489,28 @@ const handleGoLineOA = () =>
 .prize-card {
   &__text {
     @include mixins.text-caption(#868686);
+    text-align: center;
   }
   &__prize__text {
     @include mixins.text-body(#000);
   }
   &__prize__quota {
     width: fit-content;
-    min-width: 94px;
-    padding: 0 14px;
+    min-width: 64px;
+    padding: 0 12px;
     border-radius: 32px;
     background: vars.$color-white;
     text-align: center;
-    @include mixins.typography-responsive(18px, 20px, 22px, 28px, 32px, 36px, 700, #f4aa1c);
+    @include mixins.typography-responsive(14px, 16px, 18px, 22px, 28px, 36px, 700, #f4aa1c);
+  }
+
+  &__prize__quota--right {
+    width: fit-content;
+    padding: 0 12px;
+    border-radius: 32px;
+    background: vars.$color-white;
+    text-align: center;
+    @include mixins.typography-responsive(14px, 16px, 18px, 22px, 28px, 36px, 700, #f4aa1c);
   }
   &__prize__img {
     width: 108px;
@@ -464,11 +537,13 @@ const handleGoLineOA = () =>
 }
 
 .prize-card__row {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 32px;
-  align-items: center;
-  width: 100%;
+  display: none;
+}
+
+.prize-card__row--mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .map__card {
@@ -524,9 +599,31 @@ const handleGoLineOA = () =>
 
   .step-card {
     flex-direction: row;
+    gap: 12px;
     &__col {
       justify-content: space-between;
     }
+  }
+
+  .prize-card__row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .prize-card__row--mobile {
+    display: none;
+  }
+
+  .snoopy-lg {
+    display: block;
+  }
+
+  .snoopy-prize {
+    margin-top: 48px;
+    max-width: 236px;
   }
 }
 
@@ -568,6 +665,10 @@ const handleGoLineOA = () =>
     }
   }
 
+  .step-card {
+    gap: 20px;
+  }
+
   .step-card__col {
     .step--lg {
       display: block;
@@ -575,6 +676,35 @@ const handleGoLineOA = () =>
     .step--sm {
       display: none;
     }
+  }
+
+  .raffle-section__content {
+    gap: 66px;
+  }
+
+  .raffle-section__prize__container {
+    flex-direction: row;
+    gap: 32px;
+    margin-bottom: 72px;
+  }
+
+  .raffle-section__prize__wrapper {
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .prize-card__prize__quota {
+    min-width: 80px;
+    padding: 0 14px;
+  }
+
+  .prize-card__prize__quota--right {
+    width: fit-content;
+    padding: 0 14px;
+  }
+
+  .snoopy-prize {
+    margin-top: auto;
   }
 }
 
@@ -608,6 +738,10 @@ const handleGoLineOA = () =>
     & .step--sm {
       display: none;
     }
+  }
+
+  .snoopy-prize {
+    max-width: 268px;
   }
 }
 
@@ -647,6 +781,24 @@ const handleGoLineOA = () =>
         margin-bottom: 66px;
       }
     }
+  }
+
+  .step-card {
+    gap: 32px;
+  }
+
+  .raffle-section__content {
+    gap: 80px;
+  }
+
+  .raffle-section__prize__wrapper {
+    gap: 20px;
+    margin-top: 36px;
+  }
+
+  .prize-card__prize__quota {
+    min-width: 94px;
+    padding: 0 14px;
   }
 }
 </style>
