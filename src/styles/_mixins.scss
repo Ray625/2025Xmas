@@ -1,5 +1,5 @@
-@use "sass:meta";
-@use "@/styles/_variables" as vars;
+@use 'sass:meta';
+@use '@/styles/_variables' as vars;
 
 /// Typography helper mixin.
 /// Provides a single place to keep font-related settings consistent.
@@ -26,16 +26,22 @@
 // @include typography-responsive(16px, 20px, 24px);
 // Optional overrides for line-height / weight / color can be passed as the 4th/5th/6th params.
 @mixin typography-responsive(
-  $sm-size:18px,
-  $lg-size:20px,
-  $xl-size:24px,
-  $sm-line-height:28px,
-  $lg-line-height:150%,
-  $xl-line-height:36px,
+  $sm-size: 18px,
+  $lg-size: 20px,
+  $xl-size: 24px,
+  $sm-line-height: 28px,
+  $lg-line-height: 150%,
+  $xl-line-height: 36px,
   $font-weight: 700,
   $color: vars.$color-text-blue
 ) {
-  @if meta.type-of($sm-size) != number or meta.type-of($lg-size) != number or meta.type-of($xl-size) != number {
+  @if meta.type-of($sm-size) !=
+    number or
+    meta.type-of($lg-size) !=
+    number or
+    meta.type-of($xl-size) !=
+    number
+  {
     @error "typography-responsive sizes must be numbers (px/rem), got sm: #{meta.type-of($sm-size)}, lg: #{meta.type-of($lg-size)}, xl: #{meta.type-of($xl-size)}";
   }
 
@@ -76,4 +82,20 @@
 
 @mixin text-note-lg($color: vars.$color-text-note) {
   @include typography-responsive(16px, 16px, 18px, 2, 2, 2, 700, $color);
+}
+
+@mixin card-title($color: vars.$color-white) {
+  @include typography-responsive(24px, 28px, 32px, 36px, 38px, 42px, 700, $color);
+}
+
+@mixin light-card-name($color: vars.$color-text-blue) {
+  @include typography-responsive(18px, 20px, 20px, 28px, 26px, 26px, 700, $color);
+}
+
+@mixin light-card-shop($color: vars.$color-text-blue) {
+  @include typography-responsive(16px, 16px, 18px, 28px, 30px, 32px, 500, $color);
+}
+
+@mixin light-card-text($color: vars.$color-text-blue) {
+  @include typography-responsive(14px, 16px, 16px, 22px, 22px, 22px, 500, $color);
 }

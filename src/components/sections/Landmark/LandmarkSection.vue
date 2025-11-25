@@ -46,6 +46,7 @@ import { xinyiLights } from '@/components/sections/Landmark/photo'
   }
   &__card {
     position: absolute;
+    max-width: 280px;
 
     &__container {
       position: absolute;

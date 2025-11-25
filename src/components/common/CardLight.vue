@@ -95,28 +95,29 @@ const styleVars = computed(() => ({
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
+  max-width: 256px;
   border-radius: 4px;
   margin-top: var(--card-top-margin, 0);
-  padding: 20px;
+  padding: 20px 20px 12px 20px;
   box-shadow: 0px 0px 24px 0px #f4e19d;
   background-color: vars.$color-white;
 
   &__name {
-    @include mixins.typography(20px, 26px, 700);
+    @include mixins.light-card-name;
     &.small-name {
-      @include mixins.typography(18px, 32px, 700);
+      @include mixins.light-card-shop;
     }
   }
 
   &__shop__name {
-    @include mixins.typography(18px, 32px, 500);
+    @include mixins.light-card-shop;
   }
 
   &__img {
-    width: 240px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 216px;
     height: auto;
     aspect-ratio: 240/176;
   }
@@ -148,7 +149,7 @@ const styleVars = computed(() => ({
       display: flex;
       align-items: center;
       gap: 2px;
-      @include mixins.typography(16px, 22px, 500);
+      @include mixins.light-card-text;
     }
 
     &__icon {
@@ -174,6 +175,23 @@ const styleVars = computed(() => ({
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
+  .light-card {
+    max-width: 268px;
+
+    &__img {
+      max-width: 228px;
+    }
+  }
+}
+
+@media (max-width: 1920px) {
+  .light-card {
+    max-width: 280px;
+    padding: 20px;
+    &__img {
+      max-width: 240px;
+    }
+  }
 }
 </style>

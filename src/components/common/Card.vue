@@ -58,8 +58,8 @@ const styleVars = computed(() => ({
   height: fit-content;
   border-radius: 12px 12px 40px 40px;
   &__title {
-    padding: 15px;
-    @include mixins.typography(32px, 100%, 700, vars.$color-white);
+    padding: 8px;
+    @include mixins.card-title(vars.$color-white);
     text-align: center;
     border-radius: 12px 12px 0 0;
   }
@@ -80,8 +80,7 @@ const styleVars = computed(() => ({
     height: fit-content;
     border-radius: 12px 12px 40px 40px;
     &__title {
-      padding: 15px;
-      @include mixins.typography(32px, 100%, 700, vars.$color-white);
+      padding: 10px;
       border-radius: 12px 12px 0 0;
     }
     &__body {
@@ -97,8 +96,7 @@ const styleVars = computed(() => ({
     height: fit-content;
     border-radius: 12px 12px 40px 40px;
     &__title {
-      padding: 15px;
-      @include mixins.typography(32px, 100%, 700, vars.$color-white);
+      padding: 12px;
       border-radius: 12px 12px 0 0;
     }
     &__body {
@@ -114,8 +112,7 @@ const styleVars = computed(() => ({
     height: fit-content;
     border-radius: 12px 12px 40px 40px;
     &__title {
-      padding: 15px;
-      @include mixins.typography(32px, 100%, 700, vars.$color-white);
+      padding: 12px;
       border-radius: 12px 12px 0 0;
     }
     &__body {
@@ -132,7 +129,6 @@ const styleVars = computed(() => ({
     border-radius: 12px 12px 40px 40px;
     &__title {
       padding: 15px;
-      @include mixins.typography(32px, 100%, 700, vars.$color-white);
       border-radius: 12px 12px 0 0;
     }
     &__body {
