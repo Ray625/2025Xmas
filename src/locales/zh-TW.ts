@@ -907,13 +907,13 @@ export default {
       xinyi: {
         title: '信義區百貨',
         light1: {
-          lightName: '迪士尼 玩具總動員｜星光大道',
+          lightName: '迪士尼 玩具總動員｜\n星光大道',
           shopName: '台北101',
           location: '1F 館外 (信義路/松智路/水舞廣場)',
           time: '114/11/14-115/03/08',
         },
         light2: {
-          lightName: '迪士尼 玩具總動員｜星際奇幻光廊',
+          lightName: '迪士尼 玩具總動員｜\n星際奇幻光廊',
           shopName: '台北101',
           location: '購物中心松智路側',
           time: '114/11/14-115/03/08',
@@ -925,13 +925,13 @@ export default {
           time: '114/11/14-115/03/08',
         },
         light4: {
-          lightName: '迪士尼 玩具總動員｜巴斯光年的宇宙飛船',
+          lightName: '迪士尼 玩具總動員｜\n巴斯光年的宇宙飛船',
           shopName: '台北101',
           location: '購物中心信義路側',
           time: '114/11/14-115/03/08',
         },
         light5: {
-          lightName: '迪士尼 玩具總動員｜胡迪的牛仔驛站',
+          lightName: '迪士尼 玩具總動員｜\n胡迪的牛仔驛站',
           shopName: '台北101',
           location: '購物中心松智路大門口',
           time: '114/11/14-115/03/08',
@@ -1142,7 +1142,7 @@ export default {
           lightName: '絢麗耶誕',
           shopName: '遠東SOGO百貨 復興館',
           location: '1F 館內外',
-          time: '2025/11/28-2026/01/04',
+          time: '114/11/28-115/01/04',
         },
         light2: {
           lightName: '台新新光金控聖誕派對',
@@ -1163,7 +1163,7 @@ export default {
           time: '114/11/25-115/01/04',
         },
         light5: {
-          lightName: '香港迪士尼20周年聖誕耶誕派對邀請',
+          lightName: '香港迪士尼20周年\n聖誕耶誕派對邀請',
           shopName: '遠東SOGO百貨 忠孝館',
           location: '1F 館內外',
           time: '114/11/28-115/01/18',
@@ -1194,19 +1194,19 @@ export default {
         },
         light10: {
           lightName: '星願之門',
-          shopName: "東區夜未眠 Don't call it a nigh,",
+          shopName: "東區夜未眠\nDon't call it a nigh",
           location: '瑠公綠廊',
           time: '114/12/10-115/03/08',
         },
         light11: {
           lightName: '星光馬車',
-          shopName: "東區夜未眠 Don't call it a night",
+          shopName: "東區夜未眠\nDon't call it a night",
           location: '瑠公綠廊',
           time: '114/12/10-115/03/08',
         },
         light12: {
           lightName: 'MERRY AND BRIGHT！',
-          shopName: '東區',
+          shopName: "東區夜未眠\nDon't call it a night",
           location: '頂好廣場',
           time: '114/12/10-115/03/08',
         },
@@ -1265,13 +1265,13 @@ export default {
           lightName: '粉紅聖誕派對',
           shopName: '京站時尚廣場',
           location: '1F 承德路大門口內',
-          time: '聖誕樹 114/11/01-114/12/25燈飾 114/11/01-02/23',
+          time: '聖誕樹\n114/11/01-114/12/25\n燈飾\n114/11/01-02/23',
         },
         light10: {
           lightName: '粉紅聖誕派對',
           shopName: '京站時尚廣場',
           location: '3F 圓台植生牆',
-          time: '聖誕樹 114/11/01-114/12/25燈飾 114/11/01-02/23',
+          time: '聖誕樹\n114/11/01-114/12/25\n燈飾\n114/11/01-02/23',
         },
         light11: {
           lightName: '摘星之河',
@@ -1319,7 +1319,7 @@ export default {
       ximending: {
         title: '西門 Play 樂購町',
         light1: {
-          lightName: '潮流電色｜玩色派對 舞台區',
+          lightName: '潮流電色｜玩色派對\n舞台區',
           shopName: '西門 PLAY 樂購町',
           location: '西門捷運一號出口前廣場',
           time: '114/12/17-115/01/16',
@@ -1397,12 +1397,12 @@ export default {
       light1: {
         lightName: '台新新光金控聖誕祭',
         shopName: '',
-        location: '台北南山廣場西側空橋(跨越松智路)',
+        location: '南山廣場西側空橋',
         time: '114/11/28-115/03/15',
       },
       light2: {
         lightName: '紅色天橋日間景',
-        shopName: '',
+        shopName: '威秀影城',
         location: 'A16-A17 空橋',
         time: '114/11/28-115/01/04',
       },
@@ -1413,13 +1413,13 @@ export default {
         time: '114/11/28-115/03/15',
       },
       light4: {
-        lightName: '夢境光廊入口Fantasy Corridor Entrance',
+        lightName: '夢境光廊入口\nFantasy Corridor Entrance',
         shopName: '',
         location: 'A11-A9 2F 空橋',
         time: '114/11/20-115/01/04',
       },
       light5: {
-        lightName: '夢境光廊Fantasy Corridor',
+        lightName: '夢境光廊\nFantasy Corridor',
         shopName: '',
         location: 'A9-A8 2F 空橋',
         time: '114/11/20-115/01/04',
@@ -1433,13 +1433,13 @@ export default {
       light7: {
         lightName: '台新新光金控聖誕祭',
         shopName: '',
-        location: '新光三越 A8 往微風松高',
+        location: 'A8 往微風松高',
         time: '114/11/28-115/03/15',
       },
       light8: {
         lightName: '台新新光金控聖誕祭',
         shopName: '',
-        location: '微風松高往新光三越 A8',
+        location: '微風松高往 A8',
         time: '114/11/28-115/03/15',
       },
       light9: {
@@ -1457,7 +1457,7 @@ export default {
       light11: {
         lightName: '台新新光金控聖誕祭',
         shopName: '',
-        location: '新光三越 A4 往微風松高',
+        location: 'A4 往微風松高',
         time: '114/11/28-115/03/15',
       },
     },
