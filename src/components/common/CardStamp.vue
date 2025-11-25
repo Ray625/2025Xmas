@@ -4,13 +4,25 @@
       {{ cardTitle }}
     </div>
     <div class="card__body">
-      <CardLight
-        v-for="light in paginatedLights"
-        :key="light.id ?? light.lightKey"
-        :useStar="useStar"
-        v-bind="light"
-        :showTime="props.showTime"
-      />
+      <div class="card__body__lights">
+        <CardLight
+          v-for="light in props.lights"
+          :key="light.id ?? light.lightKey"
+          :useStar="useStar"
+          v-bind="light"
+          :showTime="props.showTime"
+          class="card__light card__light--sm"
+          decorate="none"
+        />
+        <CardLight
+          v-for="light in paginatedLights"
+          :key="light.id ?? light.lightKey"
+          :useStar="useStar"
+          v-bind="light"
+          :showTime="props.showTime"
+          class="card__light card__light--lg"
+        />
+      </div>
     </div>
 
     <div class="card__pager" v-if="hasPagination">
@@ -128,29 +140,46 @@ const goNext = () => {
 .card {
   width: 100%;
   height: fit-content;
-  border-radius: 16px;
-  padding: var(--card-body-padding, 40px 72px);
+  border-radius: 12px;
+  padding-top: 16px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   &__title {
-    @include mixins.typography(38px, 100%, 700, vars.$color-white);
+    @include mixins.stamp-card-title;
     text-shadow: 0 0 8px #0000004d;
     text-align: center;
     margin-bottom: 8px;
   }
   &__body {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, 280px);
-    column-gap: 32px;
-    row-gap: 12px;
-    min-height: var(--card-body-min-height, 520px);
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__body__lights {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 16px;
+    min-width: fit-content;
+    height: fit-content;
+    padding: 24px 20px;
+    .card__light {
+      min-width: 256px;
+      &--lg {
+        display: none;
+      }
+      &--sm {
+        display: flex;
+      }
+    }
   }
 
   &__pager {
+    display: none;
     margin-top: 40px;
-    display: flex;
     justify-content: center;
     align-items: center;
     gap: 28px;
@@ -196,6 +225,48 @@ const goNext = () => {
   }
 }
 
-@media (max-width: 960px) {
+@media (min-width: 1024px) {
+  .card {
+    width: 100%;
+    height: fit-content;
+    border-radius: 16px;
+    padding: var(--card-body-padding, 40px 72px);
+    &__body {
+      overflow-x: auto;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .card__pager {
+    display: flex;
+  }
+
+  .card__body__lights {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(2, minmax(256px, 1fr));
+    column-gap: 32px;
+    row-gap: 12px;
+    min-height: var(--card-body-min-height, 520px);
+
+    .card__light {
+      min-width: 268px;
+      height: fit-content;
+      &--lg {
+        display: flex;
+      }
+      &--sm {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .card__body__lights {
+    grid-template-columns: repeat(4, minmax(280px, 1fr));
+  }
 }
 </style>
