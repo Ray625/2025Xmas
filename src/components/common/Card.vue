@@ -1,6 +1,10 @@
 <template>
   <div class="card" :style="styleVars">
-    <div v-if="cardTitle" class="card__title" :style="{ backgroundColor: textBgColor }">
+    <div
+      v-if="cardTitle && props.showTitle"
+      class="card__title"
+      :style="{ backgroundColor: textBgColor }"
+    >
       {{ cardTitle }}
     </div>
     <div class="card__body">
@@ -25,6 +29,7 @@ const props = withDefaults(
     mdBodyPadding?: string
     lgBodyPadding?: string
     xlBodyPadding?: string
+    showTitle?: boolean
   }>(),
   {
     textBgColor: '#3277E1',
@@ -34,6 +39,7 @@ const props = withDefaults(
     lgBodyPadding: '48px 48px',
     xlBodyPadding: '64px 64px',
     bodyPadding: '75px 80px 80px',
+    showTitle: true,
   },
 )
 

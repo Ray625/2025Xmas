@@ -4,6 +4,12 @@ export function usePromoLocations() {
     taipei101: {
       title: 'sections.promo.xinyi.taipei101.title',
       locationList: [{ locationKey: 'sections.promo.xinyi.taipei101.location' }],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.xinyi.taipei101.title',
+          locationKey: 'sections.promo.xinyi.taipei101.location',
+        },
+      ],
     },
     // 微風
     breeze: {
@@ -81,6 +87,13 @@ export function usePromoLocations() {
           locationKey: `sections.promo.xinyi.SKM.location${suffix}`,
         }
       }),
+      locationList_m: Array.from({ length: 4 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          shopKey: `sections.promo.xinyi.SKM.shop${suffix}_m`,
+          locationKey: `sections.promo.xinyi.SKM.location${suffix}`,
+        }
+      }),
       eventLeft: Array.from({ length: 1 }, (_, index) => {
         const suffix = index === 0 ? '' : index + 1
         return {
@@ -104,6 +117,12 @@ export function usePromoLocations() {
           locationKey: 'sections.promo.xinyi.FEDS.location',
         },
       ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.xinyi.FEDS.title',
+          locationKey: 'sections.promo.xinyi.FEDS.location',
+        },
+      ],
       eventLeft: Array.from({ length: 1 }, (_, index) => {
         const suffix = index === 0 ? '' : index + 1
         return {
@@ -124,12 +143,26 @@ export function usePromoLocations() {
         }
       }),
 
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.xinyi.uni.title',
+          locationKey: 'sections.promo.xinyi.uni.location',
+        },
+      ],
+
       locationList2: Array.from({ length: 1 }, (_, index) => {
         const suffix = index + 2
         return {
           locationKey: `sections.promo.xinyi.uni.location${suffix}`,
         }
       }),
+
+      locationList2_m: [
+        {
+          shopKey: 'sections.promo.xinyi.uni.title2',
+          locationKey: 'sections.promo.xinyi.uni.location2',
+        },
+      ],
 
       eventLeft: Array.from({ length: 1 }, (_, index) => {
         const suffix = index === 0 ? '' : index + 1
@@ -154,11 +187,23 @@ export function usePromoLocations() {
           locationKey: 'sections.promo.xinyi.BELLAVITA.location',
         },
       ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.xinyi.BELLAVITA.title',
+          locationKey: 'sections.promo.xinyi.BELLAVITA.location',
+        },
+      ],
     },
     ATT: {
       title: 'sections.promo.xinyi.ATT.title',
       locationList: [
         {
+          locationKey: 'sections.promo.xinyi.ATT.location',
+        },
+      ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.xinyi.ATT.title',
           locationKey: 'sections.promo.xinyi.ATT.location',
         },
       ],
@@ -235,9 +280,21 @@ export function usePromoLocations() {
           locationKey: 'sections.promo.eastern.sogo.location',
         },
       ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.eastern.sogo.shop_m',
+          locationKey: 'sections.promo.eastern.sogo.location',
+        },
+      ],
       locationList2: [
         {
           shopKey: 'sections.promo.eastern.sogo.shop2',
+          locationKey: 'sections.promo.eastern.sogo.location2',
+        },
+      ],
+      locationList2_m: [
+        {
+          shopKey: 'sections.promo.eastern.sogo.shop2_m',
           locationKey: 'sections.promo.eastern.sogo.location2',
         },
       ],
@@ -277,6 +334,12 @@ export function usePromoLocations() {
           locationKey: 'sections.promo.eastern.DT.location',
         },
       ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.eastern.DT.title',
+          locationKey: 'sections.promo.eastern.DT.location',
+        },
+      ],
 
       eventLeft: [
         {
@@ -297,6 +360,12 @@ export function usePromoLocations() {
       title: 'sections.promo.eastern.MingYao.title',
       locationList: [
         {
+          locationKey: 'sections.promo.eastern.MingYao.location',
+        },
+      ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.eastern.MingYao.title',
           locationKey: 'sections.promo.eastern.MingYao.location',
         },
       ],
@@ -325,6 +394,13 @@ export function usePromoLocations() {
           locationKey: `sections.promo.eastern.eslite.location${suffix}`,
         }
       }),
+      locationList_m: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          shopKey: `sections.promo.eastern.eslite.shop${suffix}_m`,
+          locationKey: `sections.promo.eastern.eslite.location${suffix}`,
+        }
+      }),
 
       eventLeft: Array.from({ length: 3 }, (_, index) => {
         const suffix = index === 0 ? '' : index + 1
@@ -344,6 +420,11 @@ export function usePromoLocations() {
 
     Taishin: {
       title: 'sections.promo.eastern.Taishin.title',
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.eastern.Taishin.title',
+        },
+      ],
       body: 'sections.promo.eastern.Taishin.body',
       link: 'sections.promo.eastern.Taishin.link',
     },
