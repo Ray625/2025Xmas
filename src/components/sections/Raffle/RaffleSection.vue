@@ -255,9 +255,26 @@
             <CardStamp
               title-key="sections.raffle.stamp.xinyi.title"
               :lights="xinyiCollect"
+              :page-size="4"
+              bodyMinHeight="780px"
+              :showTime="false"
+              class="card__stamp--sm"
+            />
+            <CardStamp
+              title-key="sections.raffle.stamp.xinyi.title"
+              :lights="xinyiCollect"
               :page-size="8"
               bodyMinHeight="780px"
               :showTime="false"
+              class="card__stamp--xl"
+            />
+            <CardStamp
+              title-key="sections.raffle.stamp.eastern.title"
+              :lights="easternCollect"
+              :page-size="4"
+              bodyMinHeight="780px"
+              :showTime="false"
+              class="card__stamp--sm"
             />
             <CardStamp
               title-key="sections.raffle.stamp.eastern.title"
@@ -265,6 +282,15 @@
               :page-size="8"
               bodyMinHeight="780px"
               :showTime="false"
+              class="card__stamp--xl"
+            />
+            <CardStamp
+              title-key="sections.raffle.stamp.taipei.title"
+              :lights="taipeiCollect"
+              :page-size="4"
+              bodyMinHeight="780px"
+              :showTime="false"
+              class="card__stamp--sm"
             />
             <CardStamp
               title-key="sections.raffle.stamp.taipei.title"
@@ -272,6 +298,7 @@
               :page-size="8"
               bodyMinHeight="780px"
               :showTime="false"
+              class="card__stamp--xl"
             />
           </div>
         </Card>
@@ -551,9 +578,9 @@ const handleGoLineOA = () =>
   height: 100%;
   &__map {
     width: 100%;
-    aspect-ratio: 1080 / 548;
-    margin-bottom: 60px;
-    border-radius: 16px;
+    aspect-ratio: 1/1;
+    margin-bottom: 52px;
+    border-radius: 12px;
     iframe {
       width: 100%;
       height: 100%;
@@ -564,13 +591,26 @@ const handleGoLineOA = () =>
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 12px;
   }
 }
 
 .stamp__note {
   @include mixins.text-note-lg;
   margin-bottom: 24px;
+  text-align: center;
+}
+
+.card__stamp {
+  &--sm {
+    display: block;
+  }
+  &--lg {
+    display: none;
+  }
+  &--xl {
+    display: none;
+  }
 }
 
 .prize-card__note__wrapper {
@@ -652,6 +692,21 @@ const handleGoLineOA = () =>
     flex-direction: row;
     gap: 32px;
     width: 100%;
+  }
+
+  .map__card {
+    &__map {
+      width: 100%;
+      aspect-ratio: 10 / 7;
+      margin-bottom: 48px;
+      border-radius: 16px;
+    }
+    &__btn__group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
   }
 }
 
@@ -738,6 +793,25 @@ const handleGoLineOA = () =>
   .snoopy-prize_2 {
     max-width: 260px;
   }
+
+  .card__stamp {
+    &--sm {
+      display: block;
+    }
+
+    &--xl {
+      display: none;
+    }
+  }
+
+  .map__card {
+    &__map {
+      width: 100%;
+      aspect-ratio: 10 / 8;
+      margin-bottom: 60px;
+      border-radius: 16px;
+    }
+  }
 }
 
 @media (min-width: 1440px) {
@@ -778,6 +852,15 @@ const handleGoLineOA = () =>
 
   .snoopy-prize_2 {
     max-width: 300px;
+  }
+
+  .map__card {
+    &__map {
+      width: 100%;
+      aspect-ratio: 1080 / 548;
+      margin-bottom: 60px;
+      border-radius: 16px;
+    }
   }
 }
 
@@ -839,6 +922,16 @@ const handleGoLineOA = () =>
 
   .snoopy-prize_2 {
     max-width: 348px;
+  }
+
+  .card__stamp {
+    &--sm {
+      display: none;
+    }
+
+    &--xl {
+      display: block;
+    }
   }
 }
 </style>

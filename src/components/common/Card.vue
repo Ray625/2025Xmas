@@ -30,7 +30,7 @@ const props = withDefaults(
     textBgColor: '#3277E1',
     bgColor: '#fff',
     smBodyPadding: '24px 12px 12px',
-    mdBodyPadding: ' 36px 28px',
+    mdBodyPadding: '28px 20px',
     lgBodyPadding: '48px 48px',
     xlBodyPadding: '64px 64px',
     bodyPadding: '75px 80px 80px',
@@ -56,12 +56,12 @@ const styleVars = computed(() => ({
 .card {
   width: 100%;
   height: fit-content;
-  border-radius: 12px 12px 40px 40px;
+  border-radius: 8px 8px 24px 24px;
   &__title {
     padding: 8px;
     @include mixins.card-title(vars.$color-white);
     text-align: center;
-    border-radius: 12px 12px 0 0;
+    border-radius: 8px 8px 0 0;
   }
   &__body {
     display: flex;
@@ -70,7 +70,7 @@ const styleVars = computed(() => ({
     width: 100%;
     padding: var(--card-body-padding-sm);
     background-color: var(--card-body-bg-color);
-    border-radius: 0 0 40px 40px;
+    border-radius: 0 0 24px 24px;
   }
 }
 
@@ -78,14 +78,14 @@ const styleVars = computed(() => ({
   .card {
     width: 100%;
     height: fit-content;
-    border-radius: 12px 12px 40px 40px;
+    border-radius: 10px 10px 28px 28px;
     &__title {
       padding: 10px;
-      border-radius: 12px 12px 0 0;
+      border-radius: 10px 10px 0 0;
     }
     &__body {
       padding: var(--card-body-padding-md);
-      border-radius: 0 0 40px 40px;
+      border-radius: 0 0 28px 28px;
     }
   }
 }
