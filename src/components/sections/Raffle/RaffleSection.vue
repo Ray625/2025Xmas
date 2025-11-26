@@ -62,9 +62,27 @@
             >
               <div class="step__text margin-small">
                 <p class="step--sm">
-                  {{ t('sections.raffle.rules.step2.text') }}
+                  <span>
+                    {{ t('sections.raffle.rules.step2.text_m') }}
+                  </span>
+                  <span class="text-[#E3007F]">
+                    {{ t('sections.raffle.rules.step2.text_focus') }}
+                  </span>
+                  <span>
+                    {{ t('sections.raffle.rules.step2.text2_m') }}
+                  </span>
                 </p>
-                <p class="step--lg">{{ t('sections.raffle.rules.step2.text2') }}</p>
+                <p class="step--lg">
+                  <span>
+                    {{ t('sections.raffle.rules.step2.text') }}
+                  </span>
+                  <span class="text-[#E3007F]">
+                    {{ t('sections.raffle.rules.step2.text_focus') }}
+                  </span>
+                  <span>
+                    {{ t('sections.raffle.rules.step2.text2') }}
+                  </span>
+                </p>
               </div>
               <img :src="iconQRCode" alt="qrcode" class="w-[60px] h-[60px] mb-3" />
               <p class="step__text__note">{{ t('sections.raffle.rules.step2.note') }}</p>
