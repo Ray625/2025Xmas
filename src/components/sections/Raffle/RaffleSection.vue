@@ -141,27 +141,27 @@
                 <span class="prize-card__text">{{ t('sections.raffle.prize.cardLeft.text') }}</span>
                 <div class="raffle-section__prize__wrapper">
                   <div class="prize-card__row">
-                    <template v-for="(prize, index) in prizeLeft">
+                    <template v-for="prize in prizeLeft">
                       <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                       <p class="prize-card__prize__text">{{ prize.text }}</p>
-                      <span class="prize-card__prize__quota whitespace-nowrap">{{
-                        `${prize.quota}${
-                          index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
-                        }`
+                      <span v-if="prize.quota" class="prize-card__prize__quota whitespace-nowrap">{{
+                        `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
                       }}</span>
                     </template>
                   </div>
                   <div class="prize-card__row--mobile">
-                    <template v-for="(prize, index) in prizeLeft">
+                    <template v-for="prize in prizeLeft">
                       <div class="flex flex-row gap-5">
                         <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                         <div class="flex flex-col gap-1">
                           <p class="prize-card__prize__text">{{ prize.text }}</p>
-                          <span class="prize-card__prize__quota whitespace-nowrap">{{
-                            `${prize.quota}${
-                              index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
-                            }`
-                          }}</span>
+                          <span
+                            v-if="prize.quota"
+                            class="prize-card__prize__quota whitespace-nowrap"
+                            >{{
+                              `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
+                            }}</span
+                          >
                         </div>
                       </div>
                     </template>
@@ -540,7 +540,7 @@ const handleGoLineOA = () =>
     border-radius: 32px;
     background: vars.$color-white;
     text-align: center;
-    @include mixins.typography-responsive(14px, 16px, 18px, 22px, 28px, 36px, 700, #f4aa1c);
+    @include mixins.typography-responsive(14px, 16px, 18px, 22px, 28px, 36px, 700, #ff5660);
   }
   &__prize__img {
     width: 108px;

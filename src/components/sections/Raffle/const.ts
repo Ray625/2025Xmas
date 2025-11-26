@@ -11,7 +11,7 @@ import prizeRight3 from '@/assets/icon/prize_right_3.svg'
 type PrizeItem = {
   img: string
   text: string
-  quota: string
+  quota?: string
 }
 
 export function useRaffleConstants() {
@@ -41,7 +41,6 @@ export function useRaffleConstants() {
     {
       img: prizeLeft5,
       text: t('sections.raffle.prize.cardLeft.prize5'),
-      quota: t('sections.raffle.prize.cardLeft.prize5tag'),
     },
   ]
 
