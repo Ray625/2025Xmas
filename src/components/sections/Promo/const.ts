@@ -402,7 +402,7 @@ export function usePromoLocations() {
         }
       }),
 
-      eventLeft: Array.from({ length: 3 }, (_, index) => {
+      eventLeft: Array.from({ length: 2 }, (_, index) => {
         const suffix = index === 0 ? '' : index + 1
         return {
           title: `sections.promo.eastern.eslite.event.title${suffix}`,
@@ -412,8 +412,8 @@ export function usePromoLocations() {
 
       eventRight: [
         {
-          title: `sections.promo.eastern.eslite.event.title4`,
-          text: `sections.promo.eastern.eslite.event.text4`,
+          title: `sections.promo.eastern.eslite.event.title3`,
+          text: `sections.promo.eastern.eslite.event.text3`,
         },
       ],
     },
@@ -570,7 +570,7 @@ export function usePromoLocations() {
         },
       ],
 
-      eventLeft: Array.from({ length: 3 }, (_, index) => {
+      eventLeft: Array.from({ length: 2 }, (_, index) => {
         const suffix = index === 0 ? '' : index + 1
         return {
           title: `sections.promo.taipei.eslite.event.title${suffix}`,
@@ -580,8 +580,8 @@ export function usePromoLocations() {
 
       eventRight: [
         {
-          title: `sections.promo.taipei.eslite.event.title4`,
-          text: `sections.promo.taipei.eslite.event.text4`,
+          title: `sections.promo.taipei.eslite.event.title3`,
+          text: `sections.promo.taipei.eslite.event.text3`,
         },
       ],
 

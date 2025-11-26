@@ -251,8 +251,17 @@
               "
             >
               <template #detail>
-                <div class="">
-                  {{ t('sections.promo.xinyi.BELLAVITA.body') }}
+                <div>
+                  <span>
+                    {{ t('sections.promo.xinyi.BELLAVITA.body') }}
+                  </span>
+                  <a
+                    href="https://www.bellavita.com.tw/catalogue/goodslist.php?d=522"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="underline"
+                    >{{ t('sections.promo.xinyi.BELLAVITA.link') }}</a
+                  >
                 </div>
               </template>
             </CardLocale>
@@ -349,7 +358,11 @@
               :title="
                 breakpoint === 'sm' || breakpoint === 'xs' ? undefined : easternList.sogo.title
               "
-              :locationList="easternList.sogo.locationList_m"
+              :locationList="
+                breakpoint === 'sm' || breakpoint === 'xs'
+                  ? easternList.sogo.locationList_m
+                  : easternList.sogo.locationList
+              "
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -512,23 +525,22 @@
               :locationList="
                 breakpoint === 'sm' || breakpoint === 'xs' ? easternList.Taishin.locationList_m : []
               "
-              :show-btb="false"
-              :default-open="true"
             >
               <template #detail>
-                <div class="flex flex-row">
+                <span>
                   <span>
                     {{ t(`${easternList.Taishin.body}`) }}
                   </span>
                   <a
-                    href="https://www.taishinbank.com.tw/TSB/personal/common/bonus/TSBankBonus-002107/"
+                    href="https://tsbk.tw/8awa5x/"
                     class="underline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {{ t(`${easternList.Taishin.link}`) }}
                   </a>
-                </div>
+                  。
+                </span>
               </template>
             </CardLocale>
           </div>

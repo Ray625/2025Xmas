@@ -538,7 +538,7 @@ const handleGoLineOA = () => {
 
   &__prize__quota--right {
     width: fit-content;
-    padding: 0 12px;
+    padding: 0 20px;
     border-radius: 32px;
     background: vars.$color-white;
     text-align: center;
@@ -773,7 +773,7 @@ const handleGoLineOA = () => {
 
   .prize-card__prize__quota--right {
     width: fit-content;
-    padding: 0 14px;
+    padding: 0 20px;
   }
 
   .snoopy-prize {
