@@ -7,12 +7,12 @@
       <div class="location-card__detail__header">
         <div
           class="location-card__detail__header__col"
-          :class="{ 'lot-location': locationList.length > 1 }"
+          :class="{ 'lot-location': locationList.length > 2 }"
         >
           <div
             v-for="location in locationList"
             class="location-card__detail__header__group"
-            :class="{ 'lot-location': locationList.length > 1 }"
+            :class="{ 'lot-location': locationList.length > 2 }"
           >
             <TagLocale v-if="location.shopKey" :shopKey="location.shopKey" />
             <div
@@ -71,8 +71,9 @@ const props = withDefaults(
   },
 )
 
-const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpoint.value))
-// const openToggle = ref(true)
+// const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpoint.value))
+
+const openToggle = ref(true)
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;

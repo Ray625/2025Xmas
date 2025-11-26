@@ -532,11 +532,24 @@
             </CardLocale>
           </div>
         </Card>
-        <Card v-if="activeTab === 2" title-key="sections.promo.taipei.title" bodyPadding="40px">
+        <Card
+          v-if="activeTab === 2"
+          title-key="sections.promo.taipei.title"
+          bodyPadding="40px"
+          :show-title="breakpoint === 'sm' || breakpoint === 'xs' ? false : true"
+          :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
+          smBodyPadding="0"
+        >
           <div class="area-list">
             <CardLocale
-              :title="taipeiList.Dayeh.title"
-              :locationList="taipeiList.Dayeh.locationList"
+              :title="
+                breakpoint === 'sm' || breakpoint === 'xs' ? undefined : taipeiList.Dayeh.title
+              "
+              :locationList="
+                breakpoint === 'sm' || breakpoint === 'xs'
+                  ? taipeiList.Dayeh.locationList_m
+                  : taipeiList.Dayeh.locationList
+              "
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -559,8 +572,14 @@
             </CardLocale>
 
             <CardLocale
-              :title="taipeiList.breeze.title"
-              :locationList="taipeiList.breeze.locationList"
+              :title="
+                breakpoint === 'sm' || breakpoint === 'xs' ? undefined : taipeiList.breeze.title
+              "
+              :locationList="
+                breakpoint === 'sm' || breakpoint === 'xs'
+                  ? taipeiList.breeze.locationList_m
+                  : taipeiList.breeze.locationList
+              "
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -582,7 +601,11 @@
               </template>
             </CardLocale>
 
-            <CardLocale :title="taipeiList.SKM.title" :locationList="taipeiList.SKM.locationList">
+            <CardLocale
+              v-if="['xl', 'lg', 'md'].includes(breakpoint)"
+              :title="taipeiList.SKM.title"
+              :locationList="taipeiList.SKM.locationList"
+            >
               <template #detail>
                 <div class="locale-card__list">
                   <div class="flex flex-col gap-4 flex-1">
@@ -603,7 +626,36 @@
               </template>
             </CardLocale>
 
-            <CardLocale :locationList="taipeiList.SKM.locationList2">
+            <!-- 新光手機版 -->
+            <CardLocale
+              v-if="['xs', 'sm'].includes(breakpoint)"
+              v-for="locale in taipeiList.SKM.locationList_m"
+              :locationList="[locale]"
+            >
+              <template #detail>
+                <div class="locale-card__list">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.eslite.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.eslite.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
+            <CardLocale
+              v-if="['xl', 'lg', 'md'].includes(breakpoint)"
+              :locationList="taipeiList.SKM.locationList2"
+            >
               <template #detail>
                 <div class="locale-card__list">
                   <div class="flex flex-col gap-4 flex-1">
@@ -623,8 +675,34 @@
                 </div>
               </template>
             </CardLocale>
+            <CardLocale
+              v-if="['xs', 'sm'].includes(breakpoint)"
+              v-for="locale in taipeiList.SKM.locationList2_m"
+              :locationList="[locale]"
+            >
+              <template #detail>
+                <div class="locale-card__list">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.eslite.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.eslite.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+
             <!-- 誠品 -->
             <CardLocale
+              v-if="['xl', 'lg', 'md'].includes(breakpoint)"
               :title="taipeiList.eslite.title"
               :locationList="taipeiList.eslite.locationList"
             >
@@ -647,7 +725,38 @@
                 </div>
               </template>
             </CardLocale>
-            <CardLocale :locationList="taipeiList.eslite.locationList2">
+            <!-- 誠品手機版 -->
+            <CardLocale
+              v-if="['xs', 'sm'].includes(breakpoint)"
+              v-for="locale in taipeiList.eslite.locationList_m"
+              :locationList="[locale]"
+            >
+              <template #detail>
+                <div class="locale-card__list">
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.eslite.eventLeft"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4 flex-1">
+                    <CardEvent
+                      v-for="(event, index) in easternList.eslite.eventRight"
+                      :key="index"
+                      :eventData="event"
+                    />
+                  </div>
+                </div>
+              </template>
+            </CardLocale>
+            <CardLocale
+              :locationList="
+                ['xs', 'sm'].includes(breakpoint)
+                  ? taipeiList.eslite.locationList2_m
+                  : taipeiList.eslite.locationList2
+              "
+            >
               <template #detail>
                 <div class="locale-card__list">
                   <div class="flex flex-col gap-4 flex-1">
@@ -667,9 +776,16 @@
                 </div>
               </template>
             </CardLocale>
+            <!-- 美麗華百樂園 -->
             <CardLocale
-              :title="taipeiList.Miramar.title"
-              :locationList="taipeiList.Miramar.locationList"
+              :title="
+                breakpoint === 'sm' || breakpoint === 'xs' ? undefined : taipeiList.Miramar.title
+              "
+              :locationList="
+                breakpoint === 'sm' || breakpoint === 'xs'
+                  ? taipeiList.Miramar.locationList_m
+                  : taipeiList.Miramar.locationList
+              "
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -690,13 +806,19 @@
                 </div>
               </template>
             </CardLocale>
-
+            <!-- LaLaport -->
             <CardLocale
-              :title="taipeiList.lalaport.title"
-              :locationList="taipeiList.lalaport.locationList"
+              :title="
+                breakpoint === 'sm' || breakpoint === 'xs' ? undefined : taipeiList.lalaport.title
+              "
+              :locationList="
+                breakpoint === 'sm' || breakpoint === 'xs'
+                  ? taipeiList.lalaport.locationList_m
+                  : taipeiList.lalaport.locationList
+              "
             >
               <template #detail>
-                <div class="flex flex-row">
+                <span>
                   <span>
                     {{ t(`${taipeiList.lalaport.body}`) }}
                   </span>
@@ -708,13 +830,19 @@
                     {{ t(`${taipeiList.lalaport.link}`) }}
                   </a>
                   。
-                </div>
+                </span>
               </template>
             </CardLocale>
-
+            <!-- 京站時尚廣場 -->
             <CardLocale
-              :title="taipeiList.QSquare.title"
-              :locationList="taipeiList.QSquare.locationList"
+              :title="
+                breakpoint === 'sm' || breakpoint === 'xs' ? undefined : taipeiList.QSquare.title
+              "
+              :locationList="
+                breakpoint === 'sm' || breakpoint === 'xs'
+                  ? taipeiList.QSquare.locationList_m
+                  : taipeiList.QSquare.locationList
+              "
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -735,10 +863,16 @@
                 </div>
               </template>
             </CardLocale>
-
+            <!-- 三創生活園區 -->
             <CardLocale
-              :title="taipeiList.Syntrend.title"
-              :locationList="taipeiList.Syntrend.locationList"
+              :title="
+                breakpoint === 'sm' || breakpoint === 'xs' ? undefined : taipeiList.Syntrend.title
+              "
+              :locationList="
+                breakpoint === 'sm' || breakpoint === 'xs'
+                  ? taipeiList.Syntrend.locationList_m
+                  : taipeiList.Syntrend.locationList
+              "
             >
               <template #detail>
                 <div class="locale-card__list">

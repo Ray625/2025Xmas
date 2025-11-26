@@ -438,6 +438,12 @@ export function usePromoLocations() {
           locationKey: 'sections.promo.taipei.Dayeh.location',
         },
       ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.taipei.Dayeh.title',
+          locationKey: 'sections.promo.taipei.Dayeh.location',
+        },
+      ],
 
       eventLeft: [
         {
@@ -457,6 +463,12 @@ export function usePromoLocations() {
       locationList: [
         {
           shopKey: 'sections.promo.taipei.breeze.shop',
+          locationKey: 'sections.promo.taipei.breeze.location',
+        },
+      ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.taipei.breeze.title',
           locationKey: 'sections.promo.taipei.breeze.location',
         },
       ],
@@ -485,10 +497,24 @@ export function usePromoLocations() {
           locationKey: `sections.promo.taipei.SKM.location${suffix}`,
         }
       }),
+      locationList_m: Array.from({ length: 3 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          shopKey: `sections.promo.taipei.SKM.shop${suffix}_m`,
+          locationKey: `sections.promo.taipei.SKM.location${suffix}`,
+        }
+      }),
       locationList2: Array.from({ length: 2 }, (_, index) => {
         const suffix = index + 4
         return {
           shopKey: `sections.promo.taipei.SKM.shop${suffix}`,
+          locationKey: `sections.promo.taipei.SKM.location${suffix}`,
+        }
+      }),
+      locationList2_m: Array.from({ length: 2 }, (_, index) => {
+        const suffix = index + 4
+        return {
+          shopKey: `sections.promo.taipei.SKM.shop${suffix}_m`,
           locationKey: `sections.promo.taipei.SKM.location${suffix}`,
         }
       }),
@@ -523,6 +549,13 @@ export function usePromoLocations() {
           locationKey: `sections.promo.taipei.eslite.location${suffix}`,
         }
       }),
+      locationList_m: Array.from({ length: 4 }, (_, index) => {
+        const suffix = index === 0 ? '' : index + 1
+        return {
+          shopKey: `sections.promo.taipei.eslite.shop${suffix}_m`,
+          locationKey: `sections.promo.taipei.eslite.location${suffix}`,
+        }
+      }),
       locationList2: Array.from({ length: 1 }, (_, index) => {
         const suffix = index + 5
         return {
@@ -530,6 +563,12 @@ export function usePromoLocations() {
           locationKey: `sections.promo.taipei.eslite.location${suffix}`,
         }
       }),
+      locationList2_m: [
+        {
+          shopKey: 'sections.promo.taipei.eslite.shop5_m',
+          locationKey: 'sections.promo.taipei.eslite.location5',
+        },
+      ],
 
       eventLeft: Array.from({ length: 3 }, (_, index) => {
         const suffix = index === 0 ? '' : index + 1
@@ -569,6 +608,12 @@ export function usePromoLocations() {
           locationKey: 'sections.promo.taipei.Miramar.location',
         },
       ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.taipei.Miramar.title',
+          locationKey: 'sections.promo.taipei.Miramar.location',
+        },
+      ],
 
       eventLeft: [
         {
@@ -591,6 +636,12 @@ export function usePromoLocations() {
           locationKey: 'sections.promo.taipei.lalaport.location',
         },
       ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.taipei.lalaport.title',
+          locationKey: 'sections.promo.taipei.lalaport.location',
+        },
+      ],
       body: 'sections.promo.taipei.lalaport.body',
       link: 'sections.promo.taipei.lalaport.link',
     },
@@ -598,6 +649,12 @@ export function usePromoLocations() {
       title: 'sections.promo.taipei.QSquare.title',
       locationList: [
         {
+          locationKey: 'sections.promo.taipei.QSquare.location',
+        },
+      ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.taipei.QSquare.title',
           locationKey: 'sections.promo.taipei.QSquare.location',
         },
       ],
@@ -621,6 +678,12 @@ export function usePromoLocations() {
       title: 'sections.promo.taipei.Syntrend.title',
       locationList: [
         {
+          locationKey: 'sections.promo.taipei.Syntrend.location',
+        },
+      ],
+      locationList_m: [
+        {
+          shopKey: 'sections.promo.taipei.Syntrend.title',
           locationKey: 'sections.promo.taipei.Syntrend.location',
         },
       ],
