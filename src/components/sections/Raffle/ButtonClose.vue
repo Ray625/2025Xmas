@@ -32,26 +32,45 @@ defineEmits<{
 
 .action-button {
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 20px;
+  right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   color: #868686;
   outline: 2px solid #868686;
   outline-offset: -2px;
   border-radius: 8px;
 
   &__icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
+}
 
-  &:hover {
-    background-color: #868686;
-    color: white;
+@media (min-width: 1024px) {
+  .action-button {
+    top: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    color: #868686;
+
+    &__icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    &:hover {
+      background-color: #868686;
+      color: white;
+    }
   }
 }
 </style>

@@ -2,8 +2,14 @@
   <section class="performance-section">
     <Container maxWidth="1440px">
       <div class="flex flex-col items-center">
-        <SectionTitle preset="performance" class="mb-[55px]" />
-        <img :src="performanceMap" alt="xinyi map" class="max-w-full" loading="lazy" />
+        <SectionTitle preset="performance" class="performance-section__title" />
+        <img :src="performanceMapM" alt="xinyi map" class="performance__img--m" loading="lazy" />
+        <img
+          :src="performanceMap"
+          alt="xinyi map"
+          class="max-w-full performance__img"
+          loading="lazy"
+        />
       </div>
     </Container>
   </section>
@@ -12,6 +18,7 @@
 import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import performanceMap from '@/assets/img/section_09_event.png'
+import performanceMapM from '@/assets/img/m_section_09_event.png'
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;
@@ -21,5 +28,39 @@ import performanceMap from '@/assets/img/section_09_event.png'
   padding-top: 56px;
   padding-bottom: 112px;
   background-color: vars.$bg-blue;
+}
+
+.performance-section__title {
+  margin-bottom: 20px;
+}
+
+.performance__img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .performance__img--m {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .performance-section__title {
+    margin-bottom: 36px;
+  }
+
+  .performance__img--m {
+    display: none;
+  }
+
+  .performance__img {
+    display: block;
+  }
+}
+
+@media (min-width: 1920px) {
+  .performance-section__title {
+    margin-bottom: 56px;
+  }
 }
 </style>

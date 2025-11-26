@@ -1,7 +1,7 @@
 <template>
   <div class="tag" :style="styleVars">
-    <img :src="props.car === 'bus' ? iconBus : iconMRT" alt="icon car" />
-    <p>{{ car }}</p>
+    <img :src="props.car === 'bus' ? iconBus : iconMRT" alt="icon car" class="tag__img" />
+    <p class="whitespace-nowrap">{{ car }}</p>
   </div>
 </template>
 
@@ -36,19 +36,43 @@ const styleVars = computed(() => ({
 
 .tag {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: 8px;
   width: fit-content;
   height: fit-content;
-  padding: 8px 6px 8px 12px;
-  border-radius: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
   background-color: var(--bg-color);
-  @include mixins.typography(18px, 32px, 700, var(--text-color));
+  @include mixins.car-tag-color(var(--text-color));
   img {
-    width: 24px;
-    max-width: 100%;
-    aspect-ratio: 1/1;
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tag {
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    img {
+      display: block;
+      width: 100%;
+      max-width: 18px;
+      aspect-ratio: 1/1;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .tag {
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    img {
+      max-width: 24px;
+    }
   }
 }
 </style>

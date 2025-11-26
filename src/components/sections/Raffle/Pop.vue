@@ -1,10 +1,10 @@
 <template>
   <div v-if="visible" class="popup" @click.self="onClose">
     <Container maxWidth="1200px">
-      <div class="relative p-[60px_284px_0px] max-h-[560px] bg-white rounded-[20px]">
+      <div class="popup-container">
         <ButtonClose @click="onClose" />
-        <div class="max-h-[500px] overflow-y-auto scroll-container">
-          <div class="flex flex-col bg-white rounded-5">
+        <div class="scroll-container">
+          <div class="popup-content">
             <div class="popup__title mb-[36px]">{{ t('popup.title') }}</div>
             <div class="flex flex-col mb-[24px] popup__text">
               <p class="popup__subtitle">{{ t('popup.event.title') }}</p>
@@ -106,13 +106,13 @@ const onClose = () => emit('close')
   overflow: auto;
 
   &__title {
-    @include mixins.typography(32px, 44px, 700, #000);
+    @include mixins.card-title(#000);
   }
   &__subtitle {
-    @include mixins.typography(24px, 36px, 700, #000);
+    @include mixins.text-title(#000);
   }
   &__text {
-    @include mixins.typography(18px, 32px, 500, #000);
+    @include mixins.locale-card-text;
   }
   &__list {
     list-style: decimal;
@@ -120,9 +120,41 @@ const onClose = () => emit('close')
   }
 }
 
+.popup-container {
+  position: relative;
+  max-height: 560px;
+  padding: 60px 24px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
 .scroll-container {
   &::-webkit-scrollbar {
     width: 0;
+  }
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .popup-content {
+    max-width: 560px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .popup-content {
+    max-width: 632px;
   }
 }
 </style>

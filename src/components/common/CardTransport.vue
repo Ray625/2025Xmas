@@ -23,15 +23,18 @@ import iconArrow from '@/assets/icon/arrow_up_sm.svg'
 import TagCar from '@/components/common/TagCar.vue'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useViewport } from '@/composables/useViewport'
+const { breakpoint } = useViewport()
 
 const { t } = useI18n()
 
-defineProps<{
+const props = defineProps<{
   title: string
   transportList: string[]
+  defaultOpen?: boolean | null
 }>()
 
-const openToggle = ref(true)
+const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpoint.value))
 
 const handleToggle = () => (openToggle.value = !openToggle.value)
 </script>
@@ -42,21 +45,20 @@ const handleToggle = () => (openToggle.value = !openToggle.value)
 .transport-card {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 8px;
   width: 100%;
   background-color: #f1f9f5;
+  padding: 12px;
+  border-radius: 16px;
 
   &__title {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 2px solid vars.$color-text-green;
-    @include mixins.typography(24px, 36px, 700, vars.$color-text-green);
+    @include mixins.text-body(vars.$color-text-green);
   }
 
   &__btn {
-    // margin-left: auto;
     &.open {
       transform: rotate(180deg);
     }
@@ -64,24 +66,52 @@ const handleToggle = () => (openToggle.value = !openToggle.value)
 
   &__detail {
     display: flex;
-    flex-direction: row;
-    gap: 40px;
+    flex-direction: column;
+    gap: 8px;
     &--left,
     &--right {
       flex: 1 1 0;
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      flex-direction: row;
+      gap: 8px;
       height: fit-content;
     }
     &__text {
       white-space: pre-line;
-      @include mixins.typography(24px, 36px, 700, #000);
+      @include mixins.car-text;
     }
   }
 }
 
+@media (min-width: 768px) {
+  .transport-card {
+    padding: 24px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
+  .transport-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0;
+
+    &__title {
+      padding: 12px 0;
+      border-bottom: 2px solid vars.$color-text-green;
+    }
+
+    &__detail {
+      flex-direction: row;
+      gap: 40px;
+      &--left,
+      &--right {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  }
+
   .transport-card__btn:hover {
     opacity: 0.8;
   }

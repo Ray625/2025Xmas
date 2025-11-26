@@ -1,8 +1,8 @@
 <template>
   <section class="media-section">
     <Container maxWidth="1440px">
-      <div class="flex flex-col items-center">
-        <SectionTitle preset="media" class="mb-[88px]" />
+      <div class="flex flex-col items-center w-full">
+        <SectionTitle preset="media" class="media-section__title" />
         <div class="media__group">
           <div
             class="media__card media__card--left"
@@ -32,15 +32,20 @@ const handleClick = (url: string) => {
 
 .media-section {
   padding-top: 80px;
-  padding-bottom: 132px;
+  padding-bottom: 40px;
   background-color: vars.$bg-snow;
+}
+
+.media-section__title {
+  margin-bottom: 16px;
 }
 
 .media {
   &__group {
     display: flex;
-    flex-direction: row;
-    gap: 48px;
+    flex-direction: column;
+    width: 100%;
+    gap: 28px;
   }
   &__card {
     position: relative;
@@ -48,7 +53,7 @@ const handleClick = (url: string) => {
     max-width: 100%;
     aspect-ratio: 620/358;
     border-radius: 16px;
-    border: 10px solid #75c7d7;
+    border: 6px solid #75c7d7;
 
     &__mask {
       width: 100%;
@@ -99,9 +104,63 @@ const handleClick = (url: string) => {
   }
 }
 
+@media (min-width: 768px) {
+  .media-section__title {
+    margin-bottom: 48px;
+  }
+
+  .media-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .media__group {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
+  .media-section {
+    padding-top: 80px;
+    padding-bottom: 132px;
+  }
+
   .media__card--left:hover {
     cursor: pointer;
+  }
+
+  .media {
+    &__group {
+      display: flex;
+      flex-direction: row;
+      gap: 48px;
+      justify-content: center;
+    }
+
+    &__card {
+      position: relative;
+      width: 620px;
+      max-width: 100%;
+      aspect-ratio: 620/358;
+      border-radius: 16px;
+      border: 10px solid #75c7d7;
+
+      &__mask {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 50%);
+        border-radius: 6px;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .media-section__title {
+    margin-bottom: 88px;
   }
 }
 </style>

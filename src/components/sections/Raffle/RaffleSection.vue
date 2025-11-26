@@ -62,9 +62,27 @@
             >
               <div class="step__text margin-small">
                 <p class="step--sm">
-                  {{ t('sections.raffle.rules.step2.text') }}
+                  <span>
+                    {{ t('sections.raffle.rules.step2.text_m') }}
+                  </span>
+                  <span class="text-[#E3007F]">
+                    {{ t('sections.raffle.rules.step2.text_focus') }}
+                  </span>
+                  <span>
+                    {{ t('sections.raffle.rules.step2.text2_m') }}
+                  </span>
                 </p>
-                <p class="step--lg">{{ t('sections.raffle.rules.step2.text2') }}</p>
+                <p class="step--lg">
+                  <span>
+                    {{ t('sections.raffle.rules.step2.text') }}
+                  </span>
+                  <span class="text-[#E3007F]">
+                    {{ t('sections.raffle.rules.step2.text_focus') }}
+                  </span>
+                  <span>
+                    {{ t('sections.raffle.rules.step2.text2') }}
+                  </span>
+                </p>
               </div>
               <img :src="iconQRCode" alt="qrcode" class="w-[60px] h-[60px] mb-3" />
               <p class="step__text__note">{{ t('sections.raffle.rules.step2.note') }}</p>
@@ -520,7 +538,7 @@ const handleGoLineOA = () => {
 
   &__prize__quota--right {
     width: fit-content;
-    padding: 0 12px;
+    padding: 0 20px;
     border-radius: 32px;
     background: vars.$color-white;
     text-align: center;
@@ -755,7 +773,7 @@ const handleGoLineOA = () => {
 
   .prize-card__prize__quota--right {
     width: fit-content;
-    padding: 0 14px;
+    padding: 0 20px;
   }
 
   .snoopy-prize {

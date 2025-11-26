@@ -71,9 +71,7 @@ const props = withDefaults(
   },
 )
 
-// const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpoint.value))
-
-const openToggle = ref(true)
+const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpoint.value))
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;
