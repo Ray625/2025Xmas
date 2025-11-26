@@ -757,7 +757,7 @@ export default {
         },
       },
       taipei: {
-        title: '台北各區百貨',
+        title: '臺北各區百貨',
         Dayeh: {
           title: '大葉髙島屋',
           location: '士林區忠誠路二段55號 (02)2831-2345',
@@ -1233,7 +1233,7 @@ export default {
         },
       },
       taipei: {
-        title: '台北各區百貨',
+        title: '臺北各區百貨',
         light1: {
           lightName: 'Just Shine! 閃耀時刻',
           shopName: '誠品生活西門',

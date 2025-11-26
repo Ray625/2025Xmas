@@ -551,6 +551,7 @@
                   ? taipeiList.Dayeh.locationList_m
                   : taipeiList.Dayeh.locationList
               "
+              :defaultOpen="true"
             >
               <template #detail>
                 <div class="locale-card__list">

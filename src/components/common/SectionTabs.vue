@@ -1,5 +1,5 @@
 <template>
-  <div class="section-tabs">
+  <div class="section-tabs" :style="styleVars">
     <button
       v-for="(tab, index) in tabs"
       :key="tab.key ?? index"
@@ -20,10 +20,17 @@ interface TabItem {
   label: string
 }
 
-const props = defineProps<{
-  tabs: TabItem[]
-  modelValue?: number
-}>()
+const props = withDefaults(
+  defineProps<{
+    tabs: TabItem[]
+    modelValue?: number
+    textColor?: string
+  }>(),
+  {
+    tabs: () => [],
+    textColor: '#001A7d',
+  },
+)
 
 const emit = defineEmits<{
   'update:modelValue': [value: number]
@@ -48,6 +55,10 @@ const handleClick = (index: number) => {
   emit('update:modelValue', index)
   emit('select', index)
 }
+
+const styleVars = computed(() => ({
+  '--text-color': props.textColor,
+}))
 </script>
 
 <style scoped lang="scss">
@@ -82,7 +93,7 @@ const handleClick = (index: number) => {
 
 .section-tabs__item--active {
   background-color: vars.$color-white;
-  color: vars.$color-text-blue;
+  color: var(--text-color);
 }
 
 @media (min-width: 768px) {

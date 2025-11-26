@@ -111,3 +111,11 @@
 @mixin locale-card-text($color: #000){
   @include typography-responsive(14px, 16px, 18px, 22px, 150%, 32px, 500, $color);
 }
+
+@mixin car-tag-color($color: #fff){
+  @include typography-responsive(12px, 14px, 18px, 22px, 150%, 32px, 700, $color);
+}
+
+@mixin car-text($color: #000){
+  @include typography-responsive(14px, 18px, 24px, 22px, 150%, 36px, 700, $color);
+}
