@@ -195,7 +195,7 @@ const tabs = computed(() => useTabs())
   border-radius: 8px;
   background-color: #ecf4f9;
   text-align: center;
-  @include mixins.typography(24px, 36px, 700, #3277e1);
+  @include mixins.text-title(#3277e1);
   &__group {
     display: flex;
     flex-direction: row;
