@@ -141,27 +141,27 @@
                 <span class="prize-card__text">{{ t('sections.raffle.prize.cardLeft.text') }}</span>
                 <div class="raffle-section__prize__wrapper">
                   <div class="prize-card__row">
-                    <template v-for="(prize, index) in prizeLeft">
+                    <template v-for="prize in prizeLeft">
                       <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                       <p class="prize-card__prize__text">{{ prize.text }}</p>
-                      <span class="prize-card__prize__quota whitespace-nowrap">{{
-                        `${prize.quota}${
-                          index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
-                        }`
+                      <span v-if="prize.quota" class="prize-card__prize__quota whitespace-nowrap">{{
+                        `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
                       }}</span>
                     </template>
                   </div>
                   <div class="prize-card__row--mobile">
-                    <template v-for="(prize, index) in prizeLeft">
+                    <template v-for="prize in prizeLeft">
                       <div class="flex flex-row gap-5">
                         <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                         <div class="flex flex-col gap-1">
                           <p class="prize-card__prize__text">{{ prize.text }}</p>
-                          <span class="prize-card__prize__quota whitespace-nowrap">{{
-                            `${prize.quota}${
-                              index === 4 ? '' : t('sections.raffle.prize.cardRight.quota')
-                            }`
-                          }}</span>
+                          <span
+                            v-if="prize.quota"
+                            class="prize-card__prize__quota whitespace-nowrap"
+                            >{{
+                              `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
+                            }}</span
+                          >
                         </div>
                       </div>
                     </template>
@@ -231,6 +231,7 @@
                     v-if="index === 2"
                     href="https://www.facebook.com/tcooc?locale=zh_TW"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="underline"
                     >{{ t(`sections.raffle.prize.note.noteLink2`) }}</a
                   >
@@ -255,50 +256,23 @@
             <CardStamp
               title-key="sections.raffle.stamp.xinyi.title"
               :lights="xinyiCollect"
-              :page-size="4"
+              :page-size="pageSize"
               bodyMinHeight="780px"
               :showTime="false"
-              class="card__stamp--sm"
-            />
-            <CardStamp
-              title-key="sections.raffle.stamp.xinyi.title"
-              :lights="xinyiCollect"
-              :page-size="8"
-              bodyMinHeight="780px"
-              :showTime="false"
-              class="card__stamp--xl"
             />
             <CardStamp
               title-key="sections.raffle.stamp.eastern.title"
               :lights="easternCollect"
-              :page-size="4"
+              :page-size="pageSize"
               bodyMinHeight="780px"
               :showTime="false"
-              class="card__stamp--sm"
-            />
-            <CardStamp
-              title-key="sections.raffle.stamp.eastern.title"
-              :lights="easternCollect"
-              :page-size="8"
-              bodyMinHeight="780px"
-              :showTime="false"
-              class="card__stamp--xl"
             />
             <CardStamp
               title-key="sections.raffle.stamp.taipei.title"
               :lights="taipeiCollect"
-              :page-size="4"
+              :page-size="pageSize"
               bodyMinHeight="780px"
               :showTime="false"
-              class="card__stamp--sm"
-            />
-            <CardStamp
-              title-key="sections.raffle.stamp.taipei.title"
-              :lights="taipeiCollect"
-              :page-size="8"
-              bodyMinHeight="780px"
-              :showTime="false"
-              class="card__stamp--xl"
             />
           </div>
         </Card>
@@ -356,15 +330,22 @@ import iconStarRight from '@/assets/icon/star_3.svg'
 import snoopyPrize from '@/assets/img/section_03_snoopy.png'
 import snoopyPrize2 from '@/assets/img/section_03_brown.png'
 
-import { watch, ref } from 'vue'
+import { watch, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRaffleConstants } from '@/components/sections/Raffle/const'
 import { xinyiCollect, easternCollect, taipeiCollect } from '@/components/sections/Raffle/photo'
+import { useViewport } from '@/composables/useViewport'
+const { breakpoint } = useViewport()
 
 const { t } = useI18n()
 const { prizeLeft, prizeRight } = useRaffleConstants()
 
 const openPopup = ref(false)
+const pageSize = computed(() => {
+  if (breakpoint.value === 'lg') return 6
+  if (breakpoint.value === 'md') return 4
+  return 8
+})
 
 const handleTogglePopup = () => {
   openPopup.value = !openPopup.value
@@ -375,15 +356,18 @@ watch(openPopup, (visible) => {
 })
 
 const handleOpenMap = () => {
-  window.open(
+  const win = window.open(
     'https://www.google.com/maps/d/u/0/viewer?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ll=25.076023980955114%2C121.56142795&z=13',
     '_blank',
-    'noopener,noreferrer',
+    'noopener',
   )
+  if (win) win.opener = null
 }
 
-const handleGoLineOA = () =>
-  window.open('https://line.me/R/ti/p/@996rskra', '_blank', 'noopener,noreferrer')
+const handleGoLineOA = () => {
+  const win = window.open('https://line.me/R/ti/p/@996rskra', '_blank', 'noopener')
+  if (win) win.opener = null
+}
 </script>
 
 <style scoped lang="scss">
@@ -540,7 +524,7 @@ const handleGoLineOA = () =>
     border-radius: 32px;
     background: vars.$color-white;
     text-align: center;
-    @include mixins.typography-responsive(14px, 16px, 18px, 22px, 28px, 36px, 700, #f4aa1c);
+    @include mixins.typography-responsive(14px, 16px, 18px, 22px, 28px, 36px, 700, #ff5660);
   }
   &__prize__img {
     width: 108px;
@@ -599,18 +583,6 @@ const handleGoLineOA = () =>
   @include mixins.text-note-lg;
   margin-bottom: 24px;
   text-align: center;
-}
-
-.card__stamp {
-  &--sm {
-    display: block;
-  }
-  &--lg {
-    display: none;
-  }
-  &--xl {
-    display: none;
-  }
 }
 
 .prize-card__note__wrapper {
@@ -794,16 +766,6 @@ const handleGoLineOA = () =>
     max-width: 260px;
   }
 
-  .card__stamp {
-    &--sm {
-      display: block;
-    }
-
-    &--xl {
-      display: none;
-    }
-  }
-
   .map__card {
     &__map {
       width: 100%;
@@ -922,16 +884,6 @@ const handleGoLineOA = () =>
 
   .snoopy-prize_2 {
     max-width: 348px;
-  }
-
-  .card__stamp {
-    &--sm {
-      display: none;
-    }
-
-    &--xl {
-      display: block;
-    }
   }
 }
 </style>

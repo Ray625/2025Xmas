@@ -16,8 +16,6 @@ export function useViewport() {
 
   const handleResize = () => {
     width.value = window.innerWidth
-    console.log('now breakpoint:', breakpoint.value)
-    console.log('width:', width)
   }
 
   onMounted(() => {

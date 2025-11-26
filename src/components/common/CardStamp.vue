@@ -99,6 +99,7 @@ const cardTitle = computed(() => (props.titleKey ? t(props.titleKey) : ''))
 const styleVars = computed(() => ({
   '--card-body-padding': props.bodyPadding,
   '--card-body-min-height': props.bodyMinHeight,
+  '--page-size': props.pageSize,
   backgroundImage: props.useBg ? `url(${bg})` : 'none',
   backgroundColor: props.useBg ? '' : props.bgColor,
 }))
@@ -246,7 +247,7 @@ const goNext = () => {
   .card__body__lights {
     display: grid;
     width: fit-content;
-    grid-template-columns: repeat(2, minmax(256px, 1fr));
+    grid-template-columns: repeat(calc(var(--page-size) / 2), minmax(256px, 1fr));
     column-gap: 32px;
     row-gap: 12px;
     min-height: var(--card-body-min-height, 520px);
@@ -266,7 +267,7 @@ const goNext = () => {
 
 @media (min-width: 1920px) {
   .card__body__lights {
-    grid-template-columns: repeat(4, minmax(280px, 1fr));
+    grid-template-columns: repeat(calc(var(--page-size) / 2), minmax(280px, 1fr));
   }
 }
 </style>

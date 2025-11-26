@@ -524,6 +524,7 @@
                     href="https://www.taishinbank.com.tw/TSB/personal/common/bonus/TSBankBonus-002107/"
                     class="underline"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {{ t(`${easternList.Taishin.link}`) }}
                   </a>
@@ -826,6 +827,7 @@
                     href="https://www.mitsui-shopping-park.com.tw/lalaport/nangang/tw/news_detail.html?id=9d93dbe6"
                     class="underline"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {{ t(`${taipeiList.lalaport.link}`) }}
                   </a>

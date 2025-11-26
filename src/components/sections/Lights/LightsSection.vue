@@ -2,21 +2,22 @@
   <section class="lights-section">
     <Container maxWidth="1440px">
       <div class="flex flex-col items-center">
-        <SectionTitle preset="lights" class="mb-[100px]" />
-        <SectionTabs v-model="activeTab" :tabs="tabs" class="mb-[88px]" />
+        <SectionTitle preset="lights" class="lights-section__title" />
+        <SectionTabs v-model="activeTab" :tabs="tabs" class="lights-section__tabs" />
         <Card
           v-if="activeTab === 0"
           title-key="sections.lights.xinyi.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
         >
-          <div class="flex flex-col gap-8 w-full">
-            <div>
+          <div class="area__list">
+            <div class="xinyi-map_m map_m"></div>
+            <div class="map_desktop">
               <img :src="xinyiMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="xinyiLights"
-              :page-size="8"
+              :page-size="pageSize"
               bodyMinHeight="967px"
               :use-bg="false"
               :use-star="true"
@@ -31,13 +32,14 @@
           bodyPadding="40px"
           bgColor="#B4C5E3"
         >
-          <div class="flex flex-col gap-8 w-full">
-            <div>
+          <div class="area__list">
+            <div class="eastern-map_m map_m"></div>
+            <div class="map_desktop">
               <img :src="easternMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="easternLights"
-              :page-size="8"
+              :page-size="pageSize"
               bodyMinHeight="967px"
               :use-bg="false"
               :use-star="true"
@@ -52,13 +54,14 @@
           bodyPadding="40px"
           bgColor="#B4C5E3"
         >
-          <div class="flex flex-col gap-8 w-full items-center">
-            <div>
+          <div class="area__list items-center">
+            <div class="taipei-map_m map_m"></div>
+            <div class="map_desktop">
               <img :src="taipeiMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="taipeiLights"
-              :page-size="8"
+              :page-size="pageSize"
               bodyMinHeight="967px"
               :use-bg="false"
               :use-star="true"
@@ -75,12 +78,13 @@
                 </span>
               </div>
             </div>
-            <div>
+            <div class="ximending-map_m map_m"></div>
+            <div class="map_desktop">
               <img :src="ximendingMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="ximenLights"
-              :page-size="8"
+              :page-size="pageSize"
               bodyMinHeight="967px"
               :use-bg="false"
               :use-star="true"
@@ -112,9 +116,16 @@ import {
   taipeiLights,
   ximenLights,
 } from '@/components/sections/Lights/photo'
+import { useViewport } from '@/composables/useViewport'
+const { breakpoint } = useViewport()
 
 const { t } = useI18n()
 
+const pageSize = computed(() => {
+  if (breakpoint.value === 'lg') return 6
+  if (breakpoint.value === 'md') return 4
+  return 8
+})
 const activeTab = ref(0)
 const tabs = computed(() => useTabs())
 </script>
@@ -123,16 +134,63 @@ const tabs = computed(() => useTabs())
 @use '@/styles/_mixins' as mixins;
 
 .lights-section {
-  padding-top: 100px;
-  padding-bottom: 240px;
+  padding-top: 12px;
+  padding-bottom: 148px;
   background-color: vars.$bg-blue;
+}
+
+.lights-section__title {
+  margin-bottom: 20px;
+}
+
+.lights-section__tabs {
+  margin-bottom: 12px;
+}
+
+.map_m {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.xinyi-map_m {
+  aspect-ratio: 342/382;
+  background-image: url('@/assets/map/section_07_map_01_xy.png');
+}
+
+.eastern-map_m {
+  aspect-ratio: 1200/820;
+  background-image: url('@/assets/map/section_07_map_02_ed.png');
+}
+
+.taipei-map_m {
+  aspect-ratio: 1400/820;
+  background-image: url('@/assets/map/section_07_map_03_other.png');
+}
+
+.ximending-map_m {
+  aspect-ratio: 700/500;
+  background-image: url('@/assets/map/section_07_map_04_xm.png');
+}
+
+.map_desktop {
+  display: none;
+}
+
+.area__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
 }
 
 .ximending__title {
   display: flex;
   justify-content: center;
   width: calc(100% - 80px);
-  margin-top: 40px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   padding: 12px;
   border-radius: 8px;
   background-color: #ecf4f9;
@@ -149,6 +207,71 @@ const tabs = computed(() => useTabs())
   &__icon {
     width: 24px;
     height: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lights-section {
+    padding-top: 100px;
+    padding-bottom: 196px;
+  }
+
+  .lights-section__title {
+    margin-bottom: 60px;
+  }
+
+  .lights-section__tabs {
+    margin-bottom: 50px;
+  }
+
+  .locale-card__list {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .ximending__title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .map_m {
+    display: none;
+  }
+
+  .map_desktop {
+    display: block;
+  }
+
+  .ximending__title {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .lights-section {
+    padding-top: 100px;
+    padding-bottom: 240px;
+  }
+
+  .lights-section__title {
+    margin-bottom: 100px;
+  }
+
+  .lights-section__tabs {
+    margin-bottom: 88px;
+  }
+
+  .area-list {
+    gap: 32px;
+  }
+
+  .ximending__title {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
 </style>
