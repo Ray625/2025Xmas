@@ -255,50 +255,23 @@
             <CardStamp
               title-key="sections.raffle.stamp.xinyi.title"
               :lights="xinyiCollect"
-              :page-size="4"
+              :page-size="pageSize"
               bodyMinHeight="780px"
               :showTime="false"
-              class="card__stamp--sm"
-            />
-            <CardStamp
-              title-key="sections.raffle.stamp.xinyi.title"
-              :lights="xinyiCollect"
-              :page-size="8"
-              bodyMinHeight="780px"
-              :showTime="false"
-              class="card__stamp--xl"
             />
             <CardStamp
               title-key="sections.raffle.stamp.eastern.title"
               :lights="easternCollect"
-              :page-size="4"
+              :page-size="pageSize"
               bodyMinHeight="780px"
               :showTime="false"
-              class="card__stamp--sm"
-            />
-            <CardStamp
-              title-key="sections.raffle.stamp.eastern.title"
-              :lights="easternCollect"
-              :page-size="8"
-              bodyMinHeight="780px"
-              :showTime="false"
-              class="card__stamp--xl"
             />
             <CardStamp
               title-key="sections.raffle.stamp.taipei.title"
               :lights="taipeiCollect"
-              :page-size="4"
+              :page-size="pageSize"
               bodyMinHeight="780px"
               :showTime="false"
-              class="card__stamp--sm"
-            />
-            <CardStamp
-              title-key="sections.raffle.stamp.taipei.title"
-              :lights="taipeiCollect"
-              :page-size="8"
-              bodyMinHeight="780px"
-              :showTime="false"
-              class="card__stamp--xl"
             />
           </div>
         </Card>
@@ -356,15 +329,22 @@ import iconStarRight from '@/assets/icon/star_3.svg'
 import snoopyPrize from '@/assets/img/section_03_snoopy.png'
 import snoopyPrize2 from '@/assets/img/section_03_brown.png'
 
-import { watch, ref } from 'vue'
+import { watch, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRaffleConstants } from '@/components/sections/Raffle/const'
 import { xinyiCollect, easternCollect, taipeiCollect } from '@/components/sections/Raffle/photo'
+import { useViewport } from '@/composables/useViewport'
+const { breakpoint } = useViewport()
 
 const { t } = useI18n()
 const { prizeLeft, prizeRight } = useRaffleConstants()
 
 const openPopup = ref(false)
+const pageSize = computed(() => {
+  if (breakpoint.value === 'lg') return 6
+  if (breakpoint.value === 'md') return 4
+  return 8
+})
 
 const handleTogglePopup = () => {
   openPopup.value = !openPopup.value
@@ -601,18 +581,6 @@ const handleGoLineOA = () =>
   text-align: center;
 }
 
-.card__stamp {
-  &--sm {
-    display: block;
-  }
-  &--lg {
-    display: none;
-  }
-  &--xl {
-    display: none;
-  }
-}
-
 .prize-card__note__wrapper {
   display: flex;
   flex-direction: column-reverse;
@@ -794,16 +762,6 @@ const handleGoLineOA = () =>
     max-width: 260px;
   }
 
-  .card__stamp {
-    &--sm {
-      display: block;
-    }
-
-    &--xl {
-      display: none;
-    }
-  }
-
   .map__card {
     &__map {
       width: 100%;
@@ -922,16 +880,6 @@ const handleGoLineOA = () =>
 
   .snoopy-prize_2 {
     max-width: 348px;
-  }
-
-  .card__stamp {
-    &--sm {
-      display: none;
-    }
-
-    &--xl {
-      display: block;
-    }
   }
 }
 </style>
