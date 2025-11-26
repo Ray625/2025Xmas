@@ -50,6 +50,7 @@ const styleVars = computed(() => {
 .container-shell {
   max-width: var(--container-max-sm, var(--container-max, 72rem));
   padding: 0;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {

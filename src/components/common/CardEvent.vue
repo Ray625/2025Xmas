@@ -9,27 +9,27 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
-  eventData: Record<string, string>;
-}>();
+  eventData: Record<string, string>
+}>()
 
-const { t } = useI18n();
+const { t } = useI18n()
 
-const title = computed(() => t(`${props.eventData.title}`));
-const text = computed(() => t(`${props.eventData.text}`));
+const title = computed(() => t(`${props.eventData.title}`))
+const text = computed(() => t(`${props.eventData.text}`))
 </script>
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .card-event {
   display: flex;
   flex-direction: column;
   &__title {
-    @include mixins.typography(18px, 32px, 700, #000);
+    @include mixins.text-caption(#000);
   }
   &__body {
     &__text {

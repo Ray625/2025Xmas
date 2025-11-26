@@ -241,7 +241,7 @@
                     {{ t('sections.raffle.prize.note.note5') }}
                   </span>
                   <button class="prize-card__link" @click="handleTogglePopup">
-                    <u>{{ t('sections.raffle.prize.note.noteLink') }}</u>
+                    <u class="text-[#3277E1]">{{ t('sections.raffle.prize.note.noteLink') }}</u>
                     <span>。</span>
                   </button>
                 </li>

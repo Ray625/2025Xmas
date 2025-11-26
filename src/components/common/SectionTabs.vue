@@ -56,8 +56,10 @@ const handleClick = (index: number) => {
 
 .section-tabs {
   display: flex;
-  gap: 36px;
+  gap: 12px;
+  justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .section-tabs__item {
@@ -65,15 +67,15 @@ const handleClick = (index: number) => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 340px;
-  max-width: 100%;
-  height: 120px;
-  padding: 24px;
-  border-radius: 12px;
+  width: 100%;
+  max-width: 340px;
+  height: 60px;
+  padding: 12px;
+  border-radius: 16px;
   outline: 3px solid vars.$color-white;
   outline-offset: -3px;
   background-color: transparent;
-  @include mixins.typography(32px, 100%, 700, vars.$color-white);
+  @include mixins.card-title;
   transition: background-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
 }
@@ -83,6 +85,32 @@ const handleClick = (index: number) => {
   color: vars.$color-text-blue;
 }
 
-@media (max-width: 960px) {
+@media (min-width: 768px) {
+  .section-tabs {
+    gap: 20px;
+  }
+  .section-tabs__item {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-tabs {
+    gap: 24px;
+  }
+
+  .section-tabs__item {
+    height: 120px;
+    max-width: 300px;
+    padding: 24px;
+    border-radius: 12px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .section-tabs {
+    gap: 36px;
+  }
 }
 </style>
