@@ -11,7 +11,9 @@
           bgColor="#B4C5E3"
         >
           <div class="area__list">
-            <div class="xinyi-map_m map_m"></div>
+            <div class="map_m">
+              <img :src="xinyiMapM" alt="xinyi map" loading="lazy" />
+            </div>
             <div class="map_desktop">
               <img :src="xinyiMap" alt="xinyi map" loading="lazy" />
             </div>
@@ -33,7 +35,9 @@
           bgColor="#B4C5E3"
         >
           <div class="area__list">
-            <div class="eastern-map_m map_m"></div>
+            <div class="map_m">
+              <img :src="easternMapM" alt="xinyi map" loading="lazy" />
+            </div>
             <div class="map_desktop">
               <img :src="easternMap" alt="xinyi map" loading="lazy" />
             </div>
@@ -55,7 +59,9 @@
           bgColor="#B4C5E3"
         >
           <div class="area__list items-center">
-            <div class="taipei-map_m map_m"></div>
+            <div class="map_m">
+              <img :src="taipeiMapM" alt="xinyi map" loading="lazy" />
+            </div>
             <div class="map_desktop">
               <img :src="taipeiMap" alt="xinyi map" loading="lazy" />
             </div>
@@ -78,7 +84,9 @@
                 </span>
               </div>
             </div>
-            <div class="ximending-map_m map_m"></div>
+            <div class="map_m">
+              <img :src="ximendingMapM" alt="xinyi map" loading="lazy" />
+            </div>
             <div class="map_desktop">
               <img :src="ximendingMap" alt="xinyi map" loading="lazy" />
             </div>
@@ -107,6 +115,10 @@ import xinyiMap from '@/assets/map/section_07_map_01_xy.png'
 import easternMap from '@/assets/map/section_07_map_02_ed.png'
 import taipeiMap from '@/assets/map/section_07_map_03_other.png'
 import ximendingMap from '@/assets/map/section_07_map_04_xm.png'
+import xinyiMapM from '@/assets/map/m_section_07_map_01_xy.png'
+import easternMapM from '@/assets/map/m_section_07_map_02_ed.png'
+import taipeiMapM from '@/assets/map/m_section_07_map_03_other.png'
+import ximendingMapM from '@/assets/map/m_section_07_map_04_xm.png'
 import iconPlay from '@/assets/icon/play_blue.svg'
 import { useTabs } from '@/data/const'
 import { useI18n } from 'vue-i18n'
@@ -149,29 +161,6 @@ const tabs = computed(() => useTabs())
 
 .map_m {
   width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.xinyi-map_m {
-  aspect-ratio: 342/382;
-  background-image: url('@/assets/map/section_07_map_01_xy.png');
-}
-
-.eastern-map_m {
-  aspect-ratio: 1200/820;
-  background-image: url('@/assets/map/section_07_map_02_ed.png');
-}
-
-.taipei-map_m {
-  aspect-ratio: 1400/820;
-  background-image: url('@/assets/map/section_07_map_03_other.png');
-}
-
-.ximending-map_m {
-  aspect-ratio: 700/500;
-  background-image: url('@/assets/map/section_07_map_04_xm.png');
 }
 
 .map_desktop {

@@ -3,7 +3,9 @@
     <Container maxWidth="1528px" smMaxWidth="395px">
       <div class="flex flex-col items-center">
         <SectionTitle preset="landmark" class="landmark-section_title" />
-        <div class="map_m"></div>
+        <div class="map_m">
+          <img :src="xinyiMapM" alt="xinyi map" loading="lazy" />
+        </div>
         <div class="map__group">
           <img :src="xinyiMap" alt="xinyi map" class="ml-auto map_desktop" loading="lazy" />
           <div class="map__card__container">
@@ -49,6 +51,7 @@
 import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import xinyiMap from '@/assets/map/section_08_map.png'
+import xinyiMapM from '@/assets/map/m_section_08_map.png'
 import CardLight from '@/components/common/CardLight.vue'
 import { xinyiLights } from '@/components/sections/Landmark/photo'
 import { useViewport } from '@/composables/useViewport'
@@ -80,11 +83,6 @@ const { breakpoint } = useViewport()
 
 .map_m {
   width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  aspect-ratio: 390/445;
-  background-image: url('@/assets/map/section_08_map.png');
 }
 
 .map_desktop {

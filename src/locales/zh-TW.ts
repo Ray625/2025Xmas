@@ -1338,7 +1338,7 @@ export default {
         },
       },
       ximending: {
-        title: '西門 Play 樂購町',
+        title: '西門 PLAY 樂購町',
         light1: {
           lightName: '潮流電色｜玩色派對\n舞台區',
           shopName: '西門 PLAY 樂購町',
