@@ -27,7 +27,7 @@
           </a>
           <a
             class="social hover"
-            href="https://youtube.com/@doed.taipei?si=ysNPrPSdNne1-mKn"
+            href="https://www.youtube.com/watch?v=d51S9qXvBRI"
             target="_blank"
             rel="noopener noreferrer"
             :aria-label="t('header.socials.youtube')"

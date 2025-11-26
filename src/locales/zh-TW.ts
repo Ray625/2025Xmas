@@ -132,8 +132,8 @@ export default {
         },
         step2: {
           title: 'Step. 2',
-          text: '前往臺北市各大百貨門市\n掃描現場QR code\n開始集章！',
-          text2: '前往臺北市各大百貨門市\n掃描現場QR code開始集章！',
+          text: '前往臺北市各大百貨分館\n掃描現場QR code\n開始集章！',
+          text2: '前往臺北市各大百貨分館\n掃描現場QR code開始集章！',
           note: '（同一館別各集章點位僅能集一次章，重複掃描無法額外集章）',
         },
         step3: {

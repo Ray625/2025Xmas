@@ -31,11 +31,7 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const handleGoToEventWeb = () => {
-  window.open(
-    'https://www.tcooc.gov.taipei/cp.aspx?n=23E99893D3EC8F41',
-    '_blank',
-    'noopener,noreferrer',
-  )
+  window.open('https://www.gotaipei.taipei/', '_blank', 'noopener,noreferrer')
 }
 </script>
 <style scoped lang="scss">
