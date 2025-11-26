@@ -16,7 +16,7 @@
             class="social hover"
             href="https://www.facebook.com/tcooc?locale=zh_TW"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             :aria-label="t('header.socials.facebook')"
           >
             <img
@@ -29,7 +29,7 @@
             class="social hover"
             href="https://youtube.com/@doed.taipei?si=ysNPrPSdNne1-mKn"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             :aria-label="t('header.socials.youtube')"
           >
             <img

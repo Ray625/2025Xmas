@@ -5,7 +5,7 @@
         <div class="contact-section__text__container">
           <SectionTitle preset="contact" class="contact-section__title" />
           <p class="contact-section__text">{{ t('sections.contact.text') }}</p>
-          <a href="mailto:taipeixmas114@clickforce.com.tw?subject=活動洽詢" class="inline-flex">
+          <a href="mailto:taipeixmas2025@clickforce.com.tw?subject=活動洽詢" class="inline-flex">
             <ButtonAction bgColor="#109D91">
               {{ t('sections.contact.mail') }}
             </ButtonAction>

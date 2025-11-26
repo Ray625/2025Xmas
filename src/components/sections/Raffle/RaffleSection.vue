@@ -231,6 +231,7 @@
                     v-if="index === 2"
                     href="https://www.facebook.com/tcooc?locale=zh_TW"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="underline"
                     >{{ t(`sections.raffle.prize.note.noteLink2`) }}</a
                   >
@@ -355,15 +356,18 @@ watch(openPopup, (visible) => {
 })
 
 const handleOpenMap = () => {
-  window.open(
+  const win = window.open(
     'https://www.google.com/maps/d/u/0/viewer?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ll=25.076023980955114%2C121.56142795&z=13',
     '_blank',
-    'noopener,noreferrer',
+    'noopener',
   )
+  if (win) win.opener = null
 }
 
-const handleGoLineOA = () =>
-  window.open('https://line.me/R/ti/p/@996rskra', '_blank', 'noopener,noreferrer')
+const handleGoLineOA = () => {
+  const win = window.open('https://line.me/R/ti/p/@996rskra', '_blank', 'noopener')
+  if (win) win.opener = null
+}
 </script>
 
 <style scoped lang="scss">

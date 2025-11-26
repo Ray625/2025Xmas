@@ -57,7 +57,7 @@
                 <li class="whitespace-pre-line">
                   {{ t(`popup.note.inform.note9`) }}
                   <a
-                    href="mailto:taipeixmas114@clickforce.com.tw?subject=活動洽詢"
+                    href="mailto:taipeixmas2025@clickforce.com.tw?subject=活動洽詢"
                     class="underline"
                   >
                     {{ t(`popup.note.inform.mail`) }}
