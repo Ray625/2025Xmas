@@ -71,38 +71,38 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed } from 'vue'
 
 const props = withDefaults(
   defineProps<{
-    bgColor?: string;
-    hasBorder?: boolean;
+    bgColor?: string
+    hasBorder?: boolean
   }>(),
   {
-    bgColor: "#45B035",
+    bgColor: '#45B035',
     hasBorder: true,
-  }
-);
+  },
+)
 
 defineEmits<{
-  click: [];
-}>();
+  click: []
+}>()
 
 const styleVars = computed(() => ({
-  "--action-button-bg": props.bgColor,
-  "--outline": props.hasBorder
-    ? "2px solid #fff"
-    : `2px solid ${props.bgColor}`,
-}));
+  '--action-button-bg': props.bgColor,
+  '--outline': props.hasBorder ? '2px solid #fff' : `2px solid ${props.bgColor}`,
+}))
 </script>
 
 <style scoped lang="scss">
-@use "@/styles/_variables" as vars;
-@use "@/styles/_mixins" as mixins;
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixins;
 
 .action-button {
   display: flex;
   gap: 8px;
+  justify-content: center;
+  align-items: center;
   padding: 16px 20px 16px 24px;
   background-color: var(--action-button-bg);
   border-radius: 40px;
@@ -112,13 +112,14 @@ const styleVars = computed(() => ({
   cursor: pointer;
 
   &__label {
-    @include mixins.typography(20px, 100%, 700, vars.$color-white);
+    @include mixins.light-card-name(vars.$color-white);
   }
 
   &__icon {
     width: 24px;
     height: 24px;
     color: var(--action-button-bg);
+    transform: translate(0, 1px);
     &.hover {
       display: none;
     }
