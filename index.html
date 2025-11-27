@@ -8,21 +8,22 @@
     <meta property="og:description" content="Coming Soon">
     <meta property="og:image" content="public/assets/og-img-1116.png">
     <title>2025繽紛耶誕玩台北・光之覓境</title>
-    <style>
-      html, body { height: 100%; margin: 0; }
-      body { background: #000; }
-      .bg {
-        position: fixed;
-        inset: 0;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover; /* 保持比例，鋪滿裁切 */
-        object-position: center center;
-        display: block;
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JD70B78P3E"></script>
+    <script> window.dataLayer = window.dataLayer || []; 
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+
+      const host = window.location.hostname;
+      const isProdHost = host === 'www.taipeixmas2025.com' || host === 'taipeixmas2025.com';
+
+      if (isProdHost) {
+        gtag('config', 'G-JD70B78P3E');
       }
-    </style>
+    </script>
   </head>
   <body>
-    <img class="bg" src="public/assets/coming-soon.png" alt="Coming soon" />
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

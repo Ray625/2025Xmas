@@ -1,0 +1,125 @@
+@use 'sass:meta';
+@use '@/styles/_variables' as vars;
+
+/// Typography helper mixin.
+/// Provides a single place to keep font-related settings consistent.
+/// Usage:
+/// @include typography(24px, 700, 36px);
+@mixin typography(
+  $font-size,
+  $line-height: 100%,
+  $font-weight: 700,
+  $color: vars.$color-text-blue
+) {
+  @if meta.type-of($font-size) != number {
+    @error "font-size must be a number, got #{meta.type-of($font-size)}";
+  }
+
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+// Responsive typography helper.
+// Usage:
+// @include typography-responsive(16px, 20px, 24px);
+// Optional overrides for line-height / weight / color can be passed as the 4th/5th/6th params.
+@mixin typography-responsive(
+  $sm-size: 18px,
+  $lg-size: 20px,
+  $xl-size: 24px,
+  $sm-line-height: 28px,
+  $lg-line-height: 150%,
+  $xl-line-height: 36px,
+  $font-weight: 700,
+  $color: vars.$color-text-blue
+) {
+  @if meta.type-of($sm-size) !=
+    number or
+    meta.type-of($lg-size) !=
+    number or
+    meta.type-of($xl-size) !=
+    number
+  {
+    @error "typography-responsive sizes must be numbers (px/rem), got sm: #{meta.type-of($sm-size)}, lg: #{meta.type-of($lg-size)}, xl: #{meta.type-of($xl-size)}";
+  }
+
+  font-size: $sm-size;
+  font-weight: $font-weight;
+  line-height: $sm-line-height;
+  color: $color;
+
+  // lg breakpoint (e.g., ≥1024px)
+  @media (min-width: 1024px) {
+    font-size: $lg-size;
+    line-height: $lg-line-height;
+  }
+
+  // xl breakpoint (e.g., ≥1280px)
+  @media (min-width: 1920px) {
+    font-size: $xl-size;
+    line-height: $xl-line-height;
+  }
+}
+
+/// Common body text helper (可帶色彩，其餘尺寸固定：14/16/18 px，行高 22px /150% /32px，字重 700)
+@mixin text-caption($color: vars.$color-text-blue) {
+  @include typography-responsive(14px, 16px, 18px, 22px, 150%, 32px, 700, $color);
+}
+
+@mixin text-body($color: vars.$color-text-blue) {
+  @include typography-responsive(18px, 20px, 24px, 28px, 150%, 36px, 700, $color);
+}
+
+@mixin text-title($color: vars.$color-white) {
+  @include typography-responsive(20px, 22px, 24px, 32px, 150%, 36px, 700, $color);
+}
+
+@mixin text-note($color: vars.$color-text-note) {
+  @include typography-responsive(14px, 16px, 16px, 2, 2, 2, 500, $color);
+}
+
+@mixin text-note-lg($color: vars.$color-text-note) {
+  @include typography-responsive(16px, 16px, 18px, 2, 2, 2, 700, $color);
+}
+
+@mixin card-title($color: vars.$color-white) {
+  @include typography-responsive(24px, 28px, 32px, 36px, 38px, 42px, 700, $color);
+}
+
+@mixin light-card-name($color: vars.$color-text-blue) {
+  @include typography-responsive(18px, 20px, 20px, 28px, 26px, 26px, 700, $color);
+}
+
+@mixin light-card-shop($color: vars.$color-text-blue) {
+  @include typography-responsive(16px, 16px, 18px, 28px, 30px, 32px, 500, $color);
+}
+
+@mixin light-card-text($color: vars.$color-text-blue) {
+  @include typography-responsive(14px, 16px, 16px, 22px, 22px, 22px, 500, $color);
+}
+
+@mixin stamp-card-title($color: vars.$color-white) {
+  @include typography-responsive(24px, 30px, 38px, 100%, 100%, 100%, 700, $color);
+}
+
+@mixin locale-card-location($color: vars.$color-text-blue){
+  @include typography-responsive(16px, 16px, 18px, 1.5, 1.5, 1.5, 700, $color);
+}
+
+@mixin locale-card-text($color: #000){
+  @include typography-responsive(14px, 16px, 18px, 22px, 150%, 32px, 500, $color);
+}
+
+@mixin car-tag-color($color: #fff){
+  @include typography-responsive(12px, 14px, 18px, 22px, 150%, 32px, 700, $color);
+}
+
+@mixin car-text($color: #000){
+  @include typography-responsive(14px, 18px, 24px, 22px, 150%, 36px, 700, $color);
+}
+
+@mixin footer-tag($color: vars.$color-text-blue){
+  @include typography-responsive(12px, 18px, 24px, 22px, 150%, 36px, 700, $color);
+}
