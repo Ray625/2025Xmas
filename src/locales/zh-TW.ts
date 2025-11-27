@@ -392,7 +392,7 @@ export default {
             location: '中山區敬業三路20號',
           },
           light7: {
-            lightName: '台新銀行 新光摩天大樓 (台北車站)',
+            lightName: '台新新光金控｜新光人壽',
             shopName: '新光摩天大樓燈飾旁',
             location: '中正區忠孝西路一段66號',
           },
@@ -423,7 +423,7 @@ export default {
           },
           light13: {
             lightName: '京站時尚廣場',
-            shopName: '1F 服務台',
+            shopName: '1F 客服中心',
             location: '大同區承德路一段1號',
           },
           light14: {
