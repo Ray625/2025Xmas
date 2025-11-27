@@ -2,7 +2,8 @@
   <div id="top" class="page">
     <HeaderBar v-if="['xl', 'lg'].includes(breakpoint)" />
     <HeaderBarMobile v-if="['sm', 'md', 'xs'].includes(breakpoint)" />
-    <HeroBanner />
+    <HeroBanner v-if="breakpoint !== 'xs'" />
+    <HeroBannerMobile v-if="['xs'].includes(breakpoint)" />
     <RaffleSection />
     <PromoSection />
     <LightsSection />
@@ -19,6 +20,7 @@
 import HeaderBar from '@/components/layout/HeaderBar.vue'
 import HeaderBarMobile from '@/components/layout/HeaderBarMobile.vue'
 import HeroBanner from '@/components/sections/HeroBanner.vue'
+import HeroBannerMobile from '@/components/sections/HeroBannerMobile.vue'
 import RaffleSection from '@/components/sections/Raffle/RaffleSection.vue'
 import PromoSection from '@/components/sections/Promo/PromoSection.vue'
 import LightsSection from '@/components/sections/Lights/LightsSection.vue'

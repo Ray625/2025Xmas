@@ -12,6 +12,7 @@
           :show-title="breakpoint === 'sm' || breakpoint === 'xs' ? false : true"
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
+          md-body-padding="0"
         >
           <div class="area-list">
             <!-- 台北101 -->
@@ -303,6 +304,7 @@
           :show-title="breakpoint === 'sm' || breakpoint === 'xs' ? false : true"
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
+          md-body-padding="0"
         >
           <div class="area-list">
             <!-- 微風廣場 -->
@@ -554,6 +556,7 @@
           :show-title="breakpoint === 'sm' || breakpoint === 'xs' ? false : true"
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
+          md-body-padding="0"
         >
           <div class="area-list">
             <CardLocale
@@ -982,7 +985,7 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
   }
 
   .area-list {
-    gap: 32px;
+    gap: 20px;
   }
 }
 
