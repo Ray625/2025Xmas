@@ -300,6 +300,7 @@
         <Card
           v-if="activeTab === 1"
           title-key="sections.promo.eastern.title"
+          textBgColor="#FF8E9F"
           bodyPadding="40px"
           :show-title="breakpoint === 'sm' || breakpoint === 'xs' ? false : true"
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
@@ -552,6 +553,7 @@
         <Card
           v-if="activeTab === 2"
           title-key="sections.promo.taipei.title"
+          textBgColor="#5E4FD4"
           bodyPadding="40px"
           :show-title="breakpoint === 'sm' || breakpoint === 'xs' ? false : true"
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
