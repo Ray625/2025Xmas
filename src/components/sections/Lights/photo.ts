@@ -40,7 +40,16 @@ const taipeiPhoto = stamps.filter((item) => item.key.includes('c'))
 const ximenPhoto = stampsLong.filter((item) => item.key.includes('ximen'))
 
 const xinyiLights: LightItem[] = xinyiPhoto.map((item, index) => {
-  const num = index + 1
+  let num
+  if (index < 6) {
+    num = index + 1
+  }
+  if (6 <= index && index < 9) {
+    num = index + 6
+  }
+  if (index >= 9) {
+    num = index + 9
+  }
   if (num === 21) {
     return {
       id: item.key,
@@ -48,7 +57,7 @@ const xinyiLights: LightItem[] = xinyiPhoto.map((item, index) => {
       shopKey: `sections.lights.xinyi.light${num}.shopName`,
       locationKey: `sections.lights.xinyi.light${num}.location`,
       timeKey: `sections.lights.xinyi.light${num}.time`,
-      num: Number(item.key.slice(-2)),
+      num: index + 1,
       lightImg: item.url as string,
       smName: true,
     }
@@ -60,7 +69,7 @@ const xinyiLights: LightItem[] = xinyiPhoto.map((item, index) => {
     shopKey: `sections.lights.xinyi.light${num}.shopName`,
     locationKey: `sections.lights.xinyi.light${num}.location`,
     timeKey: `sections.lights.xinyi.light${num}.time`,
-    num: Number(item.key.slice(-2)),
+    num: index + 1,
     lightImg: item.url as string,
   }
 })
@@ -73,7 +82,7 @@ const easternLights: LightItem[] = easternPhoto.map((item, index) => {
     shopKey: `sections.lights.eastern.light${num}.shopName`,
     locationKey: `sections.lights.eastern.light${num}.location`,
     timeKey: `sections.lights.eastern.light${num}.time`,
-    num: Number(item.key.slice(-2)),
+    num: Number(item.key.slice(-2)) - 8,
     lightImg: item.url as string,
   }
 })
@@ -86,7 +95,7 @@ const taipeiLights: LightItem[] = taipeiPhoto.map((item, index) => {
     shopKey: `sections.lights.taipei.light${num}.shopName`,
     locationKey: `sections.lights.taipei.light${num}.location`,
     timeKey: `sections.lights.taipei.light${num}.time`,
-    num: Number(item.key.slice(-2)),
+    num: Number(item.key.slice(-2)) - 8,
     lightImg: item.url as string,
   }
 })
