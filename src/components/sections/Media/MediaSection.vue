@@ -30,9 +30,9 @@
 import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 
-const handleClick = (url: string) => {
-  window.open(url, '_blank', 'noopener,noreferrer')
-}
+// const handleClick = (url: string) => {
+//   window.open(url, '_blank', 'noopener,noreferrer')
+// }
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;
