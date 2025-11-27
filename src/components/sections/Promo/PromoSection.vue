@@ -525,6 +525,8 @@
               :locationList="
                 breakpoint === 'sm' || breakpoint === 'xs' ? easternList.Taishin.locationList_m : []
               "
+              :default-open="['xl', 'md', 'lg'].includes(breakpoint)"
+              :show-btb="!['xl', 'md', 'lg'].includes(breakpoint)"
             >
               <template #detail>
                 <span>
