@@ -219,6 +219,10 @@ const toggleNavOpen = () => {
   height: 100%;
   padding: 40px 20px 40px 32px;
   background-color: #6a8ac6;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 .header-inner {
@@ -230,7 +234,7 @@ const toggleNavOpen = () => {
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
   flex-wrap: nowrap;
   padding-bottom: 32px;
   border-bottom: 1px solid #fff;
@@ -325,6 +329,10 @@ const toggleNavOpen = () => {
 }
 
 @media (min-width: 768px) {
+  .nav {
+    gap: 4px;
+  }
+
   .nav-hamburger {
     top: 40px;
     right: 40px;
