@@ -2,6 +2,16 @@
   <section class="raffle-section">
     <Container>
       <div class="raffle-card">
+        <img
+          :src="snoopyDecorateM"
+          alt="snoopyDecorateMobile"
+          class="snoopy-decorate_m"
+          loading="lazy"
+        />
+        <img :src="snoopyDecorate" alt="snoopyDecorate" class="snoopy-decorate" loading="lazy" />
+        <img :src="snoopyDiamond" alt="snoopyDiamond" class="snoopy-diamond" loading="lazy" />
+        <img :src="snoopyMobile" alt="snoopy" class="snoopy-circle_m" loading="lazy" />
+        <img :src="snoopy" alt="snoopy" class="snoopy-circle" loading="lazy" />
         <p class="raffle-card__text">
           {{ t('sections.raffle.cardText.text') }}
         </p>
@@ -349,6 +359,12 @@ import iconStarRight from '@/assets/icon/star_3.svg'
 import snoopyPrize from '@/assets/img/section_03_snoopy.png'
 import snoopyPrize2 from '@/assets/img/section_03_brown.png'
 
+import snoopyDecorate from '@/assets/img/section_01_light.png'
+import snoopyDecorateM from '@/assets/img/m_section_01_light.png'
+import snoopyDiamond from '@/assets/img/section_01_diamond.png'
+import snoopy from '@/assets/img/section_01_snoopy.png'
+import snoopyMobile from '@/assets/img/m_section_01_snoopy.png'
+
 import { watch, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRaffleConstants } from '@/components/sections/Raffle/const'
@@ -427,11 +443,12 @@ const handleGoLineOA = () => {
 }
 
 .raffle-card {
+  position: relative;
   display: flex;
   gap: 22px;
   flex-direction: column;
   align-items: center;
-  padding: 52px 12px;
+  padding: 52px 12px 140px;
   border-radius: 16px;
   background: #fff;
   &__text {
@@ -443,6 +460,37 @@ const handleGoLineOA = () => {
       margin-bottom: 24px;
     }
   }
+}
+.snoopy-decorate {
+  display: none;
+}
+
+.snoopy-decorate_m {
+  position: absolute;
+  width: 100%;
+  max-width: 128px;
+  bottom: 0;
+  left: 0;
+}
+
+.snoopy-circle {
+  display: none;
+}
+
+.snoopy-circle_m {
+  position: absolute;
+  width: 100%;
+  max-width: 243px;
+  bottom: -14%;
+  right: 2%;
+}
+
+.snoopy-diamond {
+  position: absolute;
+  width: 100%;
+  max-width: 73px;
+  top: -4%;
+  left: 3%;
 }
 
 .step__text {
@@ -699,6 +747,39 @@ const handleGoLineOA = () => {
       gap: 32px;
     }
   }
+
+  .snoopy-decorate_m {
+    display: none;
+  }
+
+  .snoopy-decorate {
+    display: block;
+    max-width: 236px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .snoopy-diamond {
+    max-width: 100px;
+    top: unset;
+    bottom: 5%;
+    left: 4%;
+  }
+
+  .snoopy-circle {
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 220px;
+    bottom: -14%;
+    right: -4%;
+  }
+
+  .snoopy-circle_m {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -793,6 +874,22 @@ const handleGoLineOA = () => {
       border-radius: 16px;
     }
   }
+
+  .snoopy-decorate {
+    max-width: 280px;
+  }
+
+  .snoopy-diamond {
+    max-width: 160px;
+    bottom: 5%;
+    left: 4%;
+  }
+
+  .snoopy-circle {
+    max-width: 300px;
+    bottom: -16%;
+    right: -1%;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -842,6 +939,20 @@ const handleGoLineOA = () => {
       margin-bottom: 60px;
       border-radius: 16px;
     }
+  }
+
+  .snoopy-decorate {
+    max-width: 360px;
+  }
+
+  .snoopy-diamond {
+    max-width: 180px;
+  }
+
+  .snoopy-circle {
+    max-width: 360px;
+    bottom: -18%;
+    right: -2%;
   }
 }
 
@@ -903,6 +1014,20 @@ const handleGoLineOA = () => {
 
   .snoopy-prize_2 {
     max-width: 348px;
+  }
+
+  .snoopy-decorate {
+    max-width: 462px;
+  }
+
+  .snoopy-diamond {
+    max-width: 200px;
+  }
+
+  .snoopy-circle {
+    max-width: 455px;
+    bottom: -22%;
+    right: -1%;
   }
 }
 </style>

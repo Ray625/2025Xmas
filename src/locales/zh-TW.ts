@@ -36,7 +36,7 @@ export default {
     title: '光之覓境雙重抽',
     event: {
       title: '【活動辦法】',
-      text: '活動內容： \n活動集章時間｜114/11/28 00:00 -  115/01/04 23:59止\n集章獎抽獎時間｜114/11/28 00:00 -  115/01/04 23:59止\n集章獎兌獎時間｜114/11/28 00:00 - 115/01/11 配合各百貨營業時間\n活動說明：',
+      text: '活動內容： \n活動集章時間｜114/11/28 00:00 -  115/01/04 23:59止\n集章獎兌獎時間｜114/11/28 00:00 - 115/01/11 配合各百貨營業時間\n活動說明：',
       direction1:
         '前往臺北市16大百貨體系，參加光之覓境雙重抽，掃描百貨分館現場 QR code 集章，共15個章。',
       direction2: '每集滿 1、3、5、7、9 個章，參加尋光立即抽（即抽即開）',
@@ -963,36 +963,6 @@ export default {
           location: '購物中心 4F 都會廣場',
           time: '114/11/27-115/01/01',
         },
-        light7: {
-          lightName: '風阻尼球',
-          shopName: '台北101',
-          location: '觀景台 88F',
-          time: '常態性展覽',
-        },
-        light8: {
-          lightName: '秘境迴廊',
-          shopName: '台北101',
-          location: '觀景台 89F',
-          time: '常態性展覽',
-        },
-        light9: {
-          lightName: '集章小屋',
-          shopName: '台北101',
-          location: '觀景台 89F',
-          time: '常態性展覽',
-        },
-        light10: {
-          lightName: '彩虹霓虹101',
-          shopName: '台北101',
-          location: '觀景台 89F',
-          time: '常態性展覽',
-        },
-        light11: {
-          lightName: '雲中星月',
-          shopName: '台北101',
-          location: '觀景台 89F',
-          time: '常態性展覽',
-        },
         light12: {
           lightName: '超越偶超越巔峰特展',
           shopName: '台北101',
@@ -1010,24 +980,6 @@ export default {
           shopName: '台北101',
           location: '觀景台 101F',
           time: '114/12/14-115/12/31',
-        },
-        light15: {
-          lightName: '無限天際',
-          shopName: '台北101',
-          location: '觀景台 89F',
-          time: '永久',
-        },
-        light16: {
-          lightName: '世界最高秘境花園',
-          shopName: '台北101',
-          location: '觀景台 101F',
-          time: '永久',
-        },
-        light17: {
-          lightName: 'Skyline 460天際線',
-          shopName: '台北101',
-          location: '觀景台 101F',
-          time: '永久',
         },
         light18: {
           lightName: '微風聖誕告白大道',

@@ -20,7 +20,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --header-height: 68px;
-  scroll-padding-top: calc(var(--header-height) + 80px);
+  scroll-padding-top: 80px;
 }
 
 *,
@@ -41,4 +41,11 @@ a {
 
 #app {
   min-height: 100vh;
+}
+
+@media (min-width: 1440px) {
+  :root {
+  --header-height: 68px;
+  scroll-padding-top: calc(var(--header-height) + 80px);
+}
 }

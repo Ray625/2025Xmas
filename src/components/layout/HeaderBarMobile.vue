@@ -95,7 +95,7 @@ import buttonX from '@/assets/icon/X.svg'
 import social_fb from '@/assets/icon/social_fb.svg'
 import social_yt from '@/assets/icon/social_yt.svg'
 
-import { ref } from 'vue'
+import { ref, watch, onBeforeUnmount } from 'vue'
 
 const iconMap: Record<string, string> = {
   raffle: giftIcon,
@@ -132,6 +132,14 @@ const navOpen = ref(false)
 const toggleNavOpen = () => {
   navOpen.value = !navOpen.value
 }
+
+watch(navOpen, (value) => {
+  document.body.style.overflow = value ? 'hidden' : ''
+})
+
+onBeforeUnmount(() => {
+  document.body.style.overflow = ''
+})
 </script>
 
 <style scoped lang="scss">

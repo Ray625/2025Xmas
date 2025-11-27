@@ -98,7 +98,7 @@ const onClose = () => emit('close')
 .popup {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 2000;
   display: flex;
   justify-content: center;
   align-items: center;
