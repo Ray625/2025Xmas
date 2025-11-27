@@ -4,15 +4,23 @@
       <div class="flex flex-col items-center w-full">
         <SectionTitle preset="media" class="media-section__title" />
         <div class="media__group">
-          <div
-            class="media__card media__card--left"
-            @click.self="handleClick('https://www.youtube.com/watch?v=d51S9qXvBRI')"
-          >
-            <div class="media__card__mask"></div>
+          <div class="media__card media__card--left">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube-nocookie.com/embed/d51S9qXvBRI?si=d1J7dSa0Sx43mcfq"
+              title="YouTube video player"
+              frameborder="0"
+              allow="clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              loading="lazy"
+              class="yt-player"
+            ></iframe>
           </div>
-          <div class="media__card media__card--right">
+          <!-- <div class="media__card media__card--right">
             <div class="media__card__mask"></div>
-          </div>
+          </div> -->
         </div>
       </div>
     </Container>
@@ -49,11 +57,12 @@ const handleClick = (url: string) => {
   }
   &__card {
     position: relative;
-    width: 620px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 620px;
     aspect-ratio: 620/358;
     border-radius: 16px;
     border: 6px solid #75c7d7;
+    background-color: #75c7d7;
 
     &__mask {
       width: 100%;
@@ -63,12 +72,6 @@ const handleClick = (url: string) => {
       pointer-events: none;
     }
 
-    &--left {
-      background-image: url('@/assets/mock/media_left.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
     &--right {
       background-image: url('@/assets/mock/media_right.png');
       background-repeat: no-repeat;
@@ -88,20 +91,11 @@ const handleClick = (url: string) => {
       transform: translate(-50%, -53%);
       aspect-ratio: 248/72;
     }
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 70px;
-      height: 70px;
-      background-image: url('@/assets/img/section_10_icon-play.png');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      transform: translate(-50%, -50%);
-    }
   }
+}
+
+.yt-player {
+  border-radius: 12px;
 }
 
 @media (min-width: 768px) {
@@ -118,6 +112,10 @@ const handleClick = (url: string) => {
     display: flex;
     flex-direction: column;
     gap: 64px;
+  }
+
+  .yt-player {
+    border-radius: 12px;
   }
 }
 
@@ -141,8 +139,8 @@ const handleClick = (url: string) => {
 
     &__card {
       position: relative;
-      width: 620px;
-      max-width: 100%;
+      width: 100%;
+      max-width: 620px;
       aspect-ratio: 620/358;
       border-radius: 16px;
       border: 10px solid #75c7d7;
@@ -156,11 +154,19 @@ const handleClick = (url: string) => {
       }
     }
   }
+
+  .yt-player {
+    border-radius: 12px;
+  }
 }
 
 @media (min-width: 1920px) {
   .media-section__title {
     margin-bottom: 88px;
+  }
+
+  .yt-player {
+    border-radius: 12px;
   }
 }
 </style>
