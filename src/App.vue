@@ -1,7 +1,9 @@
 <template>
   <div id="top" class="page">
-    <HeaderBar />
-    <HeroBanner />
+    <HeaderBar v-if="['xl', 'lg'].includes(breakpoint)" />
+    <HeaderBarMobile v-if="['sm', 'md', 'xs'].includes(breakpoint)" />
+    <HeroBanner v-if="breakpoint !== 'xs'" />
+    <HeroBannerMobile v-if="['xs'].includes(breakpoint)" />
     <RaffleSection />
     <PromoSection />
     <LightsSection />
@@ -16,7 +18,9 @@
 
 <script setup lang="ts">
 import HeaderBar from '@/components/layout/HeaderBar.vue'
+import HeaderBarMobile from '@/components/layout/HeaderBarMobile.vue'
 import HeroBanner from '@/components/sections/HeroBanner.vue'
+import HeroBannerMobile from '@/components/sections/HeroBannerMobile.vue'
 import RaffleSection from '@/components/sections/Raffle/RaffleSection.vue'
 import PromoSection from '@/components/sections/Promo/PromoSection.vue'
 import LightsSection from '@/components/sections/Lights/LightsSection.vue'
@@ -26,4 +30,7 @@ import MediaSection from '@/components/sections/Media/MediaSection.vue'
 import TransportationSection from '@/components/sections/Transportation/TransportationSection.vue'
 import ContactSection from '@/components/sections/Contact/ContactSection.vue'
 import Footer from '@/components/layout/Footer.vue'
+
+import { useViewport } from '@/composables/useViewport'
+const { breakpoint } = useViewport()
 </script>
