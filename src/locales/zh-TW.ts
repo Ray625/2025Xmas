@@ -2,6 +2,7 @@ export default {
   header: {
     nav: {
       raffle: '光之覓境雙重抽',
+      map: '集章點位',
       promo: '百貨優惠',
       lights: '耶誕燈飾',
       landmark: '信義空橋妝點',
@@ -11,10 +12,14 @@ export default {
       contact: '聯絡我們',
     },
     lang: 'EN',
+    lang_ch_m: '繁體中文',
+    lang_en_m: 'English',
     socials: {
       facebook: '粉絲專頁',
       youtube: 'YouTube',
     },
+    download_m: '活動電子手冊下載',
+    download: '活動電子手冊',
   },
   common: {
     tabs: {

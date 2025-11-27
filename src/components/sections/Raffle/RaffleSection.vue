@@ -298,6 +298,7 @@
           title-key="sections.raffle.map.title"
           text-bg-color="#28B590"
           bodyPadding="156px 180px 192px 180px"
+          id="map"
         >
           <div class="map__card">
             <div class="w-full h-full">

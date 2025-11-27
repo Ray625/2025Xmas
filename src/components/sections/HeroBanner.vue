@@ -27,7 +27,6 @@
 .hero-banner {
   position: relative;
   width: 100%;
-  margin-top: -132px;
   aspect-ratio: 1920/1080;
 }
 
@@ -213,13 +212,18 @@
   }
 }
 
-// @media (min-width: 1920px) {
-//   .img__city-left {
-//     width: 780px;
-//   }
+@media (min-width: 1440px) {
+  .hero-banner {
+    position: relative;
+    width: 100%;
+    margin-top: -100px;
+    aspect-ratio: 1920/1080;
+  }
+}
 
-//   .img__city-right {
-//     width: 780px;
-//   }
-// }
+@media (min-width: 1920px) {
+  .hero-banner {
+    margin-top: -132px;
+  }
+}
 </style>
