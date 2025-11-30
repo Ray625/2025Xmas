@@ -9,6 +9,9 @@
           title-key="sections.lights.xinyi.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <div class="area__list">
             <div class="map_m">
@@ -33,6 +36,10 @@
           title-key="sections.lights.eastern.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
+          :title-bg-list-left="snoopyListLeft(11, 9, 7, 4, 2)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 9, 7, 4, 2)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#FFB8C3"
         >
           <div class="area__list">
             <div class="map_m">
@@ -57,6 +64,10 @@
           title-key="sections.lights.taipei.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#9A8FED"
         >
           <div class="area__list items-center">
             <div class="map_m">
@@ -130,6 +141,7 @@ import {
 } from '@/components/sections/Lights/photo'
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
+import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
 
 const { t } = useI18n()
 

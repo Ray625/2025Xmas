@@ -5,7 +5,11 @@
       class="card__title"
       :style="{ backgroundColor: textBgColor }"
     >
-      {{ cardTitle }}
+      <TitleBackground :sequence="titleBgListLeft" :color="titleBgColor" />
+      <p>
+        {{ cardTitle }}
+      </p>
+      <TitleBackground :sequence="titleBgListRight" :color="titleBgColor" />
     </div>
     <div class="card__body">
       <slot />
@@ -14,10 +18,13 @@
 </template>
 
 <script setup lang="ts">
+import TitleBackground from '@/components/common/TitleBackground.vue'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+
+type bgList = Array<'left' | 'right' | 'snow'>
 
 const props = withDefaults(
   defineProps<{
@@ -30,6 +37,10 @@ const props = withDefaults(
     lgBodyPadding?: string
     xlBodyPadding?: string
     showTitle?: boolean
+    titleBgListLeft?: bgList
+    titleBgListRight?: bgList
+    titleBgColor?: string
+    titleBgGap?: string
   }>(),
   {
     textBgColor: '#3277E1',
@@ -40,6 +51,9 @@ const props = withDefaults(
     xlBodyPadding: '64px 64px',
     bodyPadding: '75px 80px 80px',
     showTitle: true,
+    titleBgListLeft: () => ['snow', 'right'],
+    titleBgListRight: () => ['snow', 'left'],
+    titleBgGap: '40px',
   },
 )
 
@@ -52,6 +66,7 @@ const styleVars = computed(() => ({
   ...(props.lgBodyPadding ? { '--card-body-padding-lg': props.lgBodyPadding } : {}),
   ...(props.xlBodyPadding ? { '--card-body-padding-xl': props.xlBodyPadding } : {}),
   '--card-body-bg-color': props.bgColor,
+  '--title-bg-gap': props.titleBgGap,
 }))
 </script>
 
@@ -64,10 +79,16 @@ const styleVars = computed(() => ({
   height: fit-content;
   border-radius: 8px 8px 24px 24px;
   &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--title-bg-gap);
     padding: 8px;
-    @include mixins.card-title(vars.$color-white);
     text-align: center;
+    @include mixins.card-title(vars.$color-white);
     border-radius: 8px 8px 0 0;
+    overflow: hidden;
   }
   &__body {
     display: flex;

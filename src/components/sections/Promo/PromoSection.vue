@@ -13,6 +13,9 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <div class="area-list">
             <!-- 台北101 -->
@@ -306,6 +309,10 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
+          :title-bg-list-left="snoopyListLeft(11, 9, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 9, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#FFB8C3"
         >
           <div class="area-list">
             <!-- 微風廣場 -->
@@ -559,6 +566,10 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#9A8FED"
         >
           <div class="area-list">
             <CardLocale
@@ -936,6 +947,7 @@ import { usePromoLocations } from '@/components/sections/Promo/const'
 import { useTabs } from '@/data/const'
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
+import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
 
 const { t } = useI18n()
 
