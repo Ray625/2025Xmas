@@ -1682,5 +1682,6 @@ export default {
     host: '主辦單位',
     marketing: '執行單位',
     cooperate: '合作單位',
+    ad: '廣告',
   },
 }
