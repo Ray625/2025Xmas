@@ -1,6 +1,10 @@
 <template>
-  <div class="section-title__container" :style="styleVars">
-    <div class="section-title">
+  <div
+    class="section-title__container"
+    :class="{ 'section-title-en__container': isEn }"
+    :style="styleVars"
+  >
+    <div class="section-title" :class="{ 'section-title-en': isEn }">
       <img
         v-if="showLeftIcon"
         :src="leftIcon"
@@ -88,7 +92,8 @@ const props = withDefaults(
   },
 )
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const isEn = computed(() => locale.value.startsWith('en'))
 
 const normalize = (value: string | number) => (typeof value === 'number' ? `${value}px` : value)
 
@@ -150,6 +155,10 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey))
   }
 }
 
+.section-title-en {
+  @include mixins.typography(24px, 100%, 700, vars.$color-white);
+}
+
 .section-title__decor {
   position: absolute;
   transform: translateY(-50%);
@@ -159,6 +168,7 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey))
 .section-title__text {
   margin: 0;
   padding: 0;
+  white-space: pre-line;
 
   &--blur {
     position: absolute;
@@ -192,6 +202,9 @@ const displayTitle = computed(() => t(presetConfig.value.titleKey))
     width: var(--section-title-width-lg);
     height: var(--section-title-height-lg);
     @include mixins.typography(36px, 100%, 700, vars.$color-white);
+  }
+  .section-title-en {
+    @include mixins.typography(28px, 100%, 700, vars.$color-white);
   }
 
   .section-title__container {

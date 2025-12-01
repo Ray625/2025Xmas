@@ -3,7 +3,7 @@
     <div class="nav-hamburger__inner"></div>
   </button>
   <div v-if="navOpen" class="nav-overlay" @click="toggleNavOpen"></div>
-  <header class="site-header" :class="{ 'nav-open': navOpen }">
+  <header class="site-header" :class="{ 'nav-open': navOpen, 'site-header-en': isEn }">
     <div class="gradient-bar">
       <button class="nav__close-btn hover" @click="toggleNavOpen">
         <img :src="buttonX" alt="close button" />
@@ -17,7 +17,8 @@
           @click="toggleNavOpen"
         >
           <img :src="item.icon" :alt="t(`header.nav.${item.key}`)" class="nav-item__icon" />
-          <span>{{ t(`header.nav.${item.key}`) }}</span>
+          <span v-if="!isEn">{{ t(`header.nav.${item.key}`) }}</span>
+          <span v-if="isEn" class="whitespace-pre-line">{{ t(`header.navEn.${item.key}`) }}</span>
         </a>
       </nav>
       <div class="header-actions">
@@ -95,7 +96,7 @@ import buttonX from '@/assets/icon/X.svg'
 import social_fb from '@/assets/icon/social_fb.svg'
 import social_yt from '@/assets/icon/social_yt.svg'
 
-import { ref, watch, onBeforeUnmount } from 'vue'
+import { ref, watch, onBeforeUnmount, computed } from 'vue'
 
 const iconMap: Record<string, string> = {
   raffle: giftIcon,
@@ -116,8 +117,9 @@ const navItems = navConfig
     icon: iconMap[item.key],
   }))
 
-// const { t, locale } = useI18n()
-const { t } = useI18n()
+const { t, locale } = useI18n()
+// const { t } = useI18n()
+const isEn = computed(() => locale.value.startsWith('en'))
 
 // const toggleLocaleToTW = () => {
 //   if (locale.value === 'zh-TW') return
@@ -211,6 +213,9 @@ onBeforeUnmount(() => {
   &.nav-open {
     transform: translate(0);
   }
+}
+.site-header-en {
+  max-width: 400px;
 }
 
 .nav__close-btn {

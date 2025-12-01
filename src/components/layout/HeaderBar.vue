@@ -1,11 +1,27 @@
 <template>
-  <header class="site-header">
+  <header class="site-header" :class="{ 'site-header-en': isEn }">
     <div class="gradient-bar">
-      <Container class="header-inner" maxWidth="1560px" xl-max-width="1380px">
+      <Container
+        class="header-inner"
+        :class="{ 'header-inner-en': isEn }"
+        maxWidth="1560px"
+        :xl-max-width="isEn ? '1400px' : '1380px'"
+      >
         <nav class="nav">
-          <a v-for="item in navItems" :key="item.href" :href="item.href" class="nav-item">
-            <img :src="item.icon" :alt="t(`header.nav.${item.key}`)" class="nav-item__icon" />
-            <span>{{ t(`header.nav.${item.key}`) }}</span>
+          <a
+            v-for="item in navItems"
+            :key="item.href"
+            :href="item.href"
+            class="nav-item"
+            :class="{ 'nav-item-en': isEn }"
+          >
+            <img
+              :src="item.icon"
+              :alt="t(`header.nav.${item.key}`)"
+              class="nav-item__icon"
+              :class="{ 'nav-item__icon-en': isEn }"
+            />
+            <span :class="{ 'whitespace-pre-line': isEn }">{{ t(`header.nav.${item.key}`) }}</span>
           </a>
         </nav>
         <div class="header-actions">
@@ -59,6 +75,7 @@ import playIcon from '@/assets/icon/play.svg'
 import mapIcon from '@/assets/icon/map_white.svg'
 import social_fb from '@/assets/icon/social_fb.svg'
 import social_yt from '@/assets/icon/social_yt.svg'
+import { computed } from 'vue'
 
 const iconMap: Record<string, string> = {
   raffle: giftIcon,
@@ -80,11 +97,11 @@ const navItems = navConfig
     icon: iconMap[item.key],
   }))
 
-// const { t, locale } = useI18n()
-const { t } = useI18n()
+const { t, locale } = useI18n()
+// const { t } = useI18n()
+const isEn = computed(() => locale.value.startsWith('en'))
 
 // const toggleLocale = () => {
-//   return
 //   locale.value = locale.value === 'zh-TW' ? 'en' : 'zh-TW'
 // }
 </script>
@@ -103,21 +120,29 @@ const { t } = useI18n()
     height: 68px;
   }
 
+  .site-header-en {
+    height: 88px;
+  }
+
   .gradient-bar {
+    display: flex;
     height: 100%;
     padding: 10px;
     background: linear-gradient(90deg, #dc1f9e 0%, #5e4fd4 100%);
     box-shadow: 0px 4px 40px 0px #0000001a;
+    align-items: center;
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 0 auto;
   }
 
   .nav {
     display: flex;
+    gap: 8px;
     flex-wrap: nowrap;
   }
 
@@ -133,9 +158,10 @@ const { t } = useI18n()
     color: #fff;
     font-weight: 700;
     font-size: 18px;
-    line-height: 32px;
+    line-height: 24px;
     text-decoration: none;
     white-space: nowrap;
+    text-align: center;
     transition: opacity 0.2s ease;
   }
 
@@ -149,6 +175,9 @@ const { t } = useI18n()
       width: 40px;
     }
   }
+  .nav-item__icon-en {
+    height: 36px;
+  }
 
   .header-actions {
     display: inline-flex;
@@ -161,7 +190,7 @@ const { t } = useI18n()
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 46px;
+    width: fit-content;
     height: 32px;
     border-radius: 999px;
     padding: 10px 12px;
@@ -212,10 +241,17 @@ const { t } = useI18n()
     color: #fff;
     font-weight: 700;
     font-size: 18px;
-    line-height: 32px;
+    line-height: 24px;
     text-decoration: none;
     white-space: nowrap;
     transition: opacity 0.2s ease;
+  }
+
+  .nav-item-en {
+    padding: 0;
+    gap: 4px;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .header-actions {

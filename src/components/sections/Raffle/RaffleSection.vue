@@ -12,10 +12,10 @@
         <img :src="snoopyDiamond" alt="snoopyDiamond" class="snoopy-diamond" loading="lazy" />
         <img :src="snoopyMobile" alt="snoopy" class="snoopy-circle_m" loading="lazy" />
         <img :src="snoopy" alt="snoopy" class="snoopy-circle" loading="lazy" />
-        <p class="raffle-card__text">
+        <p class="raffle-card__text relative">
           {{ t('sections.raffle.cardText.text') }}
         </p>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center relative">
           <p class="raffle-card__text">
             {{ t('sections.raffle.cardText.text2') }}
           </p>
@@ -23,7 +23,7 @@
             {{ t('sections.raffle.cardText.text3') }}
           </p>
         </div>
-        <p class="raffle-card__text">
+        <p class="raffle-card__text relative">
           {{ t('sections.raffle.cardText.text4') }}
         </p>
       </div>
@@ -58,8 +58,8 @@
       <div class="raffle-section__content">
         <Card
           title-key="sections.raffle.rules.title"
-          :title-bg-list-left="snoopyListLeft()[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight()[breakpoint]"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
           :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <p class="raffle-card__text text--mb">
@@ -184,8 +184,8 @@
           textBgColor="#28B590"
           bodyPadding="56px 80px 80px"
           sm-body-padding="12px"
-          :title-bg-list-left="snoopyListLeft()[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight()[breakpoint]"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#82CFB4"
         >
@@ -349,8 +349,8 @@
           text-bg-color="#28B590"
           bodyPadding="156px 180px 192px 180px"
           id="map"
-          :title-bg-list-left="snoopyListLeft()[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight()[breakpoint]"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#82CFB4"
         >
@@ -517,6 +517,7 @@ const handleGoLineOA = () => {
   max-width: 128px;
   bottom: 0;
   left: 0;
+  z-index: 0;
 }
 
 .snoopy-circle {
@@ -805,6 +806,7 @@ const handleGoLineOA = () => {
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 0;
   }
 
   .snoopy-diamond {
@@ -856,7 +858,7 @@ const handleGoLineOA = () => {
   }
 
   .raffle-card {
-    padding: 80px 100px;
+    padding: 80px 160px;
     border-radius: 36px;
     gap: 44px;
     &__text {
