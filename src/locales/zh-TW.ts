@@ -135,7 +135,7 @@ export default {
         title: '聚客展演',
         event1: {
           shop: 'ATT 4 FUN',
-          name: '繽紛完夜祭',
+          name: '繽紛玩夜祭',
           time: '114/12/04 - 114/12/31',
           location: 'ATT 1F側門及大門口',
         },
