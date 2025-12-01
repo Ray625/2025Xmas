@@ -93,16 +93,18 @@ import SectionTabs from '@/components/common/SectionTabs.vue'
 import Card from '@/components/common/Card.vue'
 import CardTransport from '@/components/common/CardTransport.vue'
 import { useTransport } from '@/components/sections/Transportation/const'
-import { useTabs } from '@/data/const'
+import { tabsConfig } from '@/data/const'
 import { useViewport } from '@/composables/useViewport'
 import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const { breakpoint } = useViewport()
 
 const { xinyiList, easternList, taipeiList } = useTransport()
 
 const activeTab = ref(0)
-const tabs = computed(() => useTabs())
+const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(tab.labelKey) })))
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;

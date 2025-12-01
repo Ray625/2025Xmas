@@ -38,6 +38,18 @@ export default {
       location: '展演地點',
     },
   },
+  title: {
+    activity: '本週活動快訊',
+    raffle: '光之覓境雙重抽',
+    map: '集章點位',
+    promo: '百貨優惠',
+    lights: '耶誕燈飾',
+    landmark: '信義空橋妝點',
+    performance: '聚客展演',
+    media: '影音專區',
+    transportation: '交通資訊',
+    contact: '聯絡我們',
+  },
   popup: {
     title: '光之覓境雙重抽',
     event: {

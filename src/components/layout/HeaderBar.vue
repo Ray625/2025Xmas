@@ -198,7 +198,7 @@ const toggleLocale = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 46px;
+    width: fit-content;
     height: 32px;
     border-radius: 999px;
     padding: 10px 12px;

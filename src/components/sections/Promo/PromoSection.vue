@@ -932,7 +932,7 @@ import CardLocale from '@/components/common/CardLocale.vue'
 import CardEvent from '@/components/common/CardEvent.vue'
 import { useI18n } from 'vue-i18n'
 import { usePromoLocations } from '@/components/sections/Promo/const'
-import { useTabs } from '@/data/const'
+import { tabsConfig } from '@/data/const'
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
@@ -940,7 +940,7 @@ import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
 const { t } = useI18n()
 
 const activeTab = ref(0)
-const tabs = computed(() => useTabs())
+const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(tab.labelKey) })))
 const { xinyiList, easternList, taipeiList } = usePromoLocations()
 </script>
 <style scoped lang="scss">

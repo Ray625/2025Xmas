@@ -2,7 +2,7 @@ export default {
   header: {
     nav: {
       activity: 'Weekly Highlights',
-      raffle: '"Realm of Light" \nDouble Draw',
+      raffle: 'Realm of Light\nDouble Draw',
       map: 'Stamp\nLocations',
       promo: 'Department\nStore Offers',
       lights: 'Christmas\nIlluminations',
@@ -14,7 +14,7 @@ export default {
     },
     navEn: {
       activity: 'Weekly Highlights',
-      raffle: '"Realm of Light" \nDouble Draw',
+      raffle: 'Realm of Light\nDouble Draw',
       map: 'Stamp Locations',
       promo: 'Department Store Offers',
       lights: 'Christmas Illuminations',
@@ -24,15 +24,27 @@ export default {
       transportation: 'Transportation',
       contact: 'Contact Us',
     },
-    lang: 'EN',
+    lang: '繁中',
     lang_ch_m: '繁體中文',
     lang_en_m: 'English',
     socials: {
-      facebook: '粉絲專頁',
+      facebook: 'facebook',
       youtube: 'YouTube',
     },
     download_m: '活動電子手冊下載',
     download: '活動電子手冊',
+  },
+  title: {
+    activity: 'Weekly Highlights',
+    raffle: 'Realm of Light\nDouble Draw',
+    map: 'Stamp\nLocations',
+    promo: 'Department\nStore Offers',
+    lights: 'Christmas\nIlluminations',
+    landmark: 'Xinyi Skyway\nDecorations',
+    performance: 'Performances\n& Events',
+    media: 'Media Gallery',
+    transportation: 'Transportation',
+    contact: 'Contact Us',
   },
   common: {
     tabs: {
@@ -137,11 +149,13 @@ export default {
   sections: {
     raffle: {
       cardText: {
-        text: '走進臺北最閃耀的「光之覓境」，\n讓燈飾化作一道道幸福光影的旅程。',
-        text2: '打造超過80處閃亮繽紛燈飾讓你拍不完，\n逾40處聚客展演活動！',
+        text: "Step into Taipei's most dazzling “Realm of Light”, where illuminated displays guide you through a journey of joy and wonder.",
+        text2:
+          'Discover over 80 sparkling light installations perfect for photos,and enjoy more than 40 performances and events throughout the city.',
         text3:
-          '加入2025繽紛耶誕玩台北LINE活動，\n參加光之覓境雙重抽，價值超過百萬元百貨好禮等你拿！',
-        text4: '大家相揪來臺北市，跟著絢麗燈飾尋找驚喜，\n感受冬夜最浪漫的閃耀時刻吧！',
+          'Join the 2025 Taipei Xmas LINE campaign and enter the Realm of Light Double Draw to win gifts worth over NT$1 million.',
+        text4:
+          'Come visit Taipei and follow the radiant displays to uncover new surprises—and experience the most romantic glow of the winter night.',
       },
       activity: {
         title: '聚客展演',
