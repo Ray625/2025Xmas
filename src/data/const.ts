@@ -1,14 +1,8 @@
-import { useI18n } from 'vue-i18n'
-
-export function useTabs() {
-  const { t } = useI18n()
-
-  return [
-    { label: t('common.tabs.xinyi'), key: 'xinyi' },
-    { label: t('common.tabs.eastern'), key: 'eastern' },
-    { label: t('common.tabs.taipei'), key: 'taipei' },
-  ]
-}
+export const tabsConfig = [
+  { labelKey: 'common.tabs.xinyi', key: 'xinyi' },
+  { labelKey: 'common.tabs.eastern', key: 'eastern' },
+  { labelKey: 'common.tabs.taipei', key: 'taipei' },
+]
 
 export const navList = {
   raffle: '光之覓境雙重抽',

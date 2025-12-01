@@ -131,7 +131,7 @@ import easternMapM from '@/assets/map/m_section_07_map_02_ed.png'
 import taipeiMapM from '@/assets/map/m_section_07_map_03_other.png'
 import ximendingMapM from '@/assets/map/m_section_07_map_04_xm.png'
 import iconPlay from '@/assets/icon/play_blue.svg'
-import { useTabs } from '@/data/const'
+import { tabsConfig } from '@/data/const'
 import { useI18n } from 'vue-i18n'
 import {
   xinyiLights,
@@ -151,7 +151,7 @@ const pageSize = computed(() => {
   return 8
 })
 const activeTab = ref(0)
-const tabs = computed(() => useTabs())
+const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(tab.labelKey) })))
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;

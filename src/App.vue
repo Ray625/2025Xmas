@@ -1,7 +1,9 @@
 <template>
   <div id="top" class="page">
-    <HeaderBar v-if="['xl', 'lg'].includes(breakpoint)" />
+    <HeaderBar v-if="['xl'].includes(breakpoint)" />
+    <HeaderBar v-if="['lg'].includes(breakpoint) && !locale.startsWith('en')" />
     <HeaderBarMobile v-if="['sm', 'md', 'xs'].includes(breakpoint)" />
+    <HeaderBarMobile v-if="['lg'].includes(breakpoint) && locale.startsWith('en')" />
     <HeroBanner v-if="breakpoint !== 'xs'" />
     <HeroBannerMobile v-if="['xs'].includes(breakpoint)" />
     <RaffleSection />
@@ -30,7 +32,9 @@ import MediaSection from '@/components/sections/Media/MediaSection.vue'
 import TransportationSection from '@/components/sections/Transportation/TransportationSection.vue'
 import ContactSection from '@/components/sections/Contact/ContactSection.vue'
 import Footer from '@/components/layout/Footer.vue'
-
 import { useViewport } from '@/composables/useViewport'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
 const { breakpoint } = useViewport()
 </script>
