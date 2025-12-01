@@ -1,5 +1,6 @@
 export type NavConfigItem = {
   key:
+    | 'activity'
     | 'raffle'
     | 'map'
     | 'promo'
@@ -15,6 +16,12 @@ export type NavConfigItem = {
 }
 
 export const navConfig: NavConfigItem[] = [
+  {
+    key: 'activity',
+    href: '#activity',
+    titleKey: 'header.nav.activity',
+    color: '#E3007F',
+  },
   {
     key: 'raffle',
     href: '#raffle',

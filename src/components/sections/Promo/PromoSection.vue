@@ -13,6 +13,9 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <div class="area-list">
             <!-- 台北101 -->
@@ -165,21 +168,12 @@
             >
               <template #detail>
                 <div class="locale-card__list">
-                  <div
-                    class="flex flex-col gap-4 flex-1 relative"
-                    :class="['sm', 'xs'].includes(breakpoint) ? 'snoopy-bg' : ''"
-                  >
+                  <div class="flex flex-col gap-4 flex-1 relative snoopy-bg">
                     <CardEvent
                       v-for="(event, index) in xinyiList.FEDS.eventLeft"
                       :key="index"
                       :eventData="event"
                     />
-                  </div>
-                  <div
-                    v-if="['xl', 'lg', 'md'].includes(breakpoint)"
-                    class="flex flex-col gap-4 flex-1 relative"
-                  >
-                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
                   </div>
                 </div>
               </template>
@@ -306,6 +300,10 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
+          :title-bg-list-left="snoopyListLeft(11, 9, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 9, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#FFB8C3"
         >
           <div class="area-list">
             <!-- 微風廣場 -->
@@ -461,13 +459,12 @@
                       :eventData="event"
                     />
                   </div>
-                  <div class="flex flex-col gap-4 flex-1 relative">
+                  <div class="flex flex-col gap-4 flex-1 relative snoopy-bg">
                     <CardEvent
                       v-for="(event, index) in easternList.MingYao.eventRight"
                       :key="index"
                       :eventData="event"
                     />
-                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
                   </div>
                 </div>
               </template>
@@ -559,6 +556,10 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#9A8FED"
         >
           <div class="area-list">
             <CardLocale
@@ -905,13 +906,12 @@
                       :eventData="event"
                     />
                   </div>
-                  <div class="flex flex-col gap-4 flex-1 relative">
+                  <div class="flex flex-col gap-4 flex-1 relative snoopy-bg">
                     <CardEvent
                       v-for="(event, index) in taipeiList.Syntrend.eventRight"
                       :key="index"
                       :eventData="event"
                     />
-                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
                   </div>
                 </div>
               </template>
@@ -930,12 +930,12 @@ import SectionTabs from '@/components/common/SectionTabs.vue'
 import Card from '@/components/common/Card.vue'
 import CardLocale from '@/components/common/CardLocale.vue'
 import CardEvent from '@/components/common/CardEvent.vue'
-import snoopyImg from '@/assets/img/section_06_snoopy.png'
 import { useI18n } from 'vue-i18n'
 import { usePromoLocations } from '@/components/sections/Promo/const'
 import { useTabs } from '@/data/const'
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
+import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
 
 const { t } = useI18n()
 

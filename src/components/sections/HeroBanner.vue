@@ -94,6 +94,8 @@
   background-position: bottom center;
   z-index: 5;
   mix-blend-mode: screen;
+  animation: fadeCycle 2s ease infinite;
+  opacity: 0;
 }
 
 .img__deco {

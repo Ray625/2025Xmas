@@ -20,6 +20,10 @@
           textBgColor="#28B590"
           :bg-color="['sm', 'xs'].includes(breakpoint) ? '#82CFB4' : '#f1f9f5'"
           class="w-full"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#82CFB4"
         >
           <div class="transportation-section__card__group">
             <CardTransport
@@ -39,6 +43,10 @@
           md-body-padding="0"
           textBgColor="#28B590"
           :bg-color="['sm', 'xs'].includes(breakpoint) ? '#82CFB4' : '#f1f9f5'"
+          :title-bg-list-left="snoopyListLeft(11, 9, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 9, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#82CFB4"
         >
           <div class="transportation-section__card__group">
             <CardTransport
@@ -58,6 +66,10 @@
           md-body-padding="0"
           textBgColor="#28B590"
           :bg-color="['sm', 'xs'].includes(breakpoint) ? '#82CFB4' : '#f1f9f5'"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#82CFB4"
         >
           <div class="transportation-section__card__group">
             <CardTransport
@@ -83,6 +95,8 @@ import CardTransport from '@/components/common/CardTransport.vue'
 import { useTransport } from '@/components/sections/Transportation/const'
 import { useTabs } from '@/data/const'
 import { useViewport } from '@/composables/useViewport'
+import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
+
 const { breakpoint } = useViewport()
 
 const { xinyiList, easternList, taipeiList } = useTransport()

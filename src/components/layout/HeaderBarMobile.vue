@@ -109,10 +109,12 @@ const iconMap: Record<string, string> = {
   contact: mailIcon,
 }
 
-const navItems = navConfig.map((item) => ({
-  ...item,
-  icon: iconMap[item.key],
-}))
+const navItems = navConfig
+  .filter((item) => item.key !== 'activity')
+  .map((item) => ({
+    ...item,
+    icon: iconMap[item.key],
+  }))
 
 // const { t, locale } = useI18n()
 const { t } = useI18n()
