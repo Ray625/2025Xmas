@@ -29,9 +29,39 @@
       </div>
     </Container>
     <Container>
+      <SectionTitle preset="activity" class="raffle-section__title" />
+      <div class="raffle-section__content">
+        <Card
+          title-key="sections.raffle.activity.title"
+          text-bg-color="#FF8E9F"
+          body-padding="20px"
+          sm-body-padding="0"
+          md-body-padding="0"
+          lg-body-padding="20px"
+          xl-body-padding="20px"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#FFB8C3"
+        >
+          <TableField
+            v-for="(activity, index) in activityList"
+            :event="activity"
+            :bg-color="index % 2 === 1 ? '#fff' : '#ffe7eb'"
+            :has-radius="activityList.length === index + 1"
+          />
+        </Card>
+      </div>
+    </Container>
+    <Container>
       <SectionTitle preset="raffle" class="raffle-section__title" />
       <div class="raffle-section__content">
-        <Card title-key="sections.raffle.rules.title">
+        <Card
+          title-key="sections.raffle.rules.title"
+          :title-bg-list-left="snoopyListLeft()[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight()[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+        >
           <p class="raffle-card__text text--mb">
             {{ t('sections.raffle.rules.text') }}
           </p>
@@ -154,6 +184,10 @@
           textBgColor="#28B590"
           bodyPadding="56px 80px 80px"
           sm-body-padding="12px"
+          :title-bg-list-left="snoopyListLeft()[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight()[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#82CFB4"
         >
           <div class="raffle-section__prize__container">
             <CardStep
@@ -278,7 +312,13 @@
             </div>
           </div>
         </Card>
-        <Card title-key="sections.raffle.stamp.title" bodyPadding="20px 40px 40px">
+        <Card
+          title-key="sections.raffle.stamp.title"
+          bodyPadding="20px 40px 40px"
+          :title-bg-list-left="snoopyListLeft(10, 8, 6, 4, 1)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(10, 8, 6, 4, 1)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+        >
           <div class="stamp__note">{{ t('sections.raffle.note') }}</div>
           <div class="flex flex-col gap-10 w-full">
             <CardStamp
@@ -309,11 +349,15 @@
           text-bg-color="#28B590"
           bodyPadding="156px 180px 192px 180px"
           id="map"
+          :title-bg-list-left="snoopyListLeft()[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight()[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#82CFB4"
         >
           <div class="map__card">
             <div class="w-full h-full">
               <iframe
-                src="https://www.google.com/maps/d/u/0/embed?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ehbc=2E312F&noprof=1"
+                src="https://www.google.com/maps/d/embed?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ehbc=2E312F&noprof=1"
                 width="100%"
                 height="auto"
                 class="map__card__map"
@@ -346,6 +390,7 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
 import TagHighlight from '@/components/common/TagHighlight.vue'
 import ButtonAction from '@/components/common/ButtonAction.vue'
 import Pop from '@/components/sections/Raffle/Pop.vue'
+import TableField from '@/components/common/TableField.vue'
 
 import iconClock from '@/assets/icon/clock.svg'
 import iconMap from '@/assets/icon/map.svg'
@@ -368,12 +413,13 @@ import snoopyMobile from '@/assets/img/m_section_01_snoopy.png'
 import { watch, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRaffleConstants } from '@/components/sections/Raffle/const'
+import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
 import { xinyiCollect, easternCollect, taipeiCollect } from '@/components/sections/Raffle/photo'
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 
 const { t } = useI18n()
-const { prizeLeft, prizeRight } = useRaffleConstants()
+const { prizeLeft, prizeRight, activityList } = useRaffleConstants()
 
 const openPopup = ref(false)
 const pageSize = computed(() => {
@@ -392,7 +438,7 @@ watch(openPopup, (visible) => {
 
 const handleOpenMap = () => {
   const win = window.open(
-    'https://www.google.com/maps/d/u/0/viewer?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ll=25.076023980955114%2C121.56142795&z=13',
+    'https://www.google.com/maps/d/viewer?mid=14lLXZgQwRyfMMWyv3Io0QVJSmJz81sk&ll=25.043643773616058%2C121.53699605977438&z=14',
     '_blank',
     'noopener',
   )

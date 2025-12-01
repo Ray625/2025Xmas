@@ -62,8 +62,19 @@ export function useRaffleConstants() {
     },
   ]
 
+  const activityList = Array.from({ length: 8 }).map((_, index) => {
+    const num = index + 1
+    return {
+      time: t(`sections.raffle.activity.event${num}.time`),
+      name: t(`sections.raffle.activity.event${num}.name`),
+      location: t(`sections.raffle.activity.event${num}.location`),
+      shop: t(`sections.raffle.activity.event${num}.shop`),
+    }
+  })
+
   return {
     prizeLeft,
     prizeRight,
+    activityList,
   }
 }

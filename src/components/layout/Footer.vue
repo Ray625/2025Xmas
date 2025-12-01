@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="footer__text">
-          <img :src="iconAd" alt="icon" />
+          <div class="footer__ad">{{ t('footer.ad') }}</div>
         </div>
       </div>
       <img :src="copyright" alt="copyright" class="copyright" />
@@ -30,7 +30,6 @@
 import hostImg from '@/assets/img/section_13_logo_01.png'
 import marketingImg from '@/assets/img/section_13_logo_02.png'
 import cooperateImg from '@/assets/img/section_13_logo_03.png'
-import iconAd from '@/assets/icon/ad.svg'
 import copyright from '@/assets/img/section_13_copyright.png'
 import tree from '@/assets/img/section_13_tree.png'
 
@@ -93,6 +92,10 @@ const { t } = useI18n()
   }
 }
 
+.log-click {
+  max-height: 30px;
+}
+
 .copyright {
   position: relative;
   z-index: 10;
@@ -119,6 +122,16 @@ const { t } = useI18n()
   background-size: cover;
   background-position: bottom center;
   z-index: 0;
+}
+
+.footer__ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  border: 0.5px solid #fff;
+  padding: 0 4px;
+  @include mixins.typography-responsive(8px, 10px, 12px, 1.5, 1.5, 1.5, 400, #fff);
 }
 
 @media screen and (min-width: 768px) {
@@ -156,6 +169,14 @@ const { t } = useI18n()
   .footer-bg {
     min-height: 200px;
   }
+
+  .log-click {
+    max-height: 40px;
+  }
+
+  .copyright {
+    max-width: unset;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -178,11 +199,19 @@ const { t } = useI18n()
 
   .tree {
     left: 0;
-    max-width: 280px;
+    max-width: 250px;
   }
 
   .footer-bg {
     min-height: 200px;
+  }
+
+  .log-click {
+    max-height: unset;
+  }
+
+  .footer__ad {
+    padding: 0 8px;
   }
 }
 
