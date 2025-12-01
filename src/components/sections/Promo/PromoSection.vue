@@ -168,21 +168,12 @@
             >
               <template #detail>
                 <div class="locale-card__list">
-                  <div
-                    class="flex flex-col gap-4 flex-1 relative"
-                    :class="['sm', 'xs'].includes(breakpoint) ? 'snoopy-bg' : ''"
-                  >
+                  <div class="flex flex-col gap-4 flex-1 relative snoopy-bg">
                     <CardEvent
                       v-for="(event, index) in xinyiList.FEDS.eventLeft"
                       :key="index"
                       :eventData="event"
                     />
-                  </div>
-                  <div
-                    v-if="['xl', 'lg', 'md'].includes(breakpoint)"
-                    class="flex flex-col gap-4 flex-1 relative"
-                  >
-                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
                   </div>
                 </div>
               </template>
@@ -468,13 +459,12 @@
                       :eventData="event"
                     />
                   </div>
-                  <div class="flex flex-col gap-4 flex-1 relative">
+                  <div class="flex flex-col gap-4 flex-1 relative snoopy-bg">
                     <CardEvent
                       v-for="(event, index) in easternList.MingYao.eventRight"
                       :key="index"
                       :eventData="event"
                     />
-                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
                   </div>
                 </div>
               </template>
@@ -916,13 +906,12 @@
                       :eventData="event"
                     />
                   </div>
-                  <div class="flex flex-col gap-4 flex-1 relative">
+                  <div class="flex flex-col gap-4 flex-1 relative snoopy-bg">
                     <CardEvent
                       v-for="(event, index) in taipeiList.Syntrend.eventRight"
                       :key="index"
                       :eventData="event"
                     />
-                    <img :src="snoopyImg" alt="snoopy" class="absolute bottom-0 right-0 w-full" />
                   </div>
                 </div>
               </template>
