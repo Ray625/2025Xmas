@@ -29,6 +29,31 @@
       </div>
     </Container>
     <Container>
+      <SectionTitle preset="activity" class="raffle-section__title" />
+      <div class="raffle-section__content">
+        <Card
+          title-key="sections.raffle.activity.title"
+          text-bg-color="#FF8E9F"
+          body-padding="20px"
+          sm-body-padding="0"
+          md-body-padding="0"
+          lg-body-padding="20px"
+          xl-body-padding="20px"
+          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
+          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#FFB8C3"
+        >
+          <TableField
+            v-for="(activity, index) in activityList"
+            :event="activity"
+            :bg-color="index % 2 === 1 ? '#fff' : '#ffe7eb'"
+            :has-radius="activityList.length === index + 1"
+          />
+        </Card>
+      </div>
+    </Container>
+    <Container>
       <SectionTitle preset="raffle" class="raffle-section__title" />
       <div class="raffle-section__content">
         <Card
@@ -365,6 +390,7 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
 import TagHighlight from '@/components/common/TagHighlight.vue'
 import ButtonAction from '@/components/common/ButtonAction.vue'
 import Pop from '@/components/sections/Raffle/Pop.vue'
+import TableField from '@/components/common/TableField.vue'
 
 import iconClock from '@/assets/icon/clock.svg'
 import iconMap from '@/assets/icon/map.svg'
@@ -393,7 +419,7 @@ import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 
 const { t } = useI18n()
-const { prizeLeft, prizeRight } = useRaffleConstants()
+const { prizeLeft, prizeRight, activityList } = useRaffleConstants()
 
 const openPopup = ref(false)
 const pageSize = computed(() => {

@@ -77,7 +77,7 @@ const styleVars = computed(() => ({
 .card {
   width: 100%;
   height: fit-content;
-  border-radius: 8px 8px 24px 24px;
+  border-radius: 8px 8px 16px 16px;
   &__title {
     display: flex;
     flex-direction: row;
@@ -97,7 +97,7 @@ const styleVars = computed(() => ({
     width: 100%;
     padding: var(--card-body-padding-sm);
     background-color: var(--card-body-bg-color);
-    border-radius: 0 0 24px 24px;
+    border-radius: 0 0 16px 16px;
   }
 }
 

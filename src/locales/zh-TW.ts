@@ -1,6 +1,7 @@
 export default {
   header: {
     nav: {
+      activity: '本週活動快訊',
       raffle: '光之覓境雙重抽',
       map: '集章點位',
       promo: '百貨優惠',
@@ -30,6 +31,11 @@ export default {
     car: {
       bus: '公車',
       mrt: '捷運',
+    },
+    activityTag: {
+      name: '展演活動',
+      shop: '百貨商圈',
+      location: '展演地點',
     },
   },
   popup: {
@@ -123,6 +129,57 @@ export default {
         text3:
           '加入2025繽紛耶誕玩台北LINE活動，\n參加光之覓境雙重抽，價值超過百萬元百貨好禮等你拿！',
         text4: '大家相揪來臺北市，跟著絢麗燈飾尋找驚喜，\n感受冬夜最浪漫的閃耀時刻吧！',
+      },
+      activity: {
+        title: '聚客展演',
+        event1: {
+          shop: 'ATT 4 FUN',
+          name: '繽紛完夜祭',
+          time: '114/12/04 - 114/12/31',
+          location: 'ATT 1F側門及大門口',
+        },
+        event2: {
+          shop: '台北101',
+          name: '500趴2025',
+          time: '114/12/05 - 114/12/07',
+          location: '水舞廣場',
+        },
+        event3: {
+          shop: '台北101',
+          name: '夢想舞台音樂會',
+          time: '114/12/06 - 114/12/07',
+          location: '4F都會廣場',
+        },
+        event4: {
+          shop: '遠東SOGO 忠孝館',
+          name: '聖誕幸福樂章~音樂演奏',
+          time: '114/12/06',
+          location: '1F',
+        },
+        event5: {
+          shop: '遠東SOGO 忠孝館',
+          name: '周末限定! 香港迪士尼拍貼小屋',
+          time: '114/12/06 - 114/12/07',
+          location: '1F',
+        },
+        event6: {
+          shop: '遠東SOGO 忠孝館',
+          name: '奇幻聖誕周末打卡贈',
+          time: '114/12/06 - 114/12/07',
+          location: '12F贈獎處',
+        },
+        event7: {
+          shop: '美麗華百樂園',
+          name: '星願童話市集',
+          time: '114/12/06 - 114/12/07',
+          location: '1F水舞廣場、海景大道',
+        },
+        event8: {
+          shop: '大葉高島屋',
+          name: '100°C 的暖心-喜憨兒義賣會',
+          time: '114/12/06 - 114/12/25',
+          location: 'B1F中央水族廣場',
+        },
       },
       rules: {
         title: '活動辦法',
