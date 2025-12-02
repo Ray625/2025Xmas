@@ -10,7 +10,7 @@ import prizeRight3 from '@/assets/icon/prize_right_3.svg'
 
 type PrizeItem = {
   img: string
-  text: string
+  textKey: string
   quota?: string
 }
 
@@ -20,44 +20,44 @@ export function useRaffleConstants() {
   const prizeLeft: PrizeItem[] = [
     {
       img: prizeLeft1,
-      text: t('sections.raffle.prize.cardLeft.prize1'),
+      textKey: 'sections.raffle.prize.cardLeft.prize1',
       quota: '800',
     },
     {
       img: prizeLeft2,
-      text: t('sections.raffle.prize.cardLeft.prize2'),
+      textKey: 'sections.raffle.prize.cardLeft.prize2',
       quota: '300',
     },
     {
       img: prizeLeft3,
-      text: t('sections.raffle.prize.cardLeft.prize3'),
+      textKey: 'sections.raffle.prize.cardLeft.prize3',
       quota: '100',
     },
     {
       img: prizeLeft4,
-      text: t('sections.raffle.prize.cardLeft.prize4'),
+      textKey: 'sections.raffle.prize.cardLeft.prize4',
       quota: '20',
     },
     {
       img: prizeLeft5,
-      text: t('sections.raffle.prize.cardLeft.prize5'),
+      textKey: 'sections.raffle.prize.cardLeft.prize5',
     },
   ]
 
   const prizeRight: PrizeItem[] = [
     {
       img: prizeRight1,
-      text: t('sections.raffle.prize.cardRight.prize1'),
+      textKey: 'sections.raffle.prize.cardRight.prize1',
       quota: '4',
     },
     {
       img: prizeRight2,
-      text: t('sections.raffle.prize.cardRight.prize2'),
+      textKey: 'sections.raffle.prize.cardRight.prize2',
       quota: '2',
     },
     {
       img: prizeRight3,
-      text: t('sections.raffle.prize.cardRight.prize3'),
+      textKey: 'sections.raffle.prize.cardRight.prize3',
       quota: '1',
     },
   ]

@@ -1,12 +1,14 @@
 <template>
-  <div class="tag">{{ location }}</div>
+  <div class="tag" :class="{ 'tag-en': isEn }">{{ location }}</div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 
 const props = withDefaults(
   defineProps<{
@@ -28,5 +30,10 @@ const location = computed(() => t(`${props.shopKey}`))
   border-radius: 8px;
   background-color: #001a7d;
   @include mixins.text-body(vars.$color-white);
+}
+
+.tag-en {
+  white-space: pre-line;
+  @include mixins.text-body-en(vars.$color-white);
 }
 </style>

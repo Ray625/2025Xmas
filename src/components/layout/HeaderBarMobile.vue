@@ -215,7 +215,7 @@ onBeforeUnmount(() => {
   }
 }
 .site-header-en {
-  max-width: 400px;
+  max-width: 360px;
 }
 
 .nav__close-btn {

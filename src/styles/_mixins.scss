@@ -72,6 +72,10 @@
   @include typography-responsive(18px, 20px, 24px, 28px, 150%, 36px, 700, $color);
 }
 
+@mixin text-body-en($color: vars.$color-text-blue) {
+  @include typography-responsive(14px, 16px, 24px, 20px, 150%, 36px, 700, $color);
+}
+
 @mixin text-title($color: vars.$color-white) {
   @include typography-responsive(20px, 22px, 24px, 32px, 150%, 36px, 700, $color);
 }
@@ -86,6 +90,10 @@
 
 @mixin card-title($color: vars.$color-white) {
   @include typography-responsive(24px, 28px, 32px, 36px, 38px, 42px, 700, $color);
+}
+
+@mixin card-title-en($color: vars.$color-white) {
+  @include typography-responsive(18px, 24px, 32px, 36px, 38px, 42px, 700, $color);
 }
 
 @mixin light-card-name($color: vars.$color-text-blue) {
@@ -124,4 +132,6 @@
   @include typography-responsive(12px, 18px, 24px, 22px, 150%, 36px, 700, $color);
 }
 
-
+@mixin prize-text-en($color: vars.$color-text-note) {
+  @include typography-responsive(16px, 16px, 18px, 1.5, 1.5, 1.5, 700, $color);
+}

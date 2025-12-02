@@ -9,8 +9,14 @@
           title-key="sections.lights.xinyi.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(8, 6, 4)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn ? snoopyListRight(8, 6, 4)[breakpoint] : snoopyListRight(11, 8, 7)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <div class="area__list">
@@ -142,9 +148,9 @@ import {
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
+const { t, locale } = useI18n()
 
-const { t } = useI18n()
-
+const isEn = computed(() => locale.value.startsWith('en'))
 const pageSize = computed(() => {
   if (breakpoint.value === 'lg') return 6
   if (breakpoint.value === 'md') return 4
