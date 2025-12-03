@@ -3,7 +3,7 @@ export default {
     nav: {
       activity: 'Weekly Highlights',
       raffle: 'Realm of Light\nDouble Draw',
-      map: 'Stamp\nLocations',
+      map: 'Stamp Collection\nPoints',
       promo: 'Department\nStore Offers',
       lights: 'Christmas\nIlluminations',
       landmark: 'Xinyi Skyway\nDecorations',
@@ -15,7 +15,7 @@ export default {
     navEn: {
       activity: 'Weekly Highlights',
       raffle: 'Realm of Light\nDouble Draw',
-      map: 'Stamp Locations',
+      map: 'Stamp Collection Points',
       promo: 'Department Store Offers',
       lights: 'Christmas Illuminations',
       landmark: 'Xinyi Skyway Decorations',
@@ -35,7 +35,7 @@ export default {
     download: '活動電子手冊',
   },
   title: {
-    activity: 'Weekly Highlights',
+    activity: "This Week's Events",
     raffle: 'Realm of Light\nDouble Draw',
     map: 'Stamp\nLocations',
     promo: 'Department\nStore Offers',
@@ -63,78 +63,93 @@ export default {
     },
   },
   popup: {
-    title: '光之覓境雙重抽',
+    title: 'Realm of Light Double Draw',
     event: {
-      title: '【活動辦法】',
-      text: '活動內容： \n活動集章時間｜114/11/28 00:00 -  115/01/04 23:59止\n集章獎兌獎時間｜114/11/28 00:00 - 115/01/11 配合各百貨營業時間\n活動說明：',
+      title: '【Event Rules】',
+      text: 'Event Details\nStamp Collection Period: 11/28/2025 (Fri) 00:00 – 01/04/2026 (Sun) 23:59\nStamp Reward Redemption: 11/28/2025 (Fri) 00:00 – 01/11/2026 (Sun) (subject to each department store’s business hours)\nDescription:',
       direction1:
-        '前往臺北市16大百貨體系，參加光之覓境雙重抽，掃描百貨分館現場 QR code 集章，共15個章。',
-      direction2: '每集滿 1、3、5、7、9 個章，參加尋光立即抽（即抽即開）',
+        'Visit 16 major department store groups in Taipei City for Realm of Light Double Draw, and collect 15 stamps by scanning the on-site QR codes at store branches.',
+      direction2:
+        'For every 1, 3, 5, 7, 9 stamps collected, you may enter the Instant Draw (instant reveal).',
       direction3:
-        '集滿 5、10、15 個章，獲得尋光大獎抽獎機會（大獎於活動結束後，於115年1月9日抽出，於115年1月16日於活動平台聯繫得獎者）',
+        'For 5, 10, 15 stamps collected, you will receive entries for the Grand Prize Draw. The grand prize will be drawn on Jan 9, 2026 and winners will be contacted on Jan 16, 2026 through the event platform.',
     },
     note: {
-      title: '【注意事項】',
-      text: '凡參加「2025繽紛耶誕玩台北」LINE官方帳號活動之參加者，視同已充分瞭解並同意遵守以下各項條款規定：',
+      title: '【Important Notices】',
+      text: 'Participants who add the 2025 Taipei Xmas LINE Official Account are deemed to have fully understood and agreed to comply with the following terms and conditions:',
       notice: {
-        title: '一、注意事項',
+        title: '1. Notes',
         note1:
-          '主辦單位保留隨時修正、暫停、終止或解釋本活動內容之最終權利，包括但不限於活動時間、方式、獎項更換與名額調整等事項，並以活動網站或官方公告為準。',
+          'The organizer reserves the final right to modify, suspend, terminate, or interpret the event content at any time, including but not limited to changes in event period, participation methods, prize substitutions, and quota adjustments. All updates shall be based on announcements published on the event website or official notices.',
         note2:
-          '活動若因電腦、網路、電話、技術或其他不可歸責於主辦單位之原因，導致資料遺失、錯誤、無法辨識或毀損，主辦單位不負任何法律責任，參加者不得異議。',
+          'The organizer assumes no legal responsibility if participant data is lost, incorrect, unidentifiable, or damaged due to computer, internet, phone, technical failures, or other issues not attributable to the organizer. Participants may not raise objections.',
         note3:
-          '因天災、疫情、停電、罷工等不可抗力之因素，主辦單位有權變更活動日期、內容或方式，並另行公告。',
+          'The organizer is entitled to change the event dates, content, or participation methods due to force majeure factors such as natural disasters, pandemics, power outages, and strikes, and will issue updated announcements separately.',
         note4:
-          '參加者若以非正常方式操作（如使用外掛程式、惡意註冊、重複登錄等），一經查獲將取消參加與得獎資格，並保留法律追訴權。',
+          'If a participant is found operating through abnormal or unauthorized means (including the use of plug-ins, bot programs, malicious registration, or repeated logins), their participation and winning eligibility will be revoked. The organizer also reserves the right to pursue legal action.',
         note5:
-          '參加者違反活動規定或提供不實資料者，主辦單位得取消其得獎資格；若已領獎，應返還獎品，並對主辦單位因此產生之損害負賠償責任。',
-        note6: '若中獎者冒用他人身分或不符資格，主辦單位得取消其得獎資格，不另行通知。',
+          'If a participant violates event rules or provides false information, the organizer may cancel their winning qualification. If the prize has already been collected, the participant must return the prize and shall be liable for compensation for any resulting damages incurred by the organizer.',
+        note6:
+          'If a winner is found to have used another person’s identity or does not meet participation qualifications, the organizer may cancel the winning qualification without further notice.',
         note7:
-          '活動獎品不得要求轉讓、兌現或更換，若遇不可抗力因素，主辦單位保留以等值商品替代之權利。',
+          'Prizes may not be transferred, exchanged for cash, or substituted at the winner’s request. In cases of force majeure, the organizer reserves the right to replace prizes with items of equivalent value.',
         note8:
-          '獎品寄送僅限台灣本島地區（含澎湖、金門、馬祖），中獎者應於期限內提供正確寄送資料，逾期未回覆視同放棄。',
-        note9: '中獎名單與領獎方式將公告於官方網站與LINE官方帳號，主辦單位不另行通知。',
+          'Prize delivery is limited to the Taiwan main island region, including Penghu, Kinmen, and Matsu. Winners must provide accurate delivery information within the designated period. Failure to respond within the deadline will be considered as forfeiture.',
+        note9:
+          'The winner list and prize collection instructions will be announced on the official website and the LINE official account. The organizer will not issue separate individual notifications.',
       },
       notice2: {
-        title: '二、稅務規定',
+        title: '2. Tax Regulations',
         note1:
-          '依中華民國稅法規定，中獎價值超過新台幣1,001元（含）者，需提供身分證影本以供報稅使用。',
-        note2: '獎項價值超過新台幣20,000元（含）者，須先行繳納10%中獎所得稅後方可領獎。',
-        note3: '外籍人士或於台灣居住未滿183天者，依法須預先扣繳20%中獎稅金。',
-        note4: '若中獎者未依規定繳納稅金或提供所需資料，將喪失中獎資格。',
+          'In accordance with the tax laws of the Republic of China (Taiwan), winners whose prize worth NT$1,001 or more must provide a copy of their ID for tax reporting purposes.',
+        note2:
+          'For prizes valued at NT$20,000 or more, winners must pay 10% income tax on the prize before it can be collected.',
+        note3:
+          'Foreign nationals or individuals residing in Taiwan for less than 183 days are required by law to have 20% tax deducted in advance.',
+        note4:
+          'Winners who fail to pay the required taxes or provide the necessary documents will forfeit their prize.',
       },
       notice3: {
-        title: '三、未成年人參加',
-        note1: '若參加者為未成年人，須經法定代理人（或監護人）同意始得參加活動。',
-        note2: '若未成年中獎，須由法定代理人代為領取並提供身份證明及同意文件。',
-        note3: '未依規定完成手續者，視同放棄得獎資格。',
+        title: '3. Participation of Minors',
+        note1:
+          'Participants who are minors must obtain consent from their legal guardian or parent to take part in the event.',
+        note2:
+          'If a minor wins a prize, the legal guardian must claim the prize on their behalf and provide identification and consent documentation.',
+        note3:
+          'Failure to complete these procedures will be considered as forfeiture of the prize.',
       },
       notice4: {
-        title: '四、其他事項',
-        note1: '本活動未盡事宜，依中華民國相關法令及主辦單位公告為準。',
-        note2: '若涉及法律爭議，以台灣台北地方法院為第一審管轄法院。',
-        note3: '主辦單位保留修正、暫停或終止活動之最終權利。',
+        title: '4. Other Matters',
+        note1:
+          'Matters not explicitly stated in this event shall be governed by the relevant laws of the Republic of China (Taiwan) and announcements made by the organizer.',
+        note2:
+          'In case of legal disputes, the Taiwan Taipei District Court shall have jurisdiction as the court of first instance.',
+        note3:
+          'The organizer reserves the final right to modify, suspend, or terminate the event at any time.',
       },
 
       inform: {
-        title: '【抽獎活動個資告知事項】',
-        text: '依《個人資料保護法》相關規定，主辦單位於辦理本活動時，向參加者蒐集、處理及利用個人資料，特此告知如下：',
+        title: '【Notice on Personal Data for the Lucky Draw】',
+        text: 'In accordance with the Personal Data Protection Act, the organizer collects, processes, and uses personal data from participants for the purpose of this event, as follows:',
         note1:
-          '「2025繽紛耶誕玩台北」集章雙重抽係臺北市商業處辦理，並委由域動行銷股份有限公司執行。',
+          'The “2025 Taipei Xmas – Double Draw” is organized by the Taipei City Office of Commerce and executed by CLICKFORCE Co., Ltd.',
         note2:
-          '蒐集目的：辦理「2025繽紛耶誕玩台北」活動、抽獎與通知中獎、寄送獎品、行銷推廣及顧客服務。',
+          'Purpose of collection: To manage the “2025 Taipei Xmas” event, conduct the lucky draw, notify winners, deliver prizes, carry out marketing promotion, and provide customer service.',
         note3:
-          '蒐集資料類別：姓名、電話、電子郵件、地址、身分證字號、LINE帳號ID及其他為完成活動所需之資料。',
-        note4: '利用期間：自參加日起至活動結束後三個月止（依法另有規定者不在此限）。',
-        note5: '利用地區：中華民國境內及主辦單位業務所及之地區。',
+          'Types of data collected: Name, phone number, email address, postal address, ID number, LINE account ID, and other information necessary to complete the event.',
+        note4:
+          'Period of use: From the date of participation until three months after the end of the event (unless otherwise required by law).',
+        note5:
+          'Area of use: Within the territory of the Republic of China (Taiwan) and areas related to the organizer’s business operations.',
         note6:
-          '利用對象與方式：主辦單位及其委託廠商於活動辦理、通知及寄送獎項之必要範圍內，透過紙本、電話、電子郵件或網路方式進行使用。',
+          'Parties and method of use: The organizer and its commissioned contractors may use the data to the extent necessary for managing the event, notifying winners, and delivering prizes, via paper, phone, email, or online platforms.',
         note7:
-          '當事人權利：參加者可依《個資法》第3條行使查詢、閱覽、製給複製本、補充、更正、停止利用或刪除等權利，請以電子郵件聯繫活動客服信箱（信箱由執行單位提供）。',
-        note8: '不提供資料之影響：若拒絕提供個人資料，將無法參與抽獎、寄送獎品或接收活動通知。',
-        note9: '主辦單位聯絡方式：\n客服信箱：',
+          'Rights of participants: Participants may exercise their rights under Article 3 of the Personal Data Protection Act, including access, review, obtaining copies, supplementing, correcting, suspending use, or deleting personal data. Please contact the event customer service email (provided by the executing company) to exercise these rights.',
+        note8:
+          'Impact of not providing data: If personal data is not provided, participants will not be able to join the draw, receive prizes, or receive event notifications.',
+        note9: 'Organizer contact information:\nCustomer Service Email:',
         mail: 'taipeixmas2025＠clickforce.com.tw',
-        note9_2: '（週一至週五09:30–17:30）',
+        note9_2: '(Monday to Friday, 09:30–17:30)',
       },
     },
   },

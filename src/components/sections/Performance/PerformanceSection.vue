@@ -19,6 +19,8 @@ import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import performanceMap from '@/assets/img/section_09_event.png'
 import performanceMapM from '@/assets/img/m_section_09_event.png'
+import performanceMapEn from '@/assets/img/section_09_event_en.png'
+import performanceMapMEn from '@/assets/img/m_section_09_event_en.png'
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;
