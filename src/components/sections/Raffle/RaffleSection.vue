@@ -347,8 +347,20 @@
         <Card
           title-key="sections.raffle.stamp.title"
           bodyPadding="20px 40px 40px"
-          :title-bg-list-left="snoopyListLeft(10, 8, 6, 4, 1)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(10, 8, 6, 4, 1)[breakpoint]"
+          sm-body-padding="12px"
+          md-body-padding="20px"
+          lg-body-padding="32px"
+          xl-body-padding="48px"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(8, 7, 5, 3, 0)[breakpoint]?.reverse()
+              : snoopyListLeft(10, 8, 6, 4, 1)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(8, 7, 5, 3, 0)[breakpoint]
+              : snoopyListRight(10, 8, 6, 4, 1)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <div class="stamp__note">{{ t('sections.raffle.note') }}</div>

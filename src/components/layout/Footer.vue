@@ -4,15 +4,21 @@
       <div class="footer__container">
         <div class="footer__wrapper">
           <div class="footer__content">
-            <div class="footer__content__tag">{{ t('footer.host') }}</div>
+            <div class="footer__content__tag tag-center" :class="{ en: isEn }">
+              {{ t('footer.host') }}
+            </div>
             <img :src="hostImg" alt="logo" class="log log-taipie" />
           </div>
           <div class="footer__content">
-            <div class="footer__content__tag">{{ t('footer.marketing') }}</div>
+            <div class="footer__content__tag tag-center" :class="{ en: isEn }">
+              {{ t('footer.marketing') }}
+            </div>
             <img :src="marketingImg" alt="logo" class="log log-click" />
           </div>
           <div class="footer__content">
-            <div class="footer__content__tag">{{ t('footer.cooperate') }}</div>
+            <div class="footer__content__tag tag-center" :class="{ en: isEn }">
+              {{ t('footer.cooperate') }}
+            </div>
             <img :src="cooperateImg" alt="logo" class="log log-group" />
           </div>
         </div>
@@ -34,8 +40,11 @@ import copyright from '@/assets/img/section_13_copyright.png'
 import tree from '@/assets/img/section_13_tree.png'
 
 import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 </script>
 <style lang="scss" scoped>
 @use '@/styles/_variables' as vars;
@@ -80,6 +89,16 @@ const { t } = useI18n()
       background-color: #fff;
       border-radius: 8px;
       @include mixins.footer-tag;
+      &.en {
+        @include mixins.footer-tag;
+        padding: 4px 6px;
+        border-radius: 2px;
+        text-align: center;
+        justify-self: flex-end;
+        &.tag-center {
+          align-self: center;
+        }
+      }
     }
   }
   &__text {

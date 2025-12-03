@@ -3,6 +3,7 @@
     <div
       v-if="cardTitle && props.showTitle"
       class="card__title"
+      :class="{ 'card__title-en': isEn }"
       :style="{ backgroundColor: textBgColor }"
     >
       <TitleBackground :sequence="titleBgListLeft" :color="titleBgColor" />
@@ -22,7 +23,9 @@ import TitleBackground from '@/components/common/TitleBackground.vue'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 
 type bgList = Array<'left' | 'right' | 'snow'>
 
@@ -89,6 +92,9 @@ const styleVars = computed(() => ({
     @include mixins.card-title(vars.$color-white);
     border-radius: 8px 8px 0 0;
     overflow: hidden;
+    &-en {
+      @include mixins.card-title-en(vars.$color-white);
+    }
   }
   &__body {
     display: flex;
