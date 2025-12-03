@@ -145,7 +145,7 @@ export function usePromoLocations() {
 
       locationList_m: [
         {
-          shopKey: 'sections.promo.xinyi.uni.title',
+          shopKey: 'sections.promo.xinyi.uni.title_m',
           locationKey: 'sections.promo.xinyi.uni.location',
         },
       ],
@@ -433,7 +433,7 @@ export function usePromoLocations() {
 
   const taipeiList = {
     Dayeh: {
-      title: '大葉髙島屋',
+      title: 'sections.promo.taipei.Dayeh.title',
       locationList: [
         {
           locationKey: 'sections.promo.taipei.Dayeh.location',

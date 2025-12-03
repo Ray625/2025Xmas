@@ -568,8 +568,14 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(7, 5, 3)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn ? snoopyListRight(7, 5, 3)[breakpoint] : snoopyListRight(11, 8, 7)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#9A8FED"
         >
@@ -953,7 +959,7 @@ const { t, locale } = useI18n()
 
 const isEn = computed(() => locale.value.startsWith('en'))
 
-const activeTab = ref(1)
+const activeTab = ref(2)
 const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(tab.labelKey) })))
 const { xinyiList, easternList, taipeiList } = usePromoLocations()
 </script>
