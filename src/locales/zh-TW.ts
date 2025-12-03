@@ -771,6 +771,8 @@ export default {
         },
         DT: {
           title: '新光三越 Diamond Towers',
+          title_m: '新光三越 Diamond Towers',
+
           location: '大安區忠孝東路三段268號 (02)2721-6688',
           event: {
             title: '【耶誕LINE集點抽 iPhone 17】',

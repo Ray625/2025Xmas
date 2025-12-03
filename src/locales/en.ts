@@ -267,14 +267,19 @@ export default {
           quota: ' winners',
         },
         note: {
-          title: '【 注意事項 】',
-          note1: '每位參加者須使用相同 LINE 帳號參與活動，重複帳號視為同一人。',
-          note2: '集章與抽獎均需於活動期間內完成，逾期將不具參加資格。',
-          note3: '尋光大獎將以系統隨機抽出，中獎名單公布於',
-          note4: '獎項以實物為準，主辦單位保留活動最終解釋與調整之權利。',
-          note5: '其他詳細事宜及個資法相關事項請參閱',
-          noteLink: '此處',
-          noteLink2: '台北市商業處-我是商Ya人臉書',
+          title: '[Important Notes]',
+          note1:
+            'Each participant must use the same LINE account to join the event. Multiple accounts will be considered as the same person.',
+          note2:
+            'Stamp collection and lucky draw participation must be completed within the event period. Late entries will be disqualified.',
+          note3:
+            'The Grand Prize will be drawn randomly by the system. The winner list will be announced on the Taipei City Office of Commerce –',
+          note4:
+            'Prizes are based on physical items, and the organizer reserves the final right to interpret and adjust the event.',
+          note5:
+            'For other details and matters related to the Personal Data Protection Act, please refer to this ',
+          noteLink: 'notice',
+          noteLink2: " “I'm a Shang Ya Ren” Facebook page",
         },
       },
       stamp: {
@@ -707,110 +712,111 @@ export default {
         },
       },
       eastern: {
-        title: '東區商圈',
+        title: 'Eastern District Shopping Area',
         breeze: {
-          title: 'Breeze微風',
-          shop: '微風廣場',
-          shop2: '微風南京',
+          title: 'Breeze Group',
+          shop: 'Breeze Center',
+          shop2: 'Breeze Nan Jing',
 
-          location: '松山區復興南路一段39號 (02)6600-8888',
-          location2: '松山區南京東路三段337號 (02)6600-0999',
+          location: 'No. 39, Sec. 1, Fuxing S. Rd., Songshan Dist. Tel: (02)6600-8888',
+          location2: 'No. 337, Sec. 3, Nanjing E. Rd., Songshan Dist. Tel: (02)6600-0999',
 
           event: {
-            title: '【微風積點禮遇會員 專屬點數酬賓回饋】',
-            title2: '【微風聯名卡  首五日獨享再加碼】',
-            title3: '【Shopping Day 專屬10%回饋！】',
-            title4: '【全館滿額禮】',
-            title5: '【Miracle Christmas 耶誕心願禮】',
-            title6: '【聖誕影像記憶站】',
-            title7: '【北境雪夜聖誕神諭占卜 Frozen Fates】',
-            title8: '【聖誕老人暖心聖誕合照Santa’s greeting】',
+            title: '【Breeze Points Rewards – Exclusive Member Benefits】',
+            title2: '【Breeze Co-branded Cardholders Enjoy Extra Bonus for the First Five Days】',
+            title3: '【Shopping Day – Exclusive 10% Reward!】',
+            title4: '【Mall-Wide Reward Gift】',
+            title5: '【Miracle Christmas Wish Gift】',
+            title6: '【Christmas Photo Booth】',
+            title7: '【Frozen Fates】',
+            title8: '【Santa’s greeting】',
 
-            text: '活動時間｜\n[微風聯名卡友限定] 114/12/03(三) - 12/05(五)\n[微風積點禮遇會員限定] 114/12/06(六) - 12/25(四)\n活動內容｜活動期間完成APP註冊與開通流程之微風積點禮遇會員，當日於全館單筆消費達指定門檻，並於結帳時前告知會員資格，即可享有會員點數自動歸戶服務，優惠隨身帶著走！',
+            text: 'Event Period:\n[Breeze Co-Branded Cardholders Only]\n12/03/2025 (Wed) – 12/05/2025 (Fri)\n[Breeze Points Reward Members Only]\n12/06/2025 (Sat) – 12/25/2025 (Thu)\nDetails: During the event period, Breeze Points Reward members who have completed app registration and activation can enjoy automatic points crediting for purchases that meet the specified threshold in a single transaction in the mall. Simply present your membership at checkout to receive your rewards—take your benefits with you wherever you go!',
             text2:
-              '活動時間｜114/12/03(三) - 12/07(日)\n活動對象｜微風聯名卡友限定\n活動內容｜活動期間，憑微風積點禮遇會員資格，當日於指定櫃位刷微風聯名卡單筆消費達指定門檻，即可享有點數再加碼回饋。',
+              'Event Period: 12/03/2025 (Wed) – 12/07/2025 (Sun)\nEligible Participants: Breeze Co-branded Cardholders Only\nEvent Details: During the event period, Breeze Points Reward members who use their Breeze Co-branded Card for a single transaction that meets the specified threshold at designated counters can enjoy additional points rewards.',
             text3:
-              '活動時間｜115/01/01(四) - 115/12/31(四) 每週四\n活動內容｜每週四憑微風積點禮遇會員，持刷微風聯名卡於指定活動館別餐飲、超市、伴手禮櫃位，當館當日單卡累計消費滿2,000元，贈「電子酬賓券200元」乙份 ，APP自動歸戶！',
+              'Event Period: Every Thursday, 01/01/2026 (Thu) – 12/31/2026 (Thu) \nEvent Details: Every Thursday, Breeze Points Reward members who pay with their Breeze Co-branded Card at designated restaurants, supermarkets, or gift shops and reach a same-day cumulative spend of NT$2,000 on a single card will receive one NT$200 e-voucher, automatically credited to their app account.',
             text4:
-              '活動時間｜114/12/03(三) - 115/01/08(四)\n活動地點｜微風廣場 7F贈獎處\n活動內容｜活動期間，憑微風積點禮遇會員資格，當日於全館累積消費達指定門檻，即可兌換「會員滿額禮」乙份。',
+              'Event Period: 12/03/2025 (Wed) – 01/08/2026 (Thu)\nLocation: 7F Gift Redemption Counter, Breeze Center\nEvent Details: During the event period, Breeze Points Reward members who reach the designated cumulative spend mall-wide in a single day can claim one “Member Reward Gift.”',
             text5:
-              '活動時間｜114/12/06(六) - 115/01/04(日)\n活動地點｜微風廣場 7F贈獎處\n活動內容｜活動期間，憑微風積點禮遇會員資格，於全館累積消費滿3,000元，即可兌換「心願隨行杯」乙份。\n注意事項｜每會員每日限兌換乙次，限量150份，兌完為止。',
+              'Event Period: 12/06/2025 (Sat) – 01/04/2026 (Sun)\nLocation: 7F Gift Redemption Counter, Breeze Center\nEvent Details: During the event period, Breeze Points Reward members who reach a cumulative mall-wide spend of NT$3,000 in a single day can claim one “Wish Travel Mug”.\nNote: Each member may claim once per day. Limited to 150 gifts, while supplies last.',
             text6:
-              '活動時間｜114/12/03(三) - 12/25(四)\n活動地點｜微風廣場1F L5電梯前聖誕小屋\n活動內容｜邀請您來到我們精心打造的聖誕小屋，捕捉節慶限定的美好時刻。活動期間，造訪聖誕小屋並拍攝照片，上傳至個人公開社群平台並追蹤標記 ＠breezecenter，就有機會抽中聖誕限定好禮「旭集雙人餐券」乙份。',
+              'Event Period: 12/03/2025 (Wed) – 12/25/2025 (Thu)\nLocation: 1F Christmas Cabin (in front of L5 Elevator), Breeze Center\nEvent Details: Step into our carefully designed Christmas Cabin and capture the magic of the festive season! During the event period, take a photo at the Christmas Cabin, upload it to your public social media account, and follow & tag @breezecenter for a chance to win a Christmas-exclusive prize: “Two-Person Dining Voucher at SUNRISE.”',
             text7:
-              '活動時間｜\n114/12/06(六) - 12/07(日) 14:00 - 17:00、\n114/12/13(六) - 12/14(日) 14:00 - 17:00\n活動地點｜微風廣場1F L5電梯前聖誕小屋\n活動內容｜由專業符文解讀師現場指引，透過北歐傳統骰子與符文能量獻上專屬聖誕祝福。活動期間憑檔期期間單筆消費滿2,000元之消費發票即可至1F服務台預約15 分鐘，為您揭開未來旅程的啟示！',
+              'Event Period & Time:\n12/06/2025 (Sat) – 12/07/2025 (Sun), 2:00 PM – 5:00 PM\n12/13/2025 (Sat) – 12/14/2025 (Sun), 2:00 PM – 5:00 PM\nLocation: 1F Christmas Cabin (in front of L5 Elevator), Breeze Center\nEvent Details: Guests will be guided by a professional rune reader to receive a personalized Christmas blessing through Nordic dice and rune energies. During the event period, present a single-purchase receipt of NT$2,000 or more at the 1F Service Counter to book a 15-minute session and uncover insights for your future journey!',
             text8:
-              '活動時間｜114/12/20(六) - 12/25(四)\n(週末12:00 - 17:00 / 18:00 - 21:00｜平日18:00 - 21:00)\n活動地點｜微風廣場1F L5電梯前聖誕小屋\n活動內容｜大家最期待的聖誕老人見面會又來啦！快到聖誕小木屋和聖誕老人一起聊天合照吧！活動期間憑當日單筆消費滿1,000元之消費發票即可獲得聖誕老人合照拍立得乙張！',
+              'Event Period & Time: 12/20/2025 (Sat) – 12/25/2025 (Thu)\n(Weekends: 12:00 PM – 5:00 PM / 6:00 PM – 9:00 PM; Weekdays: 6:00 PM – 9:00 PM)\nLocation: 1F Christmas Cabin (in front of L5 Elevator), Breeze Center\nEvent Details: The most anticipated Santa Meet & Greet is back! Visit the Christmas Cabin to chat and take photos with Santa. During the event period, present a single-purchase receipt of NT$1,000 or more from the same day to receive one instant Polaroid photo with Santa.',
           },
 
           event2: {
-            title: '【微風積點禮遇會員 專屬點數酬賓回饋】',
-            title2: '【首五日聯名卡獨享再加碼】',
-            title3: '【Shopping Day 專屬10%回饋！】',
-            title4: '【Merry & Lovely 滿額禮】',
-            title5: '【Miracle Christmas 耶誕心願禮】',
+            title: '【Breeze Points Rewards – Exclusive Member Benefits】',
+            title2: '【Co-branded Cardholders Enjoy Extra Bonus for the First Five Days】',
+            title3: '【Shopping Day – Exclusive 10% Reward!】',
+            title4: '【Merry & Lovely Reward Gift】',
+            title5: '【Miracle Christmas Wish Gift】',
             title6: '【Balloon Parade】',
-            title7: '【Holiday Wishes 暖心抽獎】',
+            title7: '【Holiday Wishes – Heartwarming Lucky Draw】',
 
-            text: '活動時間｜\n[微風聯名卡友限定] 114/12/03(三) - 12/05(五)\n[微風積點禮遇會員限定] 114/12/06(六) - 12/25(四)\n活動內容｜活動期間，憑微風積點禮遇會員資格，當日單筆消費達指定門檻，即可享酬賓點數自動歸戶服務。',
+            text: 'Event Period:\n[Breeze Co-Branded Cardholders Only]\n12/03/2025 (Wed) – 12/05/2025 (Fri)\n[Breeze Points Reward Members Only]\n12/06/2025 (Sat) – 12/25/2025 (Thu)\nDetails: During the promotion period, Breeze Points Reward members who spend the required amount in a single transaction on the same day will automatically have reward points credited to their account.',
             text2:
-              '活動時間｜114/12/03(三) - 12/07(日)\n活動內容｜活動期間，憑微風積點禮遇會員，刷聯邦微風聯名卡，當日消費達指定門檻並於結帳時宣告會員資格， 即可再享會員點數回饋。',
+              'Event Period: 12/03/2025 (Wed) – 12/07/2025 (Sun)\nDetails: During the promotion period, Breeze Points Reward members using the Union Bank Breeze Co-branded Card who meet the spending requirement on the same day and present their membership at checkout will receive additional member points.',
             text3:
-              '活動時間｜115/01/01(四) - 115/12/31(四) 每週四\n活動內容｜每週四憑微風積點禮遇會員，持刷微風聯名卡於指定活動館別餐飲、超市、伴手禮櫃位，當館當日單卡累計消費滿2,000元，贈「電子酬賓券200元」乙份 ，APP自動歸戶！',
+              'Event Period: Every Thursday, 01/01/2026 – 12/31/2026\nEvent Details: Every Thursday, Breeze Points Reward members who pay with their Breeze Co-branded Card at designated restaurants, supermarkets, or gift shops and reach a same-day cumulative spend of NT$2,000 on a single card will receive one NT$200 e-voucher, automatically credited to their app account.',
             text4:
-              '活動時間｜114/12/03(三) - 115/01/04(日)\n活動地點｜微風南京 3F贈獎處\n活動內容｜活動期間，憑微風積點禮遇會員資格，當日於全館累積消費達指定門檻，即可兌換「滿額禮」乙份。',
+              'Event Period: 12/03/2025 (Wed) – 01/04/2026 (Sun)\nLocation: 3F Gift Redemption Counter, Breeze Nan Jing\nEvent Details: During the event period, Breeze Points Reward members who reach the designated cumulative mall-wide spend in a single day can claim one “Reward Gift.”',
             text5:
-              '活動時間｜114/12/06(六) - 115/01/04(日)\n活動地點｜微風南京 3F贈獎處\n活動內容｜活動期間，憑微風積點禮遇會員資格，當日於全館累積消費滿3,000(含)元以上，即可兌換「Miracle Christmas 耶誕心願禮」乙份。',
+              'Event Period: 12/06/2025 (Sat) – 01/04/2026 (Sun)\nLocation: 3F Gift Redemption Counter, Breeze Nan Jing\nDetails: During the event period, Breeze Points Reward members who spend a cumulative amount of NT$3,000 or more in a single day in the mall can claim one “Miracle Christmas Wish Gift.”',
             text6:
-              '活動時間｜114/12/21(日) 16:00 - 17:00\n活動地點｜微風南京 館內\n活動內容｜聖誕驚喜來襲！四大人氣角色驚喜快閃館內，與大家熱情互動、開心合照並派送可愛氣球。拍下合照，上傳至個人公開社群平台並追蹤標記 ＠breezecenter，一起分享這份最暖心的聖誕時光！',
+              'Event Time: 12/21/2025 (Sun), 4:00 PM – 5:00 PM\nLocation: Inside Breeze Nan Jing\nEvent Details: Get ready for a Christmas surprise! Four popular characters will make a special appearance inside the mall, interacting with visitors, taking photos, and handing out cute balloons. Snap a photo, upload it to your public social media account, and follow & tag @breezecenter to share this heartwarming Christmas moment!',
             text7:
-              '活動時間｜114/12/03(三) - 115/01/04(日)\n活動地點｜微風南京 3F贈獎處\n活動內容｜活動期間，憑微風積點禮遇會員資格，當日於全館累積消費滿8,500元以上，即可獲得「Holiday Wishes抽獎箱活動」抽獎機會乙次，(獎項「Nintendo Switch 2」乙台。) 並獲得「暖心好禮」乙份。',
+              'Event Period: 12/03/2025 (Wed) – 01/04/2026 (Sun)\nLocation: 3F Gift Redemption Counter, Breeze Nan Jing\nEvent Details: During the event period, Breeze Points Reward members who reach a cumulative mall-wide spend of NT$8,500 or more in a single day can receive one entry into the “Holiday Wishes Lucky Draw” (prize: one Nintendo Switch 2), and also claim one Heartwarming Gift.',
           },
         },
         sogo: {
-          title: '遠東SOGO百貨',
-          shop: '忠孝館',
-          shop_m: '遠東SOGO百貨 忠孝館',
-          shop2: '復興館',
-          shop2_m: '遠東SOGO百貨 復興館',
+          title: 'Far Eastern Sogo Department Store',
+          shop: 'Zhongxiao Store',
+          shop_m: 'Far Eastern Sogo\nZhongxiao Store',
+          shop2: 'Fuxing Store',
+          shop2_m: 'Far Eastern Sogo\nFuxing Store',
 
-          location: '大安區忠孝東路四段45號 (02)2776-5555',
-          location2: '大安區忠孝東路三段300號 (02)2776-5555',
+          location: 'No. 45, Sec. 4, Zhongxiao E. Rd., Da’an Dist. Tel: (02)2776-5555',
+          location2: 'No. 300, Sec. 3, Zhongxiao E. Rd., Da’an Dist. Tel: (02)2776-5555',
 
           event: {
-            title: '【歡樂聖誕 點點換購物金】',
-            title2: '【禮享聖誕滿額贈】',
+            title: '【Merry Christmas – Points for E-Shopping Credits】',
+            title2: '【Christmas Spending Rewards】',
 
-            text: '兌換時間｜114/12/04(四) - 12/25(四)\n 兌換地點｜APP線上兌換\n活動期間於APP線上扣500點兌換「300元聖誕電子購物金」壹張；扣200點兌換「100元聖誕電子購物金」壹張。\n※忠孝館、復興館300元購物金限量8,000張，100元購物金限量10,000張，換完為止。\n※活動期間每人/每帳號限兌換壹次，每帳號合計限兌換3張。\n※購物金使用期限：114/12/04(四) - 114/12/31(三) 使用，逾期無效。\n※購物金使用範圍：忠孝館/復興館指定品牌，可十足抵用。(餐廳/美食街/超市/食品銘店/3C/家電/黃金商品/CHANEL精品/LOUIS VUITTON/Nespresso Boutique恕無法使用)',
+            text: 'Redemption Period: 12/04/2025 (Thu) – 12/25/2025 (Thu)\nRedemption Location: Redeem online via the app\nDuring the event period: redeem 500 points via the app for one NT$300 Christmas e-shopping credit, or redeem 200 points for one NT$100 Christmas e-shopping credit.\n*Zhongxiao Store and Fuxing Store: NT$300 e-credits limited to 8,000, NT$100 e-credits limited to 10,000. While supplies last.\n*Each person/account may redeem once during the promotion period, with a maximum of 3 vouchers per account in total.\n*Validity Period: Valid from 12/04/2025 (Thu) to 12/31/2025 (Wed). Expired vouchers are invalid.\n*Usage Scope: Valid at designated brands in Zhongxiao Store/Fuxing Store for full credit value. (Not valid at restaurants/food courts/supermarkets/gourmet shops/3C/home appliances/gold products/CHANEL/LOUIS VUITTON/Nespresso Boutique.)',
             text2:
-              '兌換時間｜114/12/04(四) - 12/28(日)\n兌換地點｜忠孝館 12F贈獎處\n活動期間於忠孝館單日消費累積滿10,000元以上，即可憑快樂購卡及紙本銷貨明細至12F贈獎處兌換各等級精美贈品壹份。\n※活動期間每人/每卡限兌換壹次，恕不得跨門檻重覆兌換，其餘注意事項詳見現場公告。',
+              'Redemption Period: 12/04/2025 (Thu) – 12/28/2025 (Sun)\nRedemption Location: 12F Gift Redemption Counter, Zhongxiao Store\nDuring the event period, customers who accumulate same-day purchases of NT$10,000+ at Zhongxiao Store may present their Happy Go card and printed receipt at the 12F Gift Redemption Counter to claim one premium gift.\n*Each person/card may redeem once during the event period. Cross-threshold or duplicate redemptions are not permitted. For additional terms, please refer to the on-site announcement.',
           },
 
           event2: {
-            title: '【歡樂聖誕 點點換購物金】',
-            title2: '【聖誕節 滿額贈】',
-            title3: '【歡新快樂送】',
+            title: '【Merry Christmas – Points for E-Shopping Credits】',
+            title2: '【Christmas Spending Rewards】',
+            title3: '【New Year Joy Giveaway】',
 
-            text: '兌換時間｜114/12/04(四) - 12/25(四)\n兌換地點｜APP線上兌換\n活動期間於APP線上扣500點，兌換「300元聖誕電子購物金」壹張；扣200點，兌換「100元聖誕電子購物金」壹張。\n※※忠孝館、復興館300元購物金限量8,000張；100元購物金限量10,000張，換完為止。\n※活動期間每人/每帳號限兌換壹次，每帳號合計限兌換3張。\n※購物金使用期限：114/12/4(四) - 114/12/31(三) 使用，逾期無效。\n※購物金使用範圍：忠孝館/復興館指定品牌，可十足抵用。(餐廳/美食街/超市/食品銘店/3C/家電/黃金商品/CHANEL精品/LOUIS VUITTON/Nespresso Boutique恕無法使用)',
+            text: 'Redemption Period: 12/04/2025 (Thu) – 12/25/2025 (Thu)\nRedemption Location: Redeem online via the app\nDuring the event period: redeem 500 points via the app for one NT$300 Christmas e-shopping credit, or redeem 200 points for one NT$100 Christmas e-shopping credit.\n*Zhongxiao Store and Fuxing Store: NT$300 e-credits limited to 8,000, NT$100 e-credits limited to 10,000. While supplies last.\n*Each person/account may redeem once during the promotion period, with a maximum of 3 vouchers per account in total.\n*Validity Period: Valid from 12/04/2025 (Thu) to 12/31/2025 (Wed). Expired vouchers are invalid.\n*Usage Scope: Valid at designated brands in Zhongxiao Store/Fuxing Store for full credit value. (Not valid at restaurants/food courts/supermarkets/gourmet shops/3C/home appliances/gold products/CHANEL/LOUIS VUITTON/Nespresso Boutique.)',
             text2:
-              '活動時間｜114/12/04(四) - 12/25(四)\n兌換地點｜復興館 9F贈獎處\n活動期間於復興館單日消費累積滿20,000元以上，即可憑APP內快樂購卡及紙本銷貨明細兌換下列各等級好禮壹份。\n※活動期間每人/每卡限兌換壹份，超過金額恕無法累積兌換。\n・滿20,000元 贈快樂購卡點數300點\n・滿50,000元 贈快樂購卡點數800點\n・滿100,000元 贈快樂購卡點數1,800點\n※兌換之快樂購卡點數，將於115/01/10(六)前入點。\n※詳細活動辦法依活動現場公告為準。',
+              'Event Period: 12/04/2025 (Thu)– 12/25/2025 (Thu)\nRedemption Location: 9F Gift Redemption Counter, Fuxing Store\nDuring the event period, customers who accumulate same-day purchases of NT$20,000+ at Fuxing Store may present their in-app Happy Go card and printed receipt to claim one gift according to the spending tier below.\n*Each person/card may claim one gift only during the event period. Spending above the threshold cannot be accumulated for additional redemptions.\n• Purchases of NT$20,000 or above – Receive 300 Happy Go Points\n• Purchases of NT$50,000 or above – Receive 800 Happy Go Points\n• Purchases of NT$100,000 or above – Receive 1,800 Happy Go Points\n*The redeemed Happy Go Points will be credited by 01/10/2026.\n*For complete terms and conditions, please refer to the on-site announcement.',
             text3:
-              '活動時間｜114/12/18(四) - 115/01/01(四)\n使用範圍｜復興館\n活動期間下載APP(含原下載會員)即贈200元折價券。\nB2女鞋、4F~7F男女裝服飾、8F鍋具/男裝展售會、9F寢具指定品牌\n※折價券使用期間：114/12/18(四) - 115/01/08(四)，單筆消費3,000元折200元壹張。\n※單筆消費限用壹張，本券不予以累折及轉贈。\n※活動詳見SOGO官網公告及APP推播訊息。',
+              'Event Period: 12/18/2025 (Thu) – 01/01/2026 (Thu)\nStore Eligibility: Fuxing Store\nDownload the app during the event period to receive one NT$200 discount voucher (existing members included).\nB2 Women’s Shoes, 4F–7F Men’s & Women’s Apparel, 8F Cookware/Men’s Wear Exhibition, 9F Bedding at designated brands\n*Voucher validity: 12/18/2025 (Thu) – 01/08/2026 (Thu). Deduct NT$200 per single purchase of NT$3,000 or more.\n*Limit one voucher per transaction. Non-cumulative and non-transferable.\n*For full event details, please refer to the official SOGO website and app notifications.',
           },
         },
         DT: {
-          title: '新光三越 Diamond Towers',
-          location: '大安區忠孝東路三段268號 (02)2721-6688',
+          title: 'Shin Kong Mitsukoshi Diamond Towers',
+          title_m: 'Shin Kong Mitsukoshi\nDiamond Towers',
+          location: 'No. 268, Sec. 3, Zhongxiao E. Rd., Da’an Dist. Tel: (02)2721-6688',
           event: {
-            title: '【耶誕LINE集點抽 iPhone 17】',
-            title2: '【期間限定 幸福咖啡店 Express Love Café】',
-            title3: '【星願郵局】',
+            title: '【LINE Points Quest: iPhone 17 Christmas Giveaway】',
+            title2: '【Express Love Café – Limited Time Offer】',
+            title3: '【Wishing Post Office】',
 
-            text: '耶誕6大任務，等你來解鎖\n解鎖完成還有機會抽中 iPhone 17 及 AirPods 3 等耶誕夢幻逸品！\n① 耶誕裝置打卡：到各店耶誕裝置/耶誕樹拍照上傳IG貼文(須設為公開)並標記＠skmlive + #xmasexpress #skmxmas\n② 幸福咖啡店打卡：到各店幸福咖啡車拍照打卡上傳Threads貼文(須設為公開)並標記＠skmlive + #xmasexpress #skmxmas，完成後出示畫面給工作人員確認，即可掃QR Code集章。\n③ 耶誕AI占卜所：產出專屬「AI耶誕占卜祝福卡」，於活動結尾頁點擊集章按鈕。\n④ 閱讀耶誕文章：閱讀SKM Media耶誕特輯，點擊完成集章按鈕\n⑤ 購買耶誕禮物：活動期間於館內採買商品，到各店贈品處向工作人員出示APP之消費明細。\n⑥ 享用耶誕大餐：活動期間於館內享用美食，到各店贈品處向工作人員出示APP之消費明細。',
+            text: '6 Christmas missions are waiting for you to unlock!\nComplete the missions for a chance to win dreamy rewards, including iPhone 17, AirPods 3, and more!\n① Christmas Installations Check-In: Take a photo at any in-store Christmas setup or Christmas tree. Upload it as a public IG post, tag @skmlive, and include the hashtags #xmasexpress #skmxmas.\n② Express Love Café Check-In: Take a photo at the coffee cart in each store, upload it as a public Threads post, tag @skmlive, and include the hashtags #xmasexpress #skmxmas, then show the post to staff for verification. After confirmation, scan the QR code to collect your stamp.\n③ Christmas AI Fortune Booth: Generate your personal AI Christmas Fortune Blessing Card, then tap the Stamp Collection button on the results page.\n④ Read Christmas Stories: Read the Christmas Special issue of SKM Media and tap the Mission Complete button.\n⑤ Buy Christmas Gifts: During the event period, shop in the mall and present your in-app purchase history to staff at the gift redemption counter in each store.\n⑥ Enjoy a Christmas Feast: During the event period, dine in the mall and present your in-app purchase history to staff at the gift redemption counter in each store.',
             text2:
-              '派遞幸福給你！以節慶限定咖啡特調邀請你一同釋放幸福、感受驚喜\n喝咖啡還有機會刮出「skm points 100點、Apple Watch、SAMSUNG投影機」等好禮！\n活動時間｜114/12/13(六)\n活動地點｜台北忠孝店 一館1F風之迴廊\n活動方式｜期間達以下任一資格可獲No coffee限定調飲「紅絲絨冷萃咖啡」乙杯(價值155元) +「刮刮卡」乙張。\n​(口味依現場為準，每會員期間限兌1次，數量有限，當日兌完為止)\n① 貴賓卡會員完成耶誕裝置打卡成功上傳社群並現場過卡扣skm points 10點，即可兌換。\n② 現場加入新光三越貴賓卡會員，即可兌換。(橘卡會員憑當日消費明細2000元並使用電話驗證即可轉貴賓卡)\n※幸福咖啡店各店活動時間地點及詳情請見新光三越活動官網',
+              'Delivering happiness to you! Join us to share the love and enjoy delightful surprises through our exclusive festival-inspired coffee specials.\nEnjoy your coffee and get a chance to scratch out exciting rewards, including “100 SKM points, Apple Watch, Samsung Projector” and more!\nEvent Period: 12/13/2025 (Sat)\nLocation: 1F Wind Corridor, Taipei Zhongxiao Store (Building 1)\nHow to Participate: Members who meet any one of the following qualifications during the period will receive: One Limited-Edition NO COFFEE “Red Velvet Cold Brew” Coffee (value: NT$155) + one Scratch Card\n(Flavor availability may vary on-site. Each member may claim only once during the event period. Quantities are limited and while supplies last each day.)\n① VIP Card members who check in at the Christmas installation, upload the photo to social media, and tap their card on-site to deduct 10 SKM points may claim the rewards.\n② Sign up for the SKM VIP Card membership on-site to claim immediately. (Orange Card members may upgrade to VIP Card membership by presenting same-day purchase receipts totaling NT$2,000 and completing phone verification.)\n*For event schedules, locations, and details at each Express Love Café store, please visit the Shin Kong Mitsukoshi official website.',
             text3:
-              '114/11/21(五) - 12/14(日)「幸福傳遞」為主軸，推出限定藝術家聯名明信片，讓顧客能「親手寫下祝福、寄出幸福」。(明信片限量)\n活動方式｜\n① 消費滿仟滿額贈：消費達500元，獲贈「明信片＋郵寄服務」至服務台/贈品處領取明信片書寫並投入郵筒寄送。(滿額贈不累贈)\n② 會員500點兌換套組：新光三越APP點數專區扣500點可兌換藝術家「全套四款收藏版明信片組」。\n③ 同時也可以體驗AI祝福卡，用科技創造溫度感。',
+              '11/21/2025 (Fri) – 12/14/2025 (Sun)\nCentered on the theme "Delivering Love & Happiness," this event features limited-edition artist-designed postcards, inviting customers to handwrite their blessings and send happiness personally. (Limited quantities available.)\nHow to Participate:\n① Spend NT$500 to Receive a Postcard with Mailing Service: Customers may collect a postcard at the Service Counter/Gift Counter, write their message, and drop it in the mailbox for free delivery. (Non-cumulative; one gift per qualifying purchase.)\n② Claim the Complete Postcard Set with 500 Points: Members may redeem 500 SKM points in the app\'s Points Zone to claim the 4-artist-designed postcard collection.\n③ Customers may also create an AI Blessing Card using smart technology to bring heartfelt warmth.',
           },
         },
         MingYao: {
@@ -825,29 +831,29 @@ export default {
           },
         },
         eslite: {
-          title: '誠品生活',
-          shop: '松菸店',
-          shop_m: '誠品生活 松菸店',
-          shop2: '捷運敦化店',
-          shop2_m: '誠品生活 捷運敦化店',
-          location: '信義區菸廠路88號 (02)6636-5888',
-          location2: '大安區大安路一段77號 (02)8772-8699',
+          title: 'Eslite Spectrum',
+          shop: 'Songyan Store',
+          shop_m: 'Eslite Spectrum\nSongyan Store',
+          shop2: 'Metro Dunhua Store',
+          shop2_m: 'Eslite Spectrum\nMetro Dunhua Store',
+          location: 'No. 88, Yanchang Rd., Xinyi Dist. Tel: (02)6636-5888',
+          location2: 'No. 77, Sec. 1, Da’an Rd., Da’an Dist. Tel: (02)8772-8699',
           event: {
-            title: '【閃亮時刻 會員來店禮】',
-            title2: '【ZIZONE閃耀日常 會員滿額禮】',
-            title3: '【誠品點好好兌 聖誕倒數月曆】',
+            title: '【Shining Moments – Member In-Store Gifts】',
+            title2: '【ZIZONE Daily Spark – Member Spending Gifts】',
+            title3: '【Eslite Points Delight – Redeem for Christmas Countdown Calendar】',
 
-            text: '114/12/01(一) - 12/24(三)\n會員當日單筆滿 2,000 即可兌換「理膚寶水溫泉舒緩噴液」乙份',
+            text: '12/01/2025 (Mon) – 12/24/2025 (Wed)\nMembers spending NT$2,000 or more in a single transaction on the same day can claim one La Roche-Posay Thermal Spring Spray.',
             text2:
-              '114/11/07(五) - 115/01/05(一)\n當日累計消費——\n滿3,600即可兌換「PINGO小物收納包 / 旅行洗衣袋」\n滿5,000即可享350元加價購或滿8,000直接兌換「PINGO療癒抱枕毯」',
+              '11/07/2025 (Fri) – 01/05/2026 (Mon)\nCumulative daily spending:\nNT$3,600 — claim PINGO Small Storage/Travel Laundry Bag\nNT$5,000 — enjoy NT$350 add-on purchase\nNT$8,000 — claim PINGO Therapeutic Pillow Throw',
             text3:
-              '114/12/01(一) - 12/24(三)\n會員至誠品APP或迷誠品網站點數專區，憑誠品點10點兌換抽獎機會乙次，天天抽聖誕倒數24項好禮：\n．TOYOTOMI 雯麗台灣總代理 傳統式煤油暖爐（價值15,800 / 共三份）\n．Nintendo Switch 2 / 瑪利歐賽車世界主機組合（價值15,580 / 共乙份）\n．LEGO 哈利波特 活米村-典藏版（價值12,600 / 共乙份）\n活動期間參加抽獎，有機會再抽中：iPhone 17 256GB（價值29,900 / 共乙台）',
+              "12/01/2025 (Mon) – 12/24/2025 (Wed)\nMembers may redeem 10 Eslite Points via the Eslite app or meet eslite website Points Zone for one lucky draw entry. Daily draws for 24 Christmas countdown gifts:\n• TOYOTOMI Traditional Kerosene Heater by Amway Taiwan (valued at NT$15,800 / 3 units)\n• Nintendo Switch 2 / Mario Kart World Console Bundle (valued at NT$15,580 / 1 unit)\n• LEGO Harry Potter Hogsmeade Village – Collector's Edition (valued at NT$12,600 / 1 unit)\nParticipate during the event period for an additional chance to win: iPhone 17 256GB (valued at NT$29,900 / 1 unit)",
           },
         },
         Taishin: {
-          title: '台新銀行',
-          body: '台新銀行「Richart Life APP」與新光銀行整合資源，擴大串聯超過40家涵蓋各領域的人氣品牌與合作商戶，推出「限定聖誕專屬優惠」及「點亮我們的城市」活動。民眾完成指定任務即可有機會獲得旗下子公司祭出的台新POINTS，或填寫問卷抽大獎，讓線上線下都能共享節慶喜悅。詳情請洽',
-          link: '官方網站',
+          title: 'Taishin Bank',
+          body: "Taishin Bank's Richart Life app has partnered with Shin Kong Bank to expand their network to over 40 popular brands and merchants across various sectors, launching exclusive Christmas promotions including “Limited-Edition Christmas Deals” and the “Light Up Our City” campaign. Participants who complete designated tasks are eligible to earn Taishin Points or enter a grand prize draw by completing a survey, bringing festive joy to both online and offline experiences. For details, please visit the ",
+          link: 'official website',
         },
       },
       taipei: {
@@ -905,11 +911,11 @@ export default {
           location5: '中山區南京西路15號 (02)2564-1111',
 
           event: {
-            title: '【耶誕LINE集點抽 iPhone 17】',
+            title: '【LINE Points Quest: iPhone 17 Christmas Giveaway】',
             title2: '【期間限定 幸福咖啡店 Express Love Café】',
             title3: '【星願郵局】',
 
-            text: '耶誕6大任務，等你來解鎖\n解鎖完成還有機會抽中 iPhone 17 及 AirPods 3 等耶誕夢幻逸品！\n① 耶誕裝置打卡：到各店耶誕裝置/耶誕樹拍照上傳IG貼文(須設為公開)並標記＠skmlive + #xmasexpress #skmxmas\n② 幸福咖啡店打卡：到各店幸福咖啡車拍照打卡上傳Threads貼文(須設為公開)並標記＠skmlive + #xmasexpress #skmxmas，完成後出示畫面給工作人員確認，即可掃QR Code集章。\n③ 耶誕AI占卜所：產出專屬「AI耶誕占卜祝福卡」，於活動結尾頁點擊集章按鈕。\n④ 閱讀耶誕文章：閱讀SKM Media耶誕特輯，點擊完成集章按鈕\n⑤ 購買耶誕禮物：活動期間於館內採買商品，到各店贈品處向工作人員出示APP之消費明細。\n⑥ 享用耶誕大餐：活動期間於館內享用美食，到各店贈品處向工作人員出示APP之消費明細。',
+            text: '6 Christmas missions are waiting for you to unlock!\nComplete the missions for a chance to win dreamy rewards, including iPhone 17, AirPods 3, and more!\n① Christmas Installations Check-In: Take a photo at any in-store Christmas setup or Christmas tree. Upload it as a public IG post, tag @skmlive, and include the hashtags #xmasexpress #skmxmas.\n② Express Love Café Check-In: Take a photo at the coffee cart in each store, upload it as a public Threads post, tag @skmlive, and include the hashtags #xmasexpress #skmxmas, then show the post to staff for verification. After confirmation, scan the QR code to collect your stamp.\n③ Christmas AI Fortune Booth: Generate your personal AI Christmas Fortune Blessing Card, then tap the Stamp Collection button on the results page.\n④ Read Christmas Stories: Read the Christmas Special issue of SKM Media and tap the Mission Complete button.\n⑤ Buy Christmas Gifts: During the event period, shop in the mall and present your in-app purchase history to staff at the gift redemption counter in each store.\n⑥ Enjoy a Christmas Feast: During the event period, dine in the mall and present your in-app purchase history to staff at the gift redemption counter in each store.',
             text2:
               '派遞幸福給你！以節慶限定咖啡特調邀請你一同釋放幸福、感受驚喜\n喝咖啡還有機會刮出「skm points 100點、Apple Watch、SAMSUNG投影機」等好禮！\n活動時間｜114/11/22(六) - 11/23(日)\n活動地點｜台北站前店 新壽廣場\n活動方式｜期間達以下任一資格可獲No coffee限定調飲「紅絲絨冷萃咖啡」乙杯(價值155元) +「刮刮卡」乙張。\n​(口味依現場為準，每會員期間限兌1次，數量有限，當日兌完為止)\n① 貴賓卡會員完成耶誕裝置打卡成功上傳社群並現場過卡扣skm points 10點，即可兌換。\n② 現場加入新光三越貴賓卡會員，即可兌換。(橘卡會員憑當日消費明細2000元並使用電話驗證即可轉貴賓卡)\n※幸福咖啡店各店活動時間地點及詳情請見新光三越活動官網',
             text3:

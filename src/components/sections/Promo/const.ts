@@ -329,6 +329,7 @@ export function usePromoLocations() {
 
     DT: {
       title: 'sections.promo.eastern.DT.title',
+
       locationList: [
         {
           locationKey: 'sections.promo.eastern.DT.location',
@@ -336,7 +337,7 @@ export function usePromoLocations() {
       ],
       locationList_m: [
         {
-          shopKey: 'sections.promo.eastern.DT.title',
+          shopKey: 'sections.promo.eastern.DT.title_m',
           locationKey: 'sections.promo.eastern.DT.location',
         },
       ],
