@@ -176,7 +176,7 @@ const toggleLocale = () => {
     }
   }
   .nav-item__icon-en {
-    height: 36px;
+    height: 30px;
   }
 
   .header-actions {

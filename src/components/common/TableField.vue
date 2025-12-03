@@ -1,24 +1,24 @@
 <template>
   <div class="table-field" :style="styleVars">
-    <p class="table-field__time">{{ event.time }}</p>
-    <p class="table-field__shop-name">{{ event.shop }}</p>
-    <p class="table-field__activity">{{ event.name }}</p>
-    <p class="table-field__location">{{ event.location }}</p>
+    <p class="table-field__time">{{ t(`${event.time}`) }}</p>
+    <p class="table-field__shop-name">{{ t(`${event.shop}`) }}</p>
+    <p class="table-field__activity">{{ t(`${event.name}`) }}</p>
+    <p class="table-field__location">{{ t(`${event.location}`) }}</p>
   </div>
   <div class="table-field-mobile">
-    <p class="table-field__time">{{ event.time }}</p>
+    <p class="table-field__time">{{ t(`${event.time}`) }}</p>
     <div class="table-field_body">
       <div class="table-field_row">
         <TagActivity labelKey="common.activityTag.name" />
-        <p class="table-field__activity">{{ event.name }}</p>
+        <p class="table-field__activity">{{ t(`${event.name}`) }}</p>
       </div>
       <div class="table-field_row">
         <TagActivity labelKey="common.activityTag.shop" bg-color="#FFB8C3" />
-        <p class="table-field__shop-name">{{ event.shop }}</p>
+        <p class="table-field__shop-name">{{ t(`${event.shop}`) }}</p>
       </div>
       <div class="table-field_row">
         <TagActivity labelKey="common.activityTag.location" bg-color="#FFB8C3" />
-        <p class="table-field__location">{{ event.location }}</p>
+        <p class="table-field__location">{{ t(`${event.location}`) }}</p>
       </div>
     </div>
   </div>
@@ -26,6 +26,8 @@
 <script setup lang="ts">
 import TagActivity from '@/components/common/TagActivity.vue'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 type event = {
   time: string

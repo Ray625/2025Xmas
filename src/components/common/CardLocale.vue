@@ -7,12 +7,21 @@
       <div class="location-card__detail__header">
         <div
           class="location-card__detail__header__col"
-          :class="{ 'lot-location': locationList.length > 2, en: isEn }"
+          :class="{
+            'lot-location': locationList.length > 2,
+            en: isEn,
+            superlong: props.superlong,
+          }"
         >
           <div
             v-for="location in locationList"
             class="location-card__detail__header__group"
-            :class="{ 'lot-location': locationList.length > 2, en: isEn }"
+            :class="{
+              'lot-location': locationList.length > 2,
+              en: isEn,
+              superlong: props.superlong,
+              col: props.col,
+            }"
           >
             <TagLocale v-if="location.shopKey" :shopKey="location.shopKey" />
             <div
@@ -65,11 +74,15 @@ const props = withDefaults(
     cardClass?: string
     defaultOpen?: boolean
     showBtb?: boolean
+    superlong?: boolean
+    col?: boolean
   }>(),
   {
     title: '',
     locationList: () => [],
     showBtb: true,
+    superlong: false,
+    col: false,
   },
 )
 
@@ -164,6 +177,11 @@ const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpo
     align-items: center;
     min-height: 60px;
   }
+
+  .location-card__detail__header__group.en.col {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -179,6 +197,21 @@ const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpo
   .location-card__detail__header__group.lot-location {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .location-card__detail__header__col.lot-location.en.superlong {
+    row-gap: 12px;
+    max-height: unset;
+  }
+
+  .location-card__detail__header__group.lot-location.en.superlong {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .location-card__detail__header__group.en.col {
+    flex-direction: row;
+    align-items: center;
   }
 }
 

@@ -1,4 +1,3 @@
-import { useI18n } from 'vue-i18n'
 import prizeLeft1 from '@/assets/icon/prize_left_1.svg'
 import prizeLeft2 from '@/assets/icon/prize_left_2.svg'
 import prizeLeft3 from '@/assets/icon/prize_left_3.svg'
@@ -15,8 +14,6 @@ type PrizeItem = {
 }
 
 export function useRaffleConstants() {
-  const { t } = useI18n()
-
   const prizeLeft: PrizeItem[] = [
     {
       img: prizeLeft1,
@@ -65,10 +62,10 @@ export function useRaffleConstants() {
   const activityList = Array.from({ length: 8 }).map((_, index) => {
     const num = index + 1
     return {
-      time: t(`sections.raffle.activity.event${num}.time`),
-      name: t(`sections.raffle.activity.event${num}.name`),
-      location: t(`sections.raffle.activity.event${num}.location`),
-      shop: t(`sections.raffle.activity.event${num}.shop`),
+      time: `sections.raffle.activity.event${num}.time`,
+      name: `sections.raffle.activity.event${num}.name`,
+      location: `sections.raffle.activity.event${num}.location`,
+      shop: `sections.raffle.activity.event${num}.shop`,
     }
   })
 

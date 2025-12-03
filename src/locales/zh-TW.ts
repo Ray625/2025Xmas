@@ -648,6 +648,7 @@ export default {
         },
         uni: {
           title: '統一時代百貨台北店',
+          title_m: '統一時代百貨台北店',
           title2: 'DREAM PLAZA',
           location: '信義區忠孝東路五段8號 (02)2729-9699',
           location2: '信義區松高路11號 (02)2729-9699',
@@ -1212,7 +1213,7 @@ export default {
           time: '114/11/01-115/03/03',
         },
         light7: {
-          lightName: 'A starry Christmas ',
+          lightName: 'A Starry Christmas ',
           shopName: '微風廣場',
           location: '1F 復南大門與市民大門',
           time: '114/11底-115/01初',
@@ -1224,7 +1225,7 @@ export default {
           time: '114/11/07-115/01/05 ',
         },
         light9: {
-          lightName: 'A starry Christmas ',
+          lightName: 'A Starry Christmas ',
           shopName: '微風南京',
           location: '1F 南京東路大門口',
           time: '114/11底-115/01初',
@@ -1281,7 +1282,7 @@ export default {
           time: '114/11/19-114/12/31',
         },
         light6: {
-          lightName: 'A starry Christmas ',
+          lightName: 'A Starry Christmas ',
           shopName: '微風台北車站',
           location: '台北車站 1F 大廳',
           time: '114/11底-115/01初',

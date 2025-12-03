@@ -16,7 +16,11 @@
       >
         {{ lightName }}
       </div>
-      <div v-if="shopName" class="light-card__shop__name whitespace-pre-line">
+      <div
+        v-if="shopName"
+        class="light-card__shop__name whitespace-pre-line"
+        :class="{ 'light-card__shop__name-en': isEn }"
+      >
         {{ shopName }}
       </div>
     </div>
@@ -46,7 +50,8 @@ import iconClip from '@/assets/icon/card_light_clip.svg'
 import iconMap from '@/assets/icon/map_solid.svg'
 import iconTime from '@/assets/icon/date.svg'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const isEn = computed(() => locale.value.startsWith('en'))
 
 const props = withDefaults(
   defineProps<{
@@ -107,12 +112,15 @@ const styleVars = computed(() => ({
   &__name {
     @include mixins.light-card-name;
     &.small-name {
-      @include mixins.light-card-shop;
+      @include mixins.light-card-shop-en;
     }
   }
 
   &__shop__name {
     @include mixins.light-card-shop;
+    &-en {
+      @include mixins.light-card-shop-en;
+    }
   }
 
   &__img {

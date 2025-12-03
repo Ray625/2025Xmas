@@ -104,6 +104,11 @@
   @include typography-responsive(16px, 16px, 18px, 28px, 30px, 32px, 500, $color);
 }
 
+@mixin light-card-shop-en($color: vars.$color-text-blue) {
+  @include typography-responsive(16px, 16px, 18px, 1.5, 1.5, 1.5, 500, $color);
+}
+
+
 @mixin light-card-text($color: vars.$color-text-blue) {
   @include typography-responsive(14px, 16px, 16px, 22px, 22px, 22px, 500, $color);
 }

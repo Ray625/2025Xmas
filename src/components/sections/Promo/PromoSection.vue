@@ -645,6 +645,8 @@
               v-if="['xl', 'lg', 'md'].includes(breakpoint)"
               :title="taipeiList.SKM.title"
               :locationList="taipeiList.SKM.locationList"
+              :superlong="true"
+              :col="true"
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -745,6 +747,7 @@
               v-if="['xl', 'lg', 'md'].includes(breakpoint)"
               :title="taipeiList.eslite.title"
               :locationList="taipeiList.eslite.locationList"
+              :superlong="true"
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -796,6 +799,7 @@
                   ? taipeiList.eslite.locationList2_m
                   : taipeiList.eslite.locationList2
               "
+              :col="true"
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -959,7 +963,7 @@ const { t, locale } = useI18n()
 
 const isEn = computed(() => locale.value.startsWith('en'))
 
-const activeTab = ref(2)
+const activeTab = ref(0)
 const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(tab.labelKey) })))
 const { xinyiList, easternList, taipeiList } = usePromoLocations()
 </script>

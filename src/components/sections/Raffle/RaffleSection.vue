@@ -41,10 +41,14 @@
           xl-body-padding="20px"
           :title-bg-list-left="
             isEn
-              ? snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()
+              ? snoopyListLeft(9, 7, 6, 4, 1)[breakpoint]?.reverse()
               : snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()
           "
-          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(9, 7, 6, 4, 1)[breakpoint]
+              : snoopyListRight(11, 8, 7, 4, 1)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#FFB8C3"
         >
