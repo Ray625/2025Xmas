@@ -4,7 +4,10 @@
       v-for="(tab, index) in tabs"
       :key="tab.key ?? index"
       class="section-tabs__item"
-      :class="{ 'section-tabs__item--active': index === currentIndex }"
+      :class="{
+        'section-tabs__item--active': index === currentIndex,
+        'section-tabs__item-en': isEn,
+      }"
       type="button"
       @click="handleClick(index)"
     >
@@ -15,6 +18,11 @@
 
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
+
 interface TabItem {
   key?: string | number
   label: string
@@ -89,6 +97,10 @@ const styleVars = computed(() => ({
   @include mixins.card-title;
   transition: background-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
+}
+
+.section-tabs__item-en {
+  @include mixins.card-title-en;
 }
 
 .section-tabs__item--active {

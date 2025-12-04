@@ -25,9 +25,9 @@
           </a>
         </nav>
         <div class="header-actions">
-          <!-- <button class="lang-btn hover" type="button" @click="toggleLocale">
+          <button class="lang-btn hover" type="button" @click="toggleLocale">
             {{ t('header.lang') }}
-          </button> -->
+          </button>
           <a
             class="social hover"
             href="https://www.facebook.com/tcooc?locale=zh_TW"
@@ -57,6 +57,18 @@
         </div>
       </Container>
     </div>
+    <button class="download-btn" @mouseenter="isHover = true" @mouseleave="isHover = false">
+      <a :href="manual" target="_blank" class="flex gap-1 flex-col items-center">
+        <span class="whitespace-pre-line">
+          {{ t(`header.download`) }}
+        </span>
+        <img
+          :src="isHover ? buttonDownload : buttonDownloadPurple"
+          alt="download btn"
+          class="download-btn__icon"
+        />
+      </a>
+    </button>
   </header>
 </template>
 
@@ -75,7 +87,13 @@ import playIcon from '@/assets/icon/play.svg'
 import mapIcon from '@/assets/icon/map_white.svg'
 import social_fb from '@/assets/icon/social_fb.svg'
 import social_yt from '@/assets/icon/social_yt.svg'
+import buttonDownload from '@/assets/icon/download.svg'
+import buttonDownloadPurple from '@/assets/icon/download_purple.svg'
+import manual from '/assets/2025_Christmas-Event_Guide.pdf'
+import { ref } from 'vue'
+
 import { computed } from 'vue'
+const isHover = ref(false)
 
 const iconMap: Record<string, string> = {
   raffle: giftIcon,
@@ -101,12 +119,14 @@ const { t, locale } = useI18n()
 // const { t } = useI18n()
 const isEn = computed(() => locale.value.startsWith('en'))
 
-// const toggleLocale = () => {
-//   locale.value = locale.value === 'zh-TW' ? 'en' : 'zh-TW'
-// }
+const toggleLocale = () => {
+  locale.value = locale.value === 'zh-TW' ? 'en' : 'zh-TW'
+}
 </script>
 
 <style scoped lang="scss">
+@use '@/styles/_mixins' as mixins;
+
 .site-header {
   display: none;
 }
@@ -176,7 +196,7 @@ const isEn = computed(() => locale.value.startsWith('en'))
     }
   }
   .nav-item__icon-en {
-    height: 36px;
+    height: 30px;
   }
 
   .header-actions {
@@ -223,6 +243,31 @@ const isEn = computed(() => locale.value.startsWith('en'))
 
   .hover:hover {
     opacity: 0.6;
+  }
+
+  .download-btn {
+    position: fixed;
+    bottom: 20%;
+    right: 5%;
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+    min-height: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+    @include mixins.typography(20px, 28px, 700, #dc1f9e);
+    box-shadow: 0px 0px 10px 0px #0000004d;
+    &:hover {
+      color: #fff;
+      background: linear-gradient(141.98deg, #ce399d 4.79%, #5e4fd4 95.21%);
+      outline: 3px solid #fff;
+      outline-offset: -3px;
+    }
+  }
+
+  .download-btn__icon {
+    width: 24px;
+    height: 24px;
   }
 }
 

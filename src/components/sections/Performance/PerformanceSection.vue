@@ -3,9 +3,31 @@
     <Container maxWidth="1440px">
       <div class="flex flex-col items-center">
         <SectionTitle preset="performance" class="performance-section__title" />
-        <img :src="performanceMapM" alt="xinyi map" class="performance__img--m" loading="lazy" />
         <img
+          v-if="!isEn"
+          :src="performanceMapM"
+          alt="xinyi map"
+          class="performance__img--m"
+          loading="lazy"
+        />
+        <img
+          v-if="isEn"
+          :src="performanceMapMEn"
+          alt="xinyi map"
+          class="performance__img--m"
+          loading="lazy"
+        />
+
+        <img
+          v-if="!isEn"
           :src="performanceMap"
+          alt="xinyi map"
+          class="max-w-full performance__img"
+          loading="lazy"
+        />
+        <img
+          v-if="isEn"
+          :src="performanceMapEn"
           alt="xinyi map"
           class="max-w-full performance__img"
           loading="lazy"
@@ -19,6 +41,13 @@ import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import performanceMap from '@/assets/img/section_09_event.png'
 import performanceMapM from '@/assets/img/m_section_09_event.png'
+import performanceMapEn from '@/assets/img/section_09_event_en.png'
+import performanceMapMEn from '@/assets/img/m_section_09_event_en.png'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;

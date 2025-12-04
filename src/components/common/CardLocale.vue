@@ -7,12 +7,21 @@
       <div class="location-card__detail__header">
         <div
           class="location-card__detail__header__col"
-          :class="{ 'lot-location': locationList.length > 2 }"
+          :class="{
+            'lot-location': locationList.length > 2,
+            en: isEn,
+            superlong: props.superlong,
+          }"
         >
           <div
             v-for="location in locationList"
             class="location-card__detail__header__group"
-            :class="{ 'lot-location': locationList.length > 2 }"
+            :class="{
+              'lot-location': locationList.length > 2,
+              en: isEn,
+              superlong: props.superlong,
+              col: props.col,
+            }"
           >
             <TagLocale v-if="location.shopKey" :shopKey="location.shopKey" />
             <div
@@ -49,12 +58,14 @@
 import TagLocale from '@/components/common/TagLocale.vue'
 import ButtonToggle from '@/components/common/ButtonToggle.vue'
 import iconInfo from '@/assets/icon/info.svg'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 
 const props = withDefaults(
   defineProps<{
@@ -63,11 +74,15 @@ const props = withDefaults(
     cardClass?: string
     defaultOpen?: boolean
     showBtb?: boolean
+    superlong?: boolean
+    col?: boolean
   }>(),
   {
     title: '',
     locationList: () => [],
     showBtb: true,
+    superlong: false,
+    col: false,
   },
 )
 
@@ -162,6 +177,11 @@ const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpo
     align-items: center;
     min-height: 60px;
   }
+
+  .location-card__detail__header__group.en.col {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -178,6 +198,21 @@ const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpo
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .location-card__detail__header__col.lot-location.en.superlong {
+    row-gap: 12px;
+    max-height: unset;
+  }
+
+  .location-card__detail__header__group.lot-location.en.superlong {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .location-card__detail__header__group.en.col {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 @media (min-width: 1920px) {
@@ -190,9 +225,19 @@ const openToggle = ref(props.defaultOpen ? true : !['sm', 'xs'].includes(breakpo
     flex: 1 1 0;
   }
 
+  .location-card__detail__header__col.lot-location.en {
+    row-gap: 12px;
+    max-height: 260px;
+  }
+
   .location-card__detail__header__group.lot-location {
     flex-direction: row;
     align-items: center;
+  }
+
+  .location-card__detail__header__group.lot-location.en {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 </style>

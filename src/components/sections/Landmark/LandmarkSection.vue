@@ -4,10 +4,18 @@
       <div class="flex flex-col items-center">
         <SectionTitle preset="landmark" class="landmark-section_title" />
         <div class="map_m">
-          <img :src="xinyiMapM" alt="xinyi map" loading="lazy" />
+          <img v-if="isEn" :src="xinyiMapMEn" alt="xinyi map" loading="lazy" />
+          <img v-else :src="xinyiMapM" alt="xinyi map" loading="lazy" />
         </div>
         <div class="map__group">
-          <img :src="xinyiMap" alt="xinyi map" class="ml-auto map_desktop" loading="lazy" />
+          <img
+            v-if="isEn"
+            :src="xinyiMapEn"
+            alt="xinyi map"
+            class="ml-auto map_desktop"
+            loading="lazy"
+          />
+          <img v-else :src="xinyiMap" alt="xinyi map" class="ml-auto map_desktop" loading="lazy" />
           <div class="map__card__container">
             <CardLight class="map__card map__card--left" v-bind="xinyiLights[9]" />
             <CardLight class="map__card map__card--right" v-bind="xinyiLights[10]" />
@@ -51,11 +59,20 @@
 import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import xinyiMap from '@/assets/map/section_08_map.png'
+import xinyiMapEn from '@/assets/map/section_08_map_en.png'
 import xinyiMapM from '@/assets/map/m_section_08_map.png'
+import xinyiMapMEn from '@/assets/map/m_section_08_map_en.png'
 import CardLight from '@/components/common/CardLight.vue'
 import { xinyiLights } from '@/components/sections/Landmark/photo'
 import { useViewport } from '@/composables/useViewport'
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
+
+const { locale } = useI18n()
+
 const { breakpoint } = useViewport()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;

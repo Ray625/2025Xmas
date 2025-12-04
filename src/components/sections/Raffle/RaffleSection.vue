@@ -39,8 +39,16 @@
           md-body-padding="0"
           lg-body-padding="20px"
           xl-body-padding="20px"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(9, 7, 6, 4, 1)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(9, 7, 6, 4, 1)[breakpoint]
+              : snoopyListRight(11, 8, 7, 4, 1)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#FFB8C3"
         >
@@ -58,8 +66,16 @@
       <div class="raffle-section__content">
         <Card
           title-key="sections.raffle.rules.title"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(10, 8, 6, 4, 1)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(10, 8, 6, 4, 1)[breakpoint]
+              : snoopyListRight(11, 8, 7, 4, 1)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <p class="raffle-card__text text--mb">
@@ -202,12 +218,17 @@
               <div class="flex flex-col mt-2 items-center">
                 <span class="prize-card__text">{{ t('sections.raffle.prize.cardLeft.text') }}</span>
                 <div class="raffle-section__prize__wrapper">
-                  <div class="prize-card__row">
+                  <div class="prize-card__row" :class="{ 'prize-card__row-en': isEn }">
                     <template v-for="prize in prizeLeft">
                       <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
-                      <p class="prize-card__prize__text">{{ prize.text }}</p>
+                      <p
+                        class="prize-card__prize__text"
+                        :class="{ 'prize-card__prize__text-en': isEn }"
+                      >
+                        {{ t(`${prize.textKey}`) }}
+                      </p>
                       <span v-if="prize.quota" class="prize-card__prize__quota whitespace-nowrap">{{
-                        `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
+                        `${prize.quota}${t('sections.raffle.prize.cardLeft.quota')}`
                       }}</span>
                     </template>
                   </div>
@@ -216,7 +237,12 @@
                       <div class="flex flex-row gap-5">
                         <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                         <div class="flex flex-col gap-1">
-                          <p class="prize-card__prize__text">{{ prize.text }}</p>
+                          <p
+                            class="prize-card__prize__text"
+                            :class="{ 'prize-card__prize__text-en': isEn }"
+                          >
+                            {{ t(`${prize.textKey}`) }}
+                          </p>
                           <span
                             v-if="prize.quota"
                             class="prize-card__prize__quota whitespace-nowrap"
@@ -246,10 +272,15 @@
                   t('sections.raffle.prize.cardRight.text')
                 }}</span>
                 <div class="raffle-section__prize__wrapper">
-                  <div class="prize-card__row">
+                  <div class="prize-card__row" :class="{ 'prize-card__row-en': isEn }">
                     <template v-for="prize in prizeRight">
                       <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
-                      <p class="prize-card__prize__text">{{ prize.text }}</p>
+                      <p
+                        class="prize-card__prize__text"
+                        :class="{ 'prize-card__prize__text-en': isEn }"
+                      >
+                        {{ t(`${prize.textKey}`) }}
+                      </p>
                       <span class="prize-card__prize__quota--right">{{
                         `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
                       }}</span>
@@ -260,7 +291,12 @@
                       <div class="flex flex-row gap-5">
                         <img :src="prize.img" alt="prize" class="prize-card__prize__img" />
                         <div class="flex flex-col gap-1">
-                          <p class="prize-card__prize__text">{{ prize.text }}</p>
+                          <p
+                            class="prize-card__prize__text"
+                            :class="{ 'prize-card__prize__text-en': isEn }"
+                          >
+                            {{ t(`${prize.textKey}`) }}
+                          </p>
                           <span class="prize-card__prize__quota--right">{{
                             `${prize.quota}${t('sections.raffle.prize.cardRight.quota')}`
                           }}</span>
@@ -315,8 +351,20 @@
         <Card
           title-key="sections.raffle.stamp.title"
           bodyPadding="20px 40px 40px"
-          :title-bg-list-left="snoopyListLeft(10, 8, 6, 4, 1)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(10, 8, 6, 4, 1)[breakpoint]"
+          sm-body-padding="12px"
+          md-body-padding="20px"
+          lg-body-padding="32px"
+          xl-body-padding="48px"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(8, 7, 5, 3, 0)[breakpoint]?.reverse()
+              : snoopyListLeft(10, 8, 6, 4, 1)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(8, 7, 5, 3, 0)[breakpoint]
+              : snoopyListRight(10, 8, 6, 4, 1)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <div class="stamp__note">{{ t('sections.raffle.note') }}</div>
@@ -418,8 +466,10 @@ import { xinyiCollect, easternCollect, taipeiCollect } from '@/components/sectio
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 
-const { t } = useI18n()
 const { prizeLeft, prizeRight, activityList } = useRaffleConstants()
+const { t, locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 
 const openPopup = ref(false)
 const pageSize = computed(() => {
@@ -621,6 +671,9 @@ const handleGoLineOA = () => {
   }
   &__prize__text {
     @include mixins.text-body(#000);
+    &-en {
+      @include mixins.prize-text-en(#000);
+    }
   }
   &__prize__quota {
     width: fit-content;
@@ -904,6 +957,10 @@ const handleGoLineOA = () => {
   .prize-card__prize__quota--right {
     width: fit-content;
     padding: 0 20px;
+  }
+
+  .prize-card__row-en {
+    gap: 16px;
   }
 
   .snoopy-prize {

@@ -9,16 +9,24 @@
           title-key="sections.lights.xinyi.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(8, 6, 4)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn ? snoopyListRight(8, 6, 4)[breakpoint] : snoopyListRight(11, 8, 7)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <div class="area__list">
             <div class="map_m">
-              <img :src="xinyiMapM" alt="xinyi map" loading="lazy" />
+              <img v-if="isEn" :src="xinyiMapMEn" alt="xinyi map" loading="lazy" />
+              <img v-else :src="xinyiMapM" alt="xinyi map" loading="lazy" />
             </div>
             <div class="map_desktop">
-              <img :src="xinyiMap" alt="xinyi map" loading="lazy" />
+              <img v-if="isEn" :src="xinyiMapEn" alt="xinyi map" loading="lazy" />
+              <img v-else :src="xinyiMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="xinyiLights"
@@ -36,17 +44,27 @@
           title-key="sections.lights.eastern.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
-          :title-bg-list-left="snoopyListLeft(11, 9, 7, 4, 2)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 9, 7, 4, 2)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(6, 5, 3, 2, 0)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 9, 7, 4, 2)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(6, 5, 3, 2, 0)[breakpoint]
+              : snoopyListRight(11, 9, 7, 4, 2)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#FFB8C3"
         >
           <div class="area__list">
             <div class="map_m">
-              <img :src="easternMapM" alt="xinyi map" loading="lazy" />
+              <img v-if="isEn" :src="easternMapMEn" alt="xinyi map" loading="lazy" />
+              <img v-else :src="easternMapM" alt="xinyi map" loading="lazy" />
             </div>
             <div class="map_desktop">
-              <img :src="easternMap" alt="xinyi map" loading="lazy" />
+              <img v-if="isEn" :src="easternMapEn" alt="xinyi map" loading="lazy" />
+              <img v-else :src="easternMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="easternLights"
@@ -64,17 +82,27 @@
           title-key="sections.lights.taipei.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(7, 6, 4, 2, 1)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(7, 6, 4, 2, 1)[breakpoint]
+              : snoopyListRight(11, 8, 7, 4, 1)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#9A8FED"
         >
           <div class="area__list items-center">
             <div class="map_m">
-              <img :src="taipeiMapM" alt="xinyi map" loading="lazy" />
+              <img v-if="isEn" :src="taipeiMapMEn" alt="xinyi map" loading="lazy" />
+              <img v-else :src="taipeiMapM" alt="xinyi map" loading="lazy" />
             </div>
             <div class="map_desktop">
-              <img :src="taipeiMap" alt="xinyi map" loading="lazy" />
+              <img v-if="isEn" :src="taipeiMapEn" alt="xinyi map" loading="lazy" />
+              <img v-else :src="taipeiMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="taipeiLights"
@@ -96,10 +124,12 @@
               </div>
             </div>
             <div class="map_m">
-              <img :src="ximendingMapM" alt="xinyi map" loading="lazy" />
+              <img v-if="isEn" :src="ximendingMapMEn" alt="xinyi map" loading="lazy" />
+              <img v-else :src="ximendingMapM" alt="xinyi map" loading="lazy" />
             </div>
             <div class="map_desktop">
-              <img :src="ximendingMap" alt="xinyi map" loading="lazy" />
+              <img v-if="isEn" :src="ximendingMapEn" alt="xinyi map" loading="lazy" />
+              <img v-else :src="ximendingMap" alt="xinyi map" loading="lazy" />
             </div>
             <CardStamp
               :lights="ximenLights"
@@ -130,6 +160,15 @@ import xinyiMapM from '@/assets/map/m_section_07_map_01_xy.png'
 import easternMapM from '@/assets/map/m_section_07_map_02_ed.png'
 import taipeiMapM from '@/assets/map/m_section_07_map_03_other.png'
 import ximendingMapM from '@/assets/map/m_section_07_map_04_xm.png'
+import xinyiMapEn from '@/assets/map/section_07_map_01_xy_en.png'
+import easternMapEn from '@/assets/map/section_07_map_02_ed_en.png'
+import taipeiMapEn from '@/assets/map/section_07_map_03_other_en.png'
+import ximendingMapEn from '@/assets/map/section_07_map_04_xm_en.png'
+import xinyiMapMEn from '@/assets/map/m_section_07_map_01_xy_en.png'
+import easternMapMEn from '@/assets/map/m_section_07_map_02_ed_en.png'
+import taipeiMapMEn from '@/assets/map/m_section_07_map_03_other_en.png'
+import ximendingMapMEn from '@/assets/map/m_section_07_map_04_xm_en.png'
+
 import iconPlay from '@/assets/icon/play_blue.svg'
 import { tabsConfig } from '@/data/const'
 import { useI18n } from 'vue-i18n'
@@ -142,9 +181,9 @@ import {
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
+const { t, locale } = useI18n()
 
-const { t } = useI18n()
-
+const isEn = computed(() => locale.value.startsWith('en'))
 const pageSize = computed(() => {
   if (breakpoint.value === 'lg') return 6
   if (breakpoint.value === 'md') return 4

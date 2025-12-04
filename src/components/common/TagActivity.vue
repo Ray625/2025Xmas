@@ -1,12 +1,13 @@
 <template>
-  <div class="tag" :style="styleVars">{{ label }}</div>
+  <div class="tag" :class="{ en: isEn }" :style="styleVars">{{ label }}</div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const isEn = computed(() => locale.value.startsWith('en'))
 
 const props = withDefaults(
   defineProps<{
@@ -30,10 +31,15 @@ const styleVars = computed(() => ({
 @use '@/styles/_mixins' as mixins;
 
 .tag {
+  display: flex;
+  align-items: center;
   width: fit-content;
   padding: 0 8px;
   border-radius: 4px;
   background-color: var(--bg-color);
-  @include mixins.typography(12px, 26px, 700, vars.$color-white);
+  @include mixins.typography(12px, 1.5, 700, vars.$color-white);
+  &.en {
+    @include mixins.typography(10px, 1.5, 700, vars.$color-white);
+  }
 }
 </style>

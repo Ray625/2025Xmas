@@ -13,8 +13,14 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(8, 6, 4)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn ? snoopyListRight(8, 6, 4)[breakpoint] : snoopyListRight(11, 8, 7)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
         >
           <div class="area-list">
@@ -300,8 +306,14 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
-          :title-bg-list-left="snoopyListLeft(11, 9, 7)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 9, 7)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(8, 6, 4)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 9, 7)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn ? snoopyListRight(8, 6, 4)[breakpoint] : snoopyListRight(11, 9, 7)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#FFB8C3"
         >
@@ -556,8 +568,14 @@
           :bg-color="breakpoint === 'sm' || breakpoint === 'xs' ? 'transparent' : '#FFF'"
           smBodyPadding="0"
           md-body-padding="0"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(7, 5, 3)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn ? snoopyListRight(7, 5, 3)[breakpoint] : snoopyListRight(11, 8, 7)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#9A8FED"
         >
@@ -627,6 +645,8 @@
               v-if="['xl', 'lg', 'md'].includes(breakpoint)"
               :title="taipeiList.SKM.title"
               :locationList="taipeiList.SKM.locationList"
+              :superlong="true"
+              :col="true"
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -727,6 +747,7 @@
               v-if="['xl', 'lg', 'md'].includes(breakpoint)"
               :title="taipeiList.eslite.title"
               :locationList="taipeiList.eslite.locationList"
+              :superlong="true"
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -778,6 +799,7 @@
                   ? taipeiList.eslite.locationList2_m
                   : taipeiList.eslite.locationList2
               "
+              :col="true"
             >
               <template #detail>
                 <div class="locale-card__list">
@@ -937,7 +959,9 @@ import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 import { snoopyListLeft, snoopyListRight, snoopyListGap } from '@/data/const'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 
 const activeTab = ref(0)
 const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(tab.labelKey) })))

@@ -213,11 +213,19 @@ const handleGoToEventWeb = () => {
   .contact-section__event__img {
     border-radius: 40px;
   }
+
+  .contact-section__text {
+    max-width: 780px;
+  }
 }
 
 @media (min-width: 1920px) {
   .contact-section__wrapper {
     gap: 172px;
+  }
+
+  .contact-section__text {
+    max-width: 960px;
   }
 }
 </style>
