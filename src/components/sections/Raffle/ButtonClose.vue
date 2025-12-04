@@ -56,6 +56,15 @@ defineEmits<{
 
 @media (min-width: 1024px) {
   .action-button {
+    &:hover {
+      background-color: #868686;
+      color: white;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .action-button {
     top: 40px;
     right: 40px;
     width: 60px;
@@ -65,11 +74,6 @@ defineEmits<{
     &__icon {
       width: 32px;
       height: 32px;
-    }
-
-    &:hover {
-      background-color: #868686;
-      color: white;
     }
   }
 }
