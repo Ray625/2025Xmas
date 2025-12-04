@@ -20,7 +20,7 @@ export default {
       youtube: 'YouTube',
     },
     download_m: '活動電子手冊下載',
-    download: '活動電子手冊',
+    download: '下載\n電子手冊',
   },
   common: {
     tabs: {

@@ -23,10 +23,14 @@
       </nav>
       <div class="header-actions">
         <!-- 下載按鈕 -->
-        <!-- <button class="download-btn hover">
-          {{ t(`header.download_m`) }}
-          <img :src="buttonDownload" alt="download btn" class="download-btn__icon" />
-        </button> -->
+        <button class="download-btn hover" :class="{ en: isEn }">
+          <a :href="manual" target="_blank" class="flex gap-1">
+            <span>
+              {{ t(`header.download_m`) }}
+            </span>
+            <img :src="buttonDownload" alt="download btn" class="download-btn__icon" />
+          </a>
+        </button>
         <!-- 中英切換按鈕 -->
         <div class="header-actions__lang">
           <button
@@ -92,9 +96,10 @@ import mailIcon from '@/assets/icon/mail.svg'
 import playIcon from '@/assets/icon/play.svg'
 import mapIcon from '@/assets/icon/map_white.svg'
 import buttonX from '@/assets/icon/X.svg'
-// import buttonDownload from '@/assets/icon/download.svg'
+import buttonDownload from '@/assets/icon/download.svg'
 import social_fb from '@/assets/icon/social_fb.svg'
 import social_yt from '@/assets/icon/social_yt.svg'
+import manual from '/assets/2025_Christmas-Event_Guide.pdf'
 
 import { ref, watch, onBeforeUnmount, computed } from 'vue'
 
@@ -275,8 +280,10 @@ onBeforeUnmount(() => {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 4px;
   @include mixins.typography(18px, 32px, 700, vars.$color-white);
+  &.en {
+    @include mixins.typography(14px, 1.5, 700, vars.$color-white);
+  }
 }
 
 .download-btn__icon {
