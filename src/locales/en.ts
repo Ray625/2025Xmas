@@ -31,8 +31,8 @@ export default {
       facebook: 'facebook',
       youtube: 'YouTube',
     },
-    download_m: '活動電子手冊下載',
-    download: '活動電子手冊',
+    download_m: 'Download the Digital Brochure',
+    download: 'Download the Digital Brochure',
   },
   title: {
     activity: "This Week's Events",
