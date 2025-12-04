@@ -25,9 +25,9 @@
           </a>
         </nav>
         <div class="header-actions">
-          <button class="lang-btn hover" type="button" @click="toggleLocale">
+          <!-- <button class="lang-btn hover" type="button" @click="toggleLocale">
             {{ t('header.lang') }}
-          </button>
+          </button> -->
           <a
             class="social hover"
             href="https://www.facebook.com/tcooc?locale=zh_TW"
@@ -124,9 +124,9 @@ const { t, locale } = useI18n()
 // const { t } = useI18n()
 const isEn = computed(() => locale.value.startsWith('en'))
 
-const toggleLocale = () => {
-  locale.value = locale.value === 'zh-TW' ? 'en' : 'zh-TW'
-}
+// const toggleLocale = () => {
+//   locale.value = locale.value === 'zh-TW' ? 'en' : 'zh-TW'
+// }
 </script>
 
 <style scoped lang="scss">
