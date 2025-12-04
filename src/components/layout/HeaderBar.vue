@@ -57,7 +57,12 @@
         </div>
       </Container>
     </div>
-    <button class="download-btn" @mouseenter="isHover = true" @mouseleave="isHover = false">
+    <button
+      class="download-btn"
+      :class="{ en: isEn }"
+      @mouseenter="isHover = true"
+      @mouseleave="isHover = false"
+    >
       <a :href="manual" target="_blank" class="flex gap-1 flex-col items-center">
         <span class="whitespace-pre-line">
           {{ t(`header.download`) }}
@@ -249,6 +254,9 @@ const toggleLocale = () => {
     position: fixed;
     bottom: 20%;
     right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 120px;
     min-width: 120px;
     height: 120px;
@@ -257,6 +265,9 @@ const toggleLocale = () => {
     background-color: #fff;
     @include mixins.typography(20px, 28px, 700, #dc1f9e);
     box-shadow: 0px 0px 10px 0px #0000004d;
+    &.en {
+      @include mixins.typography(14px, 1.5, 700, #dc1f9e);
+    }
     &:hover {
       color: #fff;
       background: linear-gradient(141.98deg, #ce399d 4.79%, #5e4fd4 95.21%);
