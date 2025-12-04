@@ -123,7 +123,7 @@ const onClose = () => emit('close')
 .popup-container {
   position: relative;
   max-height: 560px;
-  padding: 60px 24px;
+  padding: 68px 24px 0;
   background-color: #fff;
   border-radius: 20px;
 }
@@ -132,7 +132,9 @@ const onClose = () => emit('close')
   &::-webkit-scrollbar {
     width: 0;
   }
-  max-height: 500px;
+  margin-right: -8px;
+  padding-right: 8px;
+  max-height: 492px;
   overflow-y: auto;
 }
 
