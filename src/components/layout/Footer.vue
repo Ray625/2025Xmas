@@ -4,19 +4,19 @@
       <div class="footer__container">
         <div class="footer__wrapper">
           <div class="footer__content">
-            <div class="footer__content__tag tag-center" :class="{ en: isEn }">
+            <div class="footer__content__tag" :class="{ en: isEn }">
               {{ t('footer.host') }}
             </div>
             <img :src="hostImg" alt="logo" class="log log-taipie" />
           </div>
           <div class="footer__content">
-            <div class="footer__content__tag tag-center" :class="{ en: isEn }">
+            <div class="footer__content__tag" :class="{ en: isEn }">
               {{ t('footer.marketing') }}
             </div>
             <img :src="marketingImg" alt="logo" class="log log-click" />
           </div>
           <div class="footer__content">
-            <div class="footer__content__tag tag-center" :class="{ en: isEn }">
+            <div class="footer__content__tag" :class="{ en: isEn }">
               {{ t('footer.cooperate') }}
             </div>
             <img :src="cooperateImg" alt="logo" class="log log-group" />
@@ -90,14 +90,11 @@ const isEn = computed(() => locale.value.startsWith('en'))
       border-radius: 8px;
       @include mixins.footer-tag;
       &.en {
-        @include mixins.footer-tag;
+        @include mixins.footer-tag-en;
         padding: 4px 6px;
-        border-radius: 2px;
+        border-radius: 4px;
         text-align: center;
         justify-self: flex-end;
-        &.tag-center {
-          align-self: center;
-        }
       }
     }
   }

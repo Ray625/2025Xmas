@@ -137,7 +137,7 @@
   @include typography-responsive(12px, 18px, 24px, 22px, 150%, 36px, 700, $color);
 }
 
-@mixin footer-tag($color: vars.$color-text-blue){
+@mixin footer-tag-en($color: vars.$color-text-blue){
   @include typography-responsive(8px, 10px, 10px, 1.5, 1.5, 1.5, 700, $color);
 }
 
