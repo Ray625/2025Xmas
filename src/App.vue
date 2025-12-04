@@ -35,7 +35,7 @@ import ContactSection from '@/components/sections/Contact/ContactSection.vue'
 import Footer from '@/components/layout/Footer.vue'
 import { useViewport } from '@/composables/useViewport'
 import { useI18n } from 'vue-i18n'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import Pop from '@/components/common/Pop.vue'
 
 const { locale } = useI18n()
@@ -44,4 +44,12 @@ const { breakpoint } = useViewport()
 const openPopup = ref(true)
 
 const isEn = computed(() => locale.value.startsWith('en'))
+
+watch(
+  openPopup,
+  (visible) => {
+    document.body.style.overflow = visible ? 'hidden' : ''
+  },
+  { immediate: true },
+)
 </script>
