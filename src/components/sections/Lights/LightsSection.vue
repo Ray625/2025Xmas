@@ -11,11 +11,13 @@
           bgColor="#B4C5E3"
           :title-bg-list-left="
             isEn
-              ? snoopyListLeft(8, 6, 4)[breakpoint]?.reverse()
-              : snoopyListLeft(11, 8, 7)[breakpoint]?.reverse()
+              ? snoopyListLeft(8, 6, 5, 3, 1)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7, 4, 2)[breakpoint]?.reverse()
           "
           :title-bg-list-right="
-            isEn ? snoopyListRight(8, 6, 4)[breakpoint] : snoopyListRight(11, 8, 7)[breakpoint]
+            isEn
+              ? snoopyListRight(8, 6, 5, 3, 1)[breakpoint]
+              : snoopyListRight(11, 8, 7, 4, 2)[breakpoint]
           "
           :title-bg-gap="snoopyListGap[breakpoint]"
         >
