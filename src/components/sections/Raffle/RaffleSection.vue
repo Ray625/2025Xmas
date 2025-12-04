@@ -89,13 +89,22 @@
           </TagHighlight>
           <div class="raffle-section__step__wrapper">
             <CardStep
-              class="flex-1"
+              class="flex-1 relative"
               bg-color="#CFEEE0"
               text-bg-color="#28B590"
               :icon-left="iconGift"
               :icon-right="iconGift"
               title-key="sections.raffle.rules.step1.title"
             >
+              <img
+                :src="snoopyBird"
+                alt="snoopy"
+                class="snoopy-bird"
+                :class="{ en: isEn }"
+                loading="lazy"
+              />
+              <img :src="snoopyBird" alt="snoopy" class="snoopy-bird-m" loading="lazy" />
+              <img :src="snoopyGift" alt="snoopy" class="snoopy-gift-m" loading="lazy" />
               <div class="step__text">
                 <p class="step--sm">
                   {{ t('sections.raffle.rules.step1.text') }}
@@ -107,7 +116,7 @@
               </ButtonAction>
             </CardStep>
             <CardStep
-              class="flex-1"
+              class="flex-1 relative"
               bg-color="#D3E3FF"
               text-bg-color="#5E4FD4"
               :icon-left="iconGift"
@@ -116,6 +125,13 @@
               body-padding="32px 32px 8px 32px"
               sm-body-padding="16px 16px 8px"
             >
+              <img
+                :src="snoopyGift"
+                alt="snoopy"
+                class="snoopy-gift"
+                :class="{ en: isEn }"
+                loading="lazy"
+              />
               <div class="step__text margin-small">
                 <p class="step--sm">
                   <span>
@@ -457,6 +473,8 @@ import snoopyDecorateM from '@/assets/img/m_section_01_light.png'
 import snoopyDiamond from '@/assets/img/section_01_diamond.png'
 import snoopy from '@/assets/img/section_01_snoopy.png'
 import snoopyMobile from '@/assets/img/m_section_01_snoopy.png'
+import snoopyBird from '@/assets/img/section_02_woodstock.png'
+import snoopyGift from '@/assets/img/section_02_snoopy.png'
 
 import { watch, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -588,6 +606,30 @@ const handleGoLineOA = () => {
   max-width: 73px;
   top: -4%;
   left: 3%;
+}
+
+.snoopy-bird {
+  display: none;
+}
+
+.snoopy-bird-m {
+  position: absolute;
+  bottom: -8px;
+  left: -28px;
+  height: 100%;
+  max-height: 152px;
+}
+
+.snoopy-gift-m {
+  position: absolute;
+  bottom: -2px;
+  right: -4px;
+  height: 100%;
+  max-height: 120px;
+}
+
+.snoopy-gift {
+  display: none;
 }
 
 .step__text {
@@ -826,6 +868,37 @@ const handleGoLineOA = () => {
     flex: 1 1 0;
   }
 
+  .snoopy-bird {
+    position: absolute;
+    top: -136px;
+    left: 40px;
+    display: block;
+    height: 100%;
+    max-height: 144px;
+    &.en {
+      left: -20px;
+    }
+  }
+  .snoopy-bird-m {
+    display: none;
+  }
+
+  .snoopy-gift {
+    position: absolute;
+    top: -118px;
+    right: 40px;
+    display: block;
+    height: 100%;
+    max-height: 124px;
+    &.en {
+      right: -24px;
+    }
+  }
+
+  .snoopy-gift-m {
+    display: none;
+  }
+
   .prize-card__note__wrapper {
     display: flex;
     flex-direction: row;
@@ -995,6 +1068,24 @@ const handleGoLineOA = () => {
     bottom: -16%;
     right: -1%;
   }
+
+  .snoopy-bird {
+    top: -210px;
+    left: 84px;
+    max-height: 220px;
+    &.en {
+      left: 40px;
+    }
+  }
+
+  .snoopy-gift {
+    top: -172px;
+    right: 84px;
+    max-height: 180px;
+    &.en {
+      right: 24px;
+    }
+  }
 }
 
 @media (min-width: 1440px) {
@@ -1058,6 +1149,24 @@ const handleGoLineOA = () => {
     max-width: 360px;
     bottom: -18%;
     right: -2%;
+  }
+
+  .snoopy-bird {
+    top: -244px;
+    left: 108px;
+    max-height: 256px;
+    &.en {
+      left: 60px;
+    }
+  }
+
+  .snoopy-gift {
+    top: -200px;
+    right: 128px;
+    max-height: 210px;
+    &.en {
+      right: 60px;
+    }
   }
 }
 
@@ -1134,6 +1243,24 @@ const handleGoLineOA = () => {
     max-width: 455px;
     bottom: -22%;
     right: -1%;
+  }
+
+  .snoopy-bird {
+    top: -271px;
+    left: 180px;
+    max-height: 283px;
+    &.en {
+      left: 100px;
+    }
+  }
+
+  .snoopy-gift {
+    top: -230px;
+    right: 200px;
+    max-height: 242px;
+    &.en {
+      right: 80px;
+    }
   }
 }
 </style>

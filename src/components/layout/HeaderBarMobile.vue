@@ -32,7 +32,7 @@
           </a>
         </button>
         <!-- 中英切換按鈕 -->
-        <!-- <div class="header-actions__lang">
+        <div class="header-actions__lang">
           <button
             class="lang-btn hover"
             :class="{ active: locale === 'zh-TW' }"
@@ -49,7 +49,7 @@
           >
             {{ t('header.lang_en_m') }}
           </button>
-        </div> -->
+        </div>
         <div class="header-actions__social">
           <a
             class="social hover"
@@ -125,15 +125,15 @@ const navItems = navConfig
 const { t, locale } = useI18n()
 const isEn = computed(() => locale.value.startsWith('en'))
 
-// const toggleLocaleToTW = () => {
-//   if (locale.value === 'zh-TW') return
-//   locale.value = 'zh-TW'
-// }
+const toggleLocaleToTW = () => {
+  if (locale.value === 'zh-TW') return
+  locale.value = 'zh-TW'
+}
 
-// const toggleLocaleToEn = () => {
-//   if (locale.value === 'en') return
-//   locale.value = 'en'
-// }
+const toggleLocaleToEn = () => {
+  if (locale.value === 'en') return
+  locale.value = 'en'
+}
 
 const navOpen = ref(false)
 
