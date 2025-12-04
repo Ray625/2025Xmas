@@ -1093,6 +1093,7 @@ const handleGoLineOA = () => {
     border-radius: 40px;
     gap: 44px;
     &__text {
+      max-width: 720px;
       &.text--mb {
         margin-bottom: 66px;
       }

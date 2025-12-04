@@ -210,7 +210,7 @@ onBeforeUnmount(() => {
   top: 0;
   right: 0;
   z-index: 1001;
-  height: 100vh;
+  height: 100dvh;
   width: 80%;
   max-width: 320px;
   transform: translate(100%, 0);
