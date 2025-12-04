@@ -42,8 +42,16 @@
           title-key="sections.lights.eastern.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
-          :title-bg-list-left="snoopyListLeft(11, 9, 7, 4, 2)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 9, 7, 4, 2)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(6, 5, 3, 2, 0)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 9, 7, 4, 2)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(6, 5, 3, 2, 0)[breakpoint]
+              : snoopyListRight(11, 9, 7, 4, 2)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#FFB8C3"
         >
@@ -70,8 +78,16 @@
           title-key="sections.lights.taipei.title"
           bodyPadding="40px"
           bgColor="#B4C5E3"
-          :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
-          :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(7, 6, 4, 2, 1)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(7, 6, 4, 2, 1)[breakpoint]
+              : snoopyListRight(11, 8, 7, 4, 1)[breakpoint]
+          "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#9A8FED"
         >
