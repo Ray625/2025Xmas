@@ -174,6 +174,7 @@ const styleVars = computed(() => ({
       min-width: 51px;
       aspect-ratio: 51/48;
       margin-left: auto;
+      padding-top: 2px;
       background-image: url('@/assets/icon/star.svg');
       background-position: center;
       background-repeat: no-repeat;

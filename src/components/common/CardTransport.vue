@@ -1,8 +1,12 @@
 <template>
   <div class="transport-card">
-    <div class="transport-card__title">
+    <div class="transport-card__title" @click="handleToggle">
       <p>{{ t(`${title}`) }}</p>
-      <button class="transport-card__btn" :class="openToggle ? '' : 'open'" @click="handleToggle">
+      <button
+        class="transport-card__btn"
+        :class="openToggle ? '' : 'open'"
+        @click.stop="handleToggle"
+      >
         <img :src="iconArrow" alt="icon arrow" />
       </button>
     </div>
@@ -99,6 +103,9 @@ const handleToggle = () => (openToggle.value = !openToggle.value)
     &__title {
       padding: 12px 0;
       border-bottom: 2px solid vars.$color-text-green;
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &__detail {

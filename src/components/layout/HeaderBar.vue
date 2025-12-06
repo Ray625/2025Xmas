@@ -121,7 +121,6 @@ const navItems = navConfig
   }))
 
 const { t, locale } = useI18n()
-// const { t } = useI18n()
 const isEn = computed(() => locale.value.startsWith('en'))
 
 const toggleLocale = () => {

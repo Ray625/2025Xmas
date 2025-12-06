@@ -1,6 +1,6 @@
 import { createI18n } from 'vue-i18n'
-import zhTW from './zh-TW'
-import en from './en'
+import zhTW from '@/locales/zh-TW'
+import en from '@/locales/en'
 
 export const defaultLocale = 'zh-TW'
 

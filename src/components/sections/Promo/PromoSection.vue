@@ -413,7 +413,7 @@
                       :eventData="event"
                     />
                   </div>
-                  <div class="flex flex-col gap-4 flex-1">
+                  <div class="flex flex-col gap-4 flex-1 snoopy-bg">
                     <CardEvent
                       v-for="(event, index) in easternList.sogo.eventRight2"
                       :key="index"
@@ -471,7 +471,7 @@
                       :eventData="event"
                     />
                   </div>
-                  <div class="flex flex-col gap-4 flex-1 relative snoopy-bg">
+                  <div class="flex flex-col gap-4 flex-1 relative">
                     <CardEvent
                       v-for="(event, index) in easternList.MingYao.eventRight"
                       :key="index"

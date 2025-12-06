@@ -1,5 +1,5 @@
 <template>
-  <div class="tag-highlight" :style="styleVars">
+  <div class="tag-highlight" :class="{ en: isEn }" :style="styleVars">
     <span v-if="icon" class="tag-highlight__icon">
       <img :src="icon" alt="icon" />
     </span>
@@ -11,6 +11,11 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+
+const isEn = computed(() => locale.value.startsWith('en'))
 
 const props = withDefaults(
   defineProps<{
@@ -45,6 +50,9 @@ const styleVars = computed(() => ({
 
   outline: 2px solid var(--tag-highlight-color);
   outline-offset: -2px;
+  &.en {
+    @include mixins.text-body-en(var(--tag-highlight-color));
+  }
 }
 
 .tag-highlight__icon img {
