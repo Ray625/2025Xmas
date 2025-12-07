@@ -132,9 +132,14 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 @use '@/styles/_mixins' as mixins;
 
 .transportation-section {
-  padding-top: 40px;
+  padding-top: 52px;
   padding-bottom: 200px;
   background-color: vars.$bg-green;
+  background-image: url('@/assets/img/section_10_footer_bottom.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
   &__card__group {
     display: flex;
     flex-direction: column;
@@ -151,9 +156,15 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   margin-bottom: 12px;
 }
 
+@media (min-width: 768px) {
+  .transportation-section {
+    padding-top: 92px;
+  }
+}
+
 @media (min-width: 1024px) {
   .transportation-section {
-    padding-top: 100px;
+    padding-top: 108px;
     padding-bottom: 240px;
     background-color: vars.$bg-green;
     &__card__group {
@@ -173,7 +184,17 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   }
 }
 
+@media (min-width: 1440px) {
+  .transportation-section {
+    padding-top: 132px;
+  }
+}
+
 @media (min-width: 1920px) {
+  .transportation-section {
+    padding-top: 180px;
+  }
+
   .transportation-section__title {
     margin-bottom: 100px;
   }

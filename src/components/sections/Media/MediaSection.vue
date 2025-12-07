@@ -40,8 +40,10 @@ import snoopyMusicRight from '@/assets/img/section_10_note_right.png'
 @use '@/styles/_mixins' as mixins;
 
 .media-section {
+  position: relative;
   padding-bottom: 40px;
   background-color: vars.$bg-snow;
+  margin-bottom: -2px;
 }
 
 .media-section__title {
@@ -105,7 +107,7 @@ import snoopyMusicRight from '@/assets/img/section_10_note_right.png'
 
 @media (min-width: 768px) {
   .media-section {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
   }
 
   .media-section__title {
@@ -148,7 +150,7 @@ import snoopyMusicRight from '@/assets/img/section_10_note_right.png'
 
 @media screen and (min-width: 1024px) {
   .media-section {
-    padding-bottom: 132px;
+    padding-bottom: 92px;
   }
 
   .media__card--left:hover {
@@ -201,7 +203,7 @@ import snoopyMusicRight from '@/assets/img/section_10_note_right.png'
 @media (min-width: 1440px) {
   .media-section {
     padding-top: 32px;
-    padding-bottom: 132px;
+    padding-bottom: 80px;
   }
 
   .snoopy-music-left {
