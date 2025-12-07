@@ -39,7 +39,6 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
 @use '@/styles/_mixins' as mixins;
 
 .media-section {
-  padding-top: 80px;
   padding-bottom: 40px;
   background-color: vars.$bg-snow;
 }
@@ -99,13 +98,12 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
 }
 
 @media (min-width: 768px) {
-  .media-section__title {
-    margin-bottom: 48px;
+  .media-section {
+    padding-bottom: 80px;
   }
 
-  .media-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+  .media-section__title {
+    margin-bottom: 48px;
   }
 
   .media__group {
@@ -121,7 +119,6 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
 
 @media screen and (min-width: 1024px) {
   .media-section {
-    padding-top: 80px;
     padding-bottom: 132px;
   }
 
@@ -157,6 +154,13 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
 
   .yt-player {
     border-radius: 12px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .media-section {
+    padding-top: 32px;
+    padding-bottom: 132px;
   }
 }
 
