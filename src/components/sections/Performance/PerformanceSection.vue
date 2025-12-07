@@ -54,7 +54,6 @@ const isEn = computed(() => locale.value.startsWith('en'))
 @use '@/styles/_mixins' as mixins;
 
 .performance-section {
-  padding-top: 56px;
   padding-bottom: 112px;
   background-color: vars.$bg-blue;
 }
@@ -68,12 +67,20 @@ const isEn = computed(() => locale.value.startsWith('en'))
 }
 
 @media (min-width: 768px) {
+  .performance-section {
+    padding-top: 32px;
+  }
+
   .performance__img--m {
     width: 80%;
   }
 }
 
 @media (min-width: 1024px) {
+  .performance-section {
+    padding-top: 64px;
+  }
+
   .performance-section__title {
     margin-bottom: 36px;
   }
@@ -87,7 +94,17 @@ const isEn = computed(() => locale.value.startsWith('en'))
   }
 }
 
+@media (min-width: 1440px) {
+  .performance-section {
+    padding-top: 92px;
+  }
+}
+
 @media (min-width: 1920px) {
+  .performance-section {
+    padding-top: 140px;
+  }
+
   .performance-section__title {
     margin-bottom: 56px;
   }

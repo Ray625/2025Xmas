@@ -53,6 +53,14 @@
         </div>
       </div>
     </Container>
+    <div class="bg-footer">
+      <div class="bg-footer-dark"></div>
+      <div class="bg-footer-light"></div>
+      <img :src="snoopyBgM" alt="" class="snoopy-bg-m" />
+      <img :src="snoopyM" alt="" class="snoopy-m" />
+      <img :src="snoopyBg" alt="" class="snoopy-bg" />
+      <img :src="snoopy" alt="" class="snoopy" />
+    </div>
   </section>
 </template>
 <script setup lang="ts">
@@ -63,6 +71,11 @@ import xinyiMapEn from '@/assets/map/section_08_map_en.png'
 import xinyiMapM from '@/assets/map/m_section_08_map.png'
 import xinyiMapMEn from '@/assets/map/m_section_08_map_en.png'
 import CardLight from '@/components/common/CardLight.vue'
+import snoopyBg from '@/assets/img/section_08_footer.png'
+import snoopyBgM from '@/assets/img/m_section_08_footer.png'
+import snoopy from '@/assets/img/section_08_people.png'
+import snoopyM from '@/assets/img/m_section_08_people.png'
+
 import { xinyiLights } from '@/components/sections/Landmark/photo'
 import { useViewport } from '@/composables/useViewport'
 import { useI18n } from 'vue-i18n'
@@ -80,7 +93,6 @@ const isEn = computed(() => locale.value.startsWith('en'))
 
 .landmark-section {
   padding-top: 12px;
-  padding-bottom: 120px;
   background-color: vars.$color-text-blue;
   background-image: url('@/assets/img/m_section_07_footer.png'),
     url('@/assets/img/m_section_08_bg.png');
@@ -143,20 +155,103 @@ const isEn = computed(() => locale.value.startsWith('en'))
   max-width: 256px;
 }
 
+.bg-footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 140px;
+  margin-top: 40px;
+  &-dark {
+    flex: 1.4 1 0;
+    background-color: vars.$color-text-blue;
+  }
+  &-light {
+    flex: 0.8 1 0;
+    background-color: vars.$bg-blue;
+  }
+}
+
+.snoopy-bg-m {
+  position: absolute;
+  top: 25%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.snoopy-m {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 390px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.snoopy {
+  display: none;
+}
+.snoopy-bg {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .landmark-section {
     background-position: center top -14.6%, center top 9.4%;
+  }
+
+  .bg-footer {
+    margin-top: 60px;
+  }
+
+  .snoopy-bg-m {
+    display: none;
+  }
+
+  .snoopy-bg {
+    position: absolute;
+    top: 16%;
+    display: block;
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+  }
+  .snoopy-m {
+    display: none;
+  }
+  .snoopy {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, 0);
+    max-width: 640px;
+    pointer-events: none;
+    user-select: none;
   }
 }
 
 @media (min-width: 1024px) {
   .landmark-section {
-    padding-bottom: 170px;
     background-image: url('@/assets/img/section_07_footer.png'),
       url('@/assets/img/section_08_bg.png');
     background-repeat: no-repeat;
     background-position: center top -7%, center top 3%;
     background-size: auto, 120%;
+  }
+
+  .bg-footer {
+    margin-top: 120px;
+  }
+
+  .snoopy-bg {
+    top: 0;
+  }
+
+  .snoopy {
+    bottom: 8px;
+    max-width: 880px;
   }
 
   .map_m {
@@ -184,11 +279,23 @@ const isEn = computed(() => locale.value.startsWith('en'))
 @media (min-width: 1440px) {
   .landmark-section {
     padding-top: 30px;
-    padding-bottom: 170px;
     background-image: url('@/assets/img/section_07_footer.png'),
       url('@/assets/img/section_08_bg.png');
     background-position: center top -7%, center top 6%;
     background-size: auto, 120%;
+  }
+
+  .bg-footer {
+    margin-top: 240px;
+  }
+
+  .snoopy-bg {
+    top: -32px;
+  }
+
+  .snoopy {
+    bottom: -2px;
+    max-width: 1128px;
   }
 
   .map {
@@ -232,10 +339,24 @@ const isEn = computed(() => locale.value.startsWith('en'))
   .landmark-section {
     position: relative;
     padding-top: 20px;
-    padding-bottom: 220px;
     background-image: url('@/assets/img/section_08_bg.png');
     background-position: center top;
     background-size: contain;
+  }
+
+  .bg-footer {
+    aspect-ratio: 1080/ 50;
+    height: auto;
+    margin-top: 18%;
+  }
+
+  .snoopy-bg {
+    top: -136%;
+  }
+
+  .snoopy {
+    bottom: -6%;
+    max-width: 1375px;
   }
 
   .map {
