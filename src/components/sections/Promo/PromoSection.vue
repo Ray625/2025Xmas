@@ -972,7 +972,6 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
 @use '@/styles/_mixins' as mixins;
 
 .promo-section {
-  padding-top: 12px;
   padding-bottom: 148px;
   background-color: vars.$bg-green;
 }
@@ -1017,7 +1016,6 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
 
 @media (min-width: 1024px) {
   .promo-section {
-    padding-top: 100px;
     padding-bottom: 196px;
   }
 
@@ -1038,7 +1036,6 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
 
 @media (min-width: 1920px) {
   .promo-section {
-    padding-top: 100px;
     padding-bottom: 240px;
   }
 

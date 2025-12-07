@@ -446,6 +446,8 @@
         </Card>
       </div>
     </Container>
+    <img :src="snoopyCandyM" alt="snoopy background" class="snoopy-bg-m" />
+    <img :src="snoopyCandy" alt="snoopy background" class="snoopy-bg" />
     <Pop :visible="openPopup" @close="handleTogglePopup" />
   </section>
 </template>
@@ -485,6 +487,8 @@ import snoopySnowLeft from '@/assets/img/section_05_snow-left.png'
 import snoopySnowRight from '@/assets/img/section_05_snow-right.png'
 import snoopySki from '@/assets/img/section_05_snoopy.png'
 import snoopyWood from '@/assets/img/section_05_woodstock.png'
+import snoopyCandy from '@/assets/img/section_05_candy.png'
+import snoopyCandyM from '@/assets/img/m_section_05_candy.png'
 
 import { watch, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -539,7 +543,6 @@ const handleGoLineOA = () => {
   align-items: center;
   gap: 96px;
   padding-top: 26px;
-  padding-bottom: 32px;
 
   --gradient-height: 170px;
   background: linear-gradient(180deg, #75c7d7 0%, vars.$bg-blue 100%) top center / 100%
@@ -848,10 +851,22 @@ const handleGoLineOA = () => {
   max-width: 200px;
 }
 
+.snoopy-bg-m {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: auto;
+  margin-top: -60px;
+  margin-bottom: -2px;
+}
+
+.snoopy-bg {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .raffle-section {
     padding-top: 48px;
-    padding-bottom: 56px;
     --gradient-height: 200px;
     &__title {
       margin-bottom: 24px;
@@ -1032,13 +1047,23 @@ const handleGoLineOA = () => {
   .snoopy-circle_m {
     display: none;
   }
+
+  .snoopy-bg-m {
+    display: none;
+  }
+
+  .snoopy-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: -32px;
+  }
 }
 
 @media (min-width: 1024px) {
   .raffle-section {
     gap: 136px;
     padding-top: 120px;
-    padding-bottom: 160px;
 
     --gradient-height: 368px;
     &__title {
@@ -1197,7 +1222,6 @@ const handleGoLineOA = () => {
   .raffle-section {
     gap: 148px;
     padding-top: 130px;
-    padding-bottom: 180px;
 
     --gradient-height: 400px;
     &__title {
@@ -1301,7 +1325,6 @@ const handleGoLineOA = () => {
   .raffle-section {
     gap: 172px;
     padding-top: 135px;
-    padding-bottom: 194px;
 
     --gradient-height: 427px;
     &__title {
