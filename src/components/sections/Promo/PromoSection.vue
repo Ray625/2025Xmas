@@ -3,8 +3,8 @@
     <Container maxWidth="1440px">
       <div class="flex flex-col items-center">
         <SectionTitle preset="promo" class="promo-section__title" />
-        <div class="w-full relative">
-          <SectionTabs v-model="activeTab" :tabs="tabs" class="promo-section__tabs" />
+        <div class="w-full relative promo-section__tabs">
+          <SectionTabs v-model="activeTab" :tabs="tabs" />
           <img :src="snoopyTabsXinyi" alt="snoopy img" class="snoopyXinyi" :class="{ en: isEn }" />
           <img
             :src="snoopyTabsEastern"
@@ -1066,10 +1066,14 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
   height: auto;
   margin-top: 40px;
   margin-bottom: -2px;
+  pointer-events: none;
+  user-select: none;
 }
 
 .snoopy-candy {
   display: none;
+  pointer-events: none;
+  user-select: none;
 }
 
 @media (min-width: 768px) {

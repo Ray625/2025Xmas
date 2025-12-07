@@ -1,7 +1,7 @@
 <template>
   <section class="landmark-section">
     <Container maxWidth="1528px" smMaxWidth="395px">
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center relative">
         <SectionTitle preset="landmark" class="landmark-section_title" />
         <div class="map_m">
           <img v-if="isEn" :src="xinyiMapMEn" alt="xinyi map" loading="lazy" />
@@ -79,9 +79,14 @@ const isEn = computed(() => locale.value.startsWith('en'))
 @use '@/styles/_mixins' as mixins;
 
 .landmark-section {
-  padding-top: 40px;
+  padding-top: 12px;
   padding-bottom: 120px;
   background-color: vars.$color-text-blue;
+  background-image: url('@/assets/img/m_section_07_footer.png'),
+    url('@/assets/img/m_section_08_bg.png');
+  background-repeat: no-repeat;
+  background-position: center top -22%, center top 11.8%;
+  background-size: auto, contain;
 }
 
 .map {
@@ -127,7 +132,9 @@ const isEn = computed(() => locale.value.startsWith('en'))
 }
 
 .landmark-section_title {
+  position: relative;
   margin-bottom: 15px;
+  z-index: 1;
 }
 
 .light__card {
@@ -136,10 +143,20 @@ const isEn = computed(() => locale.value.startsWith('en'))
   max-width: 256px;
 }
 
+@media (min-width: 768px) {
+  .landmark-section {
+    background-position: center top -14.6%, center top 9.4%;
+  }
+}
+
 @media (min-width: 1024px) {
   .landmark-section {
-    padding-top: 75px;
     padding-bottom: 170px;
+    background-image: url('@/assets/img/section_07_footer.png'),
+      url('@/assets/img/section_08_bg.png');
+    background-repeat: no-repeat;
+    background-position: center top -7%, center top 3%;
+    background-size: auto, 120%;
   }
 
   .map_m {
@@ -165,6 +182,15 @@ const isEn = computed(() => locale.value.startsWith('en'))
 }
 
 @media (min-width: 1440px) {
+  .landmark-section {
+    padding-top: 30px;
+    padding-bottom: 170px;
+    background-image: url('@/assets/img/section_07_footer.png'),
+      url('@/assets/img/section_08_bg.png');
+    background-position: center top -7%, center top 6%;
+    background-size: auto, 120%;
+  }
+
   .map {
     &__group {
       position: relative;
@@ -204,8 +230,12 @@ const isEn = computed(() => locale.value.startsWith('en'))
 
 @media (min-width: 1920px) {
   .landmark-section {
-    padding-top: 90px;
+    position: relative;
+    padding-top: 20px;
     padding-bottom: 220px;
+    background-image: url('@/assets/img/section_08_bg.png');
+    background-position: center top;
+    background-size: contain;
   }
 
   .map {
@@ -232,7 +262,7 @@ const isEn = computed(() => locale.value.startsWith('en'))
       }
       &--right {
         top: 32%;
-        right: 10.5%;
+        right: 4.5%;
         transform: rotate(9deg);
       }
     }
