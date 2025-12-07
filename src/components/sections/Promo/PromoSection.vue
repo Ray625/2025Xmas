@@ -3,7 +3,22 @@
     <Container maxWidth="1440px">
       <div class="flex flex-col items-center">
         <SectionTitle preset="promo" class="promo-section__title" />
-        <SectionTabs v-model="activeTab" :tabs="tabs" class="promo-section__tabs" />
+        <div class="w-full relative">
+          <SectionTabs v-model="activeTab" :tabs="tabs" class="promo-section__tabs" />
+          <img :src="snoopyTabsXinyi" alt="snoopy img" class="snoopyXinyi" :class="{ en: isEn }" />
+          <img
+            :src="snoopyTabsEastern"
+            alt="snoopy img"
+            class="snoopyEastern"
+            :class="{ en: isEn }"
+          />
+          <img
+            :src="snoopyTabsTaipei"
+            alt="snoopy img"
+            class="snoopyTaipei"
+            :class="{ en: isEn }"
+          />
+        </div>
         <!-- 信義區 -->
         <Card
           v-if="activeTab === 0"
@@ -942,6 +957,8 @@
         </Card>
       </div>
     </Container>
+    <img :src="snoopyCandyM" alt="snoopy background" class="snoopy-candy-m" />
+    <img :src="snoopyCandy" alt="snoopy background" class="snoopy-candy" />
   </section>
 </template>
 <script setup lang="ts">
@@ -952,6 +969,12 @@ import SectionTabs from '@/components/common/SectionTabs.vue'
 import Card from '@/components/common/Card.vue'
 import CardLocale from '@/components/common/CardLocale.vue'
 import CardEvent from '@/components/common/CardEvent.vue'
+import snoopyTabsXinyi from '@/assets/img/section_06_btn_01.png'
+import snoopyTabsEastern from '@/assets/img/section_06_btn_02.png'
+import snoopyTabsTaipei from '@/assets/img/section_06_btn_03.png'
+import snoopyCandy from '@/assets/img/section_06_candy.png'
+import snoopyCandyM from '@/assets/img/m_section_06_candy.png'
+
 import { useI18n } from 'vue-i18n'
 import { usePromoLocations } from '@/components/sections/Promo/const'
 import { tabsConfig } from '@/data/const'
@@ -972,7 +995,6 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
 @use '@/styles/_mixins' as mixins;
 
 .promo-section {
-  padding-bottom: 148px;
   background-color: vars.$bg-green;
 }
 
@@ -982,6 +1004,39 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
 
 .promo-section__tabs {
   margin-bottom: 12px;
+}
+
+.snoopyXinyi {
+  position: absolute;
+  width: 100%;
+  max-width: 70px;
+  top: 28px;
+  left: 12px;
+  pointer-events: none;
+  user-select: none;
+  &.en {
+    top: 20px;
+    left: -20px;
+  }
+}
+
+.snoopyEastern {
+  position: absolute;
+  width: 100%;
+  top: 64px;
+  right: -8px;
+  max-width: 78px;
+  pointer-events: none;
+  user-select: none;
+  &.en {
+    right: -28px;
+  }
+}
+
+.snoopyTaipei {
+  display: none;
+  pointer-events: none;
+  user-select: none;
 }
 
 .locale-card__list {
@@ -1004,6 +1059,19 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
   background-size: contain;
 }
 
+.snoopy-candy-m {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  margin-bottom: -2px;
+}
+
+.snoopy-candy {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .promo-section__tabs {
     margin-bottom: 20px;
@@ -1012,13 +1080,43 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
   .area-list {
     gap: 20px;
   }
+
+  .snoopyXinyi {
+    max-width: 78px;
+    top: 24px;
+    left: 10px;
+    &.en {
+      top: 24px;
+      left: 10px;
+    }
+  }
+
+  .snoopyEastern {
+    top: 72px;
+    right: -8px;
+    max-width: 84px;
+    &.en {
+      top: 72px;
+      right: -8px;
+    }
+  }
+
+  .snoopy-candy-m {
+    display: none;
+  }
+
+  .snoopy-candy {
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: -2px;
+  }
 }
 
 @media (min-width: 1024px) {
-  .promo-section {
-    padding-bottom: 196px;
-  }
-
   .promo-section__title {
     margin-bottom: 60px;
   }
@@ -1032,13 +1130,78 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
     flex-direction: row;
     gap: 32px;
   }
+
+  .snoopyXinyi {
+    top: 12px;
+    left: -12px;
+    max-width: 80px;
+    &.en {
+      top: 12px;
+      left: -12px;
+    }
+  }
+
+  .snoopyEastern {
+    top: 32px;
+    right: 318px;
+    max-width: 88px;
+    &.en {
+      top: 32px;
+      right: 308px;
+    }
+  }
+
+  .snoopyTaipei {
+    position: absolute;
+    top: -12px;
+    right: -30px;
+    display: block;
+    width: 100%;
+    max-width: 88px;
+  }
+
+  .snoopy-candy {
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .snoopyXinyi {
+    top: -4px;
+    left: 60px;
+    max-width: 92px;
+    &.en {
+      top: -4px;
+      left: 60px;
+    }
+  }
+
+  .snoopyEastern {
+    top: 20px;
+    right: 404px;
+    max-width: 104px;
+    &.en {
+      top: 20px;
+      right: 380px;
+    }
+  }
+
+  .snoopyTaipei {
+    top: -48px;
+    right: 60px;
+    max-width: 104px;
+    &.en {
+      top: -48px;
+      right: 38px;
+    }
+  }
+
+  .snoopy-candy {
+    margin-top: 120px;
+  }
 }
 
 @media (min-width: 1920px) {
-  .promo-section {
-    padding-bottom: 240px;
-  }
-
   .promo-section__title {
     margin-bottom: 100px;
   }
@@ -1049,6 +1212,40 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
 
   .area-list {
     gap: 32px;
+  }
+
+  .snoopyXinyi {
+    top: -18px;
+    left: 192px;
+    max-width: 103px;
+    &.en {
+      top: -12px;
+      left: 176px;
+    }
+  }
+
+  .snoopyEastern {
+    top: 12px;
+    right: 544px;
+    max-width: 116px;
+    &.en {
+      top: 16px;
+      right: 500px;
+    }
+  }
+
+  .snoopyTaipei {
+    top: -68px;
+    right: 192px;
+    max-width: 116px;
+    &.en {
+      top: -64px;
+      right: 178px;
+    }
+  }
+
+  .snoopy-candy {
+    margin-top: 180px;
   }
 }
 </style>

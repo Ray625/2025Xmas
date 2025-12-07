@@ -199,7 +199,6 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 @use '@/styles/_mixins' as mixins;
 
 .lights-section {
-  padding-top: 12px;
   padding-bottom: 148px;
   background-color: vars.$bg-blue;
 }
@@ -254,7 +253,6 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 
 @media (min-width: 1024px) {
   .lights-section {
-    padding-top: 100px;
     padding-bottom: 196px;
   }
 
@@ -295,7 +293,6 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 
 @media (min-width: 1920px) {
   .lights-section {
-    padding-top: 100px;
     padding-bottom: 240px;
   }
 

@@ -1053,10 +1053,13 @@ const handleGoLineOA = () => {
   }
 
   .snoopy-bg {
+    position: relative;
+    z-index: 10;
     display: block;
     width: 100%;
     height: auto;
     margin-top: -32px;
+    margin-bottom: -2px;
   }
 }
 
