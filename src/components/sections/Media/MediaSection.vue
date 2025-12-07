@@ -4,6 +4,9 @@
       <div class="flex flex-col items-center w-full">
         <SectionTitle preset="media" class="media-section__title" />
         <div class="media__group">
+          <img :src="snoopyMusicLeft" alt="" class="snoopy-music-left" />
+          <img :src="snoopyMusicRight" alt="" class="snoopy-music-right" />
+
           <div class="media__card media__card--left">
             <iframe
               width="100%"
@@ -29,10 +32,8 @@
 <script setup lang="ts">
 import Container from '@/components/layout/Container.vue'
 import SectionTitle from '@/components/common/SectionTitle.vue'
-
-// const handleClick = (url: string) => {
-//   window.open(url, '_blank', 'noopener,noreferrer')
-// }
+import snoopyMusicLeft from '@/assets/img/section_10_note_left.png'
+import snoopyMusicRight from '@/assets/img/section_10_note_right.png'
 </script>
 <style scoped lang="scss">
 @use '@/styles/_variables' as vars;
@@ -87,10 +88,15 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      transform: translate(-50%, -53%);
+      transform: translate(-50%, -50%);
       aspect-ratio: 248/72;
     }
   }
+}
+
+.snoopy-music-left,
+.snoopy-music-right {
+  display: none;
 }
 
 .yt-player {
@@ -107,9 +113,32 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
   }
 
   .media__group {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 64px;
+  }
+
+  .snoopy-music-left,
+  .snoopy-music-right {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .snoopy-music-left {
+    top: -20%;
+    left: -4%;
+    max-width: 50px;
+  }
+
+  .snoopy-music-right {
+    top: -20%;
+    right: -4%;
+    max-width: 64px;
   }
 
   .yt-player {
@@ -152,6 +181,18 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
     }
   }
 
+  .snoopy-music-left {
+    top: -20%;
+    left: 10%;
+    max-width: 64px;
+  }
+
+  .snoopy-music-right {
+    top: -22%;
+    right: 8%;
+    max-width: 80px;
+  }
+
   .yt-player {
     border-radius: 12px;
   }
@@ -162,11 +203,35 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
     padding-top: 32px;
     padding-bottom: 132px;
   }
+
+  .snoopy-music-left {
+    top: -24%;
+    left: 10%;
+    max-width: 84px;
+  }
+
+  .snoopy-music-right {
+    top: -26%;
+    right: 8%;
+    max-width: 106px;
+  }
 }
 
 @media (min-width: 1920px) {
   .media-section__title {
     margin-bottom: 88px;
+  }
+
+  .snoopy-music-left {
+    top: -24%;
+    left: 10%;
+    max-width: 104px;
+  }
+
+  .snoopy-music-right {
+    top: -30%;
+    right: 10%;
+    max-width: 145px;
   }
 
   .yt-player {
