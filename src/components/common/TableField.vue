@@ -83,6 +83,7 @@ const styleVars = computed(() => ({
 .table-field_row {
   display: flex;
   gap: 8px;
+  align-items: center;
 }
 
 .table-field__time {

@@ -34,9 +34,11 @@ const styleVars = computed(() => ({
   display: flex;
   align-items: center;
   width: fit-content;
+  height: fit-content;
   padding: 0 8px;
   border-radius: 4px;
   background-color: var(--bg-color);
+  white-space: nowrap;
   @include mixins.typography(12px, 1.5, 700, vars.$color-white);
   &.en {
     @include mixins.typography(10px, 1.5, 700, vars.$color-white);
