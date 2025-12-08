@@ -260,7 +260,7 @@ export default {
         },
         cardRight: {
           title: 'Grand Prize Draw',
-          text: '(Winners announced in late Jan 2026 after the event ends)',
+          text: '(The list of winners will be announced after the event concludes on January 9, 2026.)',
           prize1: 'Department Store Voucher NT$10,000',
           prize2: 'Department Store Voucher NT$30,000',
           prize3: 'Department Store Voucher NT$100,000',
@@ -1083,7 +1083,7 @@ export default {
           lightName: 'Breeze Christmas Confession Avenue',
           shopName: 'Breeze Nan Shan',
           location: '1F Outdoor Area',
-          time: 'Late 11/2025-Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
         light19: {
           lightName: 'Colorful Night Festival',
@@ -1203,7 +1203,7 @@ export default {
           lightName: 'Breeze Christmas Confession Avenue',
           shopName: 'Breeze Xin Yi',
           location: '1F Outdoor Area',
-          time: 'Late 11/2025 – Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
       },
       eastern: {
@@ -1248,7 +1248,7 @@ export default {
           lightName: 'A Starry Christmas',
           shopName: 'Breeze Center',
           location: '1F, Fuxing S. Entrance & Civic Blvd. Entrance',
-          time: 'Late 11/2025 – Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
         light8: {
           lightName: 'Just Shine!',
@@ -1260,11 +1260,11 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: 'Breeze Nan Jing',
           location: '1F, Nanjing E. Rd. Entrance',
-          time: 'Late 11/2025 – Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
         light10: {
           lightName: 'Gate of Wishes',
-          shopName: "Don't call it a nigh",
+          shopName: "Don't call it a night",
           location: 'Liugong Green Corridor',
           time: '12/10/2025-03/08/2026',
         },
@@ -1276,7 +1276,7 @@ export default {
         },
         light12: {
           lightName: 'MERRY AND BRIGHT！',
-          shopName: "Don't call it a night",
+          shopName: '',
           location: 'Dinghao Plaza',
           time: '12/10/2025-03/08/2026',
         },
@@ -1317,7 +1317,7 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: 'Breeze Taipei Station',
           location: '1F Lobby, Taipei Main Station',
-          time: 'Late 11/2025 – Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
         light7: {
           lightName: 'Radiant Cubic Light Installation',

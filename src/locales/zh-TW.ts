@@ -249,7 +249,7 @@ export default {
           light1: {
             lightName: '台北101',
             shopName: 'B1 服務台',
-            location: '詳細信義區市府路45號位置',
+            location: '信義區市府路45號位置',
           },
           light2: {
             lightName: '台北101',
@@ -1044,7 +1044,7 @@ export default {
           lightName: '微風聖誕告白大道',
           shopName: '微風南山',
           location: '1F 館外',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
         light19: {
           lightName: '繽紛玩夜祭',
@@ -1165,7 +1165,7 @@ export default {
           lightName: '微風聖誕告白大道',
           shopName: '微風信義',
           location: '1F 忠孝東路五段\n(十米大門側)',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
       },
       eastern: {
@@ -1210,7 +1210,7 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: '微風廣場',
           location: '1F 復南大門與市民大門',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
         light8: {
           lightName: 'Just Shine! 閃耀時刻',
@@ -1222,11 +1222,11 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: '微風南京',
           location: '1F 南京東路大門口',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
         light10: {
           lightName: '星願之門',
-          shopName: "東區夜未眠\nDon't call it a nigh",
+          shopName: "東區夜未眠\nDon't call it a night",
           location: '瑠公綠廊',
           time: '114/12/10-115/03/08',
         },
@@ -1238,7 +1238,7 @@ export default {
         },
         light12: {
           lightName: 'MERRY AND BRIGHT！',
-          shopName: "東區夜未眠\nDon't call it a night",
+          shopName: '',
           location: '頂好廣場',
           time: '114/12/10-115/03/08',
         },
@@ -1279,7 +1279,7 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: '微風台北車站',
           location: '台北車站 1F 大廳',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
         light7: {
           lightName: '炫光立次方裝置藝術',
