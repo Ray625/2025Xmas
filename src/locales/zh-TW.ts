@@ -140,13 +140,13 @@ export default {
         event1: {
           shop: '台北101',
           name: '夢想舞台音樂會',
-          time: '114/12/13 - 114/12/14',
+          time: '114/12/13、114/12/14',
           location: '4F 都會廣場',
         },
         event2: {
           shop: '遠百信義A13',
           name: '聖誕快閃派對',
-          time: '114/12/13 - 114/12/14',
+          time: '114/12/13、114/12/14',
           location: '1F 北面廣場',
         },
         event3: {
@@ -176,7 +176,7 @@ export default {
         event7: {
           shop: '微風廣場',
           name: '北境雪夜聖誕神諭占卜 Frozen Fates',
-          time: '114/12/13 - 114/12/14',
+          time: '114/12/13、114/12/14',
           location: '1F L5電梯梯廳前聖誕老人小屋',
         },
       },

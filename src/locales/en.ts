@@ -167,52 +167,46 @@ export default {
       activity: {
         title: 'Performances & Events',
         event1: {
-          shop: 'ATT 4 FUN',
-          name: 'Colorful Night Festival',
-          time: '12/04/2025 - 12/31/2025',
-          location: 'ATT ATT 1F Side Entrance & Main Entrance',
-        },
-        event2: {
-          shop: 'Taipei 101',
-          name: '500 Party 2025',
-          time: '12/05/2025 - 12/07/2025',
-          location: 'Water Dance Plaza',
-        },
-        event3: {
           shop: 'Taipei 101',
           name: 'Dream Stage Concert',
-          time: '12/06/2025 - 12/07/2025',
+          time: '12/13/2025, 12/14/2025',
           location: '4F Urban Plaza',
         },
-        event4: {
-          shop: 'Far Eastern SOGO Zhongxiao Store',
+        event2: {
+          shop: 'Far Eastern Department Store, Xinyi A13',
+          name: 'Christmas Flash Party',
+          time: '12/13/2025, 12/14/2025',
+          location: '1F North Plaza',
+        },
+        event3: {
+          shop: 'Far Eastern SOGO, Zhongxiao Store',
           name: 'Christmas Happiness Musical Performance',
-          time: '12/06/2025',
-          location: 'Zhongxiao Store—1F',
+          time: '12/14/2025',
+          location: '1F',
         },
-        event5: {
-          shop: 'Far Eastern SOGO Zhongxiao Store',
-          name: 'Weekend Only! Hong Kong Disneyland Photo Booth',
-          time: '12/06/2025 - 12/07/2025',
-          location: 'Zhongxiao Store—1F',
-        },
-        event6: {
-          shop: 'Far Eastern SOGO Zhongxiao Store',
-          name: 'Fantasy Christmas Weekend Check-in Gift',
-          time: '12/06/2025 - 12/07/2025',
-          location: '12F Prize Redemption Counter',
-        },
-        event7: {
+        event4: {
           shop: 'Miramar Entertainment Park',
           name: 'Wishful Fairy-Tale Market',
-          time: '12/06/2025 - 12/07/2025',
+          time: '12/12, 12/13, 12/14/2025',
           location: '1F Water Fountain Plaza, Seaside Avenue',
         },
-        event8: {
+        event5: {
           shop: 'Dayeh Takashimaya',
-          name: '100°C Warmth – Charity Sale for Children ',
-          time: '12/06/2025 - 12/25/2025',
+          name: '30°C Notes – Christmas Concert',
+          time: '12/13/2025',
           location: 'B1 Central Aquarium Plaza',
+        },
+        event6: {
+          shop: 'Dayeh Takashimaya',
+          name: '40°C Coolness – Ultraman Meet & Greet',
+          time: '12/14/2025',
+          location: 'B1 Central Aquarium Plaza',
+        },
+        event7: {
+          shop: 'Breeze Center',
+          name: 'Frozen Fates',
+          time: '12/13/2025, 12/14/2025',
+          location: "Santa's House on 1F, in front of the L5 elevator lobby",
         },
       },
       rules: {
