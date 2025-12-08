@@ -94,7 +94,7 @@ const isEn = computed(() => locale.value.startsWith('en'))
   flex-direction: column;
   width: 100%;
   height: 300px;
-  margin-top: 72px;
+  margin-top: 40px;
   &-dark {
     flex: 1 1 0;
     background-color: vars.$bg-blue;
@@ -110,6 +110,7 @@ const isEn = computed(() => locale.value.startsWith('en'))
   bottom: 10%;
   left: 50%;
   transform: translate(-50%, 0);
+  width: 80%;
   max-width: 314px;
   pointer-events: none;
   user-select: none;

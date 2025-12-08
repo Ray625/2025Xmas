@@ -167,52 +167,46 @@ export default {
       activity: {
         title: 'Performances & Events',
         event1: {
-          shop: 'ATT 4 FUN',
-          name: 'Colorful Night Festival',
-          time: '12/04/2025 - 12/31/2025',
-          location: 'ATT ATT 1F Side Entrance & Main Entrance',
-        },
-        event2: {
-          shop: 'Taipei 101',
-          name: '500 Party 2025',
-          time: '12/05/2025 - 12/07/2025',
-          location: 'Water Dance Plaza',
-        },
-        event3: {
           shop: 'Taipei 101',
           name: 'Dream Stage Concert',
-          time: '12/06/2025 - 12/07/2025',
+          time: '12/13/2025, 12/14/2025',
           location: '4F Urban Plaza',
         },
-        event4: {
-          shop: 'Far Eastern SOGO Zhongxiao Store',
+        event2: {
+          shop: 'Far Eastern Department Store, Xinyi A13',
+          name: 'Christmas Flash Party',
+          time: '12/13/2025, 12/14/2025',
+          location: '1F North Plaza',
+        },
+        event3: {
+          shop: 'Far Eastern SOGO, Zhongxiao Store',
           name: 'Christmas Happiness Musical Performance',
-          time: '12/06/2025',
-          location: 'Zhongxiao Store—1F',
+          time: '12/14/2025',
+          location: '1F',
         },
-        event5: {
-          shop: 'Far Eastern SOGO Zhongxiao Store',
-          name: 'Weekend Only! Hong Kong Disneyland Photo Booth',
-          time: '12/06/2025 - 12/07/2025',
-          location: 'Zhongxiao Store—1F',
-        },
-        event6: {
-          shop: 'Far Eastern SOGO Zhongxiao Store',
-          name: 'Fantasy Christmas Weekend Check-in Gift',
-          time: '12/06/2025 - 12/07/2025',
-          location: '12F Prize Redemption Counter',
-        },
-        event7: {
+        event4: {
           shop: 'Miramar Entertainment Park',
           name: 'Wishful Fairy-Tale Market',
-          time: '12/06/2025 - 12/07/2025',
+          time: '12/12, 12/13, 12/14/2025',
           location: '1F Water Fountain Plaza, Seaside Avenue',
         },
-        event8: {
+        event5: {
           shop: 'Dayeh Takashimaya',
-          name: '100°C Warmth – Charity Sale for Children ',
-          time: '12/06/2025 - 12/25/2025',
+          name: '30°C Notes – Christmas Concert',
+          time: '12/13/2025',
           location: 'B1 Central Aquarium Plaza',
+        },
+        event6: {
+          shop: 'Dayeh Takashimaya',
+          name: '40°C Coolness – Ultraman Meet & Greet',
+          time: '12/14/2025',
+          location: 'B1 Central Aquarium Plaza',
+        },
+        event7: {
+          shop: 'Breeze Center',
+          name: 'Frozen Fates',
+          time: '12/13/2025, 12/14/2025',
+          location: "Santa's House on 1F, in front of the L5 elevator lobby",
         },
       },
       rules: {
@@ -260,7 +254,7 @@ export default {
         },
         cardRight: {
           title: 'Grand Prize Draw',
-          text: '(Winners announced in late Jan 2026 after the event ends)',
+          text: '(The list of winners will be announced after the event concludes on January 9, 2026.)',
           prize1: 'Department Store Voucher NT$10,000',
           prize2: 'Department Store Voucher NT$30,000',
           prize3: 'Department Store Voucher NT$100,000',
@@ -1083,7 +1077,7 @@ export default {
           lightName: 'Breeze Christmas Confession Avenue',
           shopName: 'Breeze Nan Shan',
           location: '1F Outdoor Area',
-          time: 'Late 11/2025-Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
         light19: {
           lightName: 'Colorful Night Festival',
@@ -1203,7 +1197,7 @@ export default {
           lightName: 'Breeze Christmas Confession Avenue',
           shopName: 'Breeze Xin Yi',
           location: '1F Outdoor Area',
-          time: 'Late 11/2025 – Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
       },
       eastern: {
@@ -1248,7 +1242,7 @@ export default {
           lightName: 'A Starry Christmas',
           shopName: 'Breeze Center',
           location: '1F, Fuxing S. Entrance & Civic Blvd. Entrance',
-          time: 'Late 11/2025 – Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
         light8: {
           lightName: 'Just Shine!',
@@ -1260,11 +1254,11 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: 'Breeze Nan Jing',
           location: '1F, Nanjing E. Rd. Entrance',
-          time: 'Late 11/2025 – Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
         light10: {
           lightName: 'Gate of Wishes',
-          shopName: "Don't call it a nigh",
+          shopName: "Don't call it a night",
           location: 'Liugong Green Corridor',
           time: '12/10/2025-03/08/2026',
         },
@@ -1276,7 +1270,7 @@ export default {
         },
         light12: {
           lightName: 'MERRY AND BRIGHT！',
-          shopName: "Don't call it a night",
+          shopName: '',
           location: 'Dinghao Plaza',
           time: '12/10/2025-03/08/2026',
         },
@@ -1317,7 +1311,7 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: 'Breeze Taipei Station',
           location: '1F Lobby, Taipei Main Station',
-          time: 'Late 11/2025 – Early 01/2026',
+          time: '11/28/2025-01/04/2026\n(Please confirm exhibition dates on-site.)',
         },
         light7: {
           lightName: 'Radiant Cubic Light Installation',

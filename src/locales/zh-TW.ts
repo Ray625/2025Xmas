@@ -138,52 +138,46 @@ export default {
       activity: {
         title: '聚客展演',
         event1: {
-          shop: 'ATT 4 FUN',
-          name: '繽紛玩夜祭',
-          time: '114/12/04 - 114/12/31',
-          location: 'ATT 1F側門及大門口',
-        },
-        event2: {
-          shop: '台北101',
-          name: '500趴 2025',
-          time: '114/12/05 - 114/12/07',
-          location: '水舞廣場',
-        },
-        event3: {
           shop: '台北101',
           name: '夢想舞台音樂會',
-          time: '114/12/06 - 114/12/07',
-          location: '4F都會廣場',
+          time: '114/12/13、114/12/14',
+          location: '4F 都會廣場',
+        },
+        event2: {
+          shop: '遠百信義A13',
+          name: '聖誕快閃派對',
+          time: '114/12/13、114/12/14',
+          location: '1F 北面廣場',
+        },
+        event3: {
+          shop: '遠東SOGO百貨 忠孝館',
+          name: '聖誕幸福樂章~音樂演奏',
+          time: '114/12/14',
+          location: '1F',
         },
         event4: {
-          shop: '遠東SOGO 忠孝館',
-          name: '聖誕幸福樂章~音樂演奏',
-          time: '114/12/06',
-          location: '1F',
-        },
-        event5: {
-          shop: '遠東SOGO 忠孝館',
-          name: '周末限定! 香港迪士尼拍貼小屋',
-          time: '114/12/06 - 114/12/07',
-          location: '1F',
-        },
-        event6: {
-          shop: '遠東SOGO 忠孝館',
-          name: '奇幻聖誕周末打卡贈',
-          time: '114/12/06 - 114/12/07',
-          location: '12F贈獎處',
-        },
-        event7: {
           shop: '美麗華百樂園',
           name: '星願童話市集',
-          time: '114/12/06 - 114/12/07',
-          location: '1F水舞廣場、海景大道',
+          time: '114/12/12、12/13、12/14',
+          location: '1F 水舞廣場、海景大道',
         },
-        event8: {
-          shop: '大葉高島屋',
-          name: '100°C 的暖心-喜憨兒義賣會',
-          time: '114/12/06 - 114/12/25',
-          location: 'B1F中央水族廣場',
+        event5: {
+          shop: '大葉髙島屋',
+          name: '30°C的音符-聖誕音樂會',
+          time: '114/12/13',
+          location: 'B1F 中央水族廣場',
+        },
+        event6: {
+          shop: '大葉髙島屋',
+          name: '40°C的帥氣-超人力霸王見面會',
+          time: '114/12/14',
+          location: 'B1F 中央水族廣場',
+        },
+        event7: {
+          shop: '微風廣場',
+          name: '北境雪夜聖誕神諭占卜 Frozen Fates',
+          time: '114/12/13、114/12/14',
+          location: '1F L5電梯梯廳前聖誕老人小屋',
         },
       },
       rules: {
@@ -255,7 +249,7 @@ export default {
           light1: {
             lightName: '台北101',
             shopName: 'B1 服務台',
-            location: '詳細信義區市府路45號位置',
+            location: '信義區市府路45號位置',
           },
           light2: {
             lightName: '台北101',
@@ -1050,7 +1044,7 @@ export default {
           lightName: '微風聖誕告白大道',
           shopName: '微風南山',
           location: '1F 館外',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
         light19: {
           lightName: '繽紛玩夜祭',
@@ -1171,7 +1165,7 @@ export default {
           lightName: '微風聖誕告白大道',
           shopName: '微風信義',
           location: '1F 忠孝東路五段\n(十米大門側)',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
       },
       eastern: {
@@ -1216,7 +1210,7 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: '微風廣場',
           location: '1F 復南大門與市民大門',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
         light8: {
           lightName: 'Just Shine! 閃耀時刻',
@@ -1228,11 +1222,11 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: '微風南京',
           location: '1F 南京東路大門口',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
         light10: {
           lightName: '星願之門',
-          shopName: "東區夜未眠\nDon't call it a nigh",
+          shopName: "東區夜未眠\nDon't call it a night",
           location: '瑠公綠廊',
           time: '114/12/10-115/03/08',
         },
@@ -1244,7 +1238,7 @@ export default {
         },
         light12: {
           lightName: 'MERRY AND BRIGHT！',
-          shopName: "東區夜未眠\nDon't call it a night",
+          shopName: '',
           location: '頂好廣場',
           time: '114/12/10-115/03/08',
         },
@@ -1285,7 +1279,7 @@ export default {
           lightName: 'A Starry Christmas ',
           shopName: '微風台北車站',
           location: '台北車站 1F 大廳',
-          time: '114/11底-115/01初',
+          time: '114/11/28-115/01/04\n實際展出時間依現場為主',
         },
         light7: {
           lightName: '炫光立次方裝置藝術',
