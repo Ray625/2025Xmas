@@ -1,9 +1,24 @@
 <template>
-  <section class="lights-section">
+  <section class="lights-section" :class="{ en: isEn }">
     <Container maxWidth="1440px">
       <div class="flex flex-col items-center">
         <SectionTitle preset="lights" class="lights-section__title" />
-        <SectionTabs v-model="activeTab" :tabs="tabs" class="lights-section__tabs" />
+        <div class="w-full relative lights-section__tabs">
+          <SectionTabs v-model="activeTab" :tabs="tabs" />
+          <img :src="snoopyTabsXinyi" alt="snoopy img" class="snoopyXinyi" :class="{ en: isEn }" />
+          <img
+            :src="snoopyTabsEastern"
+            alt="snoopy img"
+            class="snoopyEastern"
+            :class="{ en: isEn }"
+          />
+          <img
+            :src="snoopyTabsTaipei"
+            alt="snoopy img"
+            class="snoopyTaipei"
+            :class="{ en: isEn }"
+          />
+        </div>
         <Card
           v-if="activeTab === 0"
           title-key="sections.lights.xinyi.title"
@@ -145,6 +160,8 @@
         </Card>
       </div>
     </Container>
+    <img :src="snoopyFooter" alt="snoopy background" class="snoopy-bg" :class="{ en: isEn }" />
+    <img :src="snoopy" alt="snoopy background" class="snoopy-img" />
   </section>
 </template>
 <script setup lang="ts">
@@ -170,6 +187,11 @@ import xinyiMapMEn from '@/assets/map/m_section_07_map_01_xy_en.png'
 import easternMapMEn from '@/assets/map/m_section_07_map_02_ed_en.png'
 import taipeiMapMEn from '@/assets/map/m_section_07_map_03_other_en.png'
 import ximendingMapMEn from '@/assets/map/m_section_07_map_04_xm_en.png'
+import snoopyTabsXinyi from '@/assets/img/section_07_btn_01.png'
+import snoopyTabsEastern from '@/assets/img/section_07_btn_02.png'
+import snoopyTabsTaipei from '@/assets/img/section_07_btn_03.png'
+import snoopy from '@/assets/img/section_07_snoopy.png'
+import snoopyFooter from '@/assets/img/section_07_footer.png'
 
 import iconPlay from '@/assets/icon/play_blue.svg'
 import { tabsConfig } from '@/data/const'
@@ -199,9 +221,16 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 @use '@/styles/_mixins' as mixins;
 
 .lights-section {
-  padding-top: 12px;
+  position: relative;
   padding-bottom: 148px;
+  z-index: 1;
   background-color: vars.$bg-blue;
+  background-image: url('@/assets/img/m_section_07_footer.png');
+  background-repeat: no-repeat;
+  background-position: center bottom -26.8%;
+  &.en {
+    background-position: center bottom -24.8%;
+  }
 }
 
 .lights-section__title {
@@ -252,10 +281,104 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   }
 }
 
+.snoopyXinyi {
+  position: absolute;
+  width: 100%;
+  max-width: 78px;
+  bottom: -12px;
+  left: 4px;
+  pointer-events: none;
+  user-select: none;
+  &.en {
+    bottom: -12px;
+    left: 4px;
+  }
+}
+
+.snoopyTaipei {
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  right: -2px;
+  max-width: 96px;
+  pointer-events: none;
+  user-select: none;
+  &.en {
+    top: -8px;
+    right: -20px;
+  }
+}
+
+.snoopyEastern {
+  display: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.snoopy-img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  max-width: 180px;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  user-select: none;
+}
+
+.snoopy-bg {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .lights-section {
+    background-position: center bottom -18.4%;
+    padding-bottom: 200px;
+    &.en {
+      background-position: center bottom -17.4%;
+    }
+  }
+
+  .snoopy-img {
+    max-width: 235px;
+    transform: translate(-50%, 0);
+  }
+
+  .snoopyXinyi {
+    max-width: 98px;
+    bottom: -12px;
+    left: 8px;
+    pointer-events: none;
+    user-select: none;
+    &.en {
+      bottom: -12px;
+      left: 8px;
+    }
+  }
+
+  .snoopyTaipei {
+    top: 52px;
+    right: -4px;
+    max-width: 120px;
+    &.en {
+      top: 52px;
+      right: -4px;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .lights-section {
-    padding-top: 100px;
-    padding-bottom: 196px;
+    background-image: url('@/assets/img/section_07_footer.png');
+    background-position: center bottom -11.2%;
+    padding-bottom: 220px;
+    &.en {
+      background-position: center bottom -10.6%;
+    }
+  }
+
+  .snoopy-img {
+    max-width: 290px;
   }
 
   .lights-section__title {
@@ -276,9 +399,55 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  .snoopyXinyi {
+    bottom: -50px;
+    left: 0;
+    max-width: 80px;
+    &.en {
+      bottom: -50px;
+      left: 0;
+    }
+  }
+
+  .snoopyEastern {
+    position: absolute;
+    top: 80px;
+    right: 332px;
+    display: block;
+    width: 100%;
+    max-width: 80px;
+    &.en {
+      top: 80px;
+      right: 332px;
+    }
+  }
+
+  .snoopyTaipei {
+    top: 40px;
+    right: -12px;
+    max-width: 100px;
+    &.en {
+      top: 58px;
+      right: -24px;
+    }
+  }
 }
 
 @media (min-width: 1440px) {
+  .lights-section {
+    background-position: center bottom -11.6%;
+    padding-bottom: 260px;
+    &.en {
+      background-position: center bottom -11.2%;
+    }
+  }
+
+  .snoopy-img {
+    max-width: 345px;
+    transform: translate(-50%, 0);
+  }
+
   .map_m {
     display: none;
   }
@@ -291,12 +460,61 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
     margin-top: 32px;
     margin-bottom: 32px;
   }
+
+  .snoopyXinyi {
+    bottom: -50px;
+    left: 20px;
+    max-width: 136px;
+    &.en {
+      bottom: -50px;
+      left: 20px;
+    }
+  }
+
+  .snoopyEastern {
+    top: 76px;
+    right: 420px;
+    max-width: 100px;
+    &.en {
+      top: 76px;
+      right: 404px;
+    }
+  }
+
+  .snoopyTaipei {
+    top: -12px;
+    right: -22px;
+    max-width: 170px;
+    &.en {
+      top: -12px;
+      right: -22px;
+    }
+  }
 }
 
 @media (min-width: 1920px) {
   .lights-section {
-    padding-top: 100px;
-    padding-bottom: 240px;
+    padding-bottom: 300px;
+    background-image: none;
+  }
+
+  .snoopy-img {
+    max-width: 404px;
+    transform: translate(-50%, 0);
+    bottom: 10px;
+  }
+
+  .snoopy-bg {
+    position: absolute;
+    bottom: -8.4%;
+    left: 0;
+    width: 100%;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    &.en {
+      bottom: -7.8%;
+    }
   }
 
   .lights-section__title {
@@ -314,6 +532,36 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   .ximending__title {
     margin-top: 40px;
     margin-bottom: 40px;
+  }
+
+  .snoopyXinyi {
+    bottom: -88px;
+    left: 84px;
+    max-width: 156px;
+    &.en {
+      bottom: -88px;
+      left: 84px;
+    }
+  }
+
+  .snoopyEastern {
+    top: 70px;
+    right: 548px;
+    max-width: 114px;
+    &.en {
+      top: 72px;
+      right: 492px;
+    }
+  }
+
+  .snoopyTaipei {
+    top: -20px;
+    right: 40px;
+    max-width: 194px;
+    &.en {
+      top: -20px;
+      right: 40px;
+    }
   }
 }
 </style>

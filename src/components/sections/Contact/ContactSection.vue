@@ -17,6 +17,8 @@
               {{ t('sections.contact.mail') }}
             </ButtonAction>
           </a>
+          <img :src="snoopy" alt="snoopy" class="snoppy-mail" />
+          <img :src="snoopyStamp" alt="snoopy" class="snoppy-stamp" />
         </div>
         <div class="contact-section__event__container">
           <img
@@ -45,6 +47,8 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
 import ButtonAction from '@/components/common/ButtonAction.vue'
 import eventImg from '@/assets/img/section_12_banner.png'
 import eventImgM from '@/assets/img/m_section_12_banner.png'
+import snoopy from '@/assets/img/section_12_snoopy.png'
+import snoopyStamp from '@/assets/img/section_12_stamp.png'
 import { useI18n } from 'vue-i18n'
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
@@ -61,8 +65,12 @@ const handleGoToEventWeb = () => {
 
 .contact-section {
   padding-top: 24px;
-  padding-bottom: 44px;
+  padding-bottom: 96px;
   background-color: vars.$bg-blue;
+  background-image: url('@/assets/img/m_section_13_ribbon_top.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
 
   &__text {
     white-space: pre-line;
@@ -122,14 +130,39 @@ const handleGoToEventWeb = () => {
   display: none;
 }
 
+.snoppy-mail {
+  position: absolute;
+  width: 100%;
+  max-width: 132px;
+  bottom: -76px;
+  right: 26px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.snoppy-stamp {
+  position: absolute;
+  width: 100%;
+  max-width: 144px;
+  bottom: -38px;
+  left: 12px;
+  pointer-events: none;
+  user-select: none;
+}
+
 @media (min-width: 768px) {
   .contact-section {
     padding-top: 48px;
-    padding-bottom: 64px;
+    padding-bottom: 104px;
     &__text__container {
       padding: 48px 48px 64px;
       border-radius: 24px;
     }
+
+    background-image: url('@/assets/img/section_13_ribbon_top.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   .contact-section__text {
@@ -139,12 +172,24 @@ const handleGoToEventWeb = () => {
   .contact-section__event__img {
     border-radius: 16px;
   }
+
+  .snoppy-mail {
+    max-width: 160px;
+    bottom: -76px;
+    right: 26px;
+  }
+
+  .snoppy-stamp {
+    max-width: 188px;
+    bottom: -38px;
+    left: 12px;
+  }
 }
 
 @media (min-width: 1024px) {
   .contact-section {
-    padding-top: 168px;
-    padding-bottom: 224px;
+    padding-top: 132px;
+    padding-bottom: 148px;
   }
 
   .contact-section__title--m {
@@ -182,17 +227,24 @@ const handleGoToEventWeb = () => {
   .contact-section__event__img {
     border-radius: 32px;
   }
+
+  .snoppy-mail {
+    max-width: 188px;
+    bottom: -76px;
+    right: 26px;
+  }
+
+  .snoppy-stamp {
+    max-width: 232px;
+    bottom: -60px;
+    left: 12px;
+  }
 }
 
 @media (min-width: 1440px) {
   .contact-section {
     padding-top: 168px;
-    padding-bottom: 224px;
-  }
-
-  .contact-section {
-    padding-top: 168px;
-    padding-bottom: 224px;
+    padding-bottom: 200px;
     &__text__container {
       padding: 152px 24px 76px;
     }
@@ -217,15 +269,43 @@ const handleGoToEventWeb = () => {
   .contact-section__text {
     max-width: 780px;
   }
+
+  .snoppy-mail {
+    max-width: 212px;
+    bottom: -76px;
+    right: -18px;
+  }
+
+  .snoppy-stamp {
+    max-width: 276px;
+    bottom: -60px;
+    left: -28px;
+  }
 }
 
 @media (min-width: 1920px) {
+  .contact-section {
+    padding-bottom: 220px;
+  }
+
   .contact-section__wrapper {
     gap: 172px;
   }
 
   .contact-section__text {
     max-width: 960px;
+  }
+
+  .snoppy-mail {
+    max-width: 240px;
+    bottom: -69px;
+    right: -40px;
+  }
+
+  .snoppy-stamp {
+    max-width: 319px;
+    bottom: -73px;
+    left: -51px;
   }
 }
 </style>

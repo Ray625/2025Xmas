@@ -411,7 +411,7 @@
         <Card
           title-key="sections.raffle.map.title"
           text-bg-color="#28B590"
-          bodyPadding="156px 180px 192px 180px"
+          bodyPadding="156px 76px 108px"
           id="map"
           :title-bg-list-left="snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()"
           :title-bg-list-right="snoopyListRight(11, 8, 7, 4, 1)[breakpoint]"
@@ -437,10 +437,17 @@
                 t('sections.raffle.map.openLine')
               }}</ButtonAction>
             </div>
+            <img :src="snoopySnowLeft" alt="snoopy snow" class="snoopy-snow-left snoopy-snow" />
+            <img :src="snoopySnowRight" alt="snoopy snow" class="snoopy-snow-right snoopy-snow" />
+            <img :src="snoopySki" alt="snoopy ski" class="snoopy-ski" />
+            <img :src="snoopyWood" alt="snoopy wood" class="snoopy-wood" />
+            <img :src="snoopySkiM" alt="snoopy ski" class="snoopy-ski-m" />
           </div>
         </Card>
       </div>
     </Container>
+    <img :src="snoopyCandyM" alt="snoopy background" class="snoopy-bg-m" />
+    <img :src="snoopyCandy" alt="snoopy background" class="snoopy-bg" />
     <Pop :visible="openPopup" @close="handleTogglePopup" />
   </section>
 </template>
@@ -475,6 +482,13 @@ import snoopy from '@/assets/img/section_01_snoopy.png'
 import snoopyMobile from '@/assets/img/m_section_01_snoopy.png'
 import snoopyBird from '@/assets/img/section_02_woodstock.png'
 import snoopyGift from '@/assets/img/section_02_snoopy.png'
+import snoopySkiM from '@/assets/img/m_section_05_snoopy.png'
+import snoopySnowLeft from '@/assets/img/section_05_snow-left.png'
+import snoopySnowRight from '@/assets/img/section_05_snow-right.png'
+import snoopySki from '@/assets/img/section_05_snoopy.png'
+import snoopyWood from '@/assets/img/section_05_woodstock.png'
+import snoopyCandy from '@/assets/img/section_05_candy.png'
+import snoopyCandyM from '@/assets/img/m_section_05_candy.png'
 
 import { watch, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -529,7 +543,6 @@ const handleGoLineOA = () => {
   align-items: center;
   gap: 96px;
   padding-top: 26px;
-  padding-bottom: 32px;
 
   --gradient-height: 170px;
   background: linear-gradient(180deg, #75c7d7 0%, vars.$bg-blue 100%) top center / 100%
@@ -630,6 +643,36 @@ const handleGoLineOA = () => {
 
 .snoopy-gift {
   display: none;
+}
+
+.snoopy-ski {
+  display: none;
+}
+
+.snoopy-wood {
+  display: none;
+}
+
+.snoopy-ski-m {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 310px;
+}
+
+.snoopy-snow {
+  position: absolute;
+  width: 100%;
+  &-left {
+    bottom: 238px;
+    left: 0;
+    max-width: 124px;
+  }
+  &-right {
+    bottom: 256px;
+    right: 0;
+    max-width: 122px;
+  }
 }
 
 .step__text {
@@ -764,11 +807,13 @@ const handleGoLineOA = () => {
 }
 
 .map__card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
+  padding-bottom: 132px;
   &__map {
     width: 100%;
     aspect-ratio: 1/1;
@@ -806,10 +851,22 @@ const handleGoLineOA = () => {
   max-width: 200px;
 }
 
+.snoopy-bg-m {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: auto;
+  margin-top: -60px;
+  margin-bottom: -2px;
+}
+
+.snoopy-bg {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .raffle-section {
     padding-top: 48px;
-    padding-bottom: 56px;
     --gradient-height: 200px;
     &__title {
       margin-bottom: 24px;
@@ -899,6 +956,41 @@ const handleGoLineOA = () => {
     display: none;
   }
 
+  .snoopy-snow {
+    &-left {
+      bottom: 168px;
+      left: 0;
+      max-width: 144px;
+    }
+    &-right {
+      bottom: 188px;
+      right: 0;
+      max-width: 142px;
+    }
+  }
+
+  .snoopy-wood {
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    display: block;
+    height: 100%;
+    max-height: 124px;
+  }
+
+  .snoopy-ski {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    max-height: 120px;
+  }
+
+  .snoopy-ski-m {
+    display: none;
+  }
+
   .prize-card__note__wrapper {
     display: flex;
     flex-direction: row;
@@ -907,6 +999,7 @@ const handleGoLineOA = () => {
   }
 
   .map__card {
+    padding-bottom: 60px;
     &__map {
       width: 100%;
       aspect-ratio: 10 / 7;
@@ -954,13 +1047,26 @@ const handleGoLineOA = () => {
   .snoopy-circle_m {
     display: none;
   }
+
+  .snoopy-bg-m {
+    display: none;
+  }
+
+  .snoopy-bg {
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: -32px;
+    margin-bottom: -2px;
+  }
 }
 
 @media (min-width: 1024px) {
   .raffle-section {
     gap: 136px;
     padding-top: 120px;
-    padding-bottom: 160px;
 
     --gradient-height: 368px;
     &__title {
@@ -1044,10 +1150,37 @@ const handleGoLineOA = () => {
     max-width: 260px;
   }
 
+  .snoopy-snow {
+    &-left {
+      top: -24px;
+      bottom: unset;
+      left: 0;
+      max-width: 184px;
+    }
+    &-right {
+      top: -24px;
+      bottom: unset;
+      right: 0;
+      max-width: 180px;
+    }
+  }
+
+  .snoopy-wood {
+    max-height: 144px;
+  }
+
+  .snoopy-ski {
+    max-height: 140px;
+  }
+
   .map__card {
+    padding-top: 48px;
+    padding-bottom: 0;
     &__map {
-      width: 100%;
-      aspect-ratio: 10 / 8;
+      width: 80%;
+      aspect-ratio: 10 / 6;
+      margin-left: auto;
+      margin-right: auto;
       margin-bottom: 60px;
       border-radius: 16px;
     }
@@ -1092,7 +1225,6 @@ const handleGoLineOA = () => {
   .raffle-section {
     gap: 148px;
     padding-top: 130px;
-    padding-bottom: 180px;
 
     --gradient-height: 400px;
     &__title {
@@ -1129,12 +1261,34 @@ const handleGoLineOA = () => {
   }
 
   .map__card {
+    padding-bottom: 64px;
     &__map {
-      width: 100%;
+      width: 88%;
       aspect-ratio: 1080 / 548;
       margin-bottom: 60px;
       border-radius: 16px;
     }
+  }
+
+  .snoopy-snow {
+    &-left {
+      top: -60x;
+      left: -32px;
+      max-width: 220px;
+    }
+    &-right {
+      top: -28px;
+      right: -40px;
+      max-width: 212px;
+    }
+  }
+
+  .snoopy-ski {
+    max-height: 180px;
+  }
+
+  .snoopy-wood {
+    max-height: 172px;
   }
 
   .snoopy-decorate {
@@ -1174,7 +1328,6 @@ const handleGoLineOA = () => {
   .raffle-section {
     gap: 172px;
     padding-top: 135px;
-    padding-bottom: 194px;
 
     --gradient-height: 427px;
     &__title {
@@ -1225,6 +1378,37 @@ const handleGoLineOA = () => {
   .prize-card__prize__quota {
     min-width: 94px;
     padding: 0 14px;
+  }
+
+  .map__card {
+    padding-top: 0;
+    padding-bottom: 88px;
+    &__map {
+      width: 84%;
+      aspect-ratio: 1080 / 548;
+    }
+  }
+
+  .snoopy-snow {
+    &-left {
+      top: -100px;
+      left: -28px;
+      max-width: 260px;
+    }
+    &-right {
+      top: -88px;
+      right: -20px;
+      max-width: 256px;
+    }
+  }
+
+  .snoopy-ski {
+    max-height: 220px;
+  }
+
+  .snoopy-wood {
+    max-height: 228px;
+    right: 12px;
   }
 
   .snoopy-prize_2 {
