@@ -693,14 +693,14 @@
                 <div class="locale-card__list">
                   <div class="flex flex-col gap-4 flex-1">
                     <CardEvent
-                      v-for="(event, index) in easternList.eslite.eventLeft"
+                      v-for="(event, index) in taipeiList.SKM.eventLeft"
                       :key="index"
                       :eventData="event"
                     />
                   </div>
                   <div class="flex flex-col gap-4 flex-1">
                     <CardEvent
-                      v-for="(event, index) in easternList.eslite.eventRight"
+                      v-for="(event, index) in taipeiList.SKM.eventRight"
                       :key="index"
                       :eventData="event"
                     />
@@ -741,14 +741,14 @@
                 <div class="locale-card__list">
                   <div class="flex flex-col gap-4 flex-1">
                     <CardEvent
-                      v-for="(event, index) in easternList.eslite.eventLeft"
+                      v-for="(event, index) in taipeiList.SKM.eventLeft"
                       :key="index"
                       :eventData="event"
                     />
                   </div>
                   <div class="flex flex-col gap-4 flex-1">
                     <CardEvent
-                      v-for="(event, index) in easternList.eslite.eventRight"
+                      v-for="(event, index) in taipeiList.SKM.eventRight2"
                       :key="index"
                       :eventData="event"
                     />
