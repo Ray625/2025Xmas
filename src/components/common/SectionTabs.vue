@@ -135,5 +135,10 @@ const styleVars = computed(() => ({
   .section-tabs {
     gap: 36px;
   }
+
+  .section-tabs__item {
+    max-width: 340px;
+    padding: 40px;
+  }
 }
 </style>

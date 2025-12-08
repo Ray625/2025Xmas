@@ -536,31 +536,31 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 
   .snoopyXinyi {
     bottom: -88px;
-    left: 144px;
+    left: 84px;
     max-width: 156px;
     &.en {
       bottom: -88px;
-      left: 144px;
+      left: 84px;
     }
   }
 
   .snoopyEastern {
     top: 70px;
-    right: 568px;
+    right: 548px;
     max-width: 114px;
     &.en {
       top: 72px;
-      right: 512px;
+      right: 492px;
     }
   }
 
   .snoopyTaipei {
     top: -20px;
-    right: 100px;
+    right: 40px;
     max-width: 194px;
     &.en {
       top: -20px;
-      right: 100px;
+      right: 40px;
     }
   }
 }

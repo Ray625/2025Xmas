@@ -143,7 +143,7 @@ const handleGoToEventWeb = () => {
 
 @media (min-width: 1024px) {
   .contact-section {
-    padding-top: 168px;
+    padding-top: 132px;
     padding-bottom: 224px;
   }
 

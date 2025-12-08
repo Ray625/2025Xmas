@@ -1220,31 +1220,31 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
 
   .snoopyXinyi {
     top: -18px;
-    left: 192px;
+    left: 132px;
     max-width: 103px;
     &.en {
       top: -12px;
-      left: 176px;
+      left: 116px;
     }
   }
 
   .snoopyEastern {
     top: 12px;
-    right: 544px;
+    right: 524px;
     max-width: 116px;
     &.en {
       top: 16px;
-      right: 500px;
+      right: 480px;
     }
   }
 
   .snoopyTaipei {
     top: -68px;
-    right: 192px;
+    right: 132px;
     max-width: 116px;
     &.en {
       top: -64px;
-      right: 178px;
+      right: 118px;
     }
   }
 

@@ -42,9 +42,9 @@
     <div class="bg-footer">
       <div class="bg-footer-dark"></div>
       <div class="bg-footer-light"></div>
-      <img :src="snoopyBg" alt="" class="snoopy-bg" />
-      <img :src="snoopyM" alt="" class="snoopy-m" />
-      <img :src="snoopy" alt="" class="snoopy" />
+      <img :src="snoopyBg" alt="snoopy background" class="snoopy-bg" />
+      <img :src="snoopyM" alt="snoopy" class="snoopy-m" />
+      <img :src="snoopy" alt="snoopy" class="snoopy" />
     </div>
   </section>
 </template>
