@@ -1,5 +1,5 @@
 <template>
-  <section class="lights-section" :class="{ en: isEn }">
+  <section class="lights-section">
     <Container maxWidth="1440px">
       <div class="flex flex-col items-center">
         <SectionTitle preset="lights" class="lights-section__title" />
@@ -160,7 +160,10 @@
         </Card>
       </div>
     </Container>
-    <img :src="snoopyFooter" alt="snoopy background" class="snoopy-bg" :class="{ en: isEn }" />
+    <div class="bg-footer">
+      <img :src="snoopyFooter" alt="snoopy background" class="snoopy-bg" :class="{ en: isEn }" />
+      <img :src="snoopyFooterM" alt="snoopy background" class="snoopy-bg-m" :class="{ en: isEn }" />
+    </div>
     <img :src="snoopy" alt="snoopy background" class="snoopy-img" />
   </section>
 </template>
@@ -192,6 +195,7 @@ import snoopyTabsEastern from '@/assets/img/section_07_btn_02.png'
 import snoopyTabsTaipei from '@/assets/img/section_07_btn_03.png'
 import snoopy from '@/assets/img/section_07_snoopy.png'
 import snoopyFooter from '@/assets/img/section_07_footer.png'
+import snoopyFooterM from '@/assets/img/m_section_07_footer.png'
 
 import iconPlay from '@/assets/icon/play_blue.svg'
 import { tabsConfig } from '@/data/const'
@@ -225,12 +229,6 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   padding-bottom: 148px;
   z-index: 1;
   background-color: vars.$bg-blue;
-  background-image: url('@/assets/img/m_section_07_footer.png');
-  background-repeat: no-repeat;
-  background-position: center bottom -26.8%;
-  &.en {
-    background-position: center bottom -24.8%;
-  }
 }
 
 .lights-section__title {
@@ -330,13 +328,28 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   display: none;
 }
 
+.bg-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.snoopy-bg-m {
+  position: absolute;
+  top: 52%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
 @media (min-width: 768px) {
   .lights-section {
-    background-position: center bottom -18.4%;
     padding-bottom: 200px;
-    &.en {
-      background-position: center bottom -17.4%;
-    }
   }
 
   .snoopy-img {
@@ -365,11 +378,32 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
       right: -4px;
     }
   }
+
+  .snoopy-bg {
+    position: absolute;
+    top: 64%;
+    left: 0;
+    right: 0;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .bg-footer {
+    bottom: 0;
+    height: 200px;
+  }
+
+  .snoopy-bg-m {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
   .lights-section {
     background-image: url('@/assets/img/section_07_footer.png');
+    background-image: none;
+
     background-position: center bottom -11.2%;
     padding-bottom: 220px;
     &.en {
@@ -379,6 +413,15 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 
   .snoopy-img {
     max-width: 290px;
+  }
+
+  .snoopy-bg {
+    top: 55%;
+  }
+
+  .bg-footer {
+    bottom: 0;
+    height: 200px;
   }
 
   .lights-section__title {
@@ -448,6 +491,15 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
     transform: translate(-50%, 0);
   }
 
+  .snoopy-bg {
+    top: 55%;
+  }
+
+  .bg-footer {
+    bottom: 0;
+    height: 260px;
+  }
+
   .map_m {
     display: none;
   }
@@ -495,7 +547,6 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 @media (min-width: 1920px) {
   .lights-section {
     padding-bottom: 300px;
-    background-image: none;
   }
 
   .snoopy-img {
@@ -504,17 +555,14 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
     bottom: 10px;
   }
 
+  .bg-footer {
+    bottom: 0;
+    height: 260px;
+  }
+
   .snoopy-bg {
-    position: absolute;
-    bottom: -8.4%;
-    left: 0;
+    top: 106px;
     width: 100%;
-    display: block;
-    pointer-events: none;
-    user-select: none;
-    &.en {
-      bottom: -7.8%;
-    }
   }
 
   .lights-section__title {
@@ -562,6 +610,17 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
       top: -20px;
       right: 40px;
     }
+  }
+}
+
+@media (min-width: 2560px) {
+  .bg-footer {
+    bottom: 0;
+    height: 260px;
+  }
+
+  .snoopy-bg {
+    top: 40px;
   }
 }
 </style>
