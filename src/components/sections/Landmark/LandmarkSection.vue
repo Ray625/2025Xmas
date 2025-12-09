@@ -98,7 +98,7 @@ const isEn = computed(() => locale.value.startsWith('en'))
   background-image: url('@/assets/img/m_section_07_footer.png'),
     url('@/assets/img/m_section_08_bg.png');
   background-repeat: no-repeat;
-  background-position: center top -22%, center top 11.8%;
+  background-position: center top -20%, center top 11.8%;
   background-size: auto, contain;
 }
 
