@@ -667,7 +667,8 @@ export default {
           },
         },
         FEDS: {
-          title: 'FEDS Xinyi A13',
+          title: 'Far Eastern Department Stores XinYi A13',
+          shop: 'Far Eastern Department Stores\nXinYi A13',
           location: 'No. 58, Songren Rd., Xinyi Dist. Tel: (02) 7750-0888',
           event: {
             title: '【Colorful Wonderland – Adventurers, Assemble!】',
@@ -1111,7 +1112,7 @@ export default {
         },
         light24: {
           lightName: 'Glorious Corridor',
-          shopName: 'FEDS Xinyi A13',
+          shopName: 'Far Eastern Department Stores XinYi A13',
           location: '1F East Corridor (Songren Rd. Pedestrian Walkway)',
           time: '11/17/2025-01/05/2026',
         },
@@ -1491,7 +1492,7 @@ export default {
       light6: {
         lightName: 'Dream Light Bridge',
         shopName: 'Far Eastern Xinyi A13',
-        location: 'Skywalk at FEDS Xinyi A13',
+        location: 'Skywalk at Far Eastern Department Stores XinYi A13',
         time: '11/17/2025-01/05/2026',
       },
       light7: {
@@ -1553,7 +1554,7 @@ export default {
           mrt: 'Bannan Line: Taipei City Hall Station, Exit 2, then walk about 3 minutes',
         },
         A13: {
-          title: 'FEDS Xinyi A13',
+          title: 'Far Eastern Department Stores XinYi A13',
           bus: '20, 212 (Direct), 651 (Weekends), 669, 939',
           mrt: 'Bannan Line: Taipei City Hall Station, Exit 3, then walk about 3 minutes',
         },

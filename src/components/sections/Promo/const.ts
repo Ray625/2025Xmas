@@ -119,7 +119,7 @@ export function usePromoLocations() {
       ],
       locationList_m: [
         {
-          shopKey: 'sections.promo.xinyi.FEDS.title',
+          shopKey: 'sections.promo.xinyi.FEDS.shop',
           locationKey: 'sections.promo.xinyi.FEDS.location',
         },
       ],
