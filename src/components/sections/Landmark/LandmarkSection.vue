@@ -201,7 +201,11 @@ const isEn = computed(() => locale.value.startsWith('en'))
 
 @media (min-width: 768px) {
   .landmark-section {
+    background-image: url('@/assets/img/section_07_footer.png'),
+      url('@/assets/img/m_section_08_bg.png');
+    background-repeat: no-repeat;
     background-position: center top -14.6%, center top 9.4%;
+    background-size: auto, contain;
   }
 
   .bg-footer {
