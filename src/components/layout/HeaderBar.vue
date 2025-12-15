@@ -63,7 +63,7 @@
       @mouseenter="isHover = true"
       @mouseleave="isHover = false"
     >
-      <a :href="manual" target="_blank" class="flex gap-1 flex-col items-center">
+      <a :href="isEn ? manualEn : manual" target="_blank" class="flex gap-1 flex-col items-center">
         <span class="whitespace-pre-line">
           {{ t(`header.download`) }}
         </span>
@@ -95,6 +95,7 @@ import social_yt from '@/assets/icon/social_yt.svg'
 import buttonDownload from '@/assets/icon/download.svg'
 import buttonDownloadPurple from '@/assets/icon/download_purple.svg'
 import manual from '/assets/2025_Christmas-Event_Guide.pdf'
+import manualEn from '/assets/2025_Christmas-Event_Guide_en.pdf'
 import { ref } from 'vue'
 
 import { computed } from 'vue'

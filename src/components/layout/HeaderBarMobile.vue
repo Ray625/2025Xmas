@@ -24,7 +24,7 @@
       <div class="header-actions">
         <!-- 下載按鈕 -->
         <button class="download-btn hover" :class="{ en: isEn }">
-          <a :href="manual" target="_blank" class="flex gap-1">
+          <a :href="isEn ? manualEn : manual" target="_blank" class="flex gap-1">
             <span>
               {{ t(`header.download_m`) }}
             </span>
@@ -100,6 +100,7 @@ import buttonDownload from '@/assets/icon/download.svg'
 import social_fb from '@/assets/icon/social_fb.svg'
 import social_yt from '@/assets/icon/social_yt.svg'
 import manual from '/assets/2025_Christmas-Event_Guide.pdf'
+import manualEn from '/assets/2025_Christmas-Event_Guide_en.pdf'
 
 import { ref, watch, onBeforeUnmount, computed } from 'vue'
 
