@@ -41,6 +41,9 @@ const styleVars = computed(() => ({
   white-space: nowrap;
   @include mixins.typography(12px, 1.5, 700, vars.$color-white);
   &.en {
+    margin-top: 2px;
+    padding: 2px 8px;
+    align-self: flex-start;
     @include mixins.typography(10px, 1.5, 700, vars.$color-white);
   }
 }

@@ -61,6 +61,11 @@ export default {
       shop: 'Shopping District',
       location: 'Event Location',
     },
+    flashTag: {
+      shop: 'Department Store',
+      time: 'Event Time',
+      location: 'Event Location',
+    },
   },
   popup: {
     title: 'Realm of Light Double Draw',
@@ -164,8 +169,95 @@ export default {
         text4:
           'Come visit Taipei and follow the radiant displays to uncover new surprises—and experience the most romantic glow of the winter night.',
       },
+      flash: {
+        title: 'Light-Seeking Pop-up Team',
+        tableTitle: {
+          date: 'Event Date',
+          shop: 'Department Store',
+          time: 'Event Time',
+          location: 'Event Location',
+        },
+        event1: {
+          date: '12/20/2025 (Sat)',
+          shop: 'Dayeh Takashimaya',
+          time: '14:10 - 15:30',
+          location: 'Outer perimeter of Section 2, Zhongcheng Road',
+        },
+        event2: {
+          date: '12/20/2025 (Sat)',
+          shop: 'Shin Kong Mitsukoshi Taipei Station Store',
+          time: '15:45 - 17:15',
+          location: 'Outer perimeter of Section 2, Zhongcheng Road',
+        },
+        event3: {
+          date: '12/20/2025 (Sat)',
+          shop: 'Miramar Entertainment Park',
+          time: '18:15 - 20:05',
+          location: 'Miramar Entertainment Park outer plaza',
+        },
+        event4: {
+          date: '12/21/2025 (Sun)',
+          shop: 'Vieshow Cinemas Taipei Xinyi',
+          time: '14:10 – 16:00',
+          location: 'Vieshow Cinemas walkway outside the square',
+        },
+        event5: {
+          date: '12/21/2025 (Sun)',
+          shop: 'ATT 4 FUN',
+          time: '16:05 – 17:35',
+          location: 'ATT 4 FUN Bar Street',
+        },
+        event6: {
+          date: '12/21/2025 (Sun)',
+          shop: 'LaLaport Nangang',
+          time: '18:05 - 20:05',
+          location: 'B1, South Plaza (next to the lighting display)',
+        },
+        event7: {
+          date: '12/27/2025 (Sat)',
+          shop: 'Taipei 101',
+          time: '14:10 – 16:00',
+          location: 'Taipei 101 outer plaza',
+        },
+        event8: {
+          date: '12/27/2025 (Sat)',
+          shop: 'Breeze Nan Shan',
+          time: '16:05 – 18:00',
+          location: 'Songzhi Road walkway',
+        },
+        event9: {
+          date: '12/27/2025 (Sat)',
+          shop: 'Shin Kong Mitsukoshi Xinyi Place',
+          time: '18:10 - 20:05',
+          location: 'Xiangti Avenue Plaza',
+        },
+        event10: {
+          date: '12/28/2025 (Sun)',
+          shop: 'Far Eastern SOGO Zhongxiao Store',
+          time: '14:10 – 16:00',
+          location: "45, Section 4, Zhongxiao East Road, Da'an District, Taipei City, 106, Taiwan",
+        },
+        event11: {
+          date: '12/28/2025 (Sun)',
+          shop: 'Shin Kong Mitsukoshi – Diamond Towers (Zhongxiao Store)',
+          time: '16:10 –18:00',
+          location: "268, Section 3, Zhongxiao East Road, Da'an District, Taipei, Taiwan",
+        },
+        event12: {
+          date: '12/28/2025 (Sun)',
+          shop: 'Ming Yao Department Store',
+          time: '18:20 - 20:05',
+          location: "200, Section 4, Zhongxiao East Road, Da'an District, Taipei City, 106, Taiwan",
+        },
+      },
       activity: {
         title: 'Performances & Events',
+        tableTitle: {
+          date: 'Event Date',
+          shop: 'Department Store',
+          time: 'Event Name',
+          location: 'Event Location',
+        },
         event1: {
           shop: 'Shin Kong Mitsukoshi, Taipei Station Store',
           name: 'Christmas Caroling',

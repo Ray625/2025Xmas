@@ -32,6 +32,42 @@
       <SectionTitle preset="activity" class="raffle-section__title" />
       <div class="raffle-section__content">
         <Card
+          title-key="sections.raffle.flash.title"
+          text-bg-color="#FF8E9F"
+          body-padding="20px"
+          sm-body-padding="0"
+          md-body-padding="0"
+          lg-body-padding="20px"
+          xl-body-padding="20px"
+          :title-bg-list-left="
+            isEn
+              ? snoopyListLeft(8, 7, 5, 3, 0)[breakpoint]?.reverse()
+              : snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()
+          "
+          :title-bg-list-right="
+            isEn
+              ? snoopyListRight(8, 7, 5, 3, 0)[breakpoint]
+              : snoopyListRight(11, 8, 7, 4, 1)[breakpoint]
+          "
+          :title-bg-gap="snoopyListGap[breakpoint]"
+          title-bg-color="#FFB8C3"
+        >
+          <TableFieldTitle
+            v-if="['xl', 'lg', 'md'].includes(breakpoint)"
+            v-for="activity in flashTitle"
+            :event="activity"
+            bg-color="#FF8E9F"
+            text-color="#fff"
+            label-for="flash"
+          />
+          <TableFieldFlash
+            v-for="(activity, index) in flashList"
+            :event="activity"
+            :bg-color="index % 2 === 0 ? '#fff' : '#ffe7eb'"
+            :has-radius="flashList.length === index + 1"
+          />
+        </Card>
+        <Card
           title-key="sections.raffle.activity.title"
           text-bg-color="#FF8E9F"
           body-padding="20px"
@@ -41,21 +77,28 @@
           xl-body-padding="20px"
           :title-bg-list-left="
             isEn
-              ? snoopyListLeft(9, 7, 6, 4, 1)[breakpoint]?.reverse()
+              ? snoopyListLeft(9, 7, 6, 3, 1)[breakpoint]?.reverse()
               : snoopyListLeft(11, 8, 7, 4, 1)[breakpoint]?.reverse()
           "
           :title-bg-list-right="
             isEn
-              ? snoopyListRight(9, 7, 6, 4, 1)[breakpoint]
+              ? snoopyListRight(9, 7, 6, 3, 1)[breakpoint]
               : snoopyListRight(11, 8, 7, 4, 1)[breakpoint]
           "
           :title-bg-gap="snoopyListGap[breakpoint]"
           title-bg-color="#FFB8C3"
         >
+          <TableFieldTitle
+            v-if="['xl', 'lg', 'md'].includes(breakpoint)"
+            v-for="activity in activityTitle"
+            :event="activity"
+            bg-color="#FF8E9F"
+            text-color="#fff"
+          />
           <TableField
             v-for="(activity, index) in activityList"
             :event="activity"
-            :bg-color="index % 2 === 1 ? '#fff' : '#ffe7eb'"
+            :bg-color="index % 2 === 0 ? '#fff' : '#ffe7eb'"
             :has-radius="activityList.length === index + 1"
           />
         </Card>
@@ -462,7 +505,8 @@ import TagHighlight from '@/components/common/TagHighlight.vue'
 import ButtonAction from '@/components/common/ButtonAction.vue'
 import Pop from '@/components/sections/Raffle/Pop.vue'
 import TableField from '@/components/common/TableField.vue'
-
+import TableFieldFlash from '@/components/common/TableFieldFlash.vue'
+import TableFieldTitle from '@/components/common/TableFieldTitle.vue'
 import iconClock from '@/assets/icon/clock.svg'
 import iconMap from '@/assets/icon/map.svg'
 import iconGift from '@/assets/icon/gift.svg'
@@ -498,7 +542,8 @@ import { xinyiCollect, easternCollect, taipeiCollect } from '@/components/sectio
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 
-const { prizeLeft, prizeRight, activityList } = useRaffleConstants()
+const { prizeLeft, prizeRight, activityList, activityTitle, flashList, flashTitle } =
+  useRaffleConstants()
 const { t, locale } = useI18n()
 
 const isEn = computed(() => locale.value.startsWith('en'))

@@ -37,6 +37,11 @@ export default {
       shop: '百貨商圈',
       location: '展演地點',
     },
+    flashTag: {
+      shop: '百貨',
+      time: '活動時間',
+      location: '活動地點',
+    },
   },
   title: {
     activity: '本週活動快訊',
@@ -135,8 +140,95 @@ export default {
           '加入2025繽紛耶誕玩台北LINE活動，\n參加光之覓境雙重抽，價值超過百萬元百貨好禮等你拿！',
         text4: '大家相揪來臺北市，跟著絢麗燈飾尋找驚喜，\n感受冬夜最浪漫的閃耀時刻吧！',
       },
+      flash: {
+        title: '尋光快閃隊',
+        tableTitle: {
+          date: '活動日期',
+          shop: '百貨',
+          time: '活動時間',
+          location: '活動地點',
+        },
+        event1: {
+          date: '114/12/20(六)',
+          shop: '大葉高島屋',
+          time: '14:10 - 15:30',
+          location: '忠誠路二段外圍',
+        },
+        event2: {
+          date: '114/12/20(六)',
+          shop: '新光三越天母館',
+          time: '15:45 - 17:15',
+          location: '忠誠路二段外圍',
+        },
+        event3: {
+          date: '114/12/20(六)',
+          shop: '美麗華',
+          time: '18:15 - 20:05',
+          location: '美麗華廣場',
+        },
+        event4: {
+          date: '114/12/21(日)',
+          shop: '信義威秀',
+          time: '14:10 – 16:00',
+          location: '威秀廣場外走道',
+        },
+        event5: {
+          date: '114/12/21(日)',
+          shop: 'ATT 4 FUN',
+          time: '16:05 – 17:35',
+          location: 'ATT 4 FUN Bar Street',
+        },
+        event6: {
+          date: '114/12/21(日)',
+          shop: 'LaLaport 南港',
+          time: '18:05 - 20:05',
+          location: '南廣場燈飾旁',
+        },
+        event7: {
+          date: '114/12/27(六)',
+          shop: '台北101',
+          time: '14:10 – 16:00',
+          location: '101館外',
+        },
+        event8: {
+          date: '114/12/27(六)',
+          shop: '微風南山',
+          time: '16:05 – 18:00',
+          location: '微風南山松智路側',
+        },
+        event9: {
+          date: '114/12/27(六)',
+          shop: '新光三越 A11',
+          time: '18:10 - 20:05',
+          location: '香堤廣場',
+        },
+        event10: {
+          date: '114/12/28(日)',
+          shop: 'SOGO 忠孝館',
+          time: '14:10 – 16:00',
+          location: '館外忠孝東路四段側',
+        },
+        event11: {
+          date: '114/12/28(日)',
+          shop: '新光三越忠孝館',
+          time: '16:10 –18:00',
+          location: '館外忠孝東路三段側',
+        },
+        event12: {
+          date: '114/12/28(日)',
+          shop: '明曜百貨',
+          time: '18:20 - 20:05',
+          location: '館外忠孝東路四段側',
+        },
+      },
       activity: {
         title: '聚客展演',
+        tableTitle: {
+          date: '活動日期',
+          shop: '百貨',
+          time: '活動名稱',
+          location: '活動地點',
+        },
         event1: {
           shop: '新光三越 站前店',
           name: '耶誕報佳音',

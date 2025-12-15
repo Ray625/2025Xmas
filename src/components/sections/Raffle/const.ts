@@ -69,9 +69,40 @@ export function useRaffleConstants() {
     }
   })
 
+  const flashList = Array.from({ length: 6 }).map((_, index) => {
+    const num = index + 1
+    return {
+      time: `sections.raffle.flash.event${num}.time`,
+      date: `sections.raffle.flash.event${num}.date`,
+      location: `sections.raffle.flash.event${num}.location`,
+      shop: `sections.raffle.flash.event${num}.shop`,
+    }
+  })
+
+  const flashTitle = [
+    {
+      time: `sections.raffle.flash.tableTitle.time`,
+      date: `sections.raffle.flash.tableTitle.date`,
+      location: `sections.raffle.flash.tableTitle.location`,
+      shop: `sections.raffle.flash.tableTitle.shop`,
+    },
+  ]
+
+  const activityTitle = [
+    {
+      time: `sections.raffle.activity.tableTitle.time`,
+      date: `sections.raffle.activity.tableTitle.date`,
+      location: `sections.raffle.activity.tableTitle.location`,
+      shop: `sections.raffle.activity.tableTitle.shop`,
+    },
+  ]
+
   return {
     prizeLeft,
     prizeRight,
     activityList,
+    activityTitle,
+    flashList,
+    flashTitle,
   }
 }
