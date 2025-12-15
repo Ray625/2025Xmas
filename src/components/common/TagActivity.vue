@@ -33,7 +33,9 @@ const styleVars = computed(() => ({
 .tag {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: fit-content;
+  min-width: 64px;
   height: fit-content;
   padding: 0 8px;
   border-radius: 4px;
@@ -43,6 +45,7 @@ const styleVars = computed(() => ({
   &.en {
     margin-top: 2px;
     padding: 2px 8px;
+    min-width: unset;
     align-self: flex-start;
     @include mixins.typography(10px, 1.5, 700, vars.$color-white);
   }

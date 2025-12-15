@@ -1,9 +1,9 @@
 <template>
   <div class="table-field" :style="styleVars" :class="{ flash: labelFor === 'flash' }">
-    <p class="table-field__time">{{ t(`${event.date}`) }}</p>
-    <p class="table-field__shop-name">{{ t(`${event.shop}`) }}</p>
-    <p class="table-field__activity">{{ t(`${event.time}`) }}</p>
-    <p class="table-field__location">{{ t(`${event.location}`) }}</p>
+    <p class="table-field__time">{{ t(`${eventData.date}`) }}</p>
+    <p class="table-field__shop-name">{{ t(`${eventData.shop}`) }}</p>
+    <p class="table-field__activity">{{ t(`${eventData.time}`) }}</p>
+    <p class="table-field__location">{{ t(`${eventData.location}`) }}</p>
   </div>
 </template>
 <script setup lang="ts">
@@ -11,7 +11,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
-type event = {
+type eventData = {
   time: string
   date: string
   shop: string
@@ -20,7 +20,7 @@ type event = {
 
 const props = withDefaults(
   defineProps<{
-    event: event
+    eventData: eventData
     borderRadius?: string
     hasRadius?: boolean
     bgColor?: string

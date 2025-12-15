@@ -55,14 +55,14 @@
           <TableFieldTitle
             v-if="['xl', 'lg', 'md'].includes(breakpoint)"
             v-for="activity in flashTitle"
-            :event="activity"
+            :event-data="activity"
             bg-color="#FF8E9F"
             text-color="#fff"
             label-for="flash"
           />
           <TableFieldFlash
             v-for="(activity, index) in flashList"
-            :event="activity"
+            :event-data="activity"
             :bg-color="index % 2 === 0 ? '#fff' : '#ffe7eb'"
             :has-radius="flashList.length === index + 1"
           />
@@ -91,13 +91,13 @@
           <TableFieldTitle
             v-if="['xl', 'lg', 'md'].includes(breakpoint)"
             v-for="activity in activityTitle"
-            :event="activity"
+            :event-data="activity"
             bg-color="#FF8E9F"
             text-color="#fff"
           />
           <TableField
             v-for="(activity, index) in activityList"
-            :event="activity"
+            :event-data="activity"
             :bg-color="index % 2 === 0 ? '#fff' : '#ffe7eb'"
             :has-radius="activityList.length === index + 1"
           />

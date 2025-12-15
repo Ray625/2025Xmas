@@ -34,7 +34,7 @@ export default {
     },
     activityTag: {
       name: '展演活動',
-      shop: '百貨商圈',
+      shop: '百貨',
       location: '展演地點',
     },
     flashTag: {

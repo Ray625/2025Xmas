@@ -1,24 +1,24 @@
 <template>
   <div class="table-field" :style="styleVars">
-    <p class="table-field__time">{{ t(`${event.date}`) }}</p>
-    <p class="table-field__shop-name">{{ t(`${event.shop}`) }}</p>
-    <p class="table-field__activity">{{ t(`${event.time}`) }}</p>
-    <p class="table-field__location">{{ t(`${event.location}`) }}</p>
+    <p class="table-field__time">{{ t(`${eventData.date}`) }}</p>
+    <p class="table-field__shop-name">{{ t(`${eventData.shop}`) }}</p>
+    <p class="table-field__activity">{{ t(`${eventData.time}`) }}</p>
+    <p class="table-field__location">{{ t(`${eventData.location}`) }}</p>
   </div>
   <div class="table-field-mobile">
-    <p class="table-field__time">{{ t(`${event.date}`) }}</p>
+    <p class="table-field__time">{{ t(`${eventData.date}`) }}</p>
     <div class="table-field_body">
       <div class="table-field_row">
         <TagActivity labelKey="common.flashTag.shop" />
-        <p class="table-field__shop-name">{{ t(`${event.shop}`) }}</p>
+        <p class="table-field__shop-name">{{ t(`${eventData.shop}`) }}</p>
       </div>
       <div class="table-field_row">
         <TagActivity labelKey="common.flashTag.time" bg-color="#FFB8C3" />
-        <p class="table-field__activity">{{ t(`${event.time}`) }}</p>
+        <p class="table-field__activity">{{ t(`${eventData.time}`) }}</p>
       </div>
       <div class="table-field_row">
         <TagActivity labelKey="common.flashTag.location" bg-color="#FFB8C3" />
-        <p class="table-field__location">{{ t(`${event.location}`) }}</p>
+        <p class="table-field__location">{{ t(`${eventData.location}`) }}</p>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
-type event = {
+type eventData = {
   time: string
   date: string
   shop: string
@@ -38,7 +38,7 @@ type event = {
 
 const props = withDefaults(
   defineProps<{
-    event: event
+    eventData: eventData
     borderRadius?: string
     hasRadius?: boolean
     bgColor?: string
@@ -95,11 +95,11 @@ const styleVars = computed(() => ({
 }
 
 .table-field__shop-name {
-  @include mixins.typography-responsive(14px, 20px, 24px, 22px, 150%, 36px, 700, var(--text-color));
+  @include mixins.typography-responsive(16px, 20px, 24px, 22px, 150%, 36px, 700, var(--text-color));
 }
 
 .table-field__activity {
-  @include mixins.typography-responsive(16px, 20px, 24px, 22px, 150%, 36px, 700, var(--text-color));
+  @include mixins.typography-responsive(14px, 20px, 24px, 22px, 150%, 36px, 700, var(--text-color));
 }
 
 .table-field__location {
