@@ -59,7 +59,7 @@ export function useRaffleConstants() {
     },
   ]
 
-  const activityList = Array.from({ length: 7 }).map((_, index) => {
+  const activityList = Array.from({ length: 18 }).map((_, index) => {
     const num = index + 1
     return {
       time: `sections.raffle.activity.event${num}.time`,
