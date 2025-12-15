@@ -12,10 +12,16 @@
     <div class="img img__item-1"></div>
     <div class="img img__item-2"></div>
     <div class="title img__title-1"></div>
-    <div class="title img__title-2"></div>
+    <div class="title img__title-2" :class="{ en: isEn }"></div>
   </section>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+const isEn = computed(() => locale.value.startsWith('en'))
+</script>
 
 <style scoped lang="scss">
 .hero-banner-mobile {
@@ -150,6 +156,9 @@
   background-image: url('@/assets/kv/m_kv_title_02.png');
   background-position: top center;
   background-size: contain;
+  &.en {
+    background-image: url('@/assets/kv/m_kv_title_02_en.png');
+  }
 }
 
 @keyframes fadeCycle {

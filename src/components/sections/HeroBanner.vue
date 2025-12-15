@@ -14,10 +14,16 @@
     <div class="img img__item-1"></div>
     <div class="img img__item-2"></div>
     <div class="title img__title-1"></div>
-    <div class="title img__title-2"></div>
+    <div class="title img__title-2" :class="{ en: isEn }"></div>
   </section>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+const isEn = computed(() => locale.value.startsWith('en'))
+</script>
 
 <style scoped lang="scss">
 :root {
@@ -179,6 +185,9 @@
 .img__title-2 {
   background-image: url('@/assets/kv/kv_title_02.png');
   background-position: center 42%;
+  &.en {
+    background-image: url('@/assets/kv/kv_title_02_en.png');
+  }
 }
 
 @keyframes fadeCycle {
