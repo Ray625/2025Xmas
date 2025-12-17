@@ -226,6 +226,7 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 
 .lights-section {
   position: relative;
+  padding-top: 12px;
   padding-bottom: 148px;
   z-index: 1;
   background-color: vars.$bg-blue;

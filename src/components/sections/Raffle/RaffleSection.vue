@@ -586,7 +586,7 @@ const handleGoLineOA = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 96px;
+  gap: 48px;
   padding-top: 26px;
 
   --gradient-height: 170px;
@@ -620,6 +620,7 @@ const handleGoLineOA = () => {
   gap: 22px;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 48px;
   padding: 52px 12px 140px;
   border-radius: 16px;
   background: #fff;
@@ -1110,7 +1111,7 @@ const handleGoLineOA = () => {
 
 @media (min-width: 1024px) {
   .raffle-section {
-    gap: 136px;
+    gap: 88px;
     padding-top: 120px;
 
     --gradient-height: 368px;
@@ -1268,7 +1269,7 @@ const handleGoLineOA = () => {
 
 @media (min-width: 1440px) {
   .raffle-section {
-    gap: 148px;
+    gap: 100px;
     padding-top: 130px;
 
     --gradient-height: 400px;
@@ -1371,7 +1372,7 @@ const handleGoLineOA = () => {
 
 @media (min-width: 1920px) {
   .raffle-section {
-    gap: 172px;
+    gap: 124px;
     padding-top: 135px;
 
     --gradient-height: 427px;

@@ -995,6 +995,7 @@ const { xinyiList, easternList, taipeiList } = usePromoLocations()
 @use '@/styles/_mixins' as mixins;
 
 .promo-section {
+  padding-top: 12px;
   background-color: vars.$bg-green;
 }
 

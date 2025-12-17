@@ -254,6 +254,7 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
 .snoopy-m {
   position: relative;
   left: 50%;
+  bottom: -2px;
   transform: translate(-50%, 0);
   max-width: 328px;
   pointer-events: none;
@@ -321,6 +322,7 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   .snoopy {
     position: relative;
     left: 5%;
+    bottom: -2px;
     display: block;
     max-width: 275px;
     pointer-events: none;
