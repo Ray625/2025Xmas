@@ -55,3 +55,8 @@ const isEn = computed(() => locale.value.startsWith('en'))
 //   { immediate: true },
 // )
 </script>
+<style scoped>
+.page {
+  overflow-x: hidden;
+}
+</style>

@@ -125,10 +125,12 @@
       </div>
     </Container>
     <div class="bg-footer">
-      <img :src="snoopyBgM" alt="snoopy background" class="snoopy-bg-m" />
-      <img :src="snoopyM" alt="snoopy" class="snoopy-m" />
-      <img :src="snoopyBg" alt="snoopy background" class="snoopy-bg" />
-      <img :src="snoopy" alt="snoopy" class="snoopy" />
+      <div class="snoopy-group">
+        <img :src="snoopyM" alt="snoopy" class="snoopy-m" />
+        <img :src="snoopy" alt="snoopy" class="snoopy" />
+        <img :src="snoopyBgM" alt="snoopy background" class="snoopy-bg-m" />
+        <img :src="snoopyBg" alt="snoopy background" class="snoopy-bg" />
+      </div>
       <img :src="snoopyTree" alt="snoopy" class="snoopy-tree" />
     </div>
   </section>
@@ -237,17 +239,21 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   margin-top: 12px;
 }
 
-.snoopy-bg-m {
+.snoopy-group {
   position: absolute;
   bottom: 0;
+  width: 100%;
+  height: fit-content;
+}
+
+.snoopy-bg-m {
   pointer-events: none;
   user-select: none;
 }
 
 .snoopy-m {
-  position: absolute;
+  position: relative;
   left: 50%;
-  bottom: 52px;
   transform: translate(-50%, 0);
   max-width: 328px;
   pointer-events: none;
@@ -313,8 +319,7 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
     margin-top: 24px;
   }
   .snoopy {
-    position: absolute;
-    bottom: 48px;
+    position: relative;
     left: 5%;
     display: block;
     max-width: 275px;
@@ -323,7 +328,7 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   }
 
   .snoopy-bg {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     display: block;
@@ -401,7 +406,6 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
     margin-top: 64px;
   }
   .snoopy {
-    bottom: 64px;
     left: 12%;
     max-width: 300px;
   }
@@ -453,7 +457,6 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
     margin-top: 80px;
   }
   .snoopy {
-    bottom: 90px;
     left: 14%;
     max-width: 388px;
   }
@@ -514,7 +517,6 @@ const tabs = computed(() => tabsConfig.map((tab) => ({ key: tab.key, label: t(ta
   }
 
   .snoopy {
-    bottom: 119px;
     left: 14%;
     max-width: 475px;
   }

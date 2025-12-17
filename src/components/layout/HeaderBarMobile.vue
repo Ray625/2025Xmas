@@ -143,7 +143,7 @@ const toggleNavOpen = () => {
 }
 
 watch(navOpen, (value) => {
-  document.body.style.overflow = value ? 'hidden' : ''
+  document.body.style.overflow = value ? 'hidden' : 'auto'
 })
 
 onBeforeUnmount(() => {
