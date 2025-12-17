@@ -105,7 +105,7 @@
       </div>
     </Container>
     <Container>
-      <SectionTitle preset="raffle" class="raffle-section__title" />
+      <SectionTitle preset="raffle" class="raffle-section__title main-content" />
       <div class="raffle-section__content">
         <Card
           title-key="sections.raffle.rules.title"
@@ -586,7 +586,7 @@ const handleGoLineOA = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 96px;
   padding-top: 26px;
 
   --gradient-height: 170px;
@@ -620,7 +620,6 @@ const handleGoLineOA = () => {
   gap: 22px;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 48px;
   padding: 52px 12px 140px;
   border-radius: 16px;
   background: #fff;
@@ -634,6 +633,11 @@ const handleGoLineOA = () => {
     }
   }
 }
+
+.main-content {
+  margin-top: -48px;
+}
+
 .snoopy-decorate {
   display: none;
 }
@@ -1111,7 +1115,7 @@ const handleGoLineOA = () => {
 
 @media (min-width: 1024px) {
   .raffle-section {
-    gap: 88px;
+    gap: 136px;
     padding-top: 120px;
 
     --gradient-height: 368px;
@@ -1269,7 +1273,7 @@ const handleGoLineOA = () => {
 
 @media (min-width: 1440px) {
   .raffle-section {
-    gap: 100px;
+    gap: 148px;
     padding-top: 130px;
 
     --gradient-height: 400px;
@@ -1372,7 +1376,7 @@ const handleGoLineOA = () => {
 
 @media (min-width: 1920px) {
   .raffle-section {
-    gap: 124px;
+    gap: 172px;
     padding-top: 135px;
 
     --gradient-height: 427px;
