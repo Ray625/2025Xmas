@@ -70,7 +70,7 @@ export function useRaffleConstants() {
   })
 
   const flashList = Array.from({ length: 6 }).map((_, index) => {
-    const num = index + 1
+    const num = index + 7
     return {
       time: `sections.raffle.flash.event${num}.time`,
       date: `sections.raffle.flash.event${num}.date`,
