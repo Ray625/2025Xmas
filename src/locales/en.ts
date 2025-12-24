@@ -277,90 +277,84 @@ export default {
           location: '1F Plaza, Building 1',
         },
         event4: {
-          shop: 'Far Eastern Department Store, Xinyi A13',
-          name: 'Christmas Caroling',
-          time: '12/24/2025、12/25/2025',
-          location: '1F North Plaza',
-        },
-        event5: {
           shop: 'Far Eastern SOGO, Zhongxiao Store',
           name: 'Santa Claus Flash Candy Giveaway',
           time: '12/25/2025',
           location: '1F Green Corridor/5F',
         },
-        event6: {
+        event5: {
           shop: 'Far Eastern SOGO, Zhongxiao Store',
           name: 'Duffy & Friends Themed Christmas Flash Party / Disney Themed New Year Friends Party',
           time: '12/25/2025',
           location: '1F/3F',
         },
-        event7: {
+        event6: {
           shop: 'Far Eastern SOGO, Zhongxiao Store',
           name: 'Fantasy Christmas Weekend Check-in Gift',
           time: '12/27/2025、12/28/2025',
           location: '12F Prize Redemption Counter',
         },
-        event8: {
+        event7: {
           shop: 'Far Eastern SOGO, Fuxing Store',
           name: 'Taipei Philharmonic Youth String Ensemble',
           time: '12/28/2025',
           location: 'In front of the 9F Japanese Garden',
         },
-        event9: {
+        event8: {
           shop: 'Q Square',
           name: '2026! Shine and Be Loved',
           time: '12/31/2025',
           location: '1F Main Entrance (Chengde Rd. side)',
         },
-        event10: {
+        event9: {
           shop: 'Miramar',
           name: 'Wishful Fairy-Tale Market',
           time: '12/26/2025 - 12/28/2025',
           location: '1F Water Fountain Plaza, Seaside Avenue',
         },
-        event11: {
+        event10: {
           shop: 'Dayeh Takashimaya',
           name: '100°C Warmth – Charity Sale for Children with Intellectual Disabilities',
           time: '12/06/2025 - 12/25/2025',
           location: 'B1 Central Aquarium Plaza',
         },
-        event12: {
+        event11: {
           shop: 'Dayeh Takashimaya',
           name: '50°C Adventure – Christmas Sister Fish-Feeding Show',
           time: '12/25/2025',
           location: 'B1 Central Aquarium Plaza',
         },
-        event13: {
+        event12: {
           shop: 'Dayeh Takashimaya',
           name: '80°C Singing – Christmas Carols',
           time: '12/25/2025',
           location: 'B1 Central Aquarium Plaza',
         },
-        event14: {
+        event13: {
           shop: 'Dayeh Takashimaya',
           name: '90°C Bravery – Kamen Rider Meet & Greet',
           time: '12/28/2025',
           location: 'B1 Central Aquarium Plaza',
         },
-        event15: {
+        event14: {
           shop: 'Breeze Center',
           name: "Santa's Greeting",
           time: '12/20/2025 - 12/25/2025',
           location: "Santa's House on 1F, in front of the L5 elevator lobby",
         },
-        event16: {
+        event15: {
           shop: 'Breeze Taipei Station',
           name: 'Christmas Starlight Miracle Night',
           time: '12/25/2025',
           location: '1F Lobby',
         },
-        event17: {
+        event16: {
           shop: 'Uni-President Department Store Taipei',
           name: 'Christmas Venice Market',
           time: '12/25/2025 - 01/01/2026',
           location: 'Xingya Rd.',
         },
-        event18: {
+        event17: {
           shop: 'ATT 4 FUN',
           name: 'Colorful Night Festival',
           time: '12/04/2025 - 12/31/2025',
