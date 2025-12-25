@@ -1,5 +1,5 @@
 <template>
-  <div id="top" class="page">
+  <div id="top">
     <!-- <Pop v-if="!isEn" :visible="openPopup" @close="() => (openPopup = false)" /> -->
     <HeaderBar v-if="['xl'].includes(breakpoint)" />
     <HeaderBar v-if="['lg'].includes(breakpoint) && !isEn" />
@@ -55,8 +55,4 @@ const isEn = computed(() => locale.value.startsWith('en'))
 //   { immediate: true },
 // )
 </script>
-<style scoped>
-.page {
-  overflow-x: hidden;
-}
-</style>
+<style scoped></style>
