@@ -6,11 +6,9 @@
         <div class="scroll-container">
           <div class="popup-content">
             <div class="popup__text">
-              <p class="popup__title">公告：</p>
+              <!-- <p class="popup__title">公告：</p> -->
               <p class="whitespace-pre-line">
-                {{
-                  '感謝熱情參與「2025繽紛耶誕玩台北光之覓境雙重抽」活動，提醒各位熱情的民眾，活動集章需要前往本市16大百貨體系，掃描百貨分館現場 QR code 集章，這樣集章才有效喔～\n 大家趕緊集章抽10萬禮券大獎!!'
-                }}
+                {{ t('post') }}
               </p>
             </div>
           </div>
@@ -23,6 +21,9 @@
 <script setup lang="ts">
 import Container from '@/components/layout/Container.vue'
 import ButtonClose from '@/components/sections/Raffle/ButtonClose.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 defineProps<{
   visible: boolean

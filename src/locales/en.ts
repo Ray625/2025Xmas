@@ -1868,4 +1868,5 @@ export default {
     cooperate: 'In collaboration with',
     ad: 'ADVERTISENENT',
   },
+  post: '【Notice | Temporary Removal of the Snoopy Installation in the East District】\n\nThank you for your continued love and support for the Snoopy installation in the East District.\n\nIn response to the planning and arrangements for New Year’s Eve events in the surrounding area, the installation will be temporarily removed from the site starting December 29, 2025, to accommodate venue coordination.\n\nThe installation is scheduled to be reinstalled by the evening of January 1, 2026, and we look forward to welcoming everyone back to take photos and check in for the New Year!\n\nWe apologize for any inconvenience this may cause and sincerely appreciate your understanding and cooperation.',
 }

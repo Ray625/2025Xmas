@@ -1,6 +1,6 @@
 <template>
   <div id="top">
-    <!-- <Pop v-if="!isEn" :visible="openPopup" @close="() => (openPopup = false)" /> -->
+    <Pop v-if="!isEn" :visible="openPopup" @close="() => (openPopup = false)" />
     <HeaderBar v-if="['xl'].includes(breakpoint)" />
     <HeaderBar v-if="['lg'].includes(breakpoint) && !isEn" />
     <HeaderBarMobile v-if="['sm', 'md', 'xs'].includes(breakpoint)" />
@@ -35,24 +35,23 @@ import ContactSection from '@/components/sections/Contact/ContactSection.vue'
 import Footer from '@/components/layout/Footer.vue'
 import { useViewport } from '@/composables/useViewport'
 import { useI18n } from 'vue-i18n'
-// import { computed, ref, watch } from 'vue'
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 
-// import Pop from '@/components/common/Pop.vue'
+import Pop from '@/components/common/Pop.vue'
 
 const { locale } = useI18n()
 const { breakpoint } = useViewport()
 
-// const openPopup = ref(true)
+const openPopup = ref(true)
 
 const isEn = computed(() => locale.value.startsWith('en'))
 
-// watch(
-//   openPopup,
-//   (visible) => {
-//     document.body.style.overflow = visible ? 'hidden' : ''
-//   },
-//   { immediate: true },
-// )
+watch(
+  openPopup,
+  (visible) => {
+    document.body.style.overflow = visible ? 'hidden' : ''
+  },
+  { immediate: true },
+)
 </script>
 <style scoped></style>
