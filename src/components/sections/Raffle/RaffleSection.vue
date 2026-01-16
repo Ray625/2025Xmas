@@ -28,7 +28,7 @@
         </p>
       </div>
     </Container>
-    <Container>
+    <!-- <Container>
       <SectionTitle preset="activity" class="raffle-section__title" />
       <div class="raffle-section__content">
         <Card
@@ -103,7 +103,7 @@
           />
         </Card>
       </div>
-    </Container>
+    </Container> -->
     <Container>
       <SectionTitle preset="raffle" class="raffle-section__title main-content" />
       <div class="raffle-section__content">
@@ -634,9 +634,9 @@ const handleGoLineOA = () => {
   }
 }
 
-.main-content {
-  margin-top: -48px;
-}
+// .main-content {
+//   margin-top: -48px;
+// }
 
 .snoopy-decorate {
   display: none;
