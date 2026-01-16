@@ -5,12 +5,13 @@
         <ButtonClose @click="onClose" />
         <div class="scroll-container">
           <div class="popup-content">
-            <div class="popup__text">
-              <!-- <p class="popup__title">公告：</p> -->
+            <!-- <div class="popup__text">
+              <p class="popup__title">公告：</p>
               <p class="whitespace-pre-line">
                 {{ t('post') }}
               </p>
-            </div>
+            </div> -->
+            <img :src="popup" alt="popup image" class="popup__img" />
           </div>
         </div>
       </div>
@@ -20,10 +21,12 @@
 
 <script setup lang="ts">
 import Container from '@/components/layout/Container.vue'
-import ButtonClose from '@/components/sections/Raffle/ButtonClose.vue'
-import { useI18n } from 'vue-i18n'
+import ButtonClose from '@/components/common/ButtonClose.vue'
+import popup from '@/assets/img/popup.jpg'
 
-const { t } = useI18n()
+// import { useI18n } from 'vue-i18n'
+
+// const { t } = useI18n()
 
 defineProps<{
   visible: boolean
@@ -60,15 +63,24 @@ const onClose = () => emit('close')
 
 .popup-container {
   position: relative;
-  max-height: 560px;
+  // max-height: 560px;
+  width: fit-content;
+  height: fit-content;
   padding: 64px 24px;
+  margin: 0 auto;
   background-color: #fff;
   border-radius: 20px;
 }
 
-.scroll-container {
-  max-height: 500px;
+.popup__img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
+
+// .scroll-container {
+// max-height: 500px;
+// }
 
 .popup-content {
   display: flex;
@@ -76,7 +88,7 @@ const onClose = () => emit('close')
   background-color: #fff;
   border-radius: 20px;
   width: 100%;
-  max-width: 500px;
+  // max-width: 500px;
   margin: 0 auto;
 }
 
@@ -86,9 +98,9 @@ const onClose = () => emit('close')
   }
 }
 
-@media (min-width: 1024px) {
-  .popup-content {
-    max-width: 640px;
-  }
-}
+// @media (min-width: 1024px) {
+//   .popup-content {
+//     max-width: 640px;
+//   }
+// }
 </style>
