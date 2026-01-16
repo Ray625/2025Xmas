@@ -504,9 +504,9 @@ import SectionTitle from '@/components/common/SectionTitle.vue'
 import TagHighlight from '@/components/common/TagHighlight.vue'
 import ButtonAction from '@/components/common/ButtonAction.vue'
 import Pop from '@/components/sections/Raffle/Pop.vue'
-import TableField from '@/components/common/TableField.vue'
-import TableFieldFlash from '@/components/common/TableFieldFlash.vue'
-import TableFieldTitle from '@/components/common/TableFieldTitle.vue'
+// import TableField from '@/components/common/TableField.vue'
+// import TableFieldFlash from '@/components/common/TableFieldFlash.vue'
+// import TableFieldTitle from '@/components/common/TableFieldTitle.vue'
 import iconClock from '@/assets/icon/clock.svg'
 import iconMap from '@/assets/icon/map.svg'
 import iconGift from '@/assets/icon/gift.svg'
@@ -542,8 +542,7 @@ import { xinyiCollect, easternCollect, taipeiCollect } from '@/components/sectio
 import { useViewport } from '@/composables/useViewport'
 const { breakpoint } = useViewport()
 
-const { prizeLeft, prizeRight, activityList, activityTitle, flashList, flashTitle } =
-  useRaffleConstants()
+const { prizeLeft, prizeRight } = useRaffleConstants()
 const { t, locale } = useI18n()
 
 const isEn = computed(() => locale.value.startsWith('en'))
