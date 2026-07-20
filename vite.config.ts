@@ -4,6 +4,7 @@ import path from 'node:path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/2025Xmas/',
   plugins: [vue()],
   resolve: {
     alias: {
